@@ -1,0 +1,810 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  
+  
+  <title>추락이 남긴 리더십의 지도: 철인 행세를 멈추고 정직한 멘토를 찾는 법</title>
+  
+  <style>
+    :root {
+      --ink: #1d2630;
+      --muted: #687586;
+      --soft: #f6f3ee;
+      --paper: #fffdf9;
+      --line: #e4ded3;
+      --accent: #8d4f2f;
+      --accent-2: #244d5a;
+      --gold: #c08a3e;
+      --card: #ffffff;
+      --shadow: 0 18px 55px rgba(30, 38, 48, 0.08);
+      --radius: 8px;
+      --max: 1080px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(192, 138, 62, 0.12), transparent 34rem),
+        linear-gradient(180deg, #fbf7f0 0%, var(--paper) 36%, #f7f4ee 100%);
+      font-family: "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+      line-height: 1.78;
+      word-break: keep-all;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 72px 0 38px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .kicker {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      margin: 0 0 18px;
+      color: var(--accent);
+      font-size: 0.86rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .kicker::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      background: var(--accent);
+      display: inline-block;
+    }
+
+    h1 {
+      max-width: 910px;
+      margin: 0;
+      font-family: Georgia, "Times New Roman", "Noto Serif KR", serif;
+      font-size: clamp(2.4rem, 6vw, 5.1rem);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      color: #18212b;
+    }
+
+    .subtitle {
+      max-width: 780px;
+      margin: 26px 0 0;
+      color: #465464;
+      font-size: clamp(1.05rem, 2vw, 1.32rem);
+      line-height: 1.75;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.8fr;
+      gap: 36px;
+      align-items: end;
+      margin-top: 38px;
+    }
+
+    .share-card,
+    .meta-card,
+    .finding-card,
+    .note-card {
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .share-card {
+      padding: 22px;
+    }
+
+    .share-label {
+      margin: 0 0 8px;
+      color: var(--muted);
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .share-title {
+      margin: 0 0 12px;
+      font-weight: 900;
+      line-height: 1.45;
+    }
+
+    .share-copy {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .meta li {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 7px 12px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.58);
+      font-size: 0.88rem;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 270px;
+      gap: 44px;
+      padding: 46px 0 84px;
+    }
+
+    aside {
+      position: sticky;
+      top: 22px;
+      align-self: start;
+    }
+
+    .toc {
+      padding: 20px;
+      background: rgba(255, 253, 249, 0.78);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .toc h2 {
+      margin: 0 0 12px;
+      font-size: 0.9rem;
+      color: var(--accent-2);
+      letter-spacing: 0.02em;
+    }
+
+    .toc ol {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.9;
+    }
+
+    article {
+      min-width: 0;
+    }
+
+    section {
+      margin: 0 0 56px;
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      font-family: Georgia, "Times New Roman", "Noto Serif KR", serif;
+      font-size: clamp(1.55rem, 3vw, 2.25rem);
+      line-height: 1.25;
+      color: #17222d;
+    }
+
+    h3 {
+      margin: 28px 0 10px;
+      font-size: 1.12rem;
+      color: var(--accent-2);
+    }
+
+    p {
+      margin: 0 0 18px;
+    }
+
+    .lead {
+      padding: 28px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--accent);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      font-size: 1.04rem;
+    }
+
+    .abstract {
+      display: grid;
+      grid-template-columns: 0.35fr 1fr;
+      gap: 24px;
+      padding: 30px;
+      background: var(--ink);
+      color: #f8f4ed;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .abstract strong {
+      color: #f4c77a;
+    }
+
+    .abstract .label {
+      margin: 0;
+      color: #d5c6b4;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+
+    .abstract p:last-child {
+      margin-bottom: 0;
+    }
+
+    .findings {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .finding-card {
+      padding: 22px;
+    }
+
+    .finding-card span {
+      display: inline-grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      margin-bottom: 14px;
+      border-radius: 50%;
+      background: #f3e7d3;
+      color: var(--accent);
+      font-weight: 900;
+    }
+
+    .finding-card h3 {
+      margin: 0 0 8px;
+      color: var(--ink);
+      font-size: 1.03rem;
+    }
+
+    .finding-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    blockquote {
+      margin: 34px 0;
+      padding: 28px 32px;
+      color: #16242d;
+      background: linear-gradient(135deg, #f3eadc, #fffaf1);
+      border-left: 6px solid var(--gold);
+      border-radius: var(--radius);
+      font-family: Georgia, "Times New Roman", "Noto Serif KR", serif;
+      font-size: clamp(1.25rem, 2.4vw, 1.72rem);
+      line-height: 1.55;
+    }
+
+    blockquote cite {
+      display: block;
+      margin-top: 14px;
+      color: var(--muted);
+      font-family: "Pretendard", "Noto Sans KR", sans-serif;
+      font-size: 0.9rem;
+      font-style: normal;
+    }
+
+    .argument-map {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .argument-row {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 18px;
+      padding: 18px 20px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .argument-row b {
+      color: var(--accent);
+    }
+
+    .argument-row p {
+      margin: 0;
+      color: #495666;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      margin: 24px 0;
+    }
+
+    .flow div {
+      min-height: 120px;
+      padding: 18px 14px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(30, 38, 48, 0.05);
+    }
+
+    .flow b {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--accent-2);
+    }
+
+    .flow span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      min-width: 720px;
+      border-collapse: collapse;
+      font-size: 0.96rem;
+    }
+
+    th,
+    td {
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #efe6d7;
+      color: #26333d;
+      font-weight: 900;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .note-card {
+      padding: 24px;
+    }
+
+    .note-card h3 {
+      margin-top: 0;
+    }
+
+    .checklist {
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .checklist li {
+      position: relative;
+      margin-bottom: 14px;
+      padding-left: 30px;
+      color: #465464;
+    }
+
+    .checklist li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent);
+      font-weight: 900;
+    }
+
+    .source-notes {
+      padding: 28px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .source-notes dl {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 10px 18px;
+      margin: 0;
+    }
+
+    .source-notes dt {
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .source-notes dd {
+      margin: 0;
+    }
+
+    .ending {
+      margin-top: 60px;
+      padding: 34px;
+      background: linear-gradient(135deg, #1f3139, #15212a);
+      color: #fff7eb;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .ending h2 {
+      color: #fff7eb;
+    }
+
+    .ending p {
+      color: #e6dcca;
+    }
+
+    .copy-box {
+      margin-top: 18px;
+      padding: 18px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: var(--radius);
+      color: #fff;
+      font-size: 0.96rem;
+    }
+
+    footer {
+      padding: 34px 0 52px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .layout,
+      .abstract,
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      aside {
+        position: static;
+        order: -1;
+      }
+
+      .findings,
+      .flow {
+        grid-template-columns: 1fr;
+      }
+
+      .argument-row,
+      .source-notes dl {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 46px;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      aside,
+      .share-card {
+        display: none;
+      }
+
+      .layout,
+      .hero-grid,
+      .findings,
+      .two-col {
+        display: block;
+      }
+
+      .finding-card,
+      .note-card,
+      .lead,
+      .abstract,
+      .source-notes {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+    }
+  </style>
+<meta property="og:type" content="article">
+<meta property="og:title" content="3장 추락이 내 삶에 남긴 것들">
+<meta property="og:description" content="[[3장 추락이 내 삶에 남긴 것들]] [[00장 교회가 아닌 리더 목차]] [[0장 요약 회가 아니라 리더 요약]] 리더 리더십 교회 영적리더십 요청하신 형식과 지침에 따라 1부 3장 &lt;추락이 내 삶에 남긴 것들: 철인 행세는 그만두고 정직한 멘토를 찾으라 (네이선 콘래드)에 대한 정밀 분석 요약을 제공합니다. 1. 【">
+<meta property="og:url" content="https://teentopia00.github.io/teendocs/s/mhidlw/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="3장 추락이 내 삶에 남긴 것들">
+<meta name="twitter:description" content="[[3장 추락이 내 삶에 남긴 것들]] [[00장 교회가 아닌 리더 목차]] [[0장 요약 회가 아니라 리더 요약]] 리더 리더십 교회 영적리더십 요청하신 형식과 지침에 따라 1부 3장 &lt;추락이 내 삶에 남긴 것들: 철인 행세는 그만두고 정직한 멘토를 찾으라 (네이선 콘래드)에 대한 정밀 분석 요약을 제공합니다. 1. 【">
+<link rel="canonical" href="https://teentopia00.github.io/teendocs/s/mhidlw/">
+</head>
+<body>
+  <header class="hero">
+    <div class="page">
+      <p class="kicker">Research Report · Editorial Blog</p>
+      <h1>추락이 남긴 리더십의 지도</h1>
+      <p class="subtitle">철인 행세를 멈추고 정직한 멘토를 찾는 법. 네이선 콘래드의 〈추락이 내 삶에 남긴 것들〉은 빙벽에서의 추락을 통해, 한계를 무시한 리더십이 어떻게 내면과 공동체를 무너뜨리는지 보여준다.</p>
+
+      <div class="hero-grid">
+        <ul class="meta" aria-label="문서 정보">
+          <li>도서: 그들은 교회가 아니라 리더를 떠난다</li>
+          <li>1부 3장</li>
+          <li>저자: 네이선 콘래드</li>
+          <li>주제: 영적 리더십 · 한계 · 멘토링</li>
+        </ul>
+
+        <div class="share-card">
+          <p class="share-label">Share framing</p>
+          <p class="share-title">리더가 무너지는 순간은 대개 능력이 부족해서가 아니라, 자신에게 허락된 한계를 부정할 때 찾아온다.</p>
+          <p class="share-copy">이 글은 성공 중독, 피드백 회피, 영웅 콤플렉스가 만드는 리더십의 위험을 분석하고 회복의 실제적 길을 제안한다.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="page layout">
+    <article>
+      <section id="abstract">
+        <div class="abstract">
+          <p class="label">ABSTRACT</p>
+          <div>
+            <p><strong>핵심 질문은 단순하다.</strong> 왜 선한 동기로 시작한 리더가 어느 순간 자기 자신을 소진시키고, 관계를 손상시키며, 하나님이 정하신 경계선 밖으로 밀려나는가?</p>
+            <p>이 장은 빙벽 등반 사고라는 강렬한 사건을 통해 영적 리더십의 위험한 동력을 해부한다. 저자는 무리한 선등, 20미터 추락, 전문가의 공개적 비판을 거쳐 자신의 사역 방식 역시 같은 패턴 위에 서 있었음을 발견한다. 결론은 명확하다. 리더는 완벽한 영웅이 아니라 은혜가 필요한 사람이며, 회복은 한계 수용과 정직한 멘토링에서 시작된다.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="overview">
+        <h2>문제의식: 리더는 왜 추락하는가</h2>
+        <p class="lead">〈추락이 내 삶에 남긴 것들〉은 실패담을 미화하지 않는다. 오히려 실패가 드러낸 리더의 내면 구조를 추적한다. 성공하고 싶다는 욕구, 유능해 보이고 싶다는 압박, 아무도 실망시키고 싶지 않은 두려움이 결합될 때 리더는 자신의 한계를 영적 방해물로 오해한다.</p>
+        <p>네이선 콘래드는 빙벽 등반 중 자신의 실력과 상황을 과신하다가 추락했다. 그러나 이 사건의 무게는 사고 자체보다 사고 이후에 있다. 그는 자신을 조롱하고 비판한 전문가의 말을 방어적으로 밀어내지 않고, 오히려 그 비판을 통해 자신의 사역과 삶을 다시 읽기 시작한다.</p>
+        <p>이 장은 1부 “인생의 두 번째 기회는 어떻게 오는가”의 마지막 장으로 기능한다. 앞선 장들이 멈춤과 셀프 리더십의 필요를 제시했다면, 이 장은 그 경고를 무시했을 때 리더가 실제로 어디까지 떨어질 수 있는지를 보여준다.</p>
+      </section>
+
+      <section id="findings">
+        <h2>Key Findings</h2>
+        <div class="findings">
+          <div class="finding-card">
+            <span>1</span>
+            <h3>아드레날린은 성령의 열심을 흉내 낼 수 있다</h3>
+            <p>도전과 성취의 흥분은 처음에는 헌신처럼 보이지만, 오래 지속되면 판단력을 흐리고 관계와 안식을 소모한다.</p>
+          </div>
+          <div class="finding-card">
+            <span>2</span>
+            <h3>한계는 방해물이 아니라 보호 장치다</h3>
+            <p>수면, 안식, 가족, 공동체, 정직한 피드백은 리더십의 속도를 늦추는 짐이 아니라 생존을 가능하게 하는 확보물이다.</p>
+          </div>
+          <div class="finding-card">
+            <span>3</span>
+            <h3>회복은 비판자를 피하지 않는 데서 시작된다</h3>
+            <p>수치심을 방어하지 않고 뼈아픈 조언을 멘토링으로 전환할 때, 실패는 패배가 아니라 훈련의 자료가 된다.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="argument">
+        <h2>논증 구조: 추락에서 회복으로</h2>
+        <div class="argument-map">
+          <div class="argument-row">
+            <b>Claim</b>
+            <p>리더는 성공과 인정 욕구에 취해 하나님이 정하신 한계를 넘어서서는 안 되며, 실패 이후에는 완벽주의적 영웅 신화를 내려놓고 정직한 피드백을 받아들여야 한다.</p>
+          </div>
+          <div class="argument-row">
+            <b>Evidence</b>
+            <p>드라큘라 빙벽에서의 무리한 등반과 추락, 전문가 윌 가드의 공개 비판, 주 75시간 사역과 영적 공허, 관계의 균열이 근거로 제시된다.</p>
+          </div>
+          <div class="argument-row">
+            <b>Logic</b>
+            <p>물리적 추락의 내러티브가 영적 추락의 은유로 확장되고, 비판자를 멘토로 받아들이는 반전을 통해 회복의 길이 제시된다.</p>
+          </div>
+          <div class="argument-row">
+            <b>Conclusion</b>
+            <p>내 이야기의 주인공은 내가 아니라 하나님이다. 리더의 실패는 하나님이 영웅이 되시는 이야기 안에서 은혜의 증언으로 재해석될 수 있다.</p>
+          </div>
+        </div>
+
+        <div class="flow" aria-label="논리 흐름 다이어그램">
+          <div><b>과신</b><span>실력과 열정을 과대평가한다</span></div>
+          <div><b>한계 무시</b><span>안전장치와 안식을 가볍게 여긴다</span></div>
+          <div><b>추락</b><span>몸과 영혼과 관계가 동시에 흔들린다</span></div>
+          <div><b>피드백</b><span>뼈아픈 조언을 회피하지 않는다</span></div>
+          <div><b>재정렬</b><span>하나님을 이야기의 중심에 둔다</span></div>
+        </div>
+      </section>
+
+      <section id="evidence">
+        <h2>Evidence Sections</h2>
+
+        <h3>1. 아드레날린 과다 분비와 한계 무시</h3>
+        <p>저자의 빙벽 사고는 사역의 위험한 속도를 비추는 거울이다. 그는 선등자로 나섰고, 몸의 신호와 상황의 위험을 무시했다. 이 패턴은 주 75시간 일하며 유능한 목자로 인정받고 싶어 했던 사역 방식과 연결된다.</p>
+        <blockquote>
+          “이건 등반에만 국한된 문제가 아닙니다. 내 인생 전체가 걸린 문제입니다.”
+          <cite>네이선 콘래드, 〈추락이 내 삶에 남긴 것들〉 요지</cite>
+        </blockquote>
+        <p>이 문장은 장 전체의 전환점이다. 문제는 한 번의 사고가 아니라, 사고를 낳은 반복된 삶의 방식이다. 리더가 스스로를 멈추지 못할 때, 외부의 추락이 내부의 붕괴를 폭로한다.</p>
+
+        <h3>2. 정직한 멘토링의 수용</h3>
+        <p>가장 인상적인 장면은 저자가 자신을 공개적으로 비판한 윌 가드에게 조언을 구한다는 점이다. 여기서 멘토링은 편안한 격려가 아니라, 자존심을 찌르는 진실을 견디는 훈련으로 제시된다.</p>
+        <blockquote>
+          “사역을 혼자서 하지 마라, 멘토를 찾아라, 남들의 말에 귀를 기울여라.”
+          <cite>장 핵심 명령 요약</cite>
+        </blockquote>
+        <p>리더십의 위험은 고립에서 커진다. 누구도 나를 교정할 수 없고, 누구의 말도 들을 필요가 없다고 느끼는 순간 리더는 이미 위험 지대에 들어선다.</p>
+
+        <h3>3. 영웅 신화의 해체</h3>
+        <p>이 장의 결론은 리더가 더 강해져야 한다는 조언이 아니다. 오히려 더 정직해져야 한다는 요청이다. 실패하지 않는 리더가 되라는 말이 아니라, 실패마저 은혜의 증언으로 바꿀 수 있을 만큼 중심을 하나님께 내어드리라는 말이다.</p>
+        <blockquote>
+          “하나님이 이 이야기의 영웅이 되시면, 설령 내가 실패했다 하더라도 필연적으로 패배로 이어지지 않는다.”
+          <cite>장 결론부 핵심 문장 요약</cite>
+        </blockquote>
+      </section>
+
+      <section id="concepts">
+        <h2>핵심 개념 분석</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>개념</th>
+                <th>의미</th>
+                <th>리더십 적용</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>추락</td>
+                <td>빙벽에서의 물리적 사고이자, 한계를 무시한 삶이 맞이하는 영적 붕괴</td>
+                <td>실패를 숨길 사건이 아니라 진단 자료로 읽어야 한다</td>
+              </tr>
+              <tr>
+                <td>아드레날린</td>
+                <td>도전과 성취의 흥분이 만드는 거짓 동력</td>
+                <td>열정과 인정 욕구를 구분하는 자기 점검이 필요하다</td>
+              </tr>
+              <tr>
+                <td>한계</td>
+                <td>성장을 막는 벽이 아니라 하나님이 주신 보호의 테두리</td>
+                <td>안식, 수면, 가족, 공동체 피드백을 사역의 일부로 보아야 한다</td>
+              </tr>
+              <tr>
+                <td>철인</td>
+                <td>약점을 들키지 않고 홀로 모든 책임을 지려는 리더의 허상</td>
+                <td>완벽한 척하는 문화는 리더와 공동체를 동시에 병들게 한다</td>
+              </tr>
+              <tr>
+                <td>멘토</td>
+                <td>사랑과 신뢰 안에서 불편한 진실을 말해 주는 사람</td>
+                <td>칭찬보다 교정을 들을 수 있는 관계망을 의도적으로 만들어야 한다</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="reflection">
+        <h2>비판적 검토</h2>
+        <div class="two-col">
+          <div class="note-card">
+            <h3>강점: 은유의 힘</h3>
+            <p>빙벽 등반은 리더십의 위험을 선명하게 보여주는 강력한 은유다. 선등자, 확보물, 아드레날린, 추락이라는 요소가 사역의 현실과 긴밀하게 맞물리며 독자가 자신의 속도와 경계선을 돌아보게 만든다.</p>
+          </div>
+          <div class="note-card">
+            <h3>주의점: 극단적 사례의 한계</h3>
+            <p>생명을 위협하는 추락 사고는 강렬하지만, 모든 리더의 붕괴가 이렇게 극적으로 나타나지는 않는다. 실제로는 서서히 무너지는 열정, 누적된 피로, 관계의 미세한 균열이 더 흔하다.</p>
+          </div>
+        </div>
+        <p>또한 자신을 비판한 사람을 곧바로 멘토로 삼는 방식은 분별이 필요하다. 모든 비판자가 건강한 멘토가 되는 것은 아니다. 그러나 이 장이 강조하는 핵심은 비판자를 무조건 가까이 두라는 말이 아니라, 방어 본능만으로 모든 불편한 피드백을 밀어내지 말라는 데 있다.</p>
+      </section>
+
+      <section id="implications">
+        <h2>Implications: 오늘의 리더에게 남는 질문</h2>
+        <ul class="checklist">
+          <li><strong>아드레날린 점검:</strong> 지금 붙들고 있는 사역이나 프로젝트는 하나님을 향한 순종인가, 나의 유능함을 증명하려는 무대인가?</li>
+          <li><strong>한계 재설정:</strong> 수면, 안식일, 가족과의 시간, 침묵의 시간을 일정표에서 가장 먼저 확보하고 있는가?</li>
+          <li><strong>멘토 그룹 형성:</strong> 나의 나쁜 습관과 죄, 반복되는 방어 기제를 정직하게 말해 줄 사람이 실제로 있는가?</li>
+          <li><strong>영웅 서사 내려놓기:</strong> 내가 실패하면 모든 것이 끝난다고 느끼는 이유는 무엇인가? 그 이야기의 중심에는 하나님이 있는가, 내가 있는가?</li>
+        </ul>
+      </section>
+
+      <section id="discussion">
+        <h2>공동체 토론을 위한 질문</h2>
+        <div class="note-card">
+          <ol>
+            <li>최근 사역이나 일상에서 내가 무시했던 “하나님의 한계”는 무엇인가?</li>
+            <li>나를 불편하게 만든 피드백 중 실제로는 필요한 진실이었던 말은 무엇인가?</li>
+            <li>리더에게 완벽함을 요구하는 공동체 문화는 어떻게 형성되며, 어떻게 바뀔 수 있는가?</li>
+            <li>아드레날린에 취해 일하는 것과 성령의 인도 안에서 일하는 것은 어떤 증상으로 구분되는가?</li>
+            <li>내 인생 이야기에서 하나님이 영웅이시라는 고백은 실패를 대하는 태도를 어떻게 바꾸는가?</li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="theology">
+        <h2>신학적 연결</h2>
+        <p>이 장은 고린도후서 12장 9절의 “내 은혜가 네게 족하도다 이는 내 능력이 약한 데서 온전하여짐이라”는 고백과 맞닿아 있다. 리더의 약함은 제거해야 할 결함만이 아니라, 하나님의 능력이 드러나는 자리일 수 있다.</p>
+        <p>또한 루터의 십자가 신학과도 연결된다. 영광의 신학은 강함, 성취, 성공을 통해 하나님을 증명하려 한다. 그러나 십자가 신학은 고난과 실패와 한계 속에서 일하시는 하나님을 발견한다. 네이선 콘래드의 추락은 영광의 신학에서 십자가 신학으로 이동하는 리더의 회심처럼 읽힌다.</p>
+      </section>
+
+      <section id="sources">
+        <h2>Source Notes</h2>
+        <div class="source-notes">
+          <dl>
+            <dt>기초 자료</dt>
+            <dd>도서 《그들은 교회가 아니라 리더를 떠난다》 중 1부 3장 〈추락이 내 삶에 남긴 것들〉 독서노트</dd>
+            <dt>장 저자</dt>
+            <dd>네이선 콘래드</dd>
+            <dt>출판 정보</dt>
+            <dd>국제제자훈련원(DMI)</dd>
+            <dt>분석 범위</dt>
+            <dd>제공된 장별 요약, 핵심 인용, 논증 구조, 적용 포인트, 신학 연결을 바탕으로 편집형 연구 리포트로 재구성</dd>
+            <dt>편집 원칙</dt>
+            <dd>원문의 주장과 독서노트의 분석을 유지하되, 공개 블로그 아티클에 적합하도록 제목, 흐름, 표, 다이어그램, 독자 적용 질문을 정리</dd>
+          </dl>
+        </div>
+      </section>
+
+      <section class="ending" id="ending">
+        <h2>Reader-Friendly Ending</h2>
+        <p>추락은 리더의 끝을 말하지 않을 수 있다. 다만 추락은 우리가 무엇을 동력으로 삼아 왔는지, 누구의 목소리를 거부해 왔는지, 어떤 한계를 무시해 왔는지를 더 이상 숨기지 못하게 만든다.</p>
+        <p>이 장이 남기는 가장 현실적인 초대는 거창하지 않다. 오늘 하나의 경계선을 다시 세우고, 한 사람의 정직한 멘토를 찾고, 내 이야기의 중심에서 조용히 내려오는 것이다. 리더가 철인 행세를 멈출 때, 공동체는 더 안전해지고 은혜는 더 분명해진다.</p>
+        <div class="copy-box">
+          <strong>Copy-ready takeaway:</strong> 리더십의 회복은 더 강한 사람이 되는 데서 시작되지 않는다. 하나님이 정하신 한계를 받아들이고, 정직한 피드백 앞에 머물며, 내 실패보다 큰 은혜의 이야기에 자신을 다시 위치시키는 데서 시작된다.
+        </div>
+      </section>
+    </article>
+
+    <aside aria-label="문서 목차">
+      <nav class="toc">
+        <h2>Contents</h2>
+        <ol>
+          <li><a href="#abstract">Abstract</a></li>
+          <li><a href="#overview">문제의식</a></li>
+          <li><a href="#findings">Key Findings</a></li>
+          <li><a href="#argument">논증 구조</a></li>
+          <li><a href="#evidence">Evidence</a></li>
+          <li><a href="#concepts">핵심 개념</a></li>
+          <li><a href="#reflection">비판적 검토</a></li>
+          <li><a href="#implications">Implications</a></li>
+          <li><a href="#sources">Source Notes</a></li>
+        </ol>
+      </nav>
+    </aside>
+  </main>
+
+  <footer>
+    <div class="page">
+      <p>Published as a standalone editorial research report. Based on an Obsidian Markdown book note for 〈3장 추락이 내 삶에 남긴 것들〉.</p>
+    </div>
+  </footer>
+</body>
+</html>
