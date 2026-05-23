@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  
+  
+  <title>관계가 잠재력을 확장한다: 『No Limits』 6장 대인관계 수용력 연구 보고서</title>
+  
+  
+  
+  
+  
+  <style>
+    :root {
+      --ink: #17211f;
+      --muted: #5c6a66;
+      --soft: #f5f1e9;
+      --paper: #fffaf2;
+      --line: #ded6c8;
+      --accent: #7a3e2f;
+      --accent-2: #245c5a;
+      --gold: #b6842b;
+      --white: #ffffff;
+      --shadow: 0 18px 50px rgba(23, 33, 31, 0.09);
+      --radius: 8px;
+      --max: 1080px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(122, 62, 47, 0.08), transparent 32rem),
+        linear-gradient(180deg, var(--paper), #fbf8f1 36rem, #ffffff);
+      font-family: "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+      line-height: 1.75;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    a {
+      color: var(--accent-2);
+      text-decoration-thickness: 0.08em;
+      text-underline-offset: 0.22em;
+    }
+
+    .page {
+      width: min(var(--max), calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 72px 0 42px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .kicker {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 22px;
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .kicker::before {
+      content: "";
+      width: 38px;
+      height: 2px;
+      background: var(--accent);
+      display: inline-block;
+    }
+
+    h1 {
+      max-width: 920px;
+      margin: 0;
+      font-family: Georgia, "Times New Roman", "Noto Serif KR", serif;
+      font-size: clamp(2.25rem, 5vw, 5.2rem);
+      line-height: 1.06;
+      letter-spacing: 0;
+      color: #111916;
+    }
+
+    .subtitle {
+      max-width: 780px;
+      margin: 26px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+      line-height: 1.72;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 5px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.62);
+    }
+
+    .share-box {
+      margin: 36px 0 0;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.74);
+      box-shadow: var(--shadow);
+    }
+
+    .share-box strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--accent);
+      font-size: 0.92rem;
+    }
+
+    .share-box p {
+      margin: 0;
+      color: var(--ink);
+      font-size: 1.02rem;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 52px;
+      padding: 42px 0 72px;
+    }
+
+    aside {
+      align-self: start;
+      position: sticky;
+      top: 24px;
+    }
+
+    .toc {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.78);
+    }
+
+    .toc h2 {
+      margin: 0 0 12px;
+      font-size: 0.9rem;
+      color: var(--accent);
+    }
+
+    .toc ol {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+      font-size: 0.93rem;
+      line-height: 1.7;
+    }
+
+    .toc li {
+      margin: 7px 0;
+    }
+
+    article {
+      min-width: 0;
+    }
+
+    section {
+      margin: 0 0 56px;
+      scroll-margin-top: 30px;
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      font-family: Georgia, "Times New Roman", "Noto Serif KR", serif;
+      font-size: clamp(1.65rem, 3vw, 2.45rem);
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 32px 0 10px;
+      font-size: 1.18rem;
+      line-height: 1.45;
+      color: #1d3835;
+    }
+
+    p {
+      margin: 0 0 18px;
+    }
+
+    .lead {
+      padding: 26px 28px;
+      border-left: 5px solid var(--accent-2);
+      background: #eef4f2;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-size: 1.08rem;
+    }
+
+    .abstract {
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .abstract h2 {
+      font-size: 1.45rem;
+    }
+
+    .finding-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: 0 10px 28px rgba(23, 33, 31, 0.06);
+    }
+
+    .card b {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--accent);
+      font-size: 0.98rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .pullquote {
+      margin: 34px 0;
+      padding: 30px 34px;
+      border-top: 2px solid var(--accent);
+      border-bottom: 2px solid var(--accent);
+      color: #20302d;
+      font-family: Georgia, "Times New Roman", "Noto Serif KR", serif;
+      font-size: clamp(1.35rem, 3vw, 2.1rem);
+      line-height: 1.42;
+      background: rgba(255, 250, 242, 0.75);
+    }
+
+    .pullquote cite {
+      display: block;
+      margin-top: 14px;
+      color: var(--muted);
+      font-family: "Pretendard", "Noto Sans KR", sans-serif;
+      font-size: 0.9rem;
+      font-style: normal;
+    }
+
+    .flow {
+      margin: 24px 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: flow;
+    }
+
+    .flow li {
+      counter-increment: flow;
+      position: relative;
+      margin: 0 0 14px;
+      padding: 18px 18px 18px 58px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+    }
+
+    .flow li::before {
+      content: counter(flow);
+      position: absolute;
+      left: 18px;
+      top: 18px;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--accent-2);
+      color: white;
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    .evidence-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 22px 0 8px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: table;
+    }
+
+    .evidence-table th,
+    .evidence-table td {
+      padding: 16px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .evidence-table th {
+      background: #f0ebe2;
+      color: #26332f;
+      font-size: 0.92rem;
+    }
+
+    .evidence-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .note {
+      padding: 18px 20px;
+      border-radius: var(--radius);
+      background: #f7f2e8;
+      border: 1px solid #e4d7c0;
+      color: #473c2f;
+      font-size: 0.96rem;
+    }
+
+    .quote-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    blockquote {
+      margin: 0;
+      padding: 20px 22px;
+      border-left: 4px solid var(--gold);
+      background: #fffdf8;
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    blockquote p {
+      margin: 0 0 8px;
+      font-weight: 700;
+    }
+
+    blockquote small {
+      color: var(--muted);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .checklist {
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .checklist li {
+      margin: 10px 0;
+      padding-left: 30px;
+      position: relative;
+    }
+
+    .checklist li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent-2);
+      font-weight: 900;
+    }
+
+    .ending {
+      padding: 34px;
+      border-radius: var(--radius);
+      background: #18302d;
+      color: #fffaf2;
+    }
+
+    .ending h2 {
+      color: #fffaf2;
+    }
+
+    .ending p {
+      color: #e7eee9;
+    }
+
+    .copy-ready {
+      margin-top: 18px;
+      padding: 18px;
+      border: 1px dashed rgba(255, 255, 255, 0.45);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.08);
+      font-size: 0.98rem;
+    }
+
+    footer {
+      padding: 32px 0 54px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 900px) {
+      .layout {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      aside {
+        position: static;
+      }
+
+      .finding-grid,
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        width: min(100% - 24px, var(--max));
+      }
+
+      .hero {
+        padding-top: 44px;
+      }
+
+      .share-box,
+      .abstract,
+      .ending {
+        padding: 22px;
+      }
+
+      .evidence-table {
+        display: block;
+        overflow-x: auto;
+        white-space: normal;
+      }
+
+      .pullquote {
+        padding: 24px 18px;
+      }
+    }
+  </style>
+<meta property="og:type" content="article">
+<meta property="og:title" content="6장 대인관계 수용력">
+<meta property="og:description" content="[[6장 대인관계 수용력]] [[No Limits  Blow the Cap Off Your Capacity 분석]] 리더 한계 리더십 감정 관계 요청하신 존 C. 맥스웰의 저서 『NO LIMITS』 제6장(People Capacity—Your Ability to Build Relationships)에 대한 상세한 분석 및">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="6장 대인관계 수용력">
+<meta name="twitter:description" content="[[6장 대인관계 수용력]] [[No Limits  Blow the Cap Off Your Capacity 분석]] 리더 한계 리더십 감정 관계 요청하신 존 C. 맥스웰의 저서 『NO LIMITS』 제6장(People Capacity—Your Ability to Build Relationships)에 대한 상세한 분석 및">
+</head>
+<body>
+  <header class="hero">
+    <div class="page">
+      <div class="kicker">Research Report · Leadership · Book Note</div>
+      <h1>관계가 잠재력을 확장한다</h1>
+      <p class="subtitle">존 C. 맥스웰의 『No Limits』 6장 “People Capacity”는 성공을 개인의 재능이나 생산성만으로 설명하지 않는다. 이 장의 핵심은 더 선명하다. 사람은 관계의 질만큼 커지고, 관계를 대하는 태도만큼 멀리 간다.</p>
+      <div class="meta-row">
+        <span class="pill">책: 『No Limits』</span>
+        <span class="pill">저자: 존 C. 맥스웰</span>
+        <span class="pill">장: 6장 대인관계 수용력</span>
+        <span class="pill">주제: 리더십 · 관계 · 자기계발</span>
+      </div>
+      <div class="share-box" aria-label="social share framing">
+        <strong>공유용 요약</strong>
+        <p>관계는 네트워킹 기술이 아니라 잠재력을 확장하는 기반이다. 맥스웰은 “타인에게서 얻고 싶은 것”보다 “타인을 위해 원하는 것”이 많아질 때, 관계가 영향력의 통로가 된다고 말한다.</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="page layout">
+    <aside>
+      <nav class="toc" aria-label="목차">
+        <h2>읽기 흐름</h2>
+        <ol>
+          <li><a href="#abstract">초록</a></li>
+          <li><a href="#findings">핵심 발견</a></li>
+          <li><a href="#map">논리 구조</a></li>
+          <li><a href="#evidence">증거와 사례</a></li>
+          <li><a href="#concepts">핵심 개념</a></li>
+          <li><a href="#critique">비판적 검토</a></li>
+          <li><a href="#implications">적용과 함의</a></li>
+          <li><a href="#notes">출처 노트</a></li>
+        </ol>
+      </nav>
+    </aside>
+
+    <article>
+      <section id="abstract" class="abstract">
+        <h2>초록</h2>
+        <p>『No Limits』 6장은 “대인관계 수용력”, 곧 타인과 관계를 구축하고 협력하는 능력을 잠재력 확장의 핵심 요소로 제시한다. 맥스웰은 40세 무렵 자신의 성장이 생산성, 우선순위, 개인 역량만으로는 충분하지 않다는 사실을 깨달았다고 고백한다. 한계는 능력 부족만이 아니라 연결 부족에서도 발생한다.</p>
+        <p>이 보고서는 장의 논리 구조, 핵심 주장, 반복되는 수사적 장치, 원문 인용, 사례, 비판적 쟁점을 종합한다. 결론적으로 이 장은 관계를 우연한 친분이 아니라 의도적으로 형성하고 관리해야 할 성장 자본으로 본다. 다만 “무조건적 사랑”과 “나를 다음 단계로 이끌 사람 곁으로 가라”는 조언 사이에는 이타성과 도구주의의 긴장이 남는다.</p>
+      </section>
+
+      <section id="findings">
+        <h2>핵심 발견</h2>
+        <div class="finding-grid">
+          <div class="card">
+            <b>1. 성공은 관계를 통해 추적된다</b>
+            <p>맥스웰은 개인의 성공과 실패가 대개 삶 속 관계의 질과 연결된다고 본다.</p>
+          </div>
+          <div class="card">
+            <b>2. 관계의 출발점은 가치 더하기다</b>
+            <p>좋은 관계는 타인에게서 얻는 것이 아니라 타인에게 더하는 것에서 시작된다.</p>
+          </div>
+          <div class="card">
+            <b>3. 근접성은 전략이다</b>
+            <p>성장하고 싶은 사람은 자신을 끌어올릴 수 있는 사람들 곁으로 의도적으로 이동해야 한다.</p>
+          </div>
+        </div>
+
+        <div class="pullquote">
+          “관계는 잠재력의 주변부가 아니라 잠재력이 현실이 되는 통로다.”
+          <cite>6장 논지의 종합적 해석</cite>
+        </div>
+
+        <p class="lead">이 장의 설득력은 단순한 인맥론에 있지 않다. 맥스웰은 관계를 리더십의 윤리적 훈련으로 본다. 사람을 가치 있게 여기고, 질문하고, 일관성 있게 곁에 머물며, 기억할 만한 순간을 만들어 주는 사람이 더 넓은 영향력을 얻게 된다는 것이다.</p>
+      </section>
+
+      <section id="map">
+        <h2>논리 구조 맵</h2>
+        <ol class="flow">
+          <li><strong>개인적 노력의 한계 자각.</strong> 40세가 되었을 때 생산성과 우선순위에 집중했음에도 원하는 만큼의 영향력을 내지 못하고 있음을 깨닫는다.</li>
+          <li><strong>문제의 근원을 관계에서 발견.</strong> 개인의 역량만으로는 충분하지 않으며, 연결하고 협력하는 능력이 성장의 병목이 될 수 있음을 확인한다.</li>
+          <li><strong>대인관계 수용력의 정의.</strong> People Capacity는 “관계를 구축하는 능력”이며, 리더의 잠재력은 가까운 사람들에 의해 크게 좌우된다.</li>
+          <li><strong>일곱 가지 실천 원칙 제시.</strong> 사람을 가치 있게 여기고, 스스로 더 가치 있는 사람이 되며, 타인의 세계로 들어가고, 일관성 있는 친구가 되며, 원하는 관계를 향해 다가가라는 행동 지침이 제시된다.</li>
+          <li><strong>근접성의 힘으로 결론.</strong> 올바른 사람들에게 의도적으로 가까이 갈 때 대인관계 수용력은 새로운 단계로 올라간다.</li>
+        </ol>
+      </section>
+
+      <section id="evidence">
+        <h2>증거와 사례</h2>
+        <p>맥스웰은 이 장에서 추상적 이론보다 개인 경험, 주변 인물, 명언, 구체적 행동 사례를 중심으로 논지를 세운다. 논증 방식은 학술적 검증보다는 리더십 현장의 경험적 귀납에 가깝다.</p>
+
+        <table class="evidence-table">
+          <thead>
+            <tr>
+              <th>주장</th>
+              <th>근거 또는 사례</th>
+              <th>논증 방식</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>관계의 질이 성공을 결정한다</td>
+              <td>마크 콜, 린다 에거스 등 오랜 핵심 동료들과의 관계가 자신의 삶과 수용력을 크게 향상시켰다는 회고</td>
+              <td>개인 경험에서 일반 원리를 도출하는 귀납적 논증</td>
+            </tr>
+            <tr>
+              <td>타인에게 가치를 더해야 관계가 깊어진다</td>
+              <td>짐 콜린스, 지그 지글러의 명언 인용과 친구 크리스를 위한 대학 모금 사례</td>
+              <td>권위 인용과 일화적 증거</td>
+            </tr>
+            <tr>
+              <td>원하는 관계를 향해 움직여야 한다</td>
+              <td>24세 때 엘머 타운즈 박사의 일정을 파악해 성공적인 주일학교 목회자들을 직접 찾아간 사례</td>
+              <td>행동이 관계적 자본으로 이어지는 실천적 인과 논증</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>핵심 인용</h3>
+        <div class="quote-list">
+          <blockquote>
+            <p>“People can usually trace their successes and failures to the relationships in their lives.”</p>
+            <small>성공과 실패를 관계 속에서 추적할 수 있다는 장 전체의 대전제다.</small>
+          </blockquote>
+          <blockquote>
+            <p>“There is no better way to show people you value them than by asking for their opinion.”</p>
+            <small>존중을 감정이 아니라 질문이라는 행동으로 바꾸는 문장이다.</small>
+          </blockquote>
+          <blockquote>
+            <p>“To build great relationships, you need to want more for people than you want from people.”</p>
+            <small>가치 더하기의 윤리적 핵심을 압축한다.</small>
+          </blockquote>
+          <blockquote>
+            <p>“Get next to ten people who can take you to the next level.”</p>
+            <small>근접성의 힘을 가장 직접적으로 표현하는 실천 명령이다.</small>
+          </blockquote>
+        </div>
+      </section>
+
+      <section id="concepts">
+        <h2>핵심 개념</h2>
+        <div class="two-col">
+          <div class="card">
+            <b>대인관계 수용력</b>
+            <p>“관계를 구축하는 능력”이다. 단순한 사교성이 아니라 다른 사람들과 연결되고 협력하여 더 큰 목표를 이루는 능력이다.</p>
+          </div>
+          <div class="card">
+            <b>근접성의 힘</b>
+            <p>성장에 필요한 사람들 곁으로 의도적으로 이동하는 전략이다. 이는 물리적 거리뿐 아니라 시간, 대화, 배움의 접점을 포함한다.</p>
+          </div>
+        </div>
+
+        <h3>반복되는 구조적 신호</h3>
+        <p>맥스웰은 이 장에서 대비 표현을 반복한다. “사람들로부터 원하는 것”과 “사람들을 위해 원하는 것”, 관계적 “예금”과 “인출” 같은 표현은 독자가 관계를 거래가 아니라 투자와 신뢰의 문제로 이해하도록 돕는다.</p>
+        <p>또한 “일곱 단계”라는 숫자형 구조를 통해 장을 실행 가능한 매뉴얼처럼 구성한다. 이 장은 감동적인 관계론에 머물지 않고, 매일 사람을 가치 있게 여기고, 의견을 묻고, 일관성 있게 대하며, 추억을 만들라는 행동 목록으로 독자를 이동시킨다.</p>
+      </section>
+
+      <section id="critique">
+        <h2>비판적 검토</h2>
+        <h3>이타성과 도구주의의 긴장</h3>
+        <p>가장 흥미로운 긴장은 “무조건적으로 사랑하라”는 요청과 “당신을 다음 단계로 이끌 10명 곁으로 가라”는 전략 사이에 있다. 전자는 아가페적 사랑에 가깝고, 후자는 자기계발적 네트워킹에 가깝다. 이 둘은 반드시 충돌하지 않지만, 관계가 성장의 수단으로만 축소될 때 윤리적 불편함이 생긴다.</p>
+
+        <h3>사회구조적 관점의 부족</h3>
+        <p>맥스웰의 청년 시절 일화는 주도성의 힘을 잘 보여준다. 그러나 모든 사람이 항공권, 시간, 문화적 자본, 접근 가능한 네트워크를 갖고 있는 것은 아니다. 사회학적 관점에서 보면 관계 형성의 기회는 개인의 태도뿐 아니라 계층, 지역, 제도, 경제적 자원에 의해 크게 좌우된다.</p>
+
+        <div class="note">
+          <strong>해석상 주의:</strong> 근접성의 힘을 기회주의적 인맥 관리로만 읽으면 장의 균형을 놓치게 된다. 맥스웰은 먼저 자신이 타인에게 가치를 더하는 사람이 되어야 한다는 조건을 강하게 둔다.
+        </div>
+      </section>
+
+      <section id="implications">
+        <h2>적용과 함의</h2>
+        <div class="two-col">
+          <div class="card">
+            <b>개인 적용</b>
+            <p>나는 주변 사람들에게 관계적 예금을 하는 사람인가, 아니면 인출을 반복하는 사람인가? 매일 자신을 더 가치 있는 사람으로 만들어 줄 것이 많아져야 한다.</p>
+          </div>
+          <div class="card">
+            <b>공동체와 사역</b>
+            <p>리더는 군중 속에서 개인을 볼 수 있어야 한다. 바쁜 일정 속에서도 한 사람과 눈을 맞추고, 천천히 걸으며, 존재를 인정하는 훈련이 필요하다.</p>
+          </div>
+        </div>
+
+        <h3>교육과 강의에서의 적용</h3>
+        <p>질문은 지식 전달을 넘어 존재 인정의 도구가 된다. “당신의 의견은 무엇인가?”라고 묻는 행위는 학습자를 수동적 청중이 아니라 사고하는 주체로 세운다. 이 점에서 맥스웰의 관계론은 교육 리더십에도 직접적인 함의를 갖는다.</p>
+
+        <ul class="checklist">
+          <li>중요한 사람에게 의견을 묻는 습관을 만든다.</li>
+          <li>관계에서 얻을 것보다 줄 것을 먼저 점검한다.</li>
+          <li>성장을 돕는 사람들과 정기적으로 만날 접점을 만든다.</li>
+          <li>어려운 사람의 가치는 낮추지 않되, 상호작용의 빈도와 거리는 지혜롭게 조절한다.</li>
+          <li>의도적으로 좋은 기억을 설계해 관계의 정서적 기반을 강화한다.</li>
+        </ul>
+      </section>
+
+      <section id="notes">
+        <h2>출처 노트와 검증</h2>
+        <p>본 보고서는 제공된 Obsidian 노트의 내용과 그 안에 정리된 『No Limits』 6장 분석을 기반으로 재구성했다. 추가 vault context는 책 전체의 구조와 “Awareness + Ability + Choices = Capacity”라는 상위 프레임을 확인하는 데만 보조적으로 사용했다.</p>
+        <table class="evidence-table">
+          <thead>
+            <tr>
+              <th>검증 항목</th>
+              <th>반영 여부</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>무조건적 사랑과 어려운 사람을 대하는 방식</td>
+              <td>비판적 검토와 적용 항목에 반영</td>
+            </tr>
+            <tr>
+              <td>엘머 타운즈를 찾아간 사례</td>
+              <td>근접성의 힘을 설명하는 핵심 증거로 반영</td>
+            </tr>
+            <tr>
+              <td>관계적 예금과 인출의 대비</td>
+              <td>구조적 신호와 개인 적용에 반영</td>
+            </tr>
+            <tr>
+              <td>장의 결론부: 주도성과 의도성</td>
+              <td>논리 구조와 결론에 반영</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="ending">
+        <h2>결론: 좋은 관계는 우연히 남지 않는다</h2>
+        <p>『No Limits』 6장이 남기는 메시지는 간단하지만 가볍지 않다. 더 큰 영향력을 원한다면 더 많은 사람을 이용하는 법이 아니라 더 깊이 사람을 가치 있게 여기는 법을 배워야 한다. 관계는 성장을 위한 사다리이지만, 그 사다리는 신뢰와 일관성, 질문과 섬김으로 세워진다.</p>
+        <p>맥스웰의 조언을 한 문장으로 줄이면 이렇다. 사람에게 다가가라. 그러나 얻기 위해서만 다가가지 말고, 그 사람의 세계에 들어가 가치를 더하기 위해 다가가라. 그때 관계는 단순한 연결을 넘어 잠재력의 확장이 된다.</p>
+        <div class="copy-ready">
+          공유 문장: “관계는 잠재력의 주변부가 아니라 잠재력이 현실이 되는 통로다. 좋은 리더는 사람에게서 얻기 전에 사람에게 가치를 더한다.”
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <footer>
+    <div class="page">
+      <p>Standalone HTML research report · Sanitized mode: no JavaScript, no iframe, no external assets.</p>
+    </div>
+  </footer>
+</body>
+</html>
