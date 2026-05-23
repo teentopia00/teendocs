@@ -1,0 +1,800 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  
+  
+  <title>갈등을 피하지 마라: 리더십을 무너뜨리는 가짜 평화의 정체</title>
+  
+  
+  
+  
+  
+  <style>
+    :root {
+      --ink: #202124;
+      --muted: #60646c;
+      --soft: #f6f3ee;
+      --paper: #fffdf9;
+      --line: #e4ded4;
+      --accent: #8a3d2b;
+      --accent-2: #254d5b;
+      --gold: #c7983f;
+      --shade: #efe7dc;
+      --quote: #3c4650;
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(199, 152, 63, 0.14), transparent 28rem),
+        linear-gradient(180deg, #fffaf1 0%, #fffdf9 28rem, #f7f3ed 100%);
+      font-family: "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.75;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    a {
+      color: var(--accent-2);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.18em;
+    }
+
+    .page {
+      width: min(100%, var(--max));
+      margin: 0 auto;
+      padding: 28px 22px 72px;
+    }
+
+    .hero {
+      padding: 68px 0 44px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .kicker {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 22px;
+      color: var(--accent);
+      font-size: 0.86rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .kicker::before {
+      content: "";
+      width: 38px;
+      height: 2px;
+      background: var(--accent);
+      display: inline-block;
+    }
+
+    h1 {
+      max-width: 920px;
+      margin: 0;
+      font-family: Georgia, "Times New Roman", "Noto Serif KR", serif;
+      font-size: clamp(2.25rem, 5vw, 5.2rem);
+      line-height: 1.08;
+      letter-spacing: 0;
+      color: #171717;
+    }
+
+    .subtitle {
+      max-width: 760px;
+      margin: 24px 0 0;
+      color: var(--quote);
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+      line-height: 1.65;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .meta-card {
+      padding: 16px 18px;
+      background: rgba(255, 253, 249, 0.8);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .meta-card strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #141414;
+      font-size: 0.9rem;
+    }
+
+    .meta-card span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .share-frame {
+      margin-top: 26px;
+      padding: 18px 20px;
+      background: #173f4b;
+      color: #fffdf9;
+      border-radius: 8px;
+    }
+
+    .share-frame p {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 250px minmax(0, 1fr);
+      gap: 48px;
+      align-items: start;
+      padding-top: 42px;
+    }
+
+    nav.toc {
+      position: sticky;
+      top: 24px;
+      padding: 18px;
+      background: rgba(255, 253, 249, 0.88);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    nav.toc h2 {
+      margin: 0 0 12px;
+      font-size: 0.88rem;
+      color: var(--accent);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    nav.toc ol {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav.toc li + li {
+      border-top: 1px solid var(--line);
+    }
+
+    nav.toc a {
+      display: block;
+      padding: 10px 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      text-decoration: none;
+    }
+
+    article {
+      min-width: 0;
+    }
+
+    section {
+      margin: 0 0 58px;
+      scroll-margin-top: 28px;
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      font-family: Georgia, "Times New Roman", "Noto Serif KR", serif;
+      font-size: clamp(1.7rem, 3vw, 2.35rem);
+      line-height: 1.25;
+      color: #171717;
+    }
+
+    h3 {
+      margin: 34px 0 12px;
+      font-size: 1.18rem;
+      line-height: 1.45;
+      color: #17262b;
+    }
+
+    p {
+      margin: 0 0 18px;
+    }
+
+    .lead {
+      font-size: 1.13rem;
+      color: #30343a;
+    }
+
+    .abstract {
+      padding: 28px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--accent);
+      border-radius: 8px;
+      box-shadow: 0 18px 48px rgba(63, 50, 35, 0.06);
+    }
+
+    .findings {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .finding {
+      padding: 20px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .finding b {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--accent);
+      font-size: 1.02rem;
+    }
+
+    .finding p {
+      margin: 0;
+      color: var(--quote);
+      font-size: 0.96rem;
+    }
+
+    .pullquote {
+      margin: 36px 0;
+      padding: 30px 34px;
+      background: #f0e6da;
+      border-radius: 8px;
+      color: #273238;
+      font-family: Georgia, "Times New Roman", "Noto Serif KR", serif;
+      font-size: clamp(1.35rem, 3vw, 2rem);
+      line-height: 1.45;
+    }
+
+    .pullquote cite {
+      display: block;
+      margin-top: 14px;
+      color: var(--muted);
+      font-family: "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+      font-size: 0.92rem;
+      font-style: normal;
+    }
+
+    .evidence-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .evidence-item {
+      padding: 18px 20px;
+      background: rgba(255, 253, 249, 0.78);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .evidence-item strong {
+      color: var(--accent-2);
+    }
+
+    .diagram {
+      margin: 28px 0;
+      padding: 24px;
+      background: #fffdf9;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+      align-items: stretch;
+    }
+
+    .step {
+      position: relative;
+      padding: 16px 14px;
+      min-height: 128px;
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .step::after {
+      content: "→";
+      position: absolute;
+      top: 50%;
+      right: -13px;
+      transform: translateY(-50%);
+      color: var(--gold);
+      font-weight: 900;
+    }
+
+    .step:last-child::after {
+      content: "";
+    }
+
+    .step span {
+      display: inline-grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      margin-bottom: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: white;
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    .step b {
+      display: block;
+      margin-bottom: 6px;
+      line-height: 1.35;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 22px 0;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      display: table;
+    }
+
+    th, td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #efe7dc;
+      color: #1e2a2f;
+      font-size: 0.92rem;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    td {
+      color: #343940;
+      font-size: 0.96rem;
+    }
+
+    .note-box {
+      padding: 22px;
+      background: #f8f5ef;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .checklist {
+      padding: 0;
+      margin: 18px 0 0;
+      list-style: none;
+    }
+
+    .checklist li {
+      position: relative;
+      padding: 12px 0 12px 34px;
+      border-top: 1px solid var(--line);
+    }
+
+    .checklist li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 12px;
+      width: 22px;
+      height: 22px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--accent-2);
+      color: white;
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+
+    .copy-block {
+      margin-top: 18px;
+      padding: 18px;
+      background: #17262b;
+      color: #fffdf9;
+      border-radius: 8px;
+      font-size: 0.96rem;
+      line-height: 1.7;
+    }
+
+    .source-notes {
+      font-size: 0.94rem;
+      color: var(--muted);
+    }
+
+    .source-notes ol {
+      padding-left: 1.25rem;
+    }
+
+    .source-notes li {
+      margin-bottom: 10px;
+    }
+
+    .ending {
+      padding: 34px;
+      background: #173f4b;
+      color: #fffdf9;
+      border-radius: 8px;
+    }
+
+    .ending h2 {
+      color: #fffdf9;
+    }
+
+    .ending p {
+      color: #f6efe4;
+    }
+
+    footer {
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 900px) {
+      .layout {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      nav.toc {
+        position: static;
+      }
+
+      .meta-grid,
+      .findings,
+      .flow {
+        grid-template-columns: 1fr;
+      }
+
+      .step::after {
+        content: "↓";
+        top: auto;
+        right: 50%;
+        bottom: -22px;
+        transform: translateX(50%);
+      }
+
+      .step {
+        min-height: auto;
+      }
+
+      table {
+        display: block;
+        overflow-x: auto;
+        white-space: normal;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .page {
+        padding: 20px 16px 48px;
+      }
+
+      .hero {
+        padding-top: 44px;
+      }
+
+      .abstract,
+      .pullquote,
+      .diagram,
+      .ending {
+        padding: 22px;
+      }
+
+      th, td {
+        padding: 12px;
+      }
+    }
+  </style>
+<meta property="og:type" content="article">
+<meta property="og:title" content="5장 갈등을 피하지 마라">
+<meta property="og:description" content="[[5장 갈등을 피하지 마라]] [[00장 교회가 아닌 리더 목차]] [[0장 요약 교회가 아니라 리더 요약]] 리더 리더십 교회 영적리더십 요청하신 형식과 지침에 따라 2부 5장 &lt;갈등을 피하지 마라: 갈등에 담긴 은혜와 진실 (고든 맥도날드)에 대한 정밀 분석 요약을 제공합니다. 1. 【장 개요】 핵심 주제 및 저자의">
+<meta property="og:url" content="https://teentopia00.github.io/teendocs/s/1y46gr9/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="5장 갈등을 피하지 마라">
+<meta name="twitter:description" content="[[5장 갈등을 피하지 마라]] [[00장 교회가 아닌 리더 목차]] [[0장 요약 교회가 아니라 리더 요약]] 리더 리더십 교회 영적리더십 요청하신 형식과 지침에 따라 2부 5장 &lt;갈등을 피하지 마라: 갈등에 담긴 은혜와 진실 (고든 맥도날드)에 대한 정밀 분석 요약을 제공합니다. 1. 【장 개요】 핵심 주제 및 저자의">
+<link rel="canonical" href="https://teentopia00.github.io/teendocs/s/1y46gr9/">
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div class="kicker">Editorial Research Report</div>
+      <h1>갈등을 피하지 마라: 리더십을 무너뜨리는 가짜 평화의 정체</h1>
+      <p class="subtitle">
+        고든 맥도날드의 『그들은 교회가 아니라 리더를 떠난다』 5장은 리더가 가장 피하고 싶어 하는 자리, 곧 “힘든 대화”가 어떻게 공동체를 살리는 훈련장이 되는지를 보여준다.
+      </p>
+
+      <div class="meta-grid" aria-label="article metadata">
+        <div class="meta-card">
+          <strong>책</strong>
+          <span>그들은 교회가 아니라 리더를 떠난다</span>
+        </div>
+        <div class="meta-card">
+          <strong>장</strong>
+          <span>2부 5장, 갈등을 피하지 마라</span>
+        </div>
+        <div class="meta-card">
+          <strong>저자</strong>
+          <span>고든 맥도날드</span>
+        </div>
+        <div class="meta-card">
+          <strong>주제</strong>
+          <span>리더십, 갈등, 대화, 관계</span>
+        </div>
+      </div>
+
+      <div class="share-frame">
+        <p><strong>공유 문장:</strong> 갈등을 덮는 리더는 평화를 만든 것이 아니라, 관계 안에 꺼지지 않는 불씨를 남긴 것일 수 있다.</p>
+      </div>
+    </header>
+
+    <div class="layout">
+      <nav class="toc" aria-label="Table of contents">
+        <h2>Contents</h2>
+        <ol>
+          <li><a href="#abstract">초록</a></li>
+          <li><a href="#findings">핵심 발견</a></li>
+          <li><a href="#argument">논증 지도</a></li>
+          <li><a href="#evidence">증거와 사례</a></li>
+          <li><a href="#framework">갈등 해소 5단계</a></li>
+          <li><a href="#implications">적용과 함의</a></li>
+          <li><a href="#notes">출처 노트</a></li>
+        </ol>
+      </nav>
+
+      <article>
+        <section id="abstract" class="abstract">
+          <h2>초록</h2>
+          <p class="lead">
+            이 장의 핵심은 단순하다. 갈등을 피하는 것은 반드시 평화가 아니다. 때로 그것은 두려움, 상처, 자기보호가 신앙적 언어를 입고 나타난 모습이다. 맥도날드는 어린 시절의 경험, 결혼과 사역의 실패, 멘토의 직언, 성경적 사례를 통해 리더가 갈등을 어떻게 다시 배워야 하는지 추적한다.
+          </p>
+          <p>
+            본 보고서는 5장의 논지를 “가짜 평화에서 성숙한 대면으로”라는 흐름으로 재구성한다. 특히 갈등 회피의 심리적 뿌리, 방치된 갈등의 조직적 비용, 그리고 힘든 대화를 감당하는 5단계 원칙을 중심으로 분석한다.
+          </p>
+        </section>
+
+        <section id="findings">
+          <h2>핵심 발견</h2>
+          <div class="findings">
+            <div class="finding">
+              <b>1. 회피는 미덕이 아니다</b>
+              <p>문제를 덮고 백기를 드는 습관은 사랑처럼 보일 수 있지만, 실제로는 분노와 쓴뿌리를 키울 수 있다.</p>
+            </div>
+            <div class="finding">
+              <b>2. 리더십은 불편한 진실을 견딘다</b>
+              <p>리더는 비판을 인신공격으로 받아들이기보다, 공동체를 살리는 진실로 다룰 수 있어야 한다.</p>
+            </div>
+            <div class="finding">
+              <b>3. 갈등은 재설계의 계기다</b>
+              <p>초대교회의 과부 구제 문제처럼, 잘 다룬 갈등은 새로운 구조와 더 나은 책임 분배를 낳는다.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="argument">
+          <h2>논증 지도</h2>
+          <p>
+            맥도날드의 주장은 심리 고백에서 출발해 리더십 원칙으로 확장된다. 그는 어린 시절 부모의 다툼을 보며 갈등에 대한 두려움을 내면화했고, 그 두려움을 “기독교적 평화”로 오해했다. 그러나 결혼과 사역의 현장에서 회피는 관계를 보존하지 못했다. 오히려 해결되지 않은 감정은 오래 남아 사람과 공동체를 손상시켰다.
+          </p>
+
+          <div class="pullquote">
+            “갈등을 피하는 것은 평화의 기술이 아니라, 때로는 진실을 미루는 방식이다.”
+            <cite>5장 분석 요지</cite>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th>논증 요소</th>
+                <th>내용</th>
+                <th>리더십 의미</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>문제 진단</td>
+                <td>갈등을 불신앙적 태도처럼 여기고 피하려는 습관</td>
+                <td>리더의 내면 상처가 공동체 운영 방식에 영향을 준다.</td>
+              </tr>
+              <tr>
+                <td>핵심 증거</td>
+                <td>아내 게일과의 관계, 동료 사역자와의 갈등, 멘토의 직언</td>
+                <td>가까운 관계일수록 회피의 대가가 커진다.</td>
+              </tr>
+              <tr>
+                <td>성경적 비교</td>
+                <td>사도행전 6장의 건설적 해결과 사도행전 15장의 결별</td>
+                <td>갈등은 공동체를 성숙하게 할 수도, 동역을 깨뜨릴 수도 있다.</td>
+              </tr>
+              <tr>
+                <td>결론</td>
+                <td>힘든 대화를 통해 문제를 현안에 묶고, 사과와 해결책으로 종결해야 한다.</td>
+                <td>성숙한 리더십은 대면과 화해의 기술을 훈련한다.</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="evidence">
+          <h2>증거와 사례</h2>
+          <p>
+            이 장의 설득력은 추상적 원칙이 아니라 실패의 고백에서 나온다. 저자는 갈등 회피가 얼마나 그럴듯한 신앙 언어로 포장될 수 있는지 보여준다. 하지만 그 결과는 평화가 아니라 내면의 울화, 관계의 거리감, 사역의 손상이었다.
+          </p>
+
+          <div class="evidence-list">
+            <div class="evidence-item">
+              <strong>개인적 뿌리:</strong> 어린 시절 부모의 반복된 다툼은 “논쟁을 피해야 안전하다”는 감각을 남겼다. 이 감각은 성인이 된 뒤에도 관계의 위협 신호처럼 작동했다.
+            </div>
+            <div class="evidence-item">
+              <strong>가정의 훈련장:</strong> 아내 게일과의 관계는 회피만으로는 친밀해질 수 없다는 사실을 드러냈다. 사랑은 상대의 어려운 말까지 듣는 능력을 요구했다.
+            </div>
+            <div class="evidence-item">
+              <strong>사역의 실패:</strong> 동료 사역자와의 문제를 해결하지 못했을 때, 겉으로는 조용했지만 속에서는 쓴뿌리와 미움이 자랐다.
+            </div>
+            <div class="evidence-item">
+              <strong>멘토의 직언:</strong> 교회 위원회 회장은 비판에 지나치게 민감한 태도를 지적하며, 목회를 오래 하려면 힘든 대화에 익숙해져야 한다고 충고했다.
+            </div>
+          </div>
+
+          <h3>성경적 대조</h3>
+          <p>
+            사도행전 6장의 과부 구제 갈등은 공동체가 문제를 회피하지 않고 구조를 새로 세운 사례다. 반면 사도행전 15장의 바울과 바나바의 결별은 갈등이 동역 관계를 실제로 깨뜨릴 수 있음을 보여준다. 같은 갈등이라도 다루는 방식에 따라 결과는 전혀 달라진다.
+          </p>
+        </section>
+
+        <section id="framework">
+          <h2>갈등 해소 5단계</h2>
+          <p>
+            맥도날드가 제시하는 5단계는 감정을 억누르는 기술이 아니다. 갈등을 인간관계의 정상적인 일부로 받아들이고, 과거의 상처와 현재의 현안을 분리하며, 승패가 아닌 해결을 향해 가는 훈련이다.
+          </p>
+
+          <div class="diagram" role="img" aria-label="갈등 해소 5단계 흐름도">
+            <div class="flow">
+              <div class="step">
+                <span>1</span>
+                <b>충돌을 인정하라</b>
+                <p>관점의 차이는 인간관계의 필수 요소다.</p>
+              </div>
+              <div class="step">
+                <span>2</span>
+                <b>과거를 분리하라</b>
+                <p>옛 상처가 현재 문제를 왜곡하는지 살핀다.</p>
+              </div>
+              <div class="step">
+                <span>3</span>
+                <b>승패를 내려놓으라</b>
+                <p>논쟁의 목적은 이기는 것이 아니라 회복이다.</p>
+              </div>
+              <div class="step">
+                <span>4</span>
+                <b>현안에 머물라</b>
+                <p>과거의 잘못을 끌어와 판을 키우지 않는다.</p>
+              </div>
+              <div class="step">
+                <span>5</span>
+                <b>종결하라</b>
+                <p>사과하고, 타협하고, 해결책을 찾는다.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="note-box">
+            <h3>핵심 구분</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>평화 지키기처럼 보이는 회피</th>
+                  <th>성경적 평화 만들기</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>문제를 말하지 않는다.</td>
+                  <td>문제를 적절한 방식으로 말한다.</td>
+                </tr>
+                <tr>
+                  <td>상대가 불편해하지 않는 것을 목표로 삼는다.</td>
+                  <td>관계가 진실 위에 서는 것을 목표로 삼는다.</td>
+                </tr>
+                <tr>
+                  <td>감정은 내부에 쌓인다.</td>
+                  <td>감정은 현안 안에서 다루어진다.</td>
+                </tr>
+                <tr>
+                  <td>겉으로는 조용하지만 내면은 멀어진다.</td>
+                  <td>대화는 어렵지만 관계는 깊어질 수 있다.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="implications">
+          <h2>적용과 함의</h2>
+          <p>
+            이 장은 목회자에게만 해당하지 않는다. 조직을 이끄는 사람, 가정을 돌보는 사람, 공동체 안에서 책임을 맡은 사람이라면 모두 같은 질문 앞에 선다. “나는 평화를 만들고 있는가, 아니면 불편함을 미루고 있는가?”
+          </p>
+
+          <h3>리더를 위한 진단 질문</h3>
+          <ul class="checklist">
+            <li>최근 회피하고 있는 대화가 있는가?</li>
+            <li>그 대화에서 내가 정말 두려워하는 것은 상대인가, 비판인가, 과거의 상처인가?</li>
+            <li>현안이 아닌 과거의 사건을 끌어와 논점을 흐릴 위험은 없는가?</li>
+            <li>내가 원하는 결말은 승리인가, 관계의 회복인가?</li>
+            <li>대화가 끝났다고 말할 수 있는 구체적 합의나 사과가 있는가?</li>
+          </ul>
+
+          <div class="copy-block">
+            이번 주 실천 문장: “이 문제를 오래 피한 것 같습니다. 비난하려는 것이 아니라, 현안 하나만 놓고 15분 정도 차분히 이야기하고 싶습니다.”
+          </div>
+
+          <h3>비판적 검토</h3>
+          <p>
+            결론부의 리스 박사 부부 사례는 성숙한 관용을 보여주지만, 앞서 제시한 5단계 원칙처럼 문제의 본질을 치밀하게 논의한 사례로 보기는 어렵다. 이 지점은 중요한 긴장을 남긴다. 모든 갈등이 분석과 토론으로만 해결되는 것은 아니지만, “그냥 덮어주는 것”이 반복될 때 다시 회피로 돌아갈 위험도 있다. 따라서 관용은 대면을 대체하는 기술이 아니라, 대면 이후 관계를 부드럽게 닫는 덕목으로 이해하는 편이 더 설득력 있다.
+          </p>
+        </section>
+
+        <section id="notes" class="source-notes">
+          <h2>출처 노트</h2>
+          <ol>
+            <li>원자료: 고든 맥도날드 외, 『그들은 교회가 아니라 리더를 떠난다』, 국제제자훈련원(DMI), 2부 5장 “갈등을 피하지 마라”.</li>
+            <li>장별 맥락: 2부 “결정적인 순간에 나를 지키는 것들”에 속하며, 4장의 경청 주제 이후 타인과의 관계에서 드러나는 갈등 관리 문제를 다룬다.</li>
+            <li>주요 성경 연결: 사도행전 6장, 사도행전 15장, 마태복음 18:15, 에베소서 4:26.</li>
+            <li>보조 신학 연결: 디트리히 본회퍼의 공동체 이해와 연결해 볼 때, 진정한 영적 공동체는 조화의 이상이 아니라 진리와 용서 안에서 세워진다.</li>
+            <li>서지 확인용 외부 링크: <a>YES24 도서 정보</a></li>
+          </ol>
+        </section>
+
+        <section class="ending">
+          <h2>맺음말: 힘든 대화는 관계의 끝이 아니라 시작이다</h2>
+          <p>
+            갈등을 두려워하는 리더는 조용한 공동체를 만들 수는 있다. 그러나 조용함이 곧 건강함은 아니다. 맥도날드가 보여주는 리더십의 길은 더 불편하지만 더 정직하다. 리더는 자기 안의 오래된 두려움을 알아차리고, 현재의 문제를 현재의 언어로 말하며, 승패가 아니라 회복을 향해 대화를 끝까지 걸어가야 한다.
+          </p>
+          <p>
+            결국 이 장의 메시지는 한 문장으로 압축된다. 갈등을 피하지 않는 리더만이 진짜 평화를 만들 수 있다.
+          </p>
+        </section>
+
+        <footer>
+          <p>분류: 리더십 · 교회 · 영적리더십 · 독서노트 · 연구보고서</p>
+        </footer>
+      </article>
+    </div>
+  </div>
+</body>
+</html>
