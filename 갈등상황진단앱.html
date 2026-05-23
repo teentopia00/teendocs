@@ -1,0 +1,1262 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>8가지 상황 진단 갈등관리 유형 선택 앱</title>
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --panel: #ffffff;
+      --ink: #172033;
+      --muted: #657086;
+      --line: #dfe4ee;
+      --primary: #304ffe;
+      --primary-soft: #eef1ff;
+      --danger: #df3b3b;
+      --danger-soft: #fff0f0;
+      --blue: #2563eb;
+      --yellow: #b7791f;
+      --green: #138a50;
+      --gray: #667085;
+      --red: #c93636;
+      --shadow: 0 14px 36px rgba(22, 32, 51, .08);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(48, 79, 254, .10), transparent 32rem),
+        radial-gradient(circle at top right, rgba(19, 138, 80, .10), transparent 26rem),
+        var(--bg);
+      line-height: 1.55;
+    }
+
+    button, input, textarea {
+      font: inherit;
+    }
+
+    .app {
+      width: min(1160px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 56px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #ffffff 0%, #f2f5ff 100%);
+      border: 1px solid rgba(48, 79, 254, .14);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: clamp(24px, 4vw, 44px);
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--primary);
+      background: var(--primary-soft);
+      border: 1px solid rgba(48, 79, 254, .18);
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(30px, 5vw, 54px);
+      letter-spacing: -0.045em;
+      line-height: 1.08;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: clamp(16px, 2vw, 19px);
+      margin: 0 0 22px;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, .82);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 20px;
+    }
+
+    .hero-card strong {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .hero-card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 14px;
+      padding: 12px 16px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform .14s ease, box-shadow .14s ease, background .14s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+    .btn:active { transform: translateY(0); }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 10px 24px rgba(48, 79, 254, .22);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--ink);
+      border: 1px solid var(--line);
+    }
+
+    .btn-danger {
+      background: var(--danger-soft);
+      color: var(--danger);
+      border: 1px solid rgba(223, 59, 59, .20);
+    }
+
+    .btn-small {
+      padding: 9px 12px;
+      font-size: 14px;
+      border-radius: 12px;
+    }
+
+    .section {
+      margin-top: 24px;
+      background: rgba(255, 255, 255, .92);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .section-head {
+      padding: 22px 24px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(22px, 3vw, 30px);
+      letter-spacing: -0.03em;
+    }
+
+    .section-head p {
+      margin: 6px 0 0;
+      color: var(--muted);
+    }
+
+    .body {
+      padding: 24px;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .field label {
+      display: block;
+      font-weight: 800;
+      font-size: 14px;
+      margin-bottom: 7px;
+    }
+
+    .field input, .field textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px 13px;
+      background: #fff;
+      color: var(--ink);
+      outline: none;
+    }
+
+    .field textarea {
+      min-height: 86px;
+      resize: vertical;
+    }
+
+    .field input:focus, .field textarea:focus {
+      border-color: rgba(48, 79, 254, .6);
+      box-shadow: 0 0 0 4px rgba(48, 79, 254, .10);
+    }
+
+    .progress-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(246, 247, 251, .88);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(223, 228, 238, .70);
+      padding: 8px 0;
+      margin: 18px 0;
+    }
+
+    .progress-inner {
+      width: min(1160px, calc(100% - 32px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .bar {
+      height: 10px;
+      background: #e7ebf5;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .bar span {
+      display: block;
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--primary), #138a50);
+      border-radius: 999px;
+      transition: width .24s ease;
+    }
+
+    .progress-text {
+      font-weight: 900;
+      color: var(--muted);
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .question-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .question {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .q-head {
+      padding: 18px 18px 14px;
+      background: linear-gradient(180deg, #fbfcff 0%, #ffffff 100%);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .q-title {
+      margin: 0;
+      font-size: 19px;
+      letter-spacing: -0.02em;
+    }
+
+    .q-help {
+      color: var(--muted);
+      margin: 4px 0 0;
+      font-size: 14px;
+    }
+
+    .options {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      padding: 14px;
+    }
+
+    .option {
+      position: relative;
+      min-height: 132px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 12px;
+      cursor: pointer;
+      background: #fff;
+      transition: border .15s ease, transform .15s ease, box-shadow .15s ease, background .15s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .option:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 18px rgba(22, 32, 51, .07);
+    }
+
+    .option input {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .pill {
+      width: max-content;
+      max-width: 100%;
+      border-radius: 999px;
+      padding: 5px 9px;
+      font-size: 12px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .symptom-tag {
+      color: var(--primary);
+      background: var(--primary-soft);
+      border: 1px solid rgba(48, 79, 254, .14);
+    }
+
+    .option b {
+      font-size: 15px;
+      line-height: 1.3;
+    }
+
+    .option small {
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.45;
+    }
+
+    .option:has(input:checked) {
+      border-color: rgba(48, 79, 254, .72);
+      background: var(--primary-soft);
+      box-shadow: 0 0 0 4px rgba(48, 79, 254, .10);
+    }
+
+    .option:has(input:checked)::after {
+      content: "선택됨";
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      font-size: 11px;
+      font-weight: 900;
+      color: var(--primary);
+      background: #fff;
+      border: 1px solid rgba(48, 79, 254, .2);
+      border-radius: 999px;
+      padding: 3px 7px;
+    }
+
+    .result {
+      display: none;
+    }
+
+    .result.visible {
+      display: block;
+    }
+
+    .result-grid {
+      display: grid;
+      grid-template-columns: .92fr 1.08fr;
+      gap: 18px;
+    }
+
+    .recommend {
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: linear-gradient(135deg, #ffffff 0%, #f7f9ff 100%);
+      padding: 22px;
+    }
+
+    .recommend .label {
+      color: var(--muted);
+      font-weight: 900;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .recommend h3 {
+      margin: 8px 0 8px;
+      font-size: clamp(28px, 4vw, 42px);
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+    }
+
+    .recommend p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .score-card {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 20px;
+      background: white;
+    }
+
+    .score-row {
+      display: grid;
+      grid-template-columns: 120px 1fr 42px;
+      gap: 10px;
+      align-items: center;
+      margin: 12px 0;
+    }
+
+    .score-row strong {
+      font-size: 14px;
+    }
+
+    .score-bar {
+      height: 12px;
+      border-radius: 999px;
+      background: #eef1f6;
+      overflow: hidden;
+    }
+
+    .score-bar span {
+      display: block;
+      height: 100%;
+      width: 0%;
+      background: var(--primary);
+      border-radius: 999px;
+      transition: width .35s ease;
+    }
+
+    .score-row em {
+      font-style: normal;
+      font-weight: 900;
+      text-align: right;
+      color: var(--muted);
+    }
+
+    .notice {
+      border-radius: 18px;
+      padding: 15px 16px;
+      margin-top: 14px;
+      border: 1px solid var(--line);
+      background: #f8fafc;
+      color: var(--muted);
+    }
+
+    .notice strong {
+      color: var(--ink);
+    }
+
+    .notice.danger {
+      border-color: rgba(223, 59, 59, .22);
+      background: var(--danger-soft);
+      color: #823232;
+    }
+
+    .notice.primary {
+      border-color: rgba(48, 79, 254, .22);
+      background: var(--primary-soft);
+      color: #27346f;
+    }
+
+    .details {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .detail-card {
+      border: 1px solid var(--line);
+      background: white;
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .detail-card h4 {
+      margin: 0 0 8px;
+      font-size: 16px;
+    }
+
+    .detail-card p, .detail-card li {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .detail-card ul {
+      margin: 8px 0 0;
+      padding-left: 18px;
+    }
+
+    .matrix {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 920px;
+      font-size: 14px;
+    }
+
+    .matrix-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: white;
+    }
+
+    .matrix th, .matrix td {
+      border-bottom: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+      padding: 12px;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    .matrix th {
+      background: #f8fafc;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .matrix tr:last-child td { border-bottom: 0; }
+    .matrix th:last-child, .matrix td:last-child { border-right: 0; }
+
+    .footer-note {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 12px;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .result-grid,
+      .details,
+      .meta-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .options {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .option {
+        min-height: 116px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .app {
+        width: min(100% - 20px, 1160px);
+        padding-top: 12px;
+      }
+
+      .hero {
+        border-radius: 22px;
+        padding: 22px;
+      }
+
+      .section-head,
+      .body {
+        padding: 18px;
+      }
+
+      .options {
+        grid-template-columns: 1fr;
+      }
+
+      .score-row {
+        grid-template-columns: 92px 1fr 36px;
+      }
+
+      .progress-inner {
+        width: min(100% - 20px, 1160px);
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+      .toolbar,
+      .progress-wrap,
+      #diagnosisSection,
+      #matrixSection .section-head .btn {
+        display: none !important;
+      }
+      .app {
+        width: 100%;
+        padding: 0;
+      }
+      .hero,
+      .section {
+        box-shadow: none;
+        border-color: #bbb;
+      }
+      .result {
+        display: block !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="app">
+    <section class="hero">
+      <div>
+        <span class="eyebrow">갈등 상황 진단 · 8 Attributes Matrix</span>
+        <h1>8가지 상황을 체크하면<br />갈등관리 유형을 추천합니다</h1>
+        <p class="lead">
+          현재 갈등 상황의 증상만 체크하면, 마지막 결과 화면에서 가장 적합한
+          갈등 대처 모드를 점수화하여 추천합니다.
+        </p>
+        <div class="toolbar">
+          <a class="btn btn-primary" href="#diagnosisSection">진단 시작하기</a>
+          <a class="btn btn-secondary" href="#matrixSection">기준표 펼쳐보기</a>
+          <button class="btn btn-secondary" type="button" id="printBtn">결과 인쇄</button>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <strong>사용 원칙</strong>
+        <ul>
+          <li>각 속성마다 현재 상황에 가장 가까운 증상을 하나씩 선택합니다.</li>
+          <li>8개 문항을 모두 선택하면 자동으로 결과가 계산됩니다.</li>
+          <li>스트레스가 압도적이면 우선 대화 중단·거리두기를 권고합니다.</li>
+          <li>이 앱은 참고용 의사결정 도구이며, 최종 유형은 관계·조직 맥락에 따라 조정이 필요합니다.</li>
+        </ul>
+      </aside>
+    </section>
+
+    <div class="progress-wrap" aria-label="진단 진행률">
+      <div class="progress-inner">
+        <div class="bar"><span id="progressBar"></span></div>
+        <div class="progress-text"><span id="answeredCount">0</span>/8 완료</div>
+      </div>
+    </div>
+
+    <section class="section" id="diagnosisSection">
+      <div class="section-head">
+        <div>
+          <h2>상황 진단</h2>
+          <p>갈등 상황을 떠올리며 8가지 증상만 체크해 주세요. 유형명은 최종 결과에서만 표시됩니다.</p>
+        </div>
+        <button class="btn btn-danger btn-small" type="button" id="resetBtn">초기화</button>
+      </div>
+
+      <div class="body">
+        <div class="meta-grid">
+          <div class="field">
+            <label for="caseTitle">갈등 상황 제목</label>
+            <input id="caseTitle" placeholder="예: 부서 회의 중 의사결정 갈등" />
+          </div>
+          <div class="field">
+            <label for="caseName">작성자 / 대상자</label>
+            <input id="caseName" placeholder="예: 홍길동, 청년부 리더십 팀" />
+          </div>
+        </div>
+        <div class="field" style="margin-bottom: 22px;">
+          <label for="caseMemo">상황 메모</label>
+          <textarea id="caseMemo" placeholder="갈등의 핵심 쟁점, 관련자, 현재 분위기를 간단히 적어보세요."></textarea>
+        </div>
+
+        <form id="quizForm" class="question-list"></form>
+
+        <div class="toolbar" style="margin-top: 22px;">
+          <button class="btn btn-primary" type="button" id="calcBtn">결과 보기</button>
+          <button class="btn btn-secondary" type="button" id="copyBtn">결과 복사</button>
+          <button class="btn btn-secondary" type="button" id="downloadBtn">결과 파일 저장</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section result" id="resultSection">
+      <div class="section-head">
+        <div>
+          <h2>진단 결과</h2>
+          <p id="resultSubtitle">선택한 조건을 기준으로 계산된 추천 결과입니다.</p>
+        </div>
+      </div>
+      <div class="body">
+        <div class="result-grid">
+          <div class="recommend" id="recommendCard">
+            <div class="label">추천 갈등관리 유형</div>
+            <h3 id="topModeTitle">-</h3>
+            <p id="topModeSummary">8개 속성을 모두 선택하면 결과가 표시됩니다.</p>
+            <div id="specialNotice"></div>
+          </div>
+
+          <div class="score-card">
+            <h3 style="margin: 0 0 10px;">유형별 부합 점수</h3>
+            <p style="margin: 0 0 12px; color: var(--muted); font-size: 14px;">
+              각 속성에서 해당 유형 조건을 선택할 때마다 1점이 부여됩니다. 최고점 유형이 1차 추천입니다.
+            </p>
+            <div id="scoreRows"></div>
+          </div>
+        </div>
+
+        <div class="details">
+          <article class="detail-card">
+            <h4>추천 사용 방식</h4>
+            <ul id="useHow"></ul>
+          </article>
+          <article class="detail-card">
+            <h4>주의할 점</h4>
+            <ul id="watchOut"></ul>
+          </article>
+          <article class="detail-card">
+            <h4>바로 할 질문</h4>
+            <ul id="nextQuestions"></ul>
+          </article>
+        </div>
+
+        <div id="selectedReview" class="notice primary"></div>
+      </div>
+    </section>
+
+    <section class="section" id="matrixSection">
+      <div class="section-head">
+        <div>
+          <h2>원문 기준 요약표</h2>
+          <p>진단 중에는 유형명이 보이지 않도록 접어 두었습니다. 필요할 때만 펼쳐 확인하세요.</p>
+        </div>
+      </div>
+      <div class="body">
+        <details>
+          <summary style="cursor:pointer; font-weight:900; color:var(--primary); margin-bottom:14px;">
+            갈등유형별 기준표 펼쳐보기
+          </summary>
+          <div class="matrix-wrap">
+            <table class="matrix">
+              <thead>
+                <tr>
+                  <th>진단 속성</th>
+                  <th>경쟁</th>
+                  <th>협력</th>
+                  <th>타협</th>
+                  <th>회피</th>
+                  <th>수용</th>
+                </tr>
+              </thead>
+              <tbody id="matrixBody"></tbody>
+            </table>
+          </div>
+          <p class="footer-note">
+            ※ “압도적 스트레스”는 감정 조절과 안전한 대화를 위해 회피/일시중단을 우선 권고합니다.
+            “협력”은 충분한 시간, 높은 신뢰, 복잡한 문제, 효과적 의사소통이 함께 갖추어질 때 가장 적합합니다.
+          </p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const modes = {
+      competing: {
+        name: "경쟁형",
+        label: "경쟁 Competing",
+        emoji: "🔴",
+        color: "#c93636",
+        summary: "나에게 매우 중요한 사안이고 시간이 부족하며, 단호한 결정이 필요한 상황에 적합합니다.",
+        useHow: [
+          "핵심 원칙과 양보 불가능한 기준을 먼저 명확히 말합니다.",
+          "논의를 길게 끌기보다 결정 기준, 책임자, 마감 시간을 분명히 합니다.",
+          "상대방을 공격하지 말고 사안 중심으로 단호하게 표현합니다."
+        ],
+        watchOut: [
+          "관계를 장기적으로 유지해야 하는 상황에서는 후속 설명과 회복 대화가 필요합니다.",
+          "신뢰가 낮은 조직에서는 권위주의로 오해될 수 있습니다.",
+          "감정적 승패 구도로 흐르면 갈등 비용이 커집니다."
+        ],
+        questions: [
+          "이 사안에서 절대 양보할 수 없는 원칙은 무엇입니까?",
+          "지금 빠른 결정이 필요한 실제 이유가 있습니까?",
+          "결정 이후 관계 회복을 위해 어떤 설명이 필요합니까?"
+        ]
+      },
+      collaborating: {
+        name: "협력형",
+        label: "협력 Collaborating",
+        emoji: "🔵",
+        color: "#2563eb",
+        summary: "복잡하고 중요한 문제를 함께 풀어야 하며, 시간·신뢰·대화 역량이 충분할 때 가장 적합합니다.",
+        useHow: [
+          "각자의 입장(position)보다 실제 관심사(interest)를 깊이 묻습니다.",
+          "충분한 시간을 확보하고 대화 규칙을 합의합니다.",
+          "둘 중 하나를 고르는 방식보다 제3의 대안을 함께 탐색합니다."
+        ],
+        watchOut: [
+          "시간, 신뢰, 의사소통 역량이 부족하면 협력이 오히려 장기 논쟁이 될 수 있습니다.",
+          "상대가 협력할 준비가 없으면 먼저 신뢰 형성 또는 의제 축소가 필요합니다.",
+          "모든 갈등에 협력형을 적용하려 하면 의사결정이 느려질 수 있습니다."
+        ],
+        questions: [
+          "서로가 반드시 얻고 싶은 핵심 관심사는 무엇입니까?",
+          "충분한 시간과 안전한 대화 구조가 확보되어 있습니까?",
+          "양쪽 모두가 수용할 수 있는 더 높은 차원의 대안은 무엇입니까?"
+        ]
+      },
+      compromising: {
+        name: "타협형",
+        label: "타협 Compromising",
+        emoji: "🟡",
+        color: "#b7791f",
+        summary: "양쪽 모두에게 어느 정도 중요한 사안을 제한된 시간 안에 현실적으로 조정해야 할 때 적합합니다.",
+        useHow: [
+          "각자가 줄 수 있는 것과 지켜야 할 것을 구분합니다.",
+          "중간안, 단계적 합의, 임시 합의를 활용합니다.",
+          "완벽한 해법보다 실행 가능한 합의점을 찾습니다."
+        ],
+        watchOut: [
+          "근본 문제가 복잡한데 타협만 하면 임시 봉합으로 끝날 수 있습니다.",
+          "원칙이 걸린 문제를 기계적으로 반반 나누면 부작용이 생길 수 있습니다.",
+          "합의 이후 누가 무엇을 언제까지 할지 명확히 해야 합니다."
+        ],
+        questions: [
+          "서로가 양보할 수 있는 범위는 어디까지입니까?",
+          "완전한 해결이 아니라 임시 합의로 충분한 사안입니까?",
+          "합의 이후 실행 책임은 어떻게 나눌 수 있습니까?"
+        ]
+      },
+      avoiding: {
+        name: "회피형",
+        label: "회피 Avoiding",
+        emoji: "⚪",
+        color: "#667085",
+        summary: "문제가 중요하지 않거나, 시간이 없거나, 스트레스가 압도적이어서 대화를 미루는 것이 더 안전할 때 적합합니다.",
+        useHow: [
+          "대화를 피하는 것이 아니라, 더 안전한 때로 연기한다고 명확히 말합니다.",
+          "감정이 가라앉을 시간과 다시 만날 시간을 함께 정합니다.",
+          "중요하지 않은 사안은 에너지를 쓰지 않고 흘려보냅니다."
+        ],
+        watchOut: [
+          "중요한 문제를 계속 미루면 회피가 누적되어 신뢰를 잃을 수 있습니다.",
+          "상대에게 무시나 침묵 공격으로 전달되지 않게 해야 합니다.",
+          "다시 논의할 일정이 없으면 문제는 해결되지 않습니다."
+        ],
+        questions: [
+          "지금 대화하면 상황이 더 악화될 가능성이 높습니까?",
+          "이 사안은 실제로 중요한 문제입니까, 아니면 지나갈 문제입니까?",
+          "언제, 어떤 조건에서 다시 대화할 수 있습니까?"
+        ]
+      },
+      accommodating: {
+        name: "수용형",
+        label: "수용 Accommodating",
+        emoji: "🟢",
+        color: "#138a50",
+        summary: "상대방에게 더 중요한 사안이고 관계 유지가 우선일 때, 기꺼이 양보하는 방식이 적합합니다.",
+        useHow: [
+          "양보의 이유를 분명히 하되 생색내지 않습니다.",
+          "상대의 필요를 인정하고 관계적 신뢰를 세웁니다.",
+          "다음에 조정이 필요한 영역은 차분히 기록해 둡니다."
+        ],
+        watchOut: [
+          "반복적 수용은 자기 소진이나 억울함으로 이어질 수 있습니다.",
+          "원칙을 포기하는 수용은 장기적으로 건강하지 않습니다.",
+          "상대가 수용을 당연하게 여기지 않도록 경계가 필요합니다."
+        ],
+        questions: [
+          "이 사안이 상대에게 더 중요한 이유는 무엇입니까?",
+          "내가 양보해도 지켜야 할 최소 경계는 무엇입니까?",
+          "이번 수용이 관계에 어떤 선한 효과를 낼 수 있습니까?"
+        ]
+      }
+    };
+
+    const attributes = [
+      {
+        id: "stress",
+        title: "1. 스트레스 수준",
+        help: "현재 감정 에너지와 압박감은 어느 정도입니까?",
+        cells: {
+          competing: { main: "높음 또는 중간", sub: "압박이 있지만 단호히 밀고 가야 함" },
+          collaborating: { main: "건강한 자극", sub: "대화를 감당할 수 있는 긴장감" },
+          compromising: { main: "높음 또는 중간", sub: "현실적 합의가 필요한 압박" },
+          avoiding: { main: "압도적임", sub: "지금 대화하면 악화될 위험이 큼" },
+          accommodating: { main: "중간 또는 높음", sub: "관계를 위해 받아들일 여지가 있음" }
+        }
+      },
+      {
+        id: "complexity",
+        title: "2. 문제의 복잡성",
+        help: "문제가 단순한지, 여러 이해관계가 얽혀 있는지 판단합니다.",
+        cells: {
+          competing: { main: "단순함", sub: "1차원적 결정 문제" },
+          collaborating: { main: "복잡함", sub: "다차원적·구조적 문제" },
+          compromising: { main: "단순함", sub: "조정 가능한 1차원 문제" },
+          avoiding: { main: "단순함", sub: "크게 다룰 필요가 낮음" },
+          accommodating: { main: "단순함", sub: "상대에게 맞춰도 큰 손실 없음" }
+        }
+      },
+      {
+        id: "importance",
+        title: "3. 주제의 중요성",
+        help: "이 사안이 누구에게 더 중요한지 봅니다.",
+        cells: {
+          competing: { main: "나에게 더 중요함", sub: "나의 원칙·목표와 직접 연결됨" },
+          collaborating: { main: "모두에게 똑같이 중요함", sub: "공동의 핵심 사안" },
+          compromising: { main: "모두에게 적당히 중요함", sub: "서로 조금씩 얻고 잃을 수 있음" },
+          avoiding: { main: "중요하지 않음", sub: "갈등 비용이 더 큼" },
+          accommodating: { main: "상대방에게 더 중요함", sub: "나는 양보 가능함" }
+        }
+      },
+      {
+        id: "time",
+        title: "4. 주어진 시간",
+        help: "충분히 논의할 시간이 있는지 확인합니다.",
+        cells: {
+          competing: { main: "논의할 시간이 적음", sub: "빠른 결정이 필요함" },
+          collaborating: { main: "충분한 시간이 있음", sub: "깊은 대화와 탐색 가능" },
+          compromising: { main: "논의할 시간이 적음", sub: "빠른 합의가 필요함" },
+          avoiding: { main: "논의할 시간이 적음", sub: "지금은 다루기 어려움" },
+          accommodating: { main: "논의할 시간이 적음", sub: "상대 요구를 수용하는 편이 빠름" }
+        }
+      },
+      {
+        id: "trust",
+        title: "5. 신뢰 수준",
+        help: "서로의 의도와 말에 대한 기본 신뢰가 어느 정도입니까?",
+        cells: {
+          competing: { main: "낮음 또는 중간", sub: "상대 설득보다 기준 제시 필요" },
+          collaborating: { main: "매우 높음", sub: "솔직한 탐색이 가능함" },
+          compromising: { main: "중간 또는 낮음", sub: "완전한 신뢰보다 거래적 조정 가능" },
+          avoiding: { main: "낮음", sub: "지금 직면하면 방어가 커짐" },
+          accommodating: { main: "중간 또는 낮음", sub: "관계 완화를 위해 양보 가능" }
+        }
+      },
+      {
+        id: "communication",
+        title: "6. 의사소통 기술",
+        help: "현재 서로의 대화 방식이 얼마나 효과적입니까?",
+        cells: {
+          competing: { main: "각자 자기 의견만 주장함", sub: "논의보다 결정 기준이 필요" },
+          collaborating: { main: "효과적임", sub: "깊은 경청과 재진술 가능" },
+          compromising: { main: "상호 존중하는 수준", sub: "완벽하지 않지만 조정 가능" },
+          avoiding: { main: "비효과적임", sub: "대화가 반복적으로 꼬임" },
+          accommodating: { main: "비효과적임", sub: "충돌을 키우기보다 물러섬" }
+        }
+      },
+      {
+        id: "culture",
+        title: "7. 조직 문화/보상",
+        help: "현재 조직이나 관계 문화가 어떤 행동을 보상합니까?",
+        cells: {
+          competing: { main: "승/패 방식 지지", sub: "강한 주장과 결과를 보상" },
+          collaborating: { main: "탐구·협동·팀워크 장려", sub: "함께 찾는 과정을 인정" },
+          compromising: { main: "빠른 타결 장려", sub: "신속한 합의를 선호" },
+          avoiding: { main: "대립과 직면을 억제함", sub: "갈등 노출 자체를 부담스러워함" },
+          accommodating: { main: "상부/타인 순응 장려", sub: "맞춰주는 행동을 보상" }
+        }
+      },
+      {
+        id: "relationship",
+        title: "8. 관계의 중요성",
+        help: "이 관계를 장기적으로 유지해야 하는 정도를 봅니다.",
+        cells: {
+          competing: { main: "관계 유지에 관심 없음", sub: "관계보다 쟁점이 우선" },
+          collaborating: { main: "관계가 지속되기를 원함", sub: "문제 해결과 관계 모두 중요" },
+          compromising: { main: "관계 유지에 무관심함", sub: "관계보다 합의 자체가 목적" },
+          avoiding: { main: "특별히 신경 안 씀", sub: "관계 투자 필요가 낮음" },
+          accommodating: { main: "상대방을 기쁘게 하여 관계 유지 희망", sub: "관계 보존이 우선" }
+        }
+      }
+    ];
+
+    const modeOrder = ["competing", "collaborating", "compromising", "avoiding", "accommodating"];
+
+    const quizForm = document.querySelector("#quizForm");
+    const matrixBody = document.querySelector("#matrixBody");
+    const progressBar = document.querySelector("#progressBar");
+    const answeredCount = document.querySelector("#answeredCount");
+    const resultSection = document.querySelector("#resultSection");
+
+    function buildQuiz() {
+      quizForm.innerHTML = attributes.map((attr) => `
+        <fieldset class="question" id="q-${attr.id}">
+          <legend class="hidden">${attr.title}</legend>
+          <div class="q-head">
+            <h3 class="q-title">${attr.title}</h3>
+            <p class="q-help">${attr.help}</p>
+          </div>
+          <div class="options">
+            ${modeOrder.map((mode, index) => {
+              const cell = attr.cells[mode];
+              return `
+                <label class="option">
+                  <input type="radio" name="${attr.id}" value="${mode}" aria-label="${attr.title} 증상 ${index + 1}: ${cell.main}" />
+                  <span class="pill symptom-tag">증상 ${index + 1}</span>
+                  <b>${cell.main}</b>
+                  <small>${cell.sub}</small>
+                </label>
+              `;
+            }).join("")}
+          </div>
+        </fieldset>
+      `).join("");
+    }
+
+    function buildMatrix() {
+      matrixBody.innerHTML = attributes.map((attr) => `
+        <tr>
+          <th>${attr.title.replace(/^\d+\.\s*/, "")}</th>
+          ${modeOrder.map(mode => {
+            const cell = attr.cells[mode];
+            return `<td><strong>${cell.main}</strong><br><span style="color: var(--muted);">${cell.sub}</span></td>`;
+          }).join("")}
+        </tr>
+      `).join("");
+    }
+
+    function getSelections() {
+      const selections = {};
+      attributes.forEach(attr => {
+        const selected = quizForm.querySelector(`input[name="${attr.id}"]:checked`);
+        if (selected) selections[attr.id] = selected.value;
+      });
+      return selections;
+    }
+
+    function updateProgress() {
+      const count = Object.keys(getSelections()).length;
+      answeredCount.textContent = count;
+      progressBar.style.width = `${(count / attributes.length) * 100}%`;
+    }
+
+    function calculate() {
+      const selections = getSelections();
+      const count = Object.keys(selections).length;
+
+      if (count < attributes.length) {
+        const firstUnanswered = attributes.find(attr => !selections[attr.id]);
+        document.querySelector(`#q-${firstUnanswered.id}`).scrollIntoView({ behavior: "smooth", block: "center" });
+        document.querySelector(`#q-${firstUnanswered.id}`).style.boxShadow = "0 0 0 4px rgba(223, 59, 59, .12)";
+        setTimeout(() => document.querySelector(`#q-${firstUnanswered.id}`).style.boxShadow = "", 1200);
+        alert(`아직 ${attributes.length - count}개 항목이 남아 있습니다. 8가지를 모두 선택해 주세요.`);
+        return null;
+      }
+
+      const scores = Object.fromEntries(modeOrder.map(mode => [mode, 0]));
+      Object.values(selections).forEach(mode => scores[mode]++);
+
+      const sorted = [...modeOrder].sort((a, b) => scores[b] - scores[a]);
+      let top = sorted[0];
+
+      const hardAvoid = selections.stress === "avoiding";
+      if (hardAvoid) top = "avoiding";
+
+      const ties = sorted.filter(mode => scores[mode] === scores[sorted[0]]);
+      const collabPrereqs = ["complexity", "time", "trust", "communication"];
+      const collabReady = collabPrereqs.filter(key => selections[key] === "collaborating").length;
+
+      return { selections, scores, sorted, top, ties, hardAvoid, collabReady };
+    }
+
+    function renderResult(data) {
+      if (!data) return;
+      const { selections, scores, sorted, top, ties, hardAvoid, collabReady } = data;
+      const mode = modes[top];
+
+      document.querySelector("#topModeTitle").textContent = `${mode.emoji} ${mode.name}`;
+      document.querySelector("#topModeSummary").textContent = mode.summary;
+
+      const caseTitle = document.querySelector("#caseTitle").value.trim();
+      const caseName = document.querySelector("#caseName").value.trim();
+      const subtitle = [caseTitle, caseName].filter(Boolean).join(" · ");
+      document.querySelector("#resultSubtitle").textContent = subtitle || "선택한 조건을 기준으로 계산된 추천 결과입니다.";
+
+      const maxScore = Math.max(...Object.values(scores));
+      document.querySelector("#scoreRows").innerHTML = modeOrder.map(modeKey => {
+        const percent = (scores[modeKey] / attributes.length) * 100;
+        return `
+          <div class="score-row">
+            <strong>${modes[modeKey].emoji} ${modes[modeKey].name}</strong>
+            <div class="score-bar"><span style="width:${percent}%; background:${modes[modeKey].color};"></span></div>
+            <em>${scores[modeKey]}/8</em>
+          </div>
+        `;
+      }).join("");
+
+      document.querySelector("#useHow").innerHTML = mode.useHow.map(item => `<li>${item}</li>`).join("");
+      document.querySelector("#watchOut").innerHTML = mode.watchOut.map(item => `<li>${item}</li>`).join("");
+      document.querySelector("#nextQuestions").innerHTML = mode.questions.map(item => `<li>${item}</li>`).join("");
+
+      const special = [];
+      if (hardAvoid) {
+        special.push(`
+          <div class="notice danger">
+            <strong>안전 규칙 적용:</strong> 스트레스 수준을 “압도적임”으로 선택했기 때문에,
+            점수와 무관하게 우선 <strong>회피형, 즉 일시중단·거리두기</strong>를 권고합니다.
+            이는 문제를 방치하라는 뜻이 아니라 감정이 가라앉은 뒤 다시 다루라는 의미입니다.
+          </div>
+        `);
+      }
+
+      if (top === "collaborating" && collabReady < 4) {
+        special.push(`
+          <div class="notice danger">
+            <strong>협력형 주의:</strong> 협력형은 복잡성·시간·신뢰·의사소통 조건이 함께 필요합니다.
+            현재 핵심 조건 ${collabReady}/4개가 협력형에 부합합니다. 바로 깊은 협력 대화로 들어가기보다
+            시간 확보, 신뢰 회복, 대화 규칙 설정을 먼저 권합니다.
+          </div>
+        `);
+      }
+
+      if (ties.length > 1 && !hardAvoid) {
+        special.push(`
+          <div class="notice primary">
+            <strong>동점 유형:</strong> ${ties.map(m => modes[m].name).join(", ")}이 같은 점수입니다.
+            실제 상황에서는 ①주제의 중요성 ②관계의 중요성 ③시간 압박 순으로 다시 판단해 1차 유형을 정하세요.
+          </div>
+        `);
+      }
+
+      const second = sorted.find(m => m !== top);
+      if (second) {
+        special.push(`
+          <div class="notice">
+            <strong>2차 대안:</strong> 다음으로 가까운 유형은 <strong>${modes[second].emoji} ${modes[second].name}</strong>입니다.
+            1차 방식이 작동하지 않을 때 보조 전략으로 검토하세요.
+          </div>
+        `);
+      }
+
+      document.querySelector("#specialNotice").innerHTML = special.join("");
+
+      const review = attributes.map(attr => {
+        const modeKey = selections[attr.id];
+        const cell = attr.cells[modeKey];
+        return `<li><strong>${attr.title}</strong>: ${modes[modeKey].label} — ${cell.main}</li>`;
+      }).join("");
+
+      document.querySelector("#selectedReview").innerHTML = `
+        <strong>선택 항목 요약</strong>
+        <ul style="margin: 8px 0 0; padding-left: 18px;">${review}</ul>
+      `;
+
+      resultSection.classList.add("visible");
+      resultSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      return data;
+    }
+
+    function getResultText() {
+      const data = calculate();
+      if (!data) return "";
+      const { selections, scores, top, hardAvoid, collabReady, ties } = data;
+      const title = document.querySelector("#caseTitle").value.trim() || "미입력";
+      const name = document.querySelector("#caseName").value.trim() || "미입력";
+      const memo = document.querySelector("#caseMemo").value.trim() || "미입력";
+
+      const selectionLines = attributes.map(attr => {
+        const modeKey = selections[attr.id];
+        const cell = attr.cells[modeKey];
+        return `- ${attr.title}: ${modes[modeKey].label} / ${cell.main}`;
+      }).join("\n");
+
+      const scoreLines = modeOrder.map(modeKey => `- ${modes[modeKey].name}: ${scores[modeKey]}/8`).join("\n");
+
+      const cautions = [];
+      if (hardAvoid) cautions.push("스트레스가 압도적이므로 우선 회피형, 즉 일시중단·거리두기를 권고합니다.");
+      if (top === "collaborating" && collabReady < 4) cautions.push(`협력형 핵심 조건은 ${collabReady}/4개 충족입니다. 시간·신뢰·의사소통 조건을 먼저 점검하세요.`);
+      if (ties.length > 1 && !hardAvoid) cautions.push(`동점 유형: ${ties.map(m => modes[m].name).join(", ")}`);
+
+      return [
+        "[갈등관리 유형 진단 결과]",
+        `갈등 상황: ${title}`,
+        `작성자/대상자: ${name}`,
+        `상황 메모: ${memo}`,
+        "",
+        `추천 유형: ${modes[top].emoji} ${modes[top].name}`,
+        `요약: ${modes[top].summary}`,
+        "",
+        "[유형별 점수]",
+        scoreLines,
+        "",
+        "[선택 항목]",
+        selectionLines,
+        "",
+        "[주의 사항]",
+        cautions.length ? cautions.map(c => `- ${c}`).join("\n") : "- 특별 주의 없음",
+        "",
+        "[바로 할 질문]",
+        modes[top].questions.map(q => `- ${q}`).join("\n")
+      ].join("\n");
+    }
+
+    function downloadResult() {
+      const text = getResultText();
+      if (!text) return;
+      const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      const safeTitle = (document.querySelector("#caseTitle").value.trim() || "갈등관리_진단결과").replace(/[\\/:*?"<>|]/g, "_");
+      a.href = url;
+      a.download = `${safeTitle}.txt`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    }
+
+    async function copyResult() {
+      const text = getResultText();
+      if (!text) return;
+      try {
+        await navigator.clipboard.writeText(text);
+        alert("결과가 클립보드에 복사되었습니다.");
+      } catch (error) {
+        alert("복사에 실패했습니다. 브라우저 권한을 확인해 주세요.");
+      }
+    }
+
+    function resetAll() {
+      if (!confirm("입력한 선택과 메모를 모두 초기화할까요?")) return;
+      quizForm.reset();
+      document.querySelector("#caseTitle").value = "";
+      document.querySelector("#caseName").value = "";
+      document.querySelector("#caseMemo").value = "";
+      resultSection.classList.remove("visible");
+      updateProgress();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    buildQuiz();
+    buildMatrix();
+    updateProgress();
+
+    quizForm.addEventListener("change", updateProgress);
+    document.querySelector("#calcBtn").addEventListener("click", () => renderResult(calculate()));
+    document.querySelector("#resetBtn").addEventListener("click", resetAll);
+    document.querySelector("#copyBtn").addEventListener("click", copyResult);
+    document.querySelector("#downloadBtn").addEventListener("click", downloadResult);
+    document.querySelector("#printBtn").addEventListener("click", () => window.print());
+  </script>
+</body>
+</html>
