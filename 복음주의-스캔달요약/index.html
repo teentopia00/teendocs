@@ -1,0 +1,980 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  
+  
+  <title>믿는다고 말하는 삶은 왜 달라 보이지 않는가 | 복음주의 양심의 스캔들</title>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <style>
+    :root {
+      --bg: #f7f4ee;
+      --paper: #fffdf8;
+      --ink: #211e1a;
+      --muted: #625c53;
+      --line: #ddd5c7;
+      --accent: #7b3f30;
+      --accent-deep: #52251d;
+      --accent-soft: #efe1d7;
+      --sage: #334d44;
+      --sage-soft: #e4ebe5;
+      --gold: #a36f2f;
+      --shadow: 0 18px 48px rgba(36, 27, 17, .08);
+      --radius: 22px;
+      --sans: "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", Arial, sans-serif;
+      --serif: "Noto Serif KR", "Iowan Old Style", "AppleMyungjo", "Batang", serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.75;
+      word-break: keep-all;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+
+    .masthead {
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 253, 248, .84);
+    }
+
+    .masthead-inner,
+    .article,
+    .footer-inner {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .masthead-inner {
+      min-height: 66px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      font-size: .9rem;
+      letter-spacing: .04em;
+    }
+
+    .brand {
+      font-family: var(--serif);
+      font-weight: 700;
+      color: var(--accent-deep);
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      color: var(--muted);
+    }
+
+    .nav a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .hero {
+      padding: clamp(56px, 9vw, 104px) 0 50px;
+    }
+
+    .category {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 22px;
+      color: var(--accent);
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .category::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    h1 {
+      max-width: 920px;
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(2.35rem, 6.2vw, 4.65rem);
+      line-height: 1.18;
+      letter-spacing: -.065em;
+      font-weight: 700;
+    }
+
+    .dek {
+      max-width: 770px;
+      margin: 26px 0 0;
+      font-size: clamp(1.06rem, 2vw, 1.28rem);
+      color: #494239;
+      line-height: 1.72;
+    }
+
+    .hero-meta {
+      margin-top: 42px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 28px;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 760px) 270px;
+      gap: 54px;
+      align-items: start;
+      padding-bottom: 76px;
+    }
+
+    .content > section {
+      margin-bottom: clamp(52px, 8vw, 78px);
+    }
+
+    .abstract {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      padding: clamp(26px, 5vw, 40px);
+    }
+
+    .label {
+      margin: 0 0 12px;
+      color: var(--accent);
+      font-size: .76rem;
+      letter-spacing: .16em;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .abstract p:last-child { margin-bottom: 0; }
+
+    h2 {
+      margin: 0 0 24px;
+      font-family: var(--serif);
+      font-size: clamp(1.55rem, 3.3vw, 2.15rem);
+      letter-spacing: -.04em;
+      line-height: 1.35;
+    }
+
+    h3 {
+      margin: 34px 0 13px;
+      font-size: 1.12rem;
+      line-height: 1.5;
+      color: var(--accent-deep);
+    }
+
+    p { margin: 0 0 18px; }
+
+    .findings {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .finding {
+      padding: 22px 21px 24px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 17px;
+    }
+
+    .finding-number {
+      display: block;
+      margin-bottom: 14px;
+      color: var(--gold);
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+    }
+
+    .finding strong {
+      display: block;
+      margin-bottom: 8px;
+      font-family: var(--serif);
+      font-size: 1.13rem;
+      line-height: 1.5;
+    }
+
+    .finding p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .94rem;
+    }
+
+    .pullquote {
+      margin: 43px 0;
+      padding: 7px 0 7px 29px;
+      border-left: 4px solid var(--accent);
+      font-family: var(--serif);
+      font-size: clamp(1.3rem, 3vw, 1.73rem);
+      letter-spacing: -.03em;
+      line-height: 1.65;
+      color: var(--accent-deep);
+    }
+
+    .pullquote cite {
+      display: block;
+      margin-top: 12px;
+      font-family: var(--sans);
+      font-size: .78rem;
+      font-style: normal;
+      color: var(--muted);
+      letter-spacing: .08em;
+    }
+
+    .table-frame {
+      overflow-x: auto;
+      margin: 28px 0 20px;
+      background: var(--paper);
+      border-radius: 18px;
+      border: 1px solid var(--line);
+    }
+
+    table {
+      width: 100%;
+      min-width: 650px;
+      border-collapse: collapse;
+      font-size: .93rem;
+      line-height: 1.6;
+    }
+
+    caption {
+      padding: 21px 21px 16px;
+      text-align: left;
+      color: var(--muted);
+      font-size: .84rem;
+      caption-side: top;
+    }
+
+    th {
+      padding: 13px 16px;
+      background: #f1ebe1;
+      color: var(--accent-deep);
+      text-align: left;
+      font-size: .83rem;
+      letter-spacing: .03em;
+    }
+
+    td {
+      padding: 15px 16px;
+      vertical-align: top;
+      border-top: 1px solid #e8e1d5;
+    }
+
+    td strong { color: var(--accent-deep); }
+
+    .small-note {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: .84rem;
+    }
+
+    .evidence-list {
+      display: grid;
+      gap: 15px;
+      margin-top: 26px;
+    }
+
+    .evidence {
+      display: grid;
+      grid-template-columns: 132px 1fr;
+      gap: 20px;
+      padding: 19px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .evidence dt {
+      font-weight: 700;
+      color: var(--accent-deep);
+    }
+
+    .evidence dd {
+      margin: 0;
+      color: #433d35;
+    }
+
+    .diagnosis {
+      background: #2e2923;
+      color: #fbf8f0;
+      border-radius: var(--radius);
+      padding: clamp(28px, 5vw, 45px);
+    }
+
+    .diagnosis .label { color: #ddb486; }
+    .diagnosis h2 { color: #fff9ed; }
+    .diagnosis p { color: #e5ddcf; }
+
+    .chain {
+      margin: 34px 0 9px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 9px;
+    }
+
+    .chain-card {
+      position: relative;
+      min-height: 132px;
+      padding: 18px 14px;
+      background: rgba(255,255,255,.065);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 13px;
+    }
+
+    .chain-card:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      top: 48px;
+      right: -17px;
+      z-index: 2;
+      color: #d9aa78;
+      font-size: 1.08rem;
+    }
+
+    .chain-card b {
+      display: block;
+      color: #f1c99d;
+      font-size: .82rem;
+      margin-bottom: 8px;
+    }
+
+    .chain-card span {
+      font-size: .91rem;
+      line-height: 1.55;
+      color: #fbf6eb;
+    }
+
+    .comparison {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 29px;
+    }
+
+    .comparison article {
+      padding: 24px;
+      border-radius: 17px;
+    }
+
+    .comparison .reduced {
+      background: #f2e2dc;
+      border: 1px solid #ead0c8;
+    }
+
+    .comparison .whole {
+      background: var(--sage-soft);
+      border: 1px solid #cad9cc;
+    }
+
+    .comparison h3 {
+      margin: 0 0 12px;
+      font-family: var(--serif);
+      font-size: 1.18rem;
+    }
+
+    .comparison ul,
+    .actions ol {
+      margin: 0;
+      padding-left: 21px;
+    }
+
+    .comparison li {
+      margin-bottom: 7px;
+    }
+
+    .identity-grid {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 27px;
+    }
+
+    .identity {
+      border-top: 3px solid var(--sage);
+      background: var(--paper);
+      padding: 20px 18px;
+      border-radius: 0 0 14px 14px;
+    }
+
+    .identity strong {
+      display: block;
+      margin-bottom: 9px;
+      font-family: var(--serif);
+      color: var(--sage);
+      font-size: 1.06rem;
+    }
+
+    .identity p {
+      margin: 0;
+      font-size: .91rem;
+      color: var(--muted);
+    }
+
+    .actions {
+      border-radius: var(--radius);
+      background: var(--paper);
+      border: 1px solid var(--line);
+      padding: clamp(25px, 4vw, 38px);
+    }
+
+    .actions li {
+      margin: 0 0 17px;
+      padding-left: 7px;
+    }
+
+    .actions li:last-child { margin-bottom: 0; }
+
+    .actions b {
+      color: var(--accent-deep);
+    }
+
+    .ending {
+      background: var(--accent);
+      color: #fff8f0;
+      border-radius: var(--radius);
+      padding: clamp(29px, 5vw, 45px);
+    }
+
+    .ending .label { color: #efc4a2; }
+    .ending h2 { color: #fff; }
+    .ending p { color: #f6e9dd; }
+    .ending p:last-child { margin: 0; }
+
+    aside {
+      position: sticky;
+      top: 30px;
+    }
+
+    .side-card {
+      margin-bottom: 17px;
+      padding: 23px 20px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 17px;
+    }
+
+    .side-card h2 {
+      margin: 0 0 15px;
+      font-family: var(--sans);
+      font-size: .78rem;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .toc a {
+      display: block;
+      padding: 8px 0;
+      border-bottom: 1px solid #ebe5da;
+      color: #494239;
+      font-size: .91rem;
+      text-decoration: none;
+    }
+
+    .toc a:last-child { border-bottom: 0; }
+
+    .share-copy {
+      font-family: var(--serif);
+      color: var(--accent-deep);
+      font-size: 1.02rem;
+      line-height: 1.65;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .tag {
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-deep);
+      font-size: .78rem;
+    }
+
+    .sources {
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+    }
+
+    .sources ul {
+      margin: 18px 0 0;
+      padding-left: 21px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .sources li { margin-bottom: 10px; }
+
+    footer {
+      padding: 32px 0 46px;
+      background: #ede7db;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 940px) {
+      .layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      aside {
+        position: static;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+      }
+
+      .side-card { margin: 0; }
+      .toc-card { grid-column: 1 / -1; }
+    }
+
+    @media (max-width: 700px) {
+      body { word-break: normal; }
+      .masthead-inner { padding: 14px 0; align-items: flex-start; flex-direction: column; gap: 6px; }
+      .hero { padding-top: 46px; }
+      .findings,
+      .comparison,
+      .identity-grid,
+      aside { display: block; }
+      .finding,
+      .comparison article,
+      .identity,
+      .side-card { margin-bottom: 12px; }
+      .evidence { display: block; }
+      .evidence dt { margin-bottom: 7px; }
+      .chain { grid-template-columns: 1fr; }
+      .chain-card { min-height: auto; }
+      .chain-card:not(:last-child)::after {
+        content: "↓";
+        top: auto;
+        bottom: -22px;
+        right: 50%;
+      }
+      h1 { letter-spacing: -.05em; }
+    }
+
+    @media print {
+      body { background: white; }
+      .masthead, aside, footer { display: none; }
+      .layout { display: block; }
+      .abstract, .actions, .diagnosis, .ending { box-shadow: none; break-inside: avoid; }
+    }
+  </style>
+<meta property="og:type" content="article">
+<meta property="og:title" content="복음주의 스캔달요약">
+<meta property="og:description" content="[[복음주의 스캔달요약]] [[sync/books/변증/복음주의 스캔달/은혜]] 이 문서는 현대 미국 복음주의가 직면한 심각한 위기를 분석한다. 핵심 주장은 복음주의자들이 공언하는 신념과 실제 삶의 방식 사이에 깊은 괴리가 존재하며, 이는 &#39;스캔들&#39;이라 칭할 만큼 심각한 수준이라는 것이다. 통계 자료에 따르면, 자칭 &#39;거">
+<meta property="og:url" content="https://teentopia00.github.io/teendocs/s/1vdjvqe/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="복음주의 스캔달요약">
+<meta name="twitter:description" content="[[복음주의 스캔달요약]] [[sync/books/변증/복음주의 스캔달/은혜]] 이 문서는 현대 미국 복음주의가 직면한 심각한 위기를 분석한다. 핵심 주장은 복음주의자들이 공언하는 신념과 실제 삶의 방식 사이에 깊은 괴리가 존재하며, 이는 &#39;스캔들&#39;이라 칭할 만큼 심각한 수준이라는 것이다. 통계 자료에 따르면, 자칭 &#39;거">
+<link rel="canonical" href="https://teentopia00.github.io/teendocs/s/1vdjvqe/">
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <div class="brand">Faith &amp; Public Life Review</div>
+      <nav class="nav" aria-label="기사 섹션">
+        <a href="#abstract">초록</a>
+        <a href="#findings">핵심 발견</a>
+        <a href="#evidence">증거</a>
+        <a href="#implications">함의</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="article">
+    <header class="hero">
+      <div class="category">Research Report · Theology &amp; Ethics</div>
+      <h1>믿는다고 말하는 삶은<br>왜 달라 보이지 않는가</h1>
+      <p class="dek">
+        복음주의의 위기는 외부의 비판만이 아니라, 스스로 고백한 복음이 실제 삶에서
+        충분히 드러나지 않는 데서 시작된다. 이 보고서는 통계적 징후, ‘값싼 은혜’라는
+        신학적 진단, 그리고 신뢰 회복을 위한 공동체적 실천을 함께 읽는다.
+      </p>
+      <div class="hero-meta">
+        <span>독서 노트 기반 편집 리포트</span>
+        <span>분야: 변증 · 신학 · 공적 윤리</span>
+        <span>읽는 시간 약 12분</span>
+        <span>발행 형식: Editorial Briefing</span>
+      </div>
+    </header>
+
+    <div class="layout">
+      <article class="content">
+        <section id="abstract" class="abstract" aria-labelledby="abstract-heading">
+          <p class="label">Abstract</p>
+          <h2 id="abstract-heading">고백과 행위의 간극이 만든 신뢰의 위기</h2>
+          <p>
+            이 독서 노트가 제기하는 핵심 논지는 분명하다. 미국 복음주의자들의 윤리적 삶이
+            그들이 비판해 온 사회 문화와 뚜렷이 구별되지 않는다면, 문제는 단순한 이미지
+            관리의 실패가 아니라 복음 이해 자체의 축소일 수 있다는 것이다.
+          </p>
+          <p>
+            이 분석은 이혼, 물질주의, 성 윤리, 인종 문제, 가정 폭력에 관한 조사 결과들을
+            ‘스캔들’의 징후로 제시한다. 이어 복음을 죄 사함과 사후 보장으로만 좁혀 이해하는
+            <strong>값싼 은혜</strong>가 회개, 성화, 제자도, 사회적 책임을 약화시켰다고 진단한다.
+            회복의 방향은 예수를 구원자이자 삶의 주인으로 받아들이는 제자도, 그리고 서로의
+            삶을 책임지는 대안 공동체로서의 교회다.
+          </p>
+        </section>
+
+        <section id="findings" aria-labelledby="findings-heading">
+          <p class="label">Key Findings</p>
+          <h2 id="findings-heading">이 보고서가 붙드는 네 가지 발견</h2>
+          <div class="findings">
+            <article class="finding">
+              <span class="finding-number">01 · CREDIBILITY</span>
+              <strong>신앙 정체성만으로 윤리적 차이가 보장되지 않는다</strong>
+              <p>제시된 조사들은 거듭남의 언어가 결혼, 돈, 성, 인종 관계에서 자동으로 다른 삶을 낳지 않음을 보여준다.</p>
+            </article>
+            <article class="finding">
+              <span class="finding-number">02 · THEOLOGY</span>
+              <strong>행동의 실패 뒤에는 축소된 복음이 있다</strong>
+              <p>죄 용서는 강조하면서 회개, 성화, 순종, 하나님 나라의 사회적 차원을 지우면 복음은 삶을 바꾸는 힘을 잃는다.</p>
+            </article>
+            <article class="finding">
+              <span class="finding-number">03 · COMMUNITY</span>
+              <strong>개인주의적 신앙은 책임의 구조를 허문다</strong>
+              <p>신앙이 개인과 하나님 사이의 사적 계약으로만 남을 때, 교회는 돌봄과 권면, 정의를 실천할 공동체성을 잃는다.</p>
+            </article>
+            <article class="finding">
+              <span class="finding-number">04 · HOPE</span>
+              <strong>깊은 헌신은 실제 삶의 차이로 이어질 수 있다</strong>
+              <p>정기적 예배, 기도, 봉사와 같은 지속적 실천에 헌신한 집단에서는 나눔과 이웃 돌봄의 차이가 관찰된다고 노트는 보고한다.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="evidence" aria-labelledby="evidence-heading">
+          <p class="label">Evidence I</p>
+          <h2 id="evidence-heading">숫자가 드러낸 불편한 풍경</h2>
+          <p>
+            이 문서가 요약하는 통계는 복음주의가 말해 온 도덕적 구별성이 실제 생활 데이터에서
+            충분히 확인되지 않는다는 문제를 제기한다. 개별 수치의 재검증은 필요하지만,
+            제시된 자료들이 향하는 방향은 일관된다. 신앙고백과 행동의 거리가 너무 멀다는 것이다.
+          </p>
+
+          <div class="table-frame">
+            <table>
+              <caption>원문 노트에 제시된 주요 비교 지표 요약</caption>
+              <thead>
+                <tr>
+                  <th scope="col">영역</th>
+                  <th scope="col">제시된 결과</th>
+                  <th scope="col">비교 또는 해석</th>
+                  <th scope="col">노트상 출처</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>이혼 경험률</strong></td>
+                  <td>거듭난 기독교인 33%</td>
+                  <td>거듭나지 않은 미국인 34%와 유의미한 차이가 없음</td>
+                  <td>George Barna, 2001</td>
+                </tr>
+                <tr>
+                  <td><strong>십일조 실천</strong></td>
+                  <td>거듭난 성인 6%</td>
+                  <td>재정적 헌신과 빈곤 구제 가능성 사이의 큰 간극</td>
+                  <td>George Barna, 2002</td>
+                </tr>
+                <tr>
+                  <td><strong>혼전 성관계</strong></td>
+                  <td>순결 서약 청년 중 88%</td>
+                  <td>언어적 서약만으로 행동 변화가 지속되지 않음을 시사</td>
+                  <td>컬럼비아·예일대 연구로 표기</td>
+                </tr>
+                <tr>
+                  <td><strong>인종 불평등 인식</strong></td>
+                  <td>개인의 동기 부족을 탓할 확률 2배</td>
+                  <td>구조적 불평등보다 개인 책임으로 환원하는 경향</td>
+                  <td>Michael Emerson &amp; Christian Smith</td>
+                </tr>
+                <tr>
+                  <td><strong>가정 폭력</strong></td>
+                  <td>전통적 남편 주도 가정 여성 10.7%</td>
+                  <td>평등주의적 가정의 3% 미만과 대비</td>
+                  <td>원문 노트 인용 통계</td>
+                </tr>
+                <tr>
+                  <td><strong>성경적 세계관</strong></td>
+                  <td>성인 9%, 십대 2%</td>
+                  <td>신앙 정체성과 형성된 세계관의 차이를 문제화</td>
+                  <td>원문 노트 인용 통계</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="small-note">
+            편집 주: 위 수치는 제공된 독서 노트에 기록된 조사 결과를 재구성한 것이다.
+            공개 인용이나 학술 사용 전에는 원 출판물의 표본, 조사 연도, 문항 정의를 확인할 필요가 있다.
+          </p>
+
+          <dl class="evidence-list">
+            <div class="evidence">
+              <dt>결혼과 가정</dt>
+              <dd>복음주의의 가족 가치 담론에도 불구하고 이혼과 가정 내 폭력 지표는 신앙고백이 곧바로 안전하고 충실한 관계를 낳는다는 가정을 흔든다.</dd>
+            </div>
+            <div class="evidence">
+              <dt>돈과 소비</dt>
+              <dd>기부와 구제보다 소비가 우선되는 생활 방식은 교회가 비판하던 물질주의가 내부에서도 작동하고 있음을 보여주는 증거로 읽힌다.</dd>
+            </div>
+            <div class="evidence">
+              <dt>성 윤리</dt>
+              <dd>서약 운동이나 규범적 언어가 제자 훈련과 지속적인 돌봄을 대신할 수 없다는 점이 드러난다.</dd>
+            </div>
+            <div class="evidence">
+              <dt>인종과 정의</dt>
+              <dd>사회 구조 속의 죄를 보지 못하고 개인 도덕성만 강조할 경우, 복음은 불평등을 교정하기보다 외면하는 언어가 될 위험이 있다.</dd>
+            </div>
+          </dl>
+        </section>
+
+        <blockquote class="pullquote">
+          “스캔들의 핵심은 교회가 완벽하지 않다는 사실이 아니다. 교회가 선포한 복음이
+          신자의 돈, 몸, 관계, 권력 사용에서 충분히 보이지 않는다는 데 있다.”
+          <cite>제공된 독서 노트의 중심 주장에 따른 편집 요약</cite>
+        </blockquote>
+
+        <section class="diagnosis" id="diagnosis" aria-labelledby="diagnosis-heading">
+          <p class="label">Evidence II · Diagnosis</p>
+          <h2 id="diagnosis-heading">‘값싼 은혜’는 어떻게 삶의 변화 없는 신앙을 만드는가</h2>
+          <p>
+            노트는 행동의 실패를 단순한 의지 박약으로 처리하지 않는다. 문제는 복음의
+            내용을 좁혀 버린 데 있다. 죄 용서만 남고 회개와 성화가 흐려질 때, 신앙은
+            새로운 삶의 시작이 아니라 기존 삶에 붙이는 안전 보증처럼 오해된다.
+          </p>
+
+          <div class="chain" role="img" aria-label="축소된 복음이 공적 신뢰의 붕괴로 이어지는 분석 흐름">
+            <div class="chain-card">
+              <b>01</b>
+              <span>복음을 개인적 죄 사함으로만 축소</span>
+            </div>
+            <div class="chain-card">
+              <b>02</b>
+              <span>회개·성화·제자도의 요구 약화</span>
+            </div>
+            <div class="chain-card">
+              <b>03</b>
+              <span>소비주의와 개인주의에 동화</span>
+            </div>
+            <div class="chain-card">
+              <b>04</b>
+              <span>신앙고백의 공적 신뢰 붕괴</span>
+            </div>
+          </div>
+        </section>
+
+        <section id="gospel" aria-labelledby="gospel-heading">
+          <p class="label">Theological Reading</p>
+          <h2 id="gospel-heading">죄 사함만이 아니라, 새로운 질서로의 부름</h2>
+          <p>
+            노트가 강조하는 온전한 복음은 개인의 내면적 구원과 사회적 삶을 분리하지 않는다.
+            예수가 전한 하나님 나라의 복음은 용서받은 개인의 탄생과 함께, 돈을 나누고,
+            차별을 거부하며, 약자를 돌보는 새로운 공동체의 출현을 포함한다.
+          </p>
+
+          <div class="comparison">
+            <article class="reduced">
+              <h3>축소된 복음</h3>
+              <ul>
+                <li>구원은 사후의 안전 보장이다.</li>
+                <li>믿음은 개인의 결단에 머문다.</li>
+                <li>사회 구조의 죄는 신앙 밖의 문제다.</li>
+                <li>교회는 종교 서비스를 제공한다.</li>
+              </ul>
+            </article>
+            <article class="whole">
+              <h3>온전한 복음</h3>
+              <ul>
+                <li>구원은 용서와 변화의 시작이다.</li>
+                <li>믿음은 순종과 제자도로 드러난다.</li>
+                <li>개인적 죄와 사회적 죄를 함께 다룬다.</li>
+                <li>교회는 하나님 나라를 증언하는 공동체다.</li>
+              </ul>
+            </article>
+          </div>
+
+          <h3>구원자와 주님을 분리할 수 없는 이유</h3>
+          <p>
+            예수를 위기의 순간에 도움을 주는 구원자로만 받아들이고, 삶의 방향과 욕망을
+            다스리는 주님으로는 받아들이지 않는 신앙은 노트의 관점에서 성경적 회개와 거리가
+            멀다. 회개는 미안함의 감정이 아니라, 삶의 충성과 방향이 바뀌는 전환이다.
+          </p>
+        </section>
+
+        <section id="community" aria-labelledby="community-heading">
+          <p class="label">Evidence III · Community</p>
+          <h2 id="community-heading">교회는 대안 공동체여야 한다</h2>
+          <p>
+            개인화된 신앙은 실패한 개인을 남기지만, 책임지는 공동체는 변화를 가능하게 한다.
+            노트는 신약성경의 교회 이미지를 세 가지로 요약한다. 이 이미지는 교회가 예배 참석자의
+            집합이 아니라, 서로의 삶을 실제로 떠받치는 관계임을 요구한다.
+          </p>
+
+          <div class="identity-grid">
+            <article class="identity">
+              <strong>그리스도의 몸</strong>
+              <p>한 사람의 고통과 실패를 공동체 전체의 책임으로 받아들이고, 은사를 공동의 유익을 위해 사용한다.</p>
+            </article>
+            <article class="identity">
+              <strong>하나님의 가족</strong>
+              <p>혈연, 인종, 계급, 성별로 세워진 장벽을 넘어 새로운 소속과 돌봄의 질서를 살아낸다.</p>
+            </article>
+            <article class="identity">
+              <strong>대항 문화</strong>
+              <p>소비주의와 성적 방종, 극단적 개인주의를 모방하지 않고 나눔과 충실함을 공개적으로 실천한다.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="hope" aria-labelledby="hope-heading">
+          <p class="label">Counter-Evidence</p>
+          <h2 id="hope-heading">절망으로 끝나지 않는 이유</h2>
+          <p>
+            이 분석은 모든 복음주의자를 같은 방식으로 판단하지 않는다. 노트에 따르면,
+            높은 수준의 신앙적 헌신을 지속하는 이들, 곧 정기적 예배와 기도, 봉사,
+            이웃 돌봄을 생활의 구조로 삼은 이들은 자선과 섬김에서 더 분명한 차이를 보인다.
+          </p>
+          <p>
+            이것은 중요한 반증이다. 복음이 무능한 것이 아니라, 값싼 형태로 소비된 복음이
+            변화를 만들지 못한다는 해석이 가능해진다. 신학과 실천이 다시 연결될 때,
+            신앙은 사회적 신뢰를 되찾을 실질적 토대를 갖는다.
+          </p>
+        </section>
+
+        <section id="implications" class="actions" aria-labelledby="implications-heading">
+          <p class="label">Implications</p>
+          <h2 id="implications-heading">신뢰 회복을 위한 네 가지 실천</h2>
+          <ol>
+            <li>
+              <b>사랑에 기초한 권면과 권징을 회복한다.</b>
+              죄를 침묵으로 덮는 공동체는 누구도 보호하지 못한다. 회복을 목표로 하는 책임의 구조가 필요하다.
+            </li>
+            <li>
+              <b>소그룹을 친교가 아닌 삶의 책임 구조로 재설계한다.</b>
+              기도 제목뿐 아니라 돈, 성, 가족, 권력 사용의 실제를 나누고 서로 점검할 수 있어야 한다.
+            </li>
+            <li>
+              <b>칭의와 성화, 개인 구원과 사회 정의를 함께 가르친다.</b>
+              강단과 교육은 복음을 한쪽으로 축소하지 않고, 용서받은 사람이 어떻게 살아야 하는지까지 말해야 한다.
+            </li>
+            <li>
+              <b>물질주의를 거스르는 공개적 실천을 만든다.</b>
+              체계적 나눔, 가난한 이웃을 위한 예산, 소비 절제와 같은 구체적 규율이 신앙의 신빙성을 세운다.
+            </li>
+          </ol>
+        </section>
+
+        <section class="ending" id="conclusion" aria-labelledby="conclusion-heading">
+          <p class="label">Closing Reflection</p>
+          <h2 id="conclusion-heading">복음은 말의 정교함보다 삶의 방향에서 검증된다</h2>
+          <p>
+            복음주의의 스캔들은 외부의 조롱 때문에 생긴 것이 아니라, 내부의 고백과 행위 사이에
+            오래 방치된 거리 때문에 생겼다. 그러므로 해결 역시 더 큰 목소리나 더 선명한 정체성
+            선언에서 시작되지 않는다.
+          </p>
+          <p>
+            축소된 복음을 버리고, 용서와 변화, 경건과 정의, 개인의 회개와 공동체의 책임을 다시
+            함께 붙드는 것. 교회가 그 길을 걸을 때에만 세상은 신앙의 주장보다 먼저, 그 신앙이
+            만들어 낸 삶을 보게 될 것이다.
+          </p>
+        </section>
+
+        <section class="sources" id="sources" aria-labelledby="sources-heading">
+          <p class="label">Source Notes</p>
+          <h2 id="sources-heading">자료 및 편집 주</h2>
+          <ul>
+            <li>본 글은 제공된 Obsidian 독서 노트 <strong>「복음주의 양심의 스캔들: 핵심 통찰 및 브리핑」</strong>을 공개용 기사 형식으로 재구성한 것이다.</li>
+            <li>노트는 George Barna의 조사, Michael Emerson과 Christian Smith의 연구, George Gallup Jr.의 관찰 등을 근거로 제시한다.</li>
+            <li>통계 수치와 서지 정보는 원문 노트의 기록을 따랐으며, 출판·인용 전에는 원 연구 및 원전 판본과의 대조가 권장된다.</li>
+            <li>제공된 메타데이터에는 책 제목과 저자 정보가 기록되어 있으나, 이 페이지는 서지 검증본이 아니라 독서 노트 기반의 편집 리포트다.</li>
+            <li>연관 노트: 「은혜」는 값싼 은혜, 칭의와 성화, 하나님 나라와 제자도에 관한 신학적 논의를 보충한다.</li>
+          </ul>
+        </section>
+      </article>
+
+      <aside aria-label="기사 보조 정보">
+        <section class="side-card toc-card">
+          <h2>Contents</h2>
+          <nav class="toc" aria-label="목차">
+            <a href="#abstract">초록</a>
+            <a href="#findings">핵심 발견</a>
+            <a href="#evidence">통계로 본 현실</a>
+            <a href="#diagnosis">값싼 은혜의 구조</a>
+            <a href="#gospel">온전한 복음</a>
+            <a href="#community">대안 공동체</a>
+            <a href="#hope">희망의 근거</a>
+            <a href="#implications">실천적 함의</a>
+            <a href="#sources">자료 노트</a>
+          </nav>
+        </section>
+
+        <section class="side-card">
+          <h2>Share Framing</h2>
+          <p class="share-copy">
+            신앙의 위기는 믿는다는 말의 부족이 아니라, 믿음이 삶에서 보이지 않는 데서 시작된다.
+          </p>
+        </section>
+
+        <section class="side-card">
+          <h2>Keywords</h2>
+          <div class="tags" aria-label="키워드">
+            <span class="tag">복음주의</span>
+            <span class="tag">값싼 은혜</span>
+            <span class="tag">제자도</span>
+            <span class="tag">성화</span>
+            <span class="tag">공동체</span>
+            <span class="tag">사회 정의</span>
+            <span class="tag">독서노트</span>
+          </div>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>Editorial Research Report · 복음주의 양심의 스캔들</span>
+      <span>정적 발행용 문서 · 외부 자산 및 스크립트 없음</span>
+    </div>
+  </footer>
+</body>
+</html>
