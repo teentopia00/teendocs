@@ -1,0 +1,1219 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  
+  
+  <title>왜 우리는 변명하는가: C. S. 루이스가 발견한 ‘인간 본성의 법칙’ | 순전한 기독교 읽기</title>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <style>
+    :root {
+      --paper: #fcfaf6;
+      --paper-strong: #ffffff;
+      --ink: #19231f;
+      --muted: #616b66;
+      --line: #e5dfd3;
+      --accent: #214c44;
+      --accent-soft: #e8f0eb;
+      --gold: #9a7435;
+      --gold-soft: #f5ecd8;
+      --rose: #7e433a;
+      --rose-soft: #f7ebe8;
+      --shadow: 0 18px 48px rgba(23, 31, 27, .06);
+      --serif: "Iowan Old Style", "Noto Serif KR", "AppleMyungjo", "Nanum Myeongjo", Georgia, serif;
+      --sans: "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--paper);
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(154, 116, 53, .08), transparent 30rem),
+        linear-gradient(180deg, #f8f4ec 0, var(--paper) 26rem);
+      font-family: var(--sans);
+      line-height: 1.75;
+      word-break: keep-all;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-color: rgba(33, 76, 68, .34);
+      text-underline-offset: .18em;
+    }
+
+    a:hover { text-decoration-color: var(--accent); }
+
+    .page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 28px 72px;
+    }
+
+    .masthead {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      padding: 26px 0 20px;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .86rem;
+      letter-spacing: .02em;
+    }
+
+    .brand {
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    .mast-meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px 18px;
+    }
+
+    .hero {
+      max-width: 920px;
+      padding: 76px 0 54px;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold);
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .kicker::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    h1 {
+      max-width: 900px;
+      margin: 20px 0 22px;
+      font-family: var(--serif);
+      font-size: clamp(2.7rem, 6.6vw, 5.1rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -.065em;
+    }
+
+    .dek {
+      max-width: 760px;
+      margin: 0 0 30px;
+      color: #43504a;
+      font-family: var(--serif);
+      font-size: clamp(1.08rem, 1.7vw, 1.3rem);
+      line-height: 1.82;
+    }
+
+    .byline {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px 22px;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .byline strong { color: var(--ink); }
+
+    .reading-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 760px) 270px;
+      gap: 58px;
+      align-items: start;
+    }
+
+    article {
+      min-width: 0;
+    }
+
+    .toc {
+      position: sticky;
+      top: 26px;
+      margin-top: 8px;
+      padding: 24px 22px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, .64);
+      box-shadow: var(--shadow);
+    }
+
+    .toc h2 {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-family: var(--sans);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .toc a {
+      display: block;
+      padding: 8px 0;
+      border-bottom: 1px solid #efe9de;
+      color: #34433c;
+      font-size: .91rem;
+      text-decoration: none;
+    }
+
+    .toc a:last-child { border-bottom: 0; }
+
+    .abstract {
+      margin-bottom: 50px;
+      padding: 31px 34px 32px;
+      border-top: 3px solid var(--accent);
+      border-radius: 0 0 17px 17px;
+      background: var(--paper-strong);
+      box-shadow: var(--shadow);
+    }
+
+    .abstract .label,
+    .section-label {
+      display: block;
+      margin-bottom: 11px;
+      color: var(--accent);
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .abstract p {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 1.11rem;
+      line-height: 1.9;
+    }
+
+    section {
+      margin-bottom: 62px;
+      scroll-margin-top: 30px;
+    }
+
+    h2.section-title {
+      margin: 0 0 22px;
+      font-family: var(--serif);
+      font-size: clamp(1.72rem, 3vw, 2.18rem);
+      line-height: 1.35;
+      letter-spacing: -.04em;
+    }
+
+    h3 {
+      margin: 34px 0 12px;
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+
+    p {
+      margin: 0 0 18px;
+      color: #29342f;
+      font-size: 1rem;
+    }
+
+    .lead {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      line-height: 1.9;
+      color: #22322b;
+    }
+
+    .findings {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-top: 28px;
+    }
+
+    .finding {
+      padding: 25px 23px 22px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+    }
+
+    .finding-num {
+      display: block;
+      color: var(--gold);
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .finding h3 {
+      margin: 10px 0 9px;
+      font-family: var(--serif);
+      font-size: 1.19rem;
+    }
+
+    .finding p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .92rem;
+      line-height: 1.7;
+    }
+
+    .argument-map {
+      margin: 28px 0 14px;
+      padding: 26px;
+      border-radius: 20px;
+      background: var(--accent);
+      color: #f8f7f3;
+    }
+
+    .argument-map h3 {
+      margin: 0 0 20px;
+      color: #fff;
+      font-family: var(--serif);
+      font-size: 1.35rem;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .flow-card {
+      position: relative;
+      padding: 18px 16px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, .1);
+      border: 1px solid rgba(255, 255, 255, .14);
+    }
+
+    .flow-card:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      right: -12px;
+      top: 42%;
+      z-index: 1;
+      color: #c7d6ce;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .flow-card strong {
+      display: block;
+      margin-bottom: 7px;
+      color: #e5c88e;
+      font-size: .78rem;
+      letter-spacing: .08em;
+    }
+
+    .flow-card span {
+      display: block;
+      font-size: .9rem;
+      line-height: 1.56;
+    }
+
+    .caption {
+      margin: 12px 0 0;
+      color: #6d776f;
+      font-size: .82rem;
+      line-height: 1.6;
+    }
+
+    .pullquote {
+      margin: 47px 0;
+      padding: 9px 0 9px 29px;
+      border-left: 3px solid var(--gold);
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: clamp(1.35rem, 2.6vw, 1.7rem);
+      line-height: 1.65;
+      letter-spacing: -.03em;
+    }
+
+    .pullquote cite {
+      display: block;
+      margin-top: 14px;
+      color: var(--muted);
+      font-family: var(--sans);
+      font-size: .84rem;
+      font-style: normal;
+      letter-spacing: .01em;
+    }
+
+    .evidence {
+      display: grid;
+      gap: 16px;
+      margin-top: 27px;
+    }
+
+    .evidence-card {
+      display: grid;
+      grid-template-columns: 142px minmax(0, 1fr);
+      gap: 22px;
+      padding: 23px 24px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .evidence-card .tag {
+      color: var(--gold);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .evidence-card h3 {
+      margin: 0 0 8px;
+      font-family: var(--serif);
+      font-size: 1.14rem;
+    }
+
+    .evidence-card p {
+      margin: 0;
+      color: #4c5953;
+      font-size: .93rem;
+    }
+
+    table {
+      width: 100%;
+      margin: 28px 0 10px;
+      border-collapse: separate;
+      border-spacing: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+      font-size: .93rem;
+    }
+
+    th, td {
+      padding: 16px 17px;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    th {
+      background: #f3efe6;
+      color: #344039;
+      font-size: .81rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+    }
+
+    td:first-child {
+      width: 26%;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .note-box {
+      margin: 30px 0;
+      padding: 25px 27px;
+      border-radius: 16px;
+      background: var(--gold-soft);
+      color: #3a362c;
+    }
+
+    .note-box h3 {
+      margin: 0 0 10px;
+      color: #624a21;
+      font-family: var(--serif);
+    }
+
+    .note-box p:last-child { margin-bottom: 0; }
+
+    .critical {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin: 26px 0 0;
+    }
+
+    .critical article {
+      padding: 23px 23px 20px;
+      border-radius: 16px;
+      background: var(--rose-soft);
+    }
+
+    .critical h3 {
+      margin: 0 0 9px;
+      color: var(--rose);
+      font-family: var(--serif);
+      font-size: 1.13rem;
+    }
+
+    .critical p {
+      margin: 0;
+      color: #514540;
+      font-size: .92rem;
+    }
+
+    .application {
+      display: grid;
+      gap: 14px;
+      counter-reset: application;
+      margin-top: 26px;
+    }
+
+    .application li {
+      position: relative;
+      list-style: none;
+      padding: 22px 22px 21px 66px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      color: #35423c;
+    }
+
+    .application li::before {
+      counter-increment: application;
+      content: "0" counter(application);
+      position: absolute;
+      left: 21px;
+      top: 23px;
+      color: var(--gold);
+      font-size: .81rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+    }
+
+    .application strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--ink);
+    }
+
+    .share-card {
+      margin: 42px 0 64px;
+      padding: 33px 34px;
+      border-radius: 20px;
+      color: #fff;
+      background: #173b35;
+    }
+
+    .share-card .label {
+      color: #d8bf89;
+      font-size: .74rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .share-card h2 {
+      max-width: 560px;
+      margin: 13px 0 14px;
+      font-family: var(--serif);
+      font-size: clamp(1.45rem, 2.7vw, 1.85rem);
+      line-height: 1.47;
+      letter-spacing: -.035em;
+    }
+
+    .share-card p {
+      margin: 0;
+      color: #e5e6e1;
+      font-size: .94rem;
+    }
+
+    .source-notes {
+      padding-top: 39px;
+      border-top: 1px solid var(--line);
+    }
+
+    .sources {
+      margin: 20px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .sources li {
+      padding: 13px 0;
+      border-bottom: 1px solid var(--line);
+      color: #53605b;
+      font-size: .91rem;
+    }
+
+    .sources strong { color: var(--ink); }
+
+    .closing {
+      margin-top: 59px;
+      padding: 43px 0 4px;
+      border-top: 1px solid var(--line);
+    }
+
+    .closing p {
+      max-width: 640px;
+      font-family: var(--serif);
+      font-size: 1.14rem;
+      line-height: 1.92;
+    }
+
+    footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 68px;
+      padding-top: 21px;
+      border-top: 1px solid var(--line);
+      color: #727a75;
+      font-size: .82rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 29px;
+    }
+
+    .tags span {
+      padding: 5px 11px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: .78rem;
+      font-weight: 600;
+    }
+
+    @media (max-width: 900px) {
+      .reading-grid {
+        display: block;
+      }
+
+      .toc {
+        position: static;
+        margin: 0 0 44px;
+      }
+
+      .flow {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .flow-card:nth-child(2)::after { display: none; }
+    }
+
+    @media (max-width: 620px) {
+      .page { padding: 0 18px 48px; }
+
+      .masthead {
+        display: block;
+        padding-top: 20px;
+      }
+
+      .mast-meta {
+        justify-content: flex-start;
+        margin-top: 9px;
+      }
+
+      .hero { padding: 50px 0 40px; }
+
+      h1 {
+        letter-spacing: -.055em;
+      }
+
+      .abstract,
+      .share-card {
+        padding: 25px 21px;
+      }
+
+      section { margin-bottom: 51px; }
+
+      .findings,
+      .critical,
+      .flow {
+        grid-template-columns: 1fr;
+      }
+
+      .flow-card::after { display: none; }
+
+      .argument-map { padding: 21px; }
+
+      .evidence-card {
+        display: block;
+        padding: 21px 20px;
+      }
+
+      .evidence-card .tag {
+        display: block;
+        margin-bottom: 9px;
+      }
+
+      th, td {
+        padding: 13px 11px;
+        font-size: .86rem;
+      }
+
+      td:first-child { width: 31%; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .toc { display: none; }
+      .reading-grid { display: block; }
+      .abstract, .finding, .share-card, .argument-map { box-shadow: none; }
+      a { color: inherit; }
+    }
+  </style>
+<meta property="og:type" content="article">
+<meta property="og:title" content="1장 인간 본성의 법칙">
+<meta property="og:description" content="[[순전한기독교 요약]] [[무신론에 대한 십자가 신학 변증]] [[9 아테나고라스의 변증]] 변증 루이스 본성 도덕 윤리 기준준 1부 1장: 인간 본성의 법칙 (The Law of Human Nature) file:///Users/teentopia/Library/CloudStorage/OneDrive%E1%84%80%E">
+<meta property="og:url" content="https://teentopia00.github.io/teendocs/s/1ouf9rf/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="1장 인간 본성의 법칙">
+<meta name="twitter:description" content="[[순전한기독교 요약]] [[무신론에 대한 십자가 신학 변증]] [[9 아테나고라스의 변증]] 변증 루이스 본성 도덕 윤리 기준준 1부 1장: 인간 본성의 법칙 (The Law of Human Nature) file:///Users/teentopia/Library/CloudStorage/OneDrive%E1%84%80%E">
+<link rel="canonical" href="https://teentopia00.github.io/teendocs/s/1ouf9rf/">
+</head>
+<body>
+  <div class="page">
+    <header class="masthead">
+      <div class="brand">Reading Report</div>
+      <div class="mast-meta">
+        <span>『순전한 기독교』 1부 1장</span>
+        <span>저자 C. S. 루이스</span>
+        <span>변증 · 윤리 · 자연법</span>
+      </div>
+    </header>
+
+    <main>
+      <header class="hero">
+        <span class="kicker">Editorial Research Report</span>
+        <h1>왜 우리는<br>변명하는가</h1>
+        <p class="dek">
+          다툼에서 꺼내 드는 한 문장, 잘못 뒤에 붙이는 한 가지 핑계.
+          C. S. 루이스는 그 평범한 순간들 속에서 인간이 떨쳐 버리지 못하는
+          ‘옳고 그름의 법칙’을 읽어 낸다.
+        </p>
+        <div class="byline">
+          <strong>순전한 기독교 읽기</strong>
+          <span>1장 인간 본성의 법칙</span>
+          <span>독서 노트 기반 분석 기사</span>
+        </div>
+        <div class="tags" aria-label="주제 태그">
+          <span>#루이스</span>
+          <span>#도덕률</span>
+          <span>#자연법</span>
+          <span>#변증</span>
+          <span>#인간본성</span>
+        </div>
+      </header>
+
+      <div class="reading-grid">
+        <article>
+          <section class="abstract" id="abstract" aria-labelledby="abstract-title">
+            <span class="label" id="abstract-title">Abstract</span>
+            <p>
+              『순전한 기독교』의 첫 장은 신앙의 교리를 곧바로 제시하지 않는다.
+              대신 사람들이 싸우고, 항의하고, 변명하는 방식에 주목한다.
+              루이스의 핵심 명제는 단순하다. 인간은 어떤 행동이 마땅히 옳다고
+              요구하는 기준을 알고 있으며, 동시에 그 기준대로 살아내지 못한다.
+              이 장은 바로 그 간극을 통해 이후의 타락, 책임, 은혜 논의를 위한
+              철학적 출발점을 세운다.
+            </p>
+          </section>
+
+          <section id="findings">
+            <span class="section-label">Key Findings</span>
+            <h2 class="section-title">이 장이 세우는 네 가지 결론</h2>
+            <div class="findings">
+              <div class="finding">
+                <span class="finding-num">Finding 01</span>
+                <h3>다툼은 기준을 전제한다</h3>
+                <p>사람들은 불쾌감만 표현하지 않고, 상대도 인정해야 한다고 여기는 공정성과 약속의 언어에 호소한다.</p>
+              </div>
+              <div class="finding">
+                <span class="finding-num">Finding 02</span>
+                <h3>도덕률은 선택 가능한 법이다</h3>
+                <p>중력과 달리 인간은 도덕적 요청을 거스를 수 있다. 바로 그 가능성이 책임이라는 개념을 낳는다.</p>
+              </div>
+              <div class="finding">
+                <span class="finding-num">Finding 03</span>
+                <h3>차이가 곧 상대성은 아니다</h3>
+                <p>문화적 차이가 존재해도 배신, 불공정, 비겁함을 판단하는 공통 문법까지 사라지는 것은 아니다.</p>
+              </div>
+              <div class="finding">
+                <span class="finding-num">Finding 04</span>
+                <h3>변명은 실패의 자백이다</h3>
+                <p>핑계는 기준이 없다는 선언이 아니라, 자신이 그 기준에 못 미쳤다는 사실을 피하려는 반응이다.</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="opening">
+            <span class="section-label">Opening Scene</span>
+            <h2 class="section-title">루이스는 거대한 이론보다 말싸움에서 시작한다</h2>
+            <p class="lead">
+              “내가 먼저 맡았어.” “약속했잖아.” “네가 내 입장이면 좋겠어?”
+              이런 말은 단순한 감정 배출이 아니다. 우리는 상대가 이미 알고
+              있다고 기대하는 규칙을 꺼내 들며, 자신이 그 규칙의 보호를 받아야
+              한다고 주장한다.
+            </p>
+            <p>
+              루이스가 포착하는 것은 바로 이 장면의 이상함이다. 만약 옳고
+              그름이 오직 취향이라면, 논쟁은 “나는 이것이 싫다”에서 끝나야
+              한다. 그러나 실제의 논쟁은 거의 언제나 “그것은 공정하지 않다”,
+              “그렇게 해서는 안 된다”라는 문장으로 진행된다. 사람들은 단지
+              기분을 말하는 것이 아니라, 마땅함을 주장한다.
+            </p>
+            <p>
+              이처럼 1장은 종교적 권위나 성경 구절보다 먼저 일상의 경험을
+              증거석에 세운다. 저자의 전략은 독자에게 신앙을 선결 조건으로
+              요구하지 않고, 이미 매일 사용하는 도덕 언어의 의미를 끝까지
+              추적하게 만드는 데 있다.
+            </p>
+
+            <blockquote class="pullquote">
+              우리는 상대의 행동이 단지 마음에 들지 않았다고 말하지 않는다.
+              상대도 알아야 한다고 기대하는 행동 기준에 호소한다.
+              <cite>『순전한 기독교』 1부 1장의 핵심 논지 요약</cite>
+            </blockquote>
+          </section>
+
+          <section id="argument">
+            <span class="section-label">Argument Map</span>
+            <h2 class="section-title">논증은 어떻게 움직이는가</h2>
+            <p>
+              루이스의 첫 논증은 추상적 정의에서 현실로 내려오는 방식이 아니라,
+              현실의 언어에서 보이지 않는 규범을 추론하는 귀납적 구조를 따른다.
+            </p>
+
+            <figure class="argument-map" aria-label="인간 본성의 법칙 논증 흐름">
+              <h3>다툼에서 도덕적 실패까지</h3>
+              <div class="flow">
+                <div class="flow-card">
+                  <strong>01 관찰</strong>
+                  <span>사람은 다툴 때 공정성, 약속, 배려를 요구한다.</span>
+                </div>
+                <div class="flow-card">
+                  <strong>02 추론</strong>
+                  <span>서로에게 요구 가능한 행동 기준이 전제되어 있다.</span>
+                </div>
+                <div class="flow-card">
+                  <strong>03 검증</strong>
+                  <span>문화 차이에도 근본적인 도덕 판단은 반복된다.</span>
+                </div>
+                <div class="flow-card">
+                  <strong>04 결론</strong>
+                  <span>인간은 그 기준을 알지만 실제로는 위반하고 변명한다.</span>
+                </div>
+              </div>
+            </figure>
+            <p class="caption">
+              도식: 제공된 장별 독서 노트의 논증 구조를 공개 기사용으로 재구성함.
+            </p>
+          </section>
+
+          <section id="evidence">
+            <span class="section-label">Evidence</span>
+            <h2 class="section-title">세 가지 일상 증거</h2>
+            <div class="evidence">
+              <div class="evidence-card">
+                <span class="tag">Evidence A</span>
+                <div>
+                  <h3>항의의 언어</h3>
+                  <p>
+                    “네가 나한테 이런 일을 당하면 어떻겠어?”라는 표현은 상호성의
+                    규칙을 호소한다. 상대방이 전혀 이해할 수 없는 기준이라면,
+                    이러한 비난은 설득의 힘을 가질 수 없다.
+                  </p>
+                </div>
+              </div>
+              <div class="evidence-card">
+                <span class="tag">Evidence B</span>
+                <div>
+                  <h3>문명 사이의 비교 가능성</h3>
+                  <p>
+                    루이스에게 문화적 다양성은 도덕 판단 자체의 소멸을 뜻하지
+                    않는다. 오히려 어떤 관습이 더 정의롭거나 더 잔혹하다고 평가할
+                    수 있다는 사실이 비교의 기준을 요청한다.
+                  </p>
+                </div>
+              </div>
+              <div class="evidence-card">
+                <span class="tag">Evidence C</span>
+                <div>
+                  <h3>자기 방어의 습관</h3>
+                  <p>
+                    “피곤해서 그랬다”, “상황이 어쩔 수 없었다”는 변명은
+                    잘못이라는 범주를 없애지 않는다. 그것은 오히려 자신만은
+                    예외로 인정받고 싶어 하는 심리를 보여 준다.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="distinction">
+            <span class="section-label">Core Distinction</span>
+            <h2 class="section-title">중력의 법칙과 인간 본성의 법칙은 다르다</h2>
+            <p>
+              루이스는 ‘법칙’이라는 같은 단어가 서로 다른 방식으로 작동한다는
+              점을 분명히 한다. 돌은 떨어지지 않기로 결정할 수 없다. 그러나
+              사람은 약속을 지켜야 한다는 사실을 알면서도 약속을 어길 수 있다.
+              도덕률의 독특성은 바로 이 불복종 가능성에 있다.
+            </p>
+
+            <table aria-label="자연 현상의 법칙과 인간 본성의 법칙 비교">
+              <thead>
+                <tr>
+                  <th>구분</th>
+                  <th>자연 현상의 법칙</th>
+                  <th>인간 본성의 법칙</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>작동 방식</td>
+                  <td>대상이 필연적으로 따른다</td>
+                  <td>인간에게 마땅히 따르라고 요구한다</td>
+                </tr>
+                <tr>
+                  <td>거부 가능성</td>
+                  <td>없다</td>
+                  <td>있다</td>
+                </tr>
+                <tr>
+                  <td>실패의 의미</td>
+                  <td>규칙 위반이라는 개념이 성립하지 않는다</td>
+                  <td>책임, 죄책, 변명의 문제가 발생한다</td>
+                </tr>
+                <tr>
+                  <td>루이스의 관심</td>
+                  <td>세계가 어떻게 움직이는가</td>
+                  <td>인간이 어떻게 살아야 하는가</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>
+              이 구분은 책 전체에서 결정적이다. 도덕률이 단지 행동을 설명하는
+              사실이라면 인간은 실패했다고 말할 수 없다. 하지만 도덕률이 인간을
+              향한 요구라면, 우리는 그 요구를 알고도 이루지 못하는 존재가 된다.
+            </p>
+          </section>
+
+          <section id="relativism">
+            <span class="section-label">Debate</span>
+            <h2 class="section-title">도덕 상대주의와 부딪히는 지점</h2>
+            <p>
+              “시대와 사회에 따라 옳고 그름은 달라진다”는 반론은 이 논증에
+              가장 먼저 제기될 수 있다. 루이스는 관습의 차이를 부정하지 않는다.
+              그가 부정하는 것은 차이가 있다는 사실만으로 모든 판단이 단순한
+              취향이 된다는 결론이다.
+            </p>
+
+            <table aria-label="도덕 상대주의와 루이스의 응답">
+              <thead>
+                <tr>
+                  <th>질문</th>
+                  <th>상대주의적 해석</th>
+                  <th>루이스의 응답</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>문화 차이</td>
+                  <td>도덕은 사회가 만든 규칙이다</td>
+                  <td>세부 관습은 달라도 충성, 정의, 용기 같은 판단 축은 반복된다</td>
+                </tr>
+                <tr>
+                  <td>도덕적 비판</td>
+                  <td>한 사회가 다른 사회를 재단할 수 없다</td>
+                  <td>어떤 도덕을 더 낫다고 말하는 순간 비교 기준을 이미 인정한다</td>
+                </tr>
+                <tr>
+                  <td>도덕적 진보</td>
+                  <td>변화일 뿐 개선이라고 부를 수 없다</td>
+                  <td>개선이라는 말에는 더 참된 기준을 향한다는 뜻이 포함된다</td>
+                </tr>
+                <tr>
+                  <td>본능 설명</td>
+                  <td>협력은 생존 전략의 결과다</td>
+                  <td>충돌하는 본능 가운데 무엇을 따를지 판단하는 기준은 별도로 설명되어야 한다</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <blockquote class="pullquote">
+              구구단이 취향의 문제가 아니듯, 루이스에게 옳고 그름 역시
+              단순한 기호나 관습만으로 환원되지 않는다.
+              <cite>장별 노트에 기록된 원문 취지의 편집 요약</cite>
+            </blockquote>
+          </section>
+
+          <section id="excuses">
+            <span class="section-label">The Turning Point</span>
+            <h2 class="section-title">가장 날카로운 증거는 우리의 변명이다</h2>
+            <p class="lead">
+              루이스의 논증에서 가장 개인적인 대목은 다른 사람의 잘못이 아니라,
+              내 잘못 뒤에 따라오는 해명의 언어다.
+            </p>
+            <p>
+              우리는 자신이 기준을 위반하지 않았다고 완전히 선언하기보다,
+              왜 이번에는 책임을 덜 져도 되는지를 설명하려 한다. 피곤했다,
+              상처를 받았다, 먼저 잘못한 사람이 따로 있었다고 말한다. 이러한
+              말들은 도덕적 요구의 존재를 지워 버리지 않는다. 오히려 우리는
+              그 요구를 충분히 알고 있으며, 그것이 자신에게 적용될 때 부담을
+              느낀다는 사실을 보여 준다.
+            </p>
+            <p>
+              여기서 장의 결론이 형성된다. 인간은 마땅한 행동 방식이 있다고
+              생각한다. 그러나 바로 그 인간은 실제로 자신이 요구하는 방식대로
+              일관되게 살지 못한다. 이 이중 사실은 루이스가 이후 기독교의 진단과
+              구원의 필요성으로 이동하기 위한 첫 관문이다.
+            </p>
+
+            <div class="note-box">
+              <h3>한 문장 요약</h3>
+              <p>
+                인간은 옳음의 기준을 알고 있기 때문에 항의하며, 그 기준을
+                어기기 때문에 변명한다.
+              </p>
+            </div>
+          </section>
+
+          <section id="theology">
+            <span class="section-label">Theological Context</span>
+            <h2 class="section-title">자연법의 긴 전통 속에서 읽기</h2>
+            <p>
+              제공된 노트는 루이스의 ‘인간 본성의 법칙’을 토마스 아퀴나스의
+              자연법 전통 및 로마서 2장의 양심 논의와 연결한다. 이 연결은
+              루이스가 20세기의 일상 언어로 제시한 논증이 더 오래된 신학적
+              질문과 만나는 지점을 보여 준다.
+            </p>
+
+            <table aria-label="루이스와 아퀴나스의 자연법 연결">
+              <thead>
+                <tr>
+                  <th>관점</th>
+                  <th>토마스 아퀴나스의 자연법</th>
+                  <th>C. S. 루이스의 설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>도덕의 근원</td>
+                  <td>영원법에 참여하는 인간 이성의 도덕 인식</td>
+                  <td>인간이라면 알아보는 옳고 그름의 법칙</td>
+                </tr>
+                <tr>
+                  <td>인식 방식</td>
+                  <td>이성을 통해 기본 원리를 파악한다</td>
+                  <td>다툼과 양심, 변명의 경험에서 드러난다</td>
+                </tr>
+                <tr>
+                  <td>인간의 문제</td>
+                  <td>선을 알면서도 죄와 습관으로 왜곡할 수 있다</td>
+                  <td>마땅함을 인정하면서도 실제로 지키지 못한다</td>
+                </tr>
+                <tr>
+                  <td>신학적 방향</td>
+                  <td>신법과 은혜의 필요성으로 이어진다</td>
+                  <td>타락과 구원의 논의를 준비한다</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="note-box">
+              <h3>성경과의 접점</h3>
+              <p>
+                노트는 로마서 2장 14-15절의 “마음에 새겨진” 율법과 양심의
+                증언을 루이스의 도덕률 설명과 나란히 배치한다. 이는 본 장의
+                논증을 성경 본문 자체의 직접 해설이라기보다, 자연법과 양심을
+                둘러싼 기독교적 사유의 한 현대적 변증으로 읽게 한다.
+              </p>
+            </div>
+          </section>
+
+          <section id="critique">
+            <span class="section-label">Critical Reflection</span>
+            <h2 class="section-title">설득력과 함께 남는 질문들</h2>
+            <p>
+              이 장의 힘은 독자를 추상 논쟁이 아니라 자신의 경험으로 데려간다는
+              데 있다. 다만 공개적 연구 보고서로 읽을 때에는 논증이 열어 두는
+              반론 역시 함께 기록해야 한다.
+            </p>
+
+            <div class="critical">
+              <article>
+                <h3>변명은 도덕 실재의 증거인가</h3>
+                <p>
+                  루이스는 변명이 내면의 도덕률을 드러낸다고 읽는다. 반면
+                  진화심리학 또는 사회심리학은 변명을 평판 관리와 집단 내
+                  생존 전략으로 설명할 수 있다. 도덕 감각의 기원과 도덕적
+                  진리의 존재는 구별해 논의할 필요가 있다.
+                </p>
+              </article>
+              <article>
+                <h3>보편성의 범위는 어디까지인가</h3>
+                <p>
+                  역사에는 명예살인, 인신공양, 계층별 차등 윤리처럼 충격적인
+                  도덕 차이가 있었다. 루이스의 주장이 유지되려면, 변하지 않는
+                  핵심 원칙과 문화적으로 달라지는 적용 방식을 더 정교하게
+                  분리해야 한다.
+                </p>
+              </article>
+            </div>
+          </section>
+
+          <section id="implications">
+            <span class="section-label">Implications</span>
+            <h2 class="section-title">오늘의 독자에게 남는 세 가지 요청</h2>
+            <ol class="application">
+              <li>
+                <strong>분노가 요구하는 기준을 확인하라.</strong>
+                억울함을 느끼는 순간, 나는 무엇이 마땅하다고 믿고 있는가.
+                갈등은 상대의 문제만이 아니라 나의 윤리적 전제를 드러낸다.
+              </li>
+              <li>
+                <strong>변명의 문장을 그대로 지나치지 말라.</strong>
+                사정 설명이 책임 회피가 되는 지점을 살펴보면, 내가 인정하면서도
+                지키지 못하는 기준이 무엇인지 더 선명하게 보인다.
+              </li>
+              <li>
+                <strong>도덕적 진단을 은혜의 언어와 연결해 보라.</strong>
+                루이스의 전체 기획에서 실패의 인정은 자기혐오의 끝이 아니라,
+                인간이 스스로 완전해질 수 없다는 사실과 구원의 필요성을
+                이해하는 시작이다.
+              </li>
+            </ol>
+          </section>
+
+          <section id="discussion">
+            <span class="section-label">For Discussion</span>
+            <h2 class="section-title">읽은 뒤 함께 물을 질문</h2>
+            <table aria-label="토론 질문">
+              <thead>
+                <tr>
+                  <th>주제</th>
+                  <th>질문</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>다툼</td>
+                  <td>최근의 갈등에서 나는 어떤 ‘모두가 알아야 할 기준’에 호소했는가?</td>
+                </tr>
+                <tr>
+                  <td>자유</td>
+                  <td>도덕률을 어길 수 있다는 사실은 인간의 존엄과 책임에 무엇을 더하는가?</td>
+                </tr>
+                <tr>
+                  <td>상대주의</td>
+                  <td>문화적 차이를 존중하면서도 잔혹함을 비판하려면 어떤 기준이 필요한가?</td>
+                </tr>
+                <tr>
+                  <td>변명</td>
+                  <td>최근 내가 사용한 가장 설득력 있는 변명은 어떤 기준을 이미 인정하고 있었는가?</td>
+                </tr>
+                <tr>
+                  <td>신앙</td>
+                  <td>도덕적 실패의 인식이 왜 기독교의 은혜 논의보다 먼저 등장해야 하는가?</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <aside class="share-card" aria-label="공유용 요약">
+            <span class="label">Share Framing</span>
+            <h2>우리는 도덕을 믿지 않는다고 말할 수 있지만, 부당한 일을 당하는 순간 이미 도덕의 언어를 사용한다.</h2>
+            <p>
+              C. S. 루이스의 『순전한 기독교』 첫 장은 다툼과 변명을 통해
+              인간이 알고도 지키지 못하는 ‘옳고 그름의 법칙’을 추적한다.
+            </p>
+          </aside>
+
+          <section class="source-notes" id="sources">
+            <span class="section-label">Source Notes</span>
+            <h2 class="section-title">자료와 편집 범위</h2>
+            <ul class="sources">
+              <li>
+                <strong>주요 텍스트:</strong>
+                C. S. 루이스, 『순전한 기독교』 1부 1장
+                「인간 본성의 법칙」에 대한 제공 독서 노트.
+              </li>
+              <li>
+                <strong>보조 맥락:</strong>
+                제공된 「순전한기독교 요약」 노트의 자연법, 도덕률,
+                인간 실패 및 구원 구조 설명.
+              </li>
+              <li>
+                <strong>신학 연결:</strong>
+                제공 노트에 포함된 토마스 아퀴나스의 자연법 요약과
+                로마서 2장 14-15절 연결 설명.
+              </li>
+              <li>
+                <strong>편집 원칙:</strong>
+                본문은 원 노트의 주장과 비판적 검토를 중심으로 재구성했으며,
+                주변 맥락 노트는 해당 장의 위치와 신학적 연계를 밝히는 범위에서만 활용했다.
+              </li>
+            </ul>
+          </section>
+
+          <section class="closing" id="ending">
+            <span class="section-label">Ending</span>
+            <h2 class="section-title">옳음을 말하는 입술과 실패하는 삶 사이</h2>
+            <p>
+              루이스의 첫 장은 우리에게 낯선 교리를 먼저 요구하지 않는다.
+              대신 우리가 이미 하고 있는 말을 정직하게 들어 보라고 권한다.
+              왜 우리는 불공정을 항의하는가. 왜 우리는 실패 뒤에 설명을 붙이는가.
+              그 질문을 외면하지 않을 때, 인간은 자신이 단지 규칙을 만드는 존재가
+              아니라 규칙 앞에 서 있는 존재임을 발견한다.
+            </p>
+            <p>
+              그리고 바로 그 발견이 『순전한 기독교』의 다음 질문을 연다.
+              옳음을 알면서도 온전히 살아내지 못하는 인간에게, 무엇이 필요한가.
+            </p>
+          </section>
+        </article>
+
+        <nav class="toc" aria-label="목차">
+          <h2>Contents</h2>
+          <a href="#abstract">초록</a>
+          <a href="#findings">핵심 발견</a>
+          <a href="#opening">일상의 출발점</a>
+          <a href="#argument">논증 구조</a>
+          <a href="#evidence">증거 장면</a>
+          <a href="#distinction">두 종류의 법칙</a>
+          <a href="#relativism">상대주의 논쟁</a>
+          <a href="#theology">신학적 연결</a>
+          <a href="#critique">비판적 검토</a>
+          <a href="#implications">오늘의 함의</a>
+          <a href="#sources">자료 메모</a>
+        </nav>
+      </div>
+    </main>
+
+    <footer>
+      <span>Research report · Editorial blog edition</span>
+      <span>주제: 변증 · 자연법 · 도덕철학 · 기독교 신학</span>
+    </footer>
+  </div>
+</body>
+</html>
