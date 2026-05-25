@@ -1,0 +1,1066 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  
+  
+  <title>1장 고린도후서 10-13장 오리엔테이션 | 그리스도인의 성숙모델</title>
+  
+  <style>
+    :root {
+      --bg: #f6f3ed;
+      --paper: #fffdf9;
+      --ink: #25231f;
+      --muted: #6d675e;
+      --line: #ddd5c8;
+      --line-strong: #c7bcaa;
+      --accent: #63513c;
+      --accent-soft: #eee6d8;
+      --gold: #9b773c;
+      --mark: #fff1a9;
+      --danger: #a33c2f;
+      --danger-bg: #fff1ee;
+      --quote: #f2ede4;
+      --shadow: 0 8px 26px rgba(49, 39, 26, 0.06);
+      --radius: 16px;
+      --content: 820px;
+      --nav: 286px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg);
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--bg);
+      font-family: "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+      line-height: 1.78;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-color: #baab95;
+      text-underline-offset: 0.18em;
+    }
+
+    a:hover { color: var(--gold); }
+
+    p { margin: 0 0 1rem; }
+
+    em { color: #514a41; }
+
+    strong { font-weight: 700; }
+
+    mark {
+      background: var(--mark);
+      color: inherit;
+      border-radius: 0.22em;
+      padding: 0.04em 0.14em;
+    }
+
+    .emphasis-red {
+      color: var(--danger);
+      background: var(--danger-bg);
+      border-radius: 0.26rem;
+      padding: 0.06rem 0.18rem;
+    }
+
+    .masthead {
+      background:
+        radial-gradient(circle at 86% 10%, rgba(155, 119, 60, 0.13), transparent 32%),
+        linear-gradient(130deg, #fffdf8 0%, #eee7db 100%);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .masthead-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 3rem;
+    }
+
+    .eyebrow {
+      margin: 0 0 0.7rem;
+      color: var(--gold);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 920px;
+      margin: 0;
+      font-family: "Noto Serif KR", "Nanum Myeongjo", "Batang", Georgia, serif;
+      font-size: clamp(2.05rem, 4.6vw, 3.15rem);
+      font-weight: 700;
+      line-height: 1.28;
+      letter-spacing: -0.035em;
+    }
+
+    .subtitle {
+      max-width: 760px;
+      margin: 1.1rem 0 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .quick-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-top: 1.7rem;
+    }
+
+    .quick-links a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 2.45rem;
+      padding: 0.42rem 0.9rem;
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      background: rgba(255, 253, 249, 0.75);
+      color: var(--accent);
+      font-size: 0.93rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .page {
+      display: grid;
+      grid-template-columns: var(--nav) minmax(0, var(--content));
+      justify-content: center;
+      gap: 2.5rem;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4.5rem;
+    }
+
+    .sidebar {
+      align-self: start;
+      position: sticky;
+      top: 1.25rem;
+    }
+
+    .panel {
+      margin-bottom: 1rem;
+      padding: 1.15rem 1.1rem;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .panel h2 {
+      margin: 0 0 0.9rem;
+      font-size: 0.86rem;
+      color: var(--gold);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .toc ol {
+      margin: 0;
+      padding-left: 1.2rem;
+      color: var(--muted);
+      font-size: 0.91rem;
+      line-height: 1.55;
+    }
+
+    .toc li { margin: 0.35rem 0; }
+
+    .toc a {
+      color: #50483e;
+      text-decoration: none;
+    }
+
+    .toc a:hover { text-decoration: underline; }
+
+    .meta-list {
+      display: grid;
+      gap: 0.65rem;
+      margin: 0;
+    }
+
+    .meta-list div {
+      display: grid;
+      gap: 0.08rem;
+    }
+
+    .meta-list dt {
+      color: var(--muted);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .meta-list dd {
+      margin: 0;
+      font-size: 0.91rem;
+      line-height: 1.5;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.38rem;
+      margin-top: 0.9rem;
+    }
+
+    .tag {
+      padding: 0.17rem 0.48rem;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border-radius: 999px;
+      font-size: 0.76rem;
+    }
+
+    main {
+      min-width: 0;
+    }
+
+    .intro,
+    .section,
+    .footnotes {
+      padding: clamp(1.25rem, 3vw, 2rem);
+      margin-bottom: 1.15rem;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .intro {
+      font-size: 1.02rem;
+      border-top: 3px solid var(--gold);
+    }
+
+    .section h2,
+    .footnotes > h2 {
+      margin: 0 0 1.12rem;
+      padding-bottom: 0.7rem;
+      border-bottom: 1px solid var(--line);
+      font-family: "Noto Serif KR", "Nanum Myeongjo", "Batang", Georgia, serif;
+      font-size: clamp(1.22rem, 2.7vw, 1.52rem);
+      line-height: 1.4;
+      letter-spacing: -0.025em;
+    }
+
+    .section h3,
+    .footnotes h3 {
+      margin: 1.55rem 0 0.65rem;
+      font-size: 1.08rem;
+      line-height: 1.5;
+      letter-spacing: -0.018em;
+    }
+
+    .section h3:first-of-type { margin-top: 0.2rem; }
+
+    ul, ol {
+      margin: 0.55rem 0 1rem;
+      padding-left: 1.4rem;
+    }
+
+    li { margin: 0.42rem 0; }
+
+    li::marker { color: var(--gold); }
+
+    .numbered-points > li {
+      margin: 0.85rem 0;
+      padding-left: 0.18rem;
+    }
+
+    .argument-map {
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .argument-item {
+      padding: 0.9rem 1rem;
+      background: #faf7f1;
+      border-left: 3px solid #d1bc93;
+      border-radius: 0 10px 10px 0;
+    }
+
+    .argument-item p:last-child,
+    .argument-item ol:last-child {
+      margin-bottom: 0;
+    }
+
+    .term-grid {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .term {
+      padding: 0.95rem 1rem;
+      background: #faf7f1;
+      border: 1px solid #e9e0d2;
+      border-radius: 12px;
+    }
+
+    .term strong {
+      display: block;
+      margin-bottom: 0.22rem;
+      color: var(--accent);
+    }
+
+    .term p { margin: 0; }
+
+    .quotation {
+      margin: 1rem 0;
+      padding: 1.05rem 1.15rem 0.95rem;
+      background: var(--quote);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 12px 12px 0;
+    }
+
+    .quotation blockquote {
+      margin: 0 0 0.6rem;
+      font-family: Georgia, "Times New Roman", serif;
+      color: #373228;
+      font-size: 1rem;
+      line-height: 1.72;
+    }
+
+    .quotation p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: #514a41;
+    }
+
+    .notice {
+      margin: 0.85rem 0;
+      padding: 1rem 1.08rem;
+      background: var(--danger-bg);
+      border: 1px solid #eed0c9;
+      border-radius: 12px;
+    }
+
+    .notice p:last-child { margin-bottom: 0; }
+
+    .expand-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .expansion-card {
+      padding: 1.05rem 1.1rem;
+      background: #faf7f1;
+      border: 1px solid #e6ddcf;
+      border-radius: 12px;
+    }
+
+    .expansion-card h3 {
+      margin-top: 0;
+    }
+
+    .completion {
+      margin-top: 1rem;
+      padding: 1.05rem 1.2rem;
+      color: #4d4335;
+      background: var(--accent-soft);
+      border-radius: 12px;
+      font-weight: 600;
+    }
+
+    .footnotes {
+      color: #3b3730;
+    }
+
+    .footnote-entry {
+      scroll-margin-top: 1rem;
+      padding-top: 0.2rem;
+    }
+
+    .footnote-entry + .footnote-entry {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .footnote-label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 2rem;
+      height: 2rem;
+      margin-right: 0.45rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .subtle-rule {
+      height: 1px;
+      margin: 1.2rem 0;
+      border: 0;
+      background: var(--line);
+    }
+
+    .backlink {
+      font-size: 0.86rem;
+      white-space: nowrap;
+    }
+
+    footer {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 1.5rem 3rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+      text-align: center;
+    }
+
+    section[id],
+    aside[id] {
+      scroll-margin-top: 1rem;
+    }
+
+    @media (max-width: 970px) {
+      .page {
+        display: block;
+        max-width: var(--content);
+      }
+
+      .sidebar {
+        position: static;
+        margin-bottom: 1.25rem;
+      }
+
+      .toc ol {
+        columns: 2;
+        column-gap: 1.4rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      body { line-height: 1.72; }
+
+      .masthead-inner {
+        padding: 2.2rem 1rem 2rem;
+      }
+
+      .page {
+        padding: 1rem 0.75rem 3rem;
+      }
+
+      .intro,
+      .section,
+      .footnotes {
+        padding: 1.1rem 1rem;
+        border-radius: 13px;
+      }
+
+      .toc ol { columns: 1; }
+
+      h1 { font-size: 1.88rem; }
+
+      .quick-links a {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    @media print {
+      :root { --bg: #fff; --paper: #fff; }
+
+      body { background: #fff; }
+
+      .sidebar { position: static; }
+
+      .page {
+        display: block;
+        padding: 0;
+      }
+
+      .panel,
+      .intro,
+      .section,
+      .footnotes {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+
+      .quick-links { display: none; }
+
+      a { color: inherit; }
+    }
+  </style>
+<meta property="og:type" content="article">
+<meta property="og:title" content="1장 고린도후서 10-13장 오리엔테이션">
+<meta property="og:description" content="[[성숙모델 목차|목차]] | [[그리스도의 성숙 요약|전체 요약]] 요청하신 정밀 분석 지침에 따라, D. A. 카슨의 『A Model of Christian Maturity』 제1장(Orientation to 2 Corinthians 1013) 에 대한 심층 분석을 시작합니다. 1. 【장 개요】 핵심 주제 및 저자의 ">
+<meta property="og:url" content="https://teentopia00.github.io/teendocs/s/d03tbk/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="1장 고린도후서 10-13장 오리엔테이션">
+<meta name="twitter:description" content="[[성숙모델 목차|목차]] | [[그리스도의 성숙 요약|전체 요약]] 요청하신 정밀 분석 지침에 따라, D. A. 카슨의 『A Model of Christian Maturity』 제1장(Orientation to 2 Corinthians 1013) 에 대한 심층 분석을 시작합니다. 1. 【장 개요】 핵심 주제 및 저자의 ">
+<link rel="canonical" href="https://teentopia00.github.io/teendocs/s/d03tbk/">
+</head>
+<body>
+  <header class="masthead" id="top">
+    <div class="masthead-inner">
+      <p class="eyebrow">독서 노트 · 장별 분석</p>
+      <h1>1장 고린도후서 10-13장 오리엔테이션</h1>
+      <p class="subtitle">
+        <em>A Model of Christian Maturity: An Exposition of 2 Corinthians 10-13</em>
+        · D. A. Carson · 중심본문: 고린도후서 10-13장
+      </p>
+      <nav class="quick-links" aria-label="연결된 노트">
+        <a href="성숙모델%20목차.html">목차</a>
+        <a href="그리스도의%20성숙%20요약.html">전체 요약</a>
+        <a href="#contents">이 문서의 목차</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page">
+    <aside class="sidebar" aria-label="문서 탐색 및 서지 정보">
+      <nav class="panel toc" id="contents" aria-labelledby="contents-title">
+        <h2 id="contents-title">Contents</h2>
+        <ol>
+          <li><a href="#overview">장 개요</a></li>
+          <li><a href="#argument">논증 구조</a></li>
+          <li><a href="#issues">핵심 논점 &amp; 전개</a></li>
+          <li><a href="#essence">원문 핵심 인용</a></li>
+          <li><a href="#keywords">핵심 개념 &amp; 키워드</a></li>
+          <li><a href="#structure">구조적 특징</a></li>
+          <li><a href="#connection">전체 흐름과의 연결</a></li>
+          <li><a href="#reflection">비판적 검토</a></li>
+          <li><a href="#application">독자 적용 포인트</a></li>
+          <li><a href="#supplement">누락 검토 및 보완</a></li>
+          <li><a href="#extension">확장 섹션</a></li>
+          <li><a href="#footnotes">보충 설명</a></li>
+        </ol>
+      </nav>
+
+      <section class="panel" aria-labelledby="metadata-title">
+        <h2 id="metadata-title">Metadata</h2>
+        <dl class="meta-list">
+          <div>
+            <dt>책 제목</dt>
+            <dd><em>A Model of Christian Maturity: An Exposition of 2 Corinthians 10-13</em></dd>
+          </div>
+          <div>
+            <dt>저자</dt>
+            <dd>D. A. Carson</dd>
+          </div>
+          <div>
+            <dt>출판사 · 판본</dt>
+            <dd>Baker Books · 2007</dd>
+          </div>
+          <div>
+            <dt>장</dt>
+            <dd>1 · <em>Orientation to 2 Corinthians 10-13</em></dd>
+          </div>
+          <div>
+            <dt>중심본문</dt>
+            <dd>고린도후서 10-13장</dd>
+          </div>
+          <div>
+            <dt>시작 페이지</dt>
+            <dd>13</dd>
+          </div>
+          <div>
+            <dt>분류</dt>
+            <dd>신앙생활 · book-note · chapter</dd>
+          </div>
+        </dl>
+        <div class="tags" aria-label="태그">
+          <span class="tag">책</span>
+          <span class="tag">독서노트</span>
+          <span class="tag">신앙생활</span>
+          <span class="tag">그리스도인의-성숙모델</span>
+          <span class="tag">장별노트</span>
+          <span class="tag">고린도후서</span>
+          <span class="tag">성숙</span>
+        </div>
+      </section>
+    </aside>
+
+    <main>
+      <article>
+        <div class="intro">
+          <p>
+            요청하신 정밀 분석 지침에 따라, D. A. 카슨의
+            『<em>A Model of Christian Maturity</em>』
+            <strong>제1장(<em>Orientation to 2 Corinthians 10-13</em>)</strong>에 대한 심층 분석을 시작합니다.
+          </p>
+        </div>
+
+        <section class="section" id="overview" aria-labelledby="overview-title">
+          <h2 id="overview-title">1. 【장 개요】</h2>
+          <ul>
+            <li>
+              <strong>핵심 주제 및 저자의 의도:</strong>
+              이 장은 고린도후서 10-13장의 문학적, 역사적 배경을 재구성하고,
+              바울을 대적했던 <mark>거짓 사도들의 정체와 그들이 가진 가치관(승리주의)을 규명</mark>합니다.
+              저자는 이 본문이 단순히 바울의 개인적 자기 변호가 아니라, 십자가의 길을 걷는 참된 리더십과
+              세속적 성공주의를 추구하는 가짜 리더십 간의 세계관 충돌임을 보여주고자 합니다.
+            </li>
+            <li>
+              <strong>책 전체에서의 역할:</strong>
+              이 장은 일종의 ‘나침반’ 역할을 합니다. 반대자들이 채택한 헬라파 소피스트들의 수사학적,
+              상업적 기준을 이해하지 못하면, 이후 2~8장에서 전개될 바울의 깊은 역설
+              (약함 속의 자랑)과 맹렬한 풍자를 독자가 오해할 수 있기 때문입니다.
+            </li>
+          </ul>
+        </section>
+
+        <section class="section" id="argument" aria-labelledby="argument-title">
+          <h2 id="argument-title">2. 【논증 구조 (Argument Map)】</h2>
+          <div class="argument-map">
+            <div class="argument-item">
+              <p>
+                <strong>핵심 주장 (Claim):</strong>
+                고린도후서 10-13장은 십자가의 도를 훼손하는 세속적 리더십(승리주의)에 맞서,
+                참된 기독교적 성숙과 리더십의 본질을 보여주는 최고의 사례 연구(case study)이다.
+              </p>
+            </div>
+            <div class="argument-item">
+              <p>
+                <strong>근거 (Evidence):</strong>
+                고린도후서 1~9장과 10~13장 사이에 나타나는 극단적인 어조의 변화
+                (위로/기쁨 → 풍자/분노)와, 반대자들이 내세웠던 ‘자기 추천, 화려한 수사학,
+                재정적 요구’라는 세속적 기준들.
+              </p>
+            </div>
+            <div class="argument-item">
+              <p><strong>전개 방식 (논리 흐름):</strong></p>
+              <ol>
+                <li><strong>동기 부여:</strong> <span class="emphasis-red">왜 고린도후서 10-13장인가? (바울의 마음과 리더십 스타일을 가장 잘 보여줌)</span></li>
+                <li><strong>역사적 재구성:</strong> 10-13장의 거친 어조는 어디서 기인했는가? (디도의 좋은 보고 이후, 다시 악화된 고린도 교회의 상황을 전해 들었기 때문이라는 가설 도출)</li>
+                <li><strong>적의 정체 규명:</strong> 반대자들은 누구인가? (소피스트의 세속적 잣대에 물든 유대주의자들)</li>
+                <li><strong>결론 도출:</strong> 이 본문을 통해 우리가 배워야 할 5가지 핵심 원리 제시.</li>
+              </ol>
+            </div>
+            <div class="argument-item">
+              <p>
+                <strong>결론 (Conclusion):</strong>
+                고린도 교회가 겪은 위기는 오늘날 현대 교회가 직면한 세속화
+                (성공 공식, 번영 신학)의 문제와 정확히 맞닿아 있으며,
+                바울의 모범을 통해 우리는 참된 영적 분별력을 회복해야 한다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="issues" aria-labelledby="issues-title">
+          <h2 id="issues-title">3. 【핵심 논점 &amp; 전개】</h2>
+          <ol class="numbered-points">
+            <li>
+              <strong>어조의 급격한 변화와 역사적 배경</strong>
+              <p>
+                <em>설명/근거:</em> 1-9장에서는 기쁨과 확신이 넘치지만, 10-13장에서는 극심한 풍자와 분노가 등장합니다.
+                <span class="emphasis-red">저자는 바울이 1-9장을 마무리할 무렵, 침입자(거짓 사도)들에 의해 고린도 교회가 다시 미혹되었다는
+                ‘새로운 나쁜 소식(additional news, bad news)’을 접했고, 이에 즉각적으로 어조를 바꾸어 10-13장을 덧붙여 썼다는 논리를 전개합니다.</span>
+              </p>
+            </li>
+            <li>
+              <strong>반대자들의 공격의 본질 (소피스트적 잣대)</strong>
+              <p>
+                <em>설명/근거:</em> 적들은 바울의 리더십을 세 가지 측면에서 조롱했습니다.
+                <mark>편지는 무게가 있으나 대면하면 유약하다(10:10), 추천서가 없다(10:12), 그리고 사례비를 받지 않는다(11:7).
+                이는 당대 헬라 사회의 프로 연설가들인 ‘소피스트(Sophists)’들의 기준이었습니다.
+                그들은 수사학적 기교를 뽐내고 큰돈을 받는 것을 권위의 척도로 삼았습니다.</mark>
+                <sup><a href="#fn-2" id="ref-2" aria-label="각주 2">[2]</a></sup>
+              </p>
+            </li>
+            <li>
+              <strong>침입자들의 정체 (유대주의자 + 헬라적 승리주의)</strong>
+              <p>
+                <em>설명/근거:</em> 저자는 이들이 팔레스타인에서 온 유대주의자들이었지만,
+                헬라적 세계관(소피스트의 태도)에 깊이 동화된 자들이었다고 분석합니다.
+                그들은 유대교적 우월감에 세속적 자기 과시를 결합하여,
+                바울이 전한 십자가의 복음(“다른 예수”)을 변질시켰습니다.
+              </p>
+            </li>
+          </ol>
+        </section>
+
+        <section class="section" id="essence" aria-labelledby="essence-title">
+          <h2 id="essence-title">4. 【원문 핵심 인용 (The Essence)】</h2>
+
+          <div class="quotation">
+            <blockquote lang="en">
+              “Close to the heart of the business of discipling another in the Christian faith is the self-discipline of serving as a model to the apprentice.”
+            </blockquote>
+            <p>
+              <strong>의미/역할:</strong> 기독교 제자도의 핵심은 가르치는 자 스스로가 모범을 보이는 자기 훈련에 있음을 선언하며,
+              바울의 생애를 연구해야 하는 정당성을 부여합니다.
+            </p>
+          </div>
+
+          <div class="quotation">
+            <blockquote lang="en">
+              “At the root of these multifaceted attacks lies the problem of boasting (a word repeated many times in these four chapters).”
+            </blockquote>
+            <p>
+              <strong>의미/역할:</strong> 바울이 직면한 모든 공격의 기저에는 세속적인 ‘자랑(boasting)’이라는 본질적 죄악이
+              도사리고 있음을 지적하며, 이후 장들의 핵심 키워드를 제시합니다.
+            </p>
+          </div>
+
+          <div class="quotation">
+            <blockquote lang="en">
+              “Modern ‘Christian’ success formulas... reveal more about triumphalism than the way of the cross.”
+            </blockquote>
+            <p>
+              <strong>의미/역할:</strong> 현대 교회의 번영 신학이나 성공 공식들이 사실상 십자가의 길이 아니라,
+              고린도의 거짓 사도들이 추구했던 이교도적인 ‘승리주의’의 발현임을 날카롭게 비판하는 문장입니다.
+            </p>
+          </div>
+        </section>
+
+        <section class="section" id="keywords" aria-labelledby="keywords-title">
+          <h2 id="keywords-title">5. 【핵심 개념 &amp; 키워드 분석】</h2>
+          <div class="term-grid">
+            <div class="term">
+              <strong>Triumphalism (승리주의)</strong>
+              <p>
+                고난, 십자가, 약함을 배제하고 인간적인 화려함, 성공, 기적, 물질적 축복만을 권위의 척도로 삼는
+                세속적 세계관. 저자가 가장 경계하는 핵심 개념입니다.
+              </p>
+            </div>
+            <div class="term">
+              <strong>Sophists (소피스트)</strong>
+              <p>
+                고대 헬라의 직업적 수사학자들. 대중을 사로잡는 언변, 화려한 자기 추천서, 고액의 강사료를 통해
+                자신의 가치를 증명하는 자들로, 거짓 사도들의 롤모델이 되었습니다.
+              </p>
+            </div>
+            <div class="term">
+              <strong>Judaizing (유대주의화)</strong>
+              <p>
+                그리스도를 믿는 믿음에 더하여(in addition to Christ) 구원의 조건으로 율법이나 다른 요소들을 강요함으로써,
+                은혜의 근간을 파괴하는 이단적 행태.
+              </p>
+            </div>
+            <div class="term">
+              <strong>개념 간 관계</strong>
+              <p>
+                거짓 사도들(Judaizers)은 교회 내에 소피스트(Sophists)의 기준을 도입하여
+                승리주의(Triumphalism)적 리더십을 구축했고, 이에 맞서 바울은 십자가의 길
+                (약함 속의 강함)로 대항합니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="structure" aria-labelledby="structure-title">
+          <h2 id="structure-title">6. 【구조적 특징 분석】</h2>
+          <ul>
+            <li>
+              <strong>점진적 진단 (현상 → 본질):</strong>
+              본문의 텍스트적 모순(어조 변화)이라는 표면적 현상을 먼저 다루고,
+              이어서 반대자들의 행태(수사학, 사례비)를 분석한 뒤, 가장 깊은 층위인
+              세계관의 충돌(복음 vs 이교도적 승리주의)로 논리를 끌고 들어가는 방식을 취합니다.
+            </li>
+            <li>
+              <strong>현대적 평행선 강조:</strong>
+              저자는 고린도 교회의 상황을 고대 문서로 취급하지 않고,
+              “Modern Christian success formulas”, “Madison Avenue techniques”
+              (현대 광고/마케팅 기법) 등의 표현을 통해 의도적으로 현대 복음주의 교회의 타락상과
+              강하게 대비시킵니다.<sup><a href="#fn-1" id="ref-1" aria-label="각주 1">[1]</a></sup>
+            </li>
+          </ul>
+        </section>
+
+        <section class="section" id="connection" aria-labelledby="connection-title">
+          <h2 id="connection-title">7. 【이전 장 및 전체 흐름과의 연결】</h2>
+          <p>
+            이 장은 서론격 오리엔테이션으로, 전체 책의 기초를 놓습니다. 독자는 이 장을 통해 바울이
+            почему(왜) 10장부터 갑자기 자신을 ‘어리석은 자’라 칭하며 풍자적 자기 자랑을 시작하는지
+            (수사학적 전략), 그리고 바울이 궁극적으로 타파하려는 견고한 진(worldview)이 무엇인지를
+            장착하고 본격적인 주해(2장~)로 넘어가게 됩니다.
+          </p>
+        </section>
+
+        <section class="section" id="reflection" aria-labelledby="reflection-title">
+          <h2 id="reflection-title">8. 【비판적 검토 (Critical Reflection)】</h2>
+          <div class="notice">
+            <p>
+              <strong>논리적 약점 (데이터 한계):</strong>
+              고린도후서 1-9장과 10-13장이 어떻게 하나의 서신으로 묶였는지 설명하기 위해,
+              <span class="emphasis-red">저자는 바울이 편지 후반부를 쓰기 직전에 ‘새로운 나쁜 소식(new information)’을 들었다고 추정합니다.
+              저자 스스로도 고린도후서 어디에도 바울이 새로운 소식을 들었다는 “명시적인 언급(nowhere explicitly states)”이 없음을 인정하며,
+              이 주장이 사본학적 증거가 결여된 논리적 추측(Intelligent speculation)에 기대고 있다는 한계를 가집니다.</span>
+            </p>
+          </div>
+        </section>
+
+        <section class="section" id="application" aria-labelledby="application-title">
+          <h2 id="application-title">9. 【독자 적용 포인트】</h2>
+          <ol class="numbered-points">
+            <li>
+              <strong>목회자 청빙 및 리더십 평가의 기준 수정 (조직적 차원):</strong>
+              오늘날 교회 리더를 세울 때, 달변, 화려한 학위(추천서), 카리스마 등 ‘소피스트적 기준’에
+              의존하고 있는지 철저히 회개하고, 십자가의 자기 부인과 성품을 기준으로 삼아야 합니다.
+            </li>
+            <li>
+              <strong>개인 신앙 속 ‘승리주의’ 점검 (개인적 차원):</strong>
+              <span class="emphasis-red">내가 예수를 믿는 목적이 고난을 면제받고 물질적 보상(“law of reciprocity”)을 얻기 위함이라면,
+              나는 바울의 복음이 아닌 고린도의 ‘다른 예수’를 믿고 있는 것일 수 있음을 경계해야 합니다.</span>
+            </li>
+          </ol>
+        </section>
+
+        <section class="section" id="supplement" aria-labelledby="supplement-title">
+          <h2 id="supplement-title">10. 【누락 검토 및 보완】</h2>
+          <ul>
+            <li>
+              <strong>보조 논점 누락 보완:</strong>
+              이 장의 결론부에서 저자가 제시한 ‘5가지 핵심 교훈’이 부분적으로만 요약되었습니다.
+              원문에 명시된 중요한 강조점 하나를 보완합니다.
+            </li>
+          </ul>
+          <div class="quotation">
+            <blockquote lang="en">
+              “We shall learn, too, that individual Christians and local churches alike must take responsibility for the styles of leadership they follow.”
+            </blockquote>
+            <p>
+              <strong>설명:</strong>
+              거짓 지도자들의 출현은 단순히 그들만의 잘못이 아니라, 이교도적 가치관을 분별하지 못하고
+              그들을 용인한 고린도 <strong>교회 전체의 영적 미성숙과 책임</strong>임을 강하게 지적하는 대목입니다.
+              독자(회중)의 분별력에 대한 엄중한 경고가 포함되어 있습니다.
+            </p>
+          </div>
+        </section>
+
+        <section class="section" id="extension" aria-labelledby="extension-title">
+          <h2 id="extension-title">확장 섹션</h2>
+          <div class="expand-grid">
+            <section class="expansion-card" aria-labelledby="sermon-title">
+              <h3 id="sermon-title">설교용 확장 (설교 3대지 도출)</h3>
+              <ol>
+                <li>대지: 교회 안으로 침투하는 세상의 가치관 (소피스트의 성공 공식)</li>
+                <li>대지: 가짜 복음의 실체: 십자가가 빠진 승리주의 (다른 예수)</li>
+                <li>대지: 성도의 책임: 참된 영적 분별력을 회복하라</li>
+              </ol>
+            </section>
+
+            <section class="expansion-card" aria-labelledby="discussion-title">
+              <h3 id="discussion-title">하브루타용 (토론 질문 5개)</h3>
+              <ol>
+                <li>바울은 왜 대면했을 때 유약해 보인다는 비판을 받았을까요? 진정한 온유함과 유약함의 차이는 무엇입니까?</li>
+                <li>현대 교회에서 ‘소피스트(궤변론자)’처럼 성공을 척도로 삼는 구체적인 사례는 무엇이 있을까요?</li>
+                <li>사역자가 사례비를 받지 않은 것이 왜 당시 고린도인들에게는 공격의 빌미가 되었을까요?</li>
+                <li>“주는 대로 받는다(보상의 법칙)”는 가르침은 성경적입니까, 아니면 승리주의적입니까?</li>
+                <li>교회가 타락한 리더를 따를 때, 그 책임은 리더에게만 있습니까, 아니면 분별하지 못한 회중에게도 있습니까?</li>
+              </ol>
+            </section>
+
+            <section class="expansion-card" aria-labelledby="theology-title">
+              <h3 id="theology-title">신학 연결</h3>
+              <p>
+                이 장에서 다루는 ‘승리주의 vs 바울의 약함’은 마틴 루터(Martin Luther)가 하이델베르크 논쟁에서 제시한
+                <strong>‘영광의 신학 (Theology of Glory)’과 ‘십자가의 신학 (Theology of the Cross)’</strong>
+                개념과 완벽하게 연결됩니다. 고린도 교인들은 십자가를 통과하지 않은 부활과 영광만을 추구하는
+                ‘영광의 신학자’들이었습니다.
+              </p>
+            </section>
+          </div>
+
+          <p class="completion">
+            1장에 대한 정밀 분석이 완료되었습니다. 2장 분석을 원하시면 ‘다음’이라고 입력해 주세요.
+          </p>
+        </section>
+
+        <aside class="footnotes" id="footnotes" aria-labelledby="footnotes-title">
+          <h2 id="footnotes-title">보충 설명</h2>
+
+          <section class="footnote-entry" id="fn-1" aria-labelledby="fn-1-title">
+            <h3 id="fn-1-title">
+              <span class="footnote-label">1</span>
+              Modern “Christian” Success Formulas와 Madison Avenue Techniques
+            </h3>
+            <p>
+              요청하신 <strong>“Modern ‘Christian’ success formulas(현대 ‘기독교적’ 성공 공식)”</strong>와
+              <strong>“Madison Avenue techniques(매디슨 애비뉴 기법)”</strong>에 대한 심층 보충 설명입니다.
+            </p>
+            <p>
+              D. A. 카슨은 1장 결론부에서 고린도 교회를 어지럽혔던 ‘거짓 사도들의 승리주의(Triumphalism)’가
+              오늘날 현대 복음주의 교회 안에서 어떻게 재현되고 있는지를 설명하기 위해 이 두 가지 개념을 사용합니다.
+            </p>
+
+            <h3>1. Madison Avenue techniques (매디슨 애비뉴 기법): 세속적 마케팅과 포장의 도입</h3>
+            <ul>
+              <li>
+                <strong>개념의 의미:</strong>
+                ‘매디슨 애비뉴’는 미국 뉴욕의 거리 이름으로,
+                <strong>현대 상업 광고와 마케팅 산업의 중심지</strong>를 상징하는 대명사입니다.
+              </li>
+              <li>
+                <strong>본문 속 적용:</strong>
+                카슨은 오늘날 기독교의 메시지가 종종 “매디슨 애비뉴 기법에 의해 마케팅되는 화려함의 장사꾼들
+                (hucksters of glamour marketed by Madison Avenue techniques)”에 의해 개발되고 있다고 강도 높게 비판합니다.
+              </li>
+              <li>
+                <strong>본질적 문제:</strong>
+                이는 고린도 교회의 침입자들이 당대 최고의 인기 직업이었던 ‘소피스트(궤변론자/수사학자)’들의 기준
+                (화려한 언변, 자기 추천서, 고액의 강사료)을 교회에 도입했던 것과 정확히 평행을 이룹니다.
+                현대 교회가 십자가의 복음을 전하는 대신, 세속적인 광고 기법을 동원하여 대중의 육신적 안락함과
+                자기 과시욕(personal comfort and aggrandizement)에 영합하고 있다는 지적입니다.
+              </li>
+            </ul>
+
+            <h3>2. Modern Christian success formulas (현대 기독교적 성공 공식): 십자가가 빠진 번영 신학</h3>
+            <ul>
+              <li>
+                <strong>개념의 의미:</strong>
+                고난과 자기를 부인하는 ‘십자가의 길’을 배제하고, 신앙을 세속적 성공, 건강, 부를 얻기 위한 도구로
+                전락시킨 가르침을 의미합니다. 카슨은 이것이 기독교의 탈을 쓰고 있지만 실제로는
+                “이교도 사회의 영웅주의 개념(our pagan society’s idea of the heroic)”과 부드럽게 맞물리도록 고안된 것이라고 폭로합니다.
+              </li>
+              <li>
+                <strong>저자가 제시한 구체적 예시 (원문 근거):</strong>
+                <ol>
+                  <li>
+                    <strong>신성모독적인 출판물:</strong>
+                    저자는 당대 출판된 책 중 『하나님과 함께 자신만의 백지수표를 쓰는 법
+                    (<em>How to Write Your Own Ticket with God</em>)』이라는
+                    “거의 신성모독적인 제목(nearly blasphemous title)”을 가진 책을 비판적 예시로 듭니다.
+                  </li>
+                  <li>
+                    <strong>상호성의 법칙 (Law of Reciprocity):</strong>
+                    현대의 성공 공식은 “더 많이 줄수록 더 많이 얻는다(the more you give the more you get)”는 법칙을 신자들에게 강요합니다.
+                    그들은 누가복음 6:36-38의 말씀을 왜곡하여, 구제를 베푸는 ‘근본적인 이유’가 ‘보상’을 얻기 위함인 것처럼 가르칩니다.
+                  </li>
+                  <li>
+                    <strong>십자가의 고난에 대한 망각:</strong>
+                    예수님은 제자들에게 학대받고, 핍박받고, 미움받을 것을 ‘예상하라(expect)’고 하셨음에도
+                    (요 15:18-16:4 등), 현대의 거짓 교사들은 신자들이 희생적으로 바치면 무한한 물질적 부를
+                    돌려받을 수 있다는 “왜곡된 승리주의(distorted triumphalism)”에 빠져 있다고 지적합니다.
+                  </li>
+                </ol>
+              </li>
+            </ul>
+
+            <h3>3. 두 개념의 종합적 결론</h3>
+            <p>
+              이 두 개념은 <strong>메시지의 변질(성공 공식)</strong>과
+              <strong>전달 방식의 세속화(매디슨 애비뉴 기법)</strong>가 결합된 현대 교회의 타락상을 보여줍니다.
+              카슨은 이러한 방식들이 결국 <strong>“십자가의 길보다는 승리주의에 대해 더 많은 것을 폭로한다
+              (reveal more about triumphalism than the way of the cross)”</strong>고 단언합니다.
+              이는 바울이 십자가에 못 박히신 그리스도를 전하기 위해 육체적 약함과 자기 비하를 기꺼이 감수했던 것
+              (2장~8장의 핵심 논제)과 완벽하게 대비되는 거짓 리더십의 실체입니다.
+            </p>
+            <p>
+              보충 설명이 충분하셨는지요? 이어서 2장(<em>Disobedience versus Discipline</em>)에 대한 정밀 분석으로 넘어가도 될까요?
+              <a class="backlink" href="#ref-1" aria-label="본문의 각주 1 참조 위치로 돌아가기">↩ 본문으로</a>
+            </p>
+          </section>
+
+          <section class="footnote-entry" id="fn-2" aria-labelledby="fn-2-title">
+            <h3 id="fn-2-title">
+              <span class="footnote-label">2</span>
+              소피스트와 승리주의에 대한 보충 설명
+            </h3>
+            <p>
+              제공된 텍스트에 기반하여, 고린도 교회를 위기에 빠뜨린 거짓 사도들의 핵심 배경인
+              <strong>‘소피스트(Sophists)’</strong>와 그들이 가져온 세계관인
+              <strong>‘승리주의(Triumphalism)’</strong>에 대해 정밀하게 보충 설명해 드립니다.
+            </p>
+
+            <h3>1. 소피스트 (The Sophists): 거짓 사도들의 세속적 롤모델</h3>
+            <p>
+              고린도 교회에 침투한 거짓 사도들은 1세기 그리스 전역, 특히 고린도에서 큰 명성을 떨치던
+              직업적 수사학자들인 ‘소피스트’들의 가치관을 교회 안으로 고스란히 끌고 들어왔습니다.
+            </p>
+            <ul>
+              <li>
+                <strong>소피스트의 3대 특징:</strong>
+                <ol>
+                  <li>
+                    <strong>자기 과시와 화려한 언변:</strong>
+                    소피스트들은 자신의 업적을 과시하고 웅변술을 뽐내는 것을 즐겼습니다.
+                    그들에게 “세련된 오만함은 미덕이 되었고, 자기 찬양은 강점이 되었습니다
+                    (Sophisticated haughtiness became a virtue, self-admiration a strength)”.
+                  </li>
+                  <li>
+                    <strong>추천서와 제자 수집:</strong>
+                    그들은 자신의 말을 경청하는 제자들을 모으는 것을 목표로 삼았으며,
+                    자신을 증명할 화려한 자기 추천서를 즐겨 사용했습니다.
+                  </li>
+                  <li>
+                    <strong>고액의 강사료 요구:</strong>
+                    가장 성취도가 높은 소피스트일수록 더 크게 자랑할 수 있었고,
+                    제자들에게 더 높은 수강료를 부과할 수 있었습니다.
+                    1세기 여행하는 교사나 전문 소피스트들에게 이상적인 삶은 가르치는 일 자체로
+                    ‘좋은 생계’를 유지하는 것이었으며, 육체노동(수작업)을 하는 것은 수치로 여겼습니다.
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <strong>바울을 향한 공격의 근거:</strong>
+                침입자들은 이러한 헬라적 기준을 종교적 환경에 적용하여 바울을 깎아내렸습니다.
+                바울이 훌륭한 수사학적 기교가 부족하고, 사역에 대한 재정적 보상(사례비)을 거부하며
+                천막 치는 노동을 했기 때문에, 그들은 바울을 ‘사도적 자격이 없는 이류(inferior apostle)’로 취급했습니다.
+              </li>
+            </ul>
+
+            <h3>2. 승리주의 (Triumphalism): 십자가가 거세된 이교도적 영광</h3>
+            <p>
+              저자인 카슨은 침입자들이 소피스트의 잣대를 통해 교회에 심어놓은 평가 기준의 핵심이 바로
+              <strong>‘승리주의’</strong>라고 진단합니다.
+            </p>
+            <ul>
+              <li>
+                <strong>본질적 이교주의 (Paganism):</strong>
+                카슨은 침입자들의 기준이 “본질적으로 비기독교적(essentially non-Christian)”이며
+                “주로 이교도적(Principally, they were pagan)”이라고 못 박습니다.
+                승리주의는 그리스도를 드러내기보다는 개인의 화려함, 수사학적 능력,
+                영적 황홀경(환상) 등을 영적 리더십의 참된 특성으로 위장합니다.
+              </li>
+              <li>
+                <strong>승리주의의 치명적 약점 (고난의 부재):</strong>
+                승리주의의 가장 큰 모순은 <strong>“복음과 그리스도 예수 자신으로부터 점진적으로 멀어진다”</strong>는 것입니다.
+                승리주의는 “십자가의 그늘 아래서 살아가는 자기희생보다는 쇼맨십, 영적 우월감(one-upmanship),
+                슈퍼스타, 정복, 승리, 영웅들이 있는 분위기를 더 편안해합니다”.
+              </li>
+              <li>
+                <strong>십자가 없는 영광:</strong>
+                고린도 교인들은 예수님이 이루신 구원이 가져다주는 ‘자유와 승리’의 측면은 열렬히 환영했지만,
+                예수님을 따르는 제자도의 핵심인 ‘자기 부인, 온유함, 섬김, 고난’은 억눌렀습니다.
+                저자는 이를 두고 “그들은 기독교적 승리주의는 사랑했지만, 십자가의 표식 아래서 사는 법은 알지 못했다
+                (They loved Christian triumphalism, but they did not know how to live under the sign of the cross)”라고 날카롭게 지적합니다.
+              </li>
+            </ul>
+
+            <h3>3. 종합: 십자가의 역설로 대항하는 바울</h3>
+            <p>
+              소피스트들의 잣대(외형적 화려함, 달변, 재정적 성공)와 승리주의(고난 없는 영광)가 결합된 가짜 복음은
+              고린도 교인들의 가치관을 심각하게 왜곡시켰습니다. 그들은 바울의 ‘온유함’과 ‘약함’을
+              그리스도를 닮은 미덕으로 보지 못하고, 소피스트의 기준으로 판단하여 ‘비굴함’이나 ‘나약함’으로 오해했습니다.
+            </p>
+            <p>
+              이에 맞서 바울은 참된 기독교적 승리는 세상의 영웅주의(승리주의)가 아니라,
+              <strong>그리스도께서 수치스럽고 고통스러운 십자가를 통해 적들을 이기신 것처럼
+              철저한 자기희생과 약함 속에서 완성된다</strong>고 반박합니다.
+              이것이 바울이 화려한 추천서 대신 자신의 ‘약함과 수난의 목록(매 맞음, 굶주림, 감옥행)’을
+              자랑하게 되는 결정적 이유입니다.
+            </p>
+            <p>
+              요청하신 개념 보충이 충분히 되셨기를 바랍니다. 이러한 세계관의 충돌을 바탕으로,
+              바울이 고린도 교인들의 불순종에 어떻게 영적인 징계와 호소로 맞서는지 다루는
+              <strong>제2장(<em>Disobedience versus Discipline</em>)</strong>의 정밀 분석으로 넘어갈까요?
+              <a class="backlink" href="#ref-2" aria-label="본문의 각주 2 참조 위치로 돌아가기">↩ 본문으로</a>
+            </p>
+          </section>
+        </aside>
+      </article>
+    </main>
+  </div>
+
+  <footer>
+    <a href="#top">문서 상단으로 이동</a>
+  </footer>
+</body>
+</html>
