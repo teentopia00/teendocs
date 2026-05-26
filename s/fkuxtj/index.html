@@ -1,0 +1,934 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  
+  
+  
+  <title>복음이 바꾼다 요약 | 망가진 세상에서 부르는 회복의 노래</title>
+  <style>
+    :root {
+      --bg: #f5f2ec;
+      --paper: #fffdf9;
+      --ink: #25221d;
+      --muted: #6d665b;
+      --line: #ddd5c8;
+      --line-strong: #c8baa5;
+      --accent: #314d43;
+      --accent-soft: #e7eee9;
+      --gold: #997647;
+      --gold-soft: #f4ecdf;
+      --quote: #f3efe7;
+      --shadow: 0 16px 48px rgba(49, 40, 25, 0.08);
+      --radius: 20px;
+      --content: 780px;
+      --sidebar: 268px;
+      --sans: "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+      --serif: "Noto Serif KR", "Iropke Batang", "Nanum Myeongjo", "Batang", serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(153, 118, 71, 0.09), transparent 34rem),
+        linear-gradient(180deg, #f7f4ee 0%, var(--bg) 100%);
+      font-family: var(--sans);
+      line-height: 1.75;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(49, 77, 67, 0.28);
+    }
+
+    a:hover,
+    a:focus-visible {
+      color: #1d352d;
+      border-bottom-color: currentColor;
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    .page {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 32px 28px 64px;
+    }
+
+    .masthead {
+      margin-bottom: 28px;
+      padding: clamp(32px, 6vw, 60px) clamp(24px, 5vw, 56px);
+      color: #f9f6f0;
+      background:
+        linear-gradient(112deg, rgba(30, 48, 42, 0.97), rgba(49, 77, 67, 0.94)),
+        #314d43;
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: #d9c59e;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .masthead h1 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(2.1rem, 4.5vw, 3.45rem);
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: -0.045em;
+    }
+
+    .subtitle {
+      margin: 14px 0 0;
+      color: #ecdfcc;
+      font-family: var(--serif);
+      font-size: clamp(1.03rem, 2vw, 1.28rem);
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: var(--sidebar) minmax(0, var(--content));
+      justify-content: center;
+      align-items: start;
+      gap: 34px;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 22px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .side-card {
+      padding: 20px;
+      background: rgba(255, 253, 249, 0.88);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+    }
+
+    .side-card h2 {
+      margin: 0 0 13px;
+      color: var(--muted);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .metadata {
+      margin: 0;
+      font-size: 0.91rem;
+    }
+
+    .metadata div {
+      display: grid;
+      gap: 2px;
+      margin-bottom: 12px;
+    }
+
+    .metadata div:last-child {
+      margin-bottom: 0;
+    }
+
+    .metadata dt {
+      color: var(--muted);
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .metadata dd {
+      margin: 0;
+      line-height: 1.55;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 9px;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border-radius: 999px;
+      font-size: 0.77rem;
+      font-weight: 600;
+    }
+
+    .toc ol {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: sections;
+    }
+
+    .toc li {
+      position: relative;
+      margin: 0;
+      padding: 7px 0 7px 28px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.45;
+      counter-increment: sections;
+    }
+
+    .toc li::before {
+      content: counter(sections, decimal-leading-zero);
+      position: absolute;
+      left: 0;
+      top: 8px;
+      color: var(--gold);
+      font-size: 0.71rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .toc a {
+      color: var(--muted);
+      border: 0;
+    }
+
+    .toc a:hover,
+    .toc a:focus-visible {
+      color: var(--accent);
+    }
+
+    main {
+      min-width: 0;
+    }
+
+    .article {
+      padding: clamp(25px, 4vw, 48px);
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .note-heading {
+      margin: 0 0 22px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+      font-family: var(--serif);
+      font-size: clamp(1.65rem, 3vw, 2.12rem);
+      line-height: 1.35;
+      letter-spacing: -0.04em;
+    }
+
+    .callout {
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 14px;
+      margin: 0 0 46px;
+      padding: 18px 20px;
+      color: #31443d;
+      background: var(--accent-soft);
+      border: 1px solid #cadbd1;
+      border-radius: 15px;
+    }
+
+    .callout-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      color: var(--accent);
+      background: #fff;
+      border-radius: 50%;
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .callout-title {
+      margin: 0 0 4px;
+      font-size: 0.94rem;
+      font-weight: 800;
+    }
+
+    .callout p {
+      margin: 0;
+      font-size: 0.93rem;
+      line-height: 1.7;
+    }
+
+    .article-title {
+      margin: 0 0 18px;
+      font-family: var(--serif);
+      font-size: clamp(1.72rem, 3vw, 2.25rem);
+      font-weight: 700;
+      line-height: 1.38;
+      letter-spacing: -0.045em;
+    }
+
+    .lede {
+      margin: 0 0 34px;
+      color: #423d35;
+      font-size: 1.02rem;
+      line-height: 1.9;
+    }
+
+    .divider {
+      height: 1px;
+      margin: 36px 0;
+      background: linear-gradient(90deg, transparent, var(--line-strong) 12%, var(--line-strong) 88%, transparent);
+      border: 0;
+    }
+
+    section {
+      scroll-margin-top: 26px;
+    }
+
+    section > h2 {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin: 0 0 22px;
+      color: #25221d;
+      font-family: var(--serif);
+      font-size: clamp(1.25rem, 2vw, 1.48rem);
+      line-height: 1.45;
+      letter-spacing: -0.035em;
+    }
+
+    .section-index {
+      flex: 0 0 auto;
+      color: var(--gold);
+      font-family: var(--sans);
+      font-size: 0.79rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+    }
+
+    p {
+      margin: 0 0 16px;
+    }
+
+    ul,
+    ol {
+      margin: 0 0 18px;
+      padding-left: 1.45rem;
+    }
+
+    li {
+      margin: 0 0 10px;
+      padding-left: 3px;
+    }
+
+    li::marker {
+      color: var(--gold);
+    }
+
+    strong {
+      font-weight: 750;
+    }
+
+    .claim-list {
+      padding-left: 1.45rem;
+    }
+
+    .claim-list > li {
+      margin-bottom: 22px;
+      padding-left: 6px;
+    }
+
+    .claim-list > li::marker {
+      color: var(--gold);
+      font-weight: 800;
+    }
+
+    .claim {
+      display: block;
+      margin-bottom: 7px;
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.65;
+    }
+
+    .claim-list ul {
+      margin-bottom: 0;
+    }
+
+    .concept-list strong {
+      color: var(--accent);
+    }
+
+    .architecture {
+      width: 100%;
+      margin: 8px 0 4px;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 0.94rem;
+      line-height: 1.65;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
+
+    .architecture th {
+      padding: 13px 15px;
+      color: #fffdf8;
+      background: var(--accent);
+      font-weight: 700;
+      text-align: left;
+    }
+
+    .architecture td {
+      padding: 14px 15px;
+      vertical-align: top;
+      border-top: 1px solid var(--line);
+      background: #fffefa;
+    }
+
+    .architecture tbody tr:nth-child(even) td {
+      background: #faf7f1;
+    }
+
+    .architecture td:first-child {
+      white-space: nowrap;
+      color: var(--accent);
+      font-weight: 750;
+    }
+
+    .architecture td:nth-child(2) {
+      white-space: nowrap;
+      font-weight: 700;
+    }
+
+    .quote-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: quote;
+    }
+
+    .quote-list li {
+      position: relative;
+      margin: 0 0 15px;
+      padding: 18px 20px 18px 54px;
+      background: var(--quote);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 12px 12px 0;
+      counter-increment: quote;
+    }
+
+    .quote-list li::before {
+      content: counter(quote);
+      position: absolute;
+      top: 20px;
+      left: 19px;
+      width: 22px;
+      height: 22px;
+      color: #fff;
+      background: var(--gold);
+      border-radius: 50%;
+      font-size: 0.75rem;
+      font-weight: 700;
+      line-height: 22px;
+      text-align: center;
+    }
+
+    .final-summary {
+      margin-top: 10px;
+      padding: clamp(20px, 4vw, 30px);
+      color: #f8f3ea;
+      background: var(--accent);
+      border-radius: 16px;
+    }
+
+    .final-summary p {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(1.12rem, 2vw, 1.32rem);
+      font-weight: 700;
+      line-height: 1.85;
+    }
+
+    .back-top {
+      display: inline-block;
+      margin-top: 34px;
+      color: var(--muted);
+      font-size: 0.87rem;
+      font-weight: 600;
+      border-bottom-color: var(--line-strong);
+    }
+
+    footer {
+      max-width: var(--content);
+      margin: 25px auto 0;
+      color: var(--muted);
+      font-size: 0.82rem;
+      text-align: center;
+    }
+
+    @media (max-width: 1000px) {
+      .layout {
+        display: block;
+      }
+
+      .sidebar {
+        position: static;
+        margin-bottom: 22px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .toc {
+        grid-column: 1 / -1;
+      }
+
+      .toc ol {
+        columns: 2;
+        column-gap: 24px;
+      }
+
+      .toc li {
+        break-inside: avoid;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .page {
+        padding: 14px 12px 38px;
+      }
+
+      .masthead {
+        margin-bottom: 14px;
+        padding: 28px 21px 32px;
+        border-radius: 20px;
+      }
+
+      .sidebar {
+        display: block;
+      }
+
+      .side-card {
+        margin-bottom: 12px;
+        padding: 17px;
+      }
+
+      .toc ol {
+        columns: 1;
+      }
+
+      .article {
+        padding: 23px 18px 28px;
+        border-radius: 18px;
+      }
+
+      .callout {
+        display: block;
+        padding: 16px;
+      }
+
+      .callout-icon {
+        margin-bottom: 10px;
+      }
+
+      .architecture {
+        display: block;
+        overflow-x: auto;
+        white-space: normal;
+      }
+
+      .architecture th,
+      .architecture td {
+        min-width: 110px;
+        padding: 11px 12px;
+      }
+
+      .architecture th:last-child,
+      .architecture td:last-child {
+        min-width: 300px;
+      }
+
+      .quote-list li {
+        padding: 46px 16px 16px;
+      }
+
+      .quote-list li::before {
+        top: 15px;
+        left: 16px;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .page {
+        max-width: none;
+        padding: 0;
+      }
+
+      .masthead,
+      .article,
+      .side-card {
+        box-shadow: none;
+      }
+
+      .layout {
+        display: block;
+      }
+
+      .sidebar {
+        position: static;
+        margin-bottom: 22px;
+      }
+
+      .toc {
+        display: none;
+      }
+
+      .article {
+        border: 0;
+        padding: 0;
+      }
+    }
+  </style>
+<meta property="og:type" content="article">
+<meta property="og:title" content="복음이 바꾼다 요약">
+<meta property="og:description" content="[!info] 독서 안내 [[복음이 바꾼다 목차|목차로 이동]] 이 노트의 개요는 현재 확보된 목차를 바탕으로 정리한 것이며, 장별 본문 독서 후 내용을 보강한다. 복음이 바꾼다: 망가진 세상에서 부르는 회복의 노래 이 문서는 제공된 도서 원문 데이터인 『복음이 바꾼다』(Recovering Redemption, 매트 챈들">
+<meta property="og:url" content="https://teentopia00.github.io/teendocs/s/fkuxtj/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="복음이 바꾼다 요약">
+<meta name="twitter:description" content="[!info] 독서 안내 [[복음이 바꾼다 목차|목차로 이동]] 이 노트의 개요는 현재 확보된 목차를 바탕으로 정리한 것이며, 장별 본문 독서 후 내용을 보강한다. 복음이 바꾼다: 망가진 세상에서 부르는 회복의 노래 이 문서는 제공된 도서 원문 데이터인 『복음이 바꾼다』(Recovering Redemption, 매트 챈들">
+<link rel="canonical" href="https://teentopia00.github.io/teendocs/s/fkuxtj/">
+</head>
+<body id="top">
+  <div class="page">
+    <header class="masthead">
+      <p class="eyebrow">독서 노트 · 전체 요약</p>
+      <h1>복음이 바꾼다</h1>
+      <p class="subtitle">망가진 세상에서 부르는 회복의 노래</p>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar" aria-label="문서 정보 및 목차">
+        <section class="side-card" aria-labelledby="book-info-heading">
+          <h2 id="book-info-heading">Book Information</h2>
+          <dl class="metadata">
+            <div>
+              <dt>제목</dt>
+              <dd>복음이 바꾼다</dd>
+            </div>
+            <div>
+              <dt>부제</dt>
+              <dd>망가진 세상에서 부르는 회복의 노래</dd>
+            </div>
+            <div>
+              <dt>저자</dt>
+              <dd>매트 챈들러<br>마이클 스네처</dd>
+            </div>
+            <div>
+              <dt>역자</dt>
+              <dd>정성묵</dd>
+            </div>
+            <div>
+              <dt>출판사</dt>
+              <dd>두란노</dd>
+            </div>
+            <div>
+              <dt>출간일</dt>
+              <dd><time datetime="2014-08-11">2014-08-11</time></dd>
+            </div>
+            <div>
+              <dt>ISBN13</dt>
+              <dd>9788953120709</dd>
+            </div>
+            <div>
+              <dt>유형</dt>
+              <dd>전체요약</dd>
+            </div>
+            <div>
+              <dt>태그</dt>
+              <dd class="tags">
+                <span class="tag">독서/복음이바꾼다</span>
+                <span class="tag">책/기독교</span>
+                <span class="tag">요약</span>
+              </dd>
+            </div>
+            <div>
+              <dt>목차 링크</dt>
+              <dd><a href="복음이 바꾼다 목차.html">복음이 바꾼다 목차</a></dd>
+            </div>
+          </dl>
+        </section>
+
+        <nav class="side-card toc" aria-labelledby="toc-heading">
+          <h2 id="toc-heading">Contents</h2>
+          <ol>
+            <li><a href="#context">배경 및 맥락</a></li>
+            <li><a href="#overview">전체 개요 &amp; 문제 의식</a></li>
+            <li><a href="#architecture">책 전체 구조 맵</a></li>
+            <li><a href="#compressed-view">장별 핵심 요약</a></li>
+            <li><a href="#knowledge-graph">핵심 개념 및 관계망</a></li>
+            <li><a href="#top-claims">저자의 핵심 주장 Top 5 &amp; 논거</a></li>
+            <li><a href="#essence">원문 핵심 인용</a></li>
+            <li><a href="#argument">사고 프레임 &amp; 논증 방식 분석</a></li>
+            <li><a href="#critical-review">비판적 검토 및 방어 기제</a></li>
+            <li><a href="#synthesis">확장적 적용</a></li>
+            <li><a href="#one-line">최종 요약</a></li>
+          </ol>
+        </nav>
+      </aside>
+
+      <main>
+        <article class="article">
+          <h2 class="note-heading">복음이 바꾼다 요약</h2>
+
+          <aside class="callout" aria-label="독서 안내">
+            <div class="callout-icon" aria-hidden="true">i</div>
+            <div>
+              <p class="callout-title">독서 안내</p>
+              <p>
+                <a href="복음이 바꾼다 목차.html">목차로 이동</a><br>
+                이 노트의 개요는 현재 확보된 목차를 바탕으로 정리한 것이며, 장별 본문 독서 후 내용을 보강한다.
+              </p>
+            </div>
+          </aside>
+
+          <header>
+            <h1 class="article-title">복음이 바꾼다: 망가진 세상에서 부르는 회복의 노래</h1>
+            <p class="lede">
+              이 문서는 제공된 도서 원문 데이터인 『복음이 바꾼다』(Recovering Redemption, 매트 챈들러 외 저)의 핵심 내용을 심층적으로 분석하고 합성한 브리핑 문서입니다.
+            </p>
+          </header>
+
+          <hr class="divider">
+
+          <section id="context" aria-labelledby="context-title">
+            <h2 id="context-title"><span class="section-index">01</span>【배경 및 맥락 (Context)】</h2>
+            <ul>
+              <li><strong>저자의 의도:</strong> 저자들은 세상이 근본적으로 망가졌다는 현실을 직시하게 하고, 인간이 스스로를 구원하려는 모든 시도(자기계발, 종교적 노력 등)가 실패할 수밖에 없음을 드러내고자 합니다. 궁극적으로는 예수 그리스도의 '복음'만이 인간을 온전하게 회복시키고 구속할 수 있다는 진리를 전하는 것이 목표입니다.</li>
+              <li><strong>시대적/지적 배경:</strong> 범죄, 질병, 재난, 가정 붕괴 등 비극이 만연한 현대 사회의 분위기 속에서, 인간은 끊임없이 실망감과 불만족을 느낍니다. 저자들은 이러한 현상을 하나님의 창조 섭리에서 벗어난 '타락'의 결과로 진단하며, 세상이 제시하는 단편적인 해결책(자기계발, 쾌락, 가짜 신앙)을 비판합니다.</li>
+              <li><strong>타겟 독자:</strong> 스스로의 힘으로 삶을 변화시키려다 좌절한 사람, 죄책감과 수치심에 시달리는 신자, 그리고 복음을 단지 '천국행 티켓'으로만 여기며 일상의 변화를 경험하지 못하는 모든 이들을 대상으로 합니다.</li>
+            </ul>
+          </section>
+
+          <hr class="divider">
+
+          <section id="overview" aria-labelledby="overview-title">
+            <h2 id="overview-title"><span class="section-index">02</span>【전체 개요 &amp; 문제 의식】</h2>
+            <ul>
+              <li>
+                <strong>핵심 주제문:</strong>
+                <ol>
+                  <li>세상과 인간은 타락으로 인해 근본적으로 망가졌으며, 인간의 자발적인 노력으로는 결코 회복될 수 없다.</li>
+                  <li>복음은 단순히 죽어서 천국에 가는 수단이 아니라, 현재의 삶을 근본적으로 변화시키는 '구속의 회복'을 의미한다.</li>
+                  <li>참된 변화는 자신의 무능함을 인정하고 하나님의 주권적인 사랑과 은혜 안에 거할 때 비로소 시작된다.</li>
+                </ol>
+              </li>
+              <li><strong>문제 제기 (Problem Statement):</strong> 저자는 "정말 이렇게밖에 살 수 없는가?"라는 질문을 던집니다. 인간은 내면의 공허함과 죄의 문제를 해결하기 위해 다양한 도구(자기계발, 타인에 대한 의존, 일시적 즐거움, 종교적 행위)를 동원하지만, 이는 잡초의 윗부분만 잘라내는 미봉책에 불과하며 근본적인 '마음'의 문제는 해결하지 못한다는 점을 지적합니다.</li>
+            </ul>
+          </section>
+
+          <hr class="divider">
+
+          <section id="architecture" aria-labelledby="architecture-title">
+            <h2 id="architecture-title"><span class="section-index">03</span>【책 전체 구조 맵 (Architecture)】</h2>
+            <table class="architecture">
+              <thead>
+                <tr>
+                  <th scope="col">구분</th>
+                  <th scope="col">단계</th>
+                  <th scope="col">주요 내용 및 기능</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>PART 1</td>
+                  <td>현상 진단</td>
+                  <td>망가진 세상의 현실과 인간이 동원하는 '가짜 복음'의 무용성을 고발함.</td>
+                </tr>
+                <tr>
+                  <td>PART 2</td>
+                  <td>복음의 개입</td>
+                  <td>복음이 인간을 어떻게 찾아오며, 칭의와 양자됨, 성화를 통해 어떻게 변화시키는가에 대한 원리 제시.</td>
+                </tr>
+                <tr>
+                  <td>PART 3</td>
+                  <td>내면적 적용</td>
+                  <td>죄책감과 수치심이라는 내면의 폭풍을 복음으로 잠재우는 실제적인 방법 제시.</td>
+                </tr>
+                <tr>
+                  <td>PART 4</td>
+                  <td>관계적 확장</td>
+                  <td>공동체와 관계 속에서 복음대로 품고 화해하는 원리 설명.</td>
+                </tr>
+                <tr>
+                  <td>PART 5</td>
+                  <td>미래 전망</td>
+                  <td>전부를 팔아 복음을 사는 삶, 즉 복음이 바꾸는 최종적인 승리를 선포함.</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <hr class="divider">
+
+          <section id="compressed-view" aria-labelledby="compressed-view-title">
+            <h2 id="compressed-view-title"><span class="section-index">04</span>【장별 핵심 요약 (Compressed View)】</h2>
+            <ul>
+              <li><strong>PART 1. 정말 이렇게밖에 살 수 없는가?</strong> 망가진 세상 속에서 인간이 느끼는 끊임없는 실망감은 창조주가 심어놓은 '완벽한 평화(샬롬)'에 대한 갈망의 반작용입니다. 인간은 스스로를 구원하려 애쓰지만(자기계발, 종교 등), 그럴수록 구원의 항구에서 멀어질 뿐입니다.</li>
+              <li><strong>PART 2. 복음이 우리를 찾아왔다</strong> 복음은 우리가 아직 연약할 때 찾아온 하나님의 '반전'입니다. 복음은 우리 자신의 방식을 내려놓게 하고, 그리스도 안에서 새로운 정체성(의인, 자녀)을 부여하며, 평생의 과정인 성화로 우리를 이끕니다.</li>
+              <li><strong>PART 3. 죄로 뒤엉킨 속마음, 복음대로 풀라</strong> 내면의 고통인 죄책감(행동의 문제)과 수치심(정체성의 문제)은 인간의 노력으로 지울 수 없습니다. 오직 우리를 온전히 받아주시는 하나님의 사랑만이 이 폭풍을 잠재우고 진정한 안식을 줍니다.</li>
+              <li><strong>PART 4~5. 공동체와 승리</strong> 복음은 개인을 넘어 공동체로 확장됩니다. 자신의 잘못을 먼저 인정하고 손을 내미는 화해의 역사가 복음을 통해 일어나며, 신자는 전부를 걸고 이 복음의 가치를 누리는 승전가를 부르게 됩니다.</li>
+            </ul>
+          </section>
+
+          <hr class="divider">
+
+          <section id="knowledge-graph" aria-labelledby="knowledge-graph-title">
+            <h2 id="knowledge-graph-title"><span class="section-index">05</span>【핵심 개념 및 관계망 (Knowledge Graph)】</h2>
+            <ul>
+              <li>
+                <strong>주요 키워드:</strong>
+                <ol class="concept-list">
+                  <li><strong>구속(Redemption):</strong> 망가진 것을 다시 사서 원상태로 회복시키는 하나님의 역사.</li>
+                  <li><strong>타락(Fall):</strong> 에덴에서의 반역으로 인해 세상의 평화(샬롬)가 깨진 사건.</li>
+                  <li><strong>가짜 신앙(False Faith):</strong> 자신의 노력으로 하나님의 점수를 따려 하거나, 복음을 사적인 위안으로만 여기는 태도.</li>
+                  <li><strong>수치심(Shame) vs 죄책감(Guilt):</strong> 수치심은 "나라는 존재가 나쁘다"는 정체성의 파괴이며, 죄책감은 "내가 나쁜 짓을 했다"는 행동의 판단임.</li>
+                  <li><strong>성화(Sanctification):</strong> 구원받은 자가 성령의 도우심으로 매일 거룩하게 변화되어 가는 긴 과정.</li>
+                </ol>
+              </li>
+              <li><strong>개념 간 관계:</strong> '타락'으로 인해 '수치심과 죄책감'이 발생했고, 인간은 '가짜 신앙'으로 이를 해결하려 하나 실패합니다. '복음'은 하나님의 '구속'을 통해 이 문제를 해결하며, 신자는 '성화'를 통해 그 결과를 삶에서 실현해 나갑니다.</li>
+            </ul>
+          </section>
+
+          <hr class="divider">
+
+          <section id="top-claims" aria-labelledby="top-claims-title">
+            <h2 id="top-claims-title"><span class="section-index">06</span>【저자의 핵심 주장 Top 5 &amp; 논거】</h2>
+            <ol class="claim-list">
+              <li>
+                <span class="claim">"우리는 스스로를 절대 구원할 수 없다."</span>
+                <ul>
+                  <li><strong>논거:</strong> 인간의 자기계발 노력은 결국 '사막과 광야'로 이어지며, 율법주의적 종교 행위는 '밑 빠진 웅덩이'에 물을 가두려는 헛수고에 불과함(원문: 렘 2:13, 17:5 인용).</li>
+                </ul>
+              </li>
+              <li>
+                <span class="claim">"진짜 문제는 '마음'의 문제다."</span>
+                <ul>
+                  <li><strong>논거:</strong> 겉으로 드러나는 중독이나 나쁜 습관은 잡초의 잎사귀일 뿐이며, 그 뿌리에는 하나님에 대한 반역과 마음의 부패가 자리 잡고 있음(원문: 막 7:15-16 인용).</li>
+                </ul>
+              </li>
+              <li>
+                <span class="claim">"칭의와 양자됨은 단번에 일어나지만, 그 누림은 평생의 과정이다."</span>
+                <ul>
+                  <li><strong>논거:</strong> 우리는 천국 법정에서 무죄 판결(칭의)을 받고 하나님의 가족으로 입양되었지만, 이 정체성을 일상에서 누리기 위해서는 지속적인 회개와 성화가 필요함.</li>
+                </ul>
+              </li>
+              <li>
+                <span class="claim">"수치심의 유일한 해법은 하나님의 '완전한 용납'이다."</span>
+                <ul>
+                  <li><strong>논거:</strong> 수치심은 비밀을 먹고 자라지만, 우리를 온전히 아시면서도 사랑하시는 하나님 앞에 자신을 드러낼 때 비로소 치유됨(원문: 탕자의 비유 인용).</li>
+                </ul>
+              </li>
+              <li>
+                <span class="claim">"성화는 '살림'과 '죽임'의 두 축으로 이루어진다."</span>
+                <ul>
+                  <li><strong>논거:</strong> 예수님을 생각함으로 마음을 '살리고(vivification)', 성령의 능력으로 죄의 습관을 '죽이는(mortification)' 적극적인 훈련이 필요함.</li>
+                </ul>
+              </li>
+            </ol>
+          </section>
+
+          <hr class="divider">
+
+          <section id="essence" aria-labelledby="essence-title">
+            <h2 id="essence-title"><span class="section-index">07</span>【원문 핵심 인용 (The Essence)】</h2>
+            <ol class="quote-list">
+              <li>"우리가 아직 연약할 때에... 그리스도께서 우리를 위하여 죽으심으로 하나님께서 우리에 대한 자기의 사랑을 확증하셨느니라." (롬 5:6-8) — <strong>복음의 핵심 근거</strong></li>
+              <li>"복음의 묘미는 하나님이 일으키시는 '반전'이다." — <strong>복음의 역동성</strong></li>
+              <li>"죄는 우리를 더럽히는 것이 아니라, 우리가 죄인이기 때문에 죄를 짓는 것이다. 문제의 핵심은 마음이다." — <strong>인간론적 통찰</strong></li>
+              <li>"회개는 구속의 살아 있는 열매다. 복음 앞에서의 올바른 반응은 지속적인 회개다." — <strong>변화의 열쇠</strong></li>
+              <li>"하나님은 우리를 구속하기 위해 우리의 삶 속으로 들어오셨다. 그 아버지의 사랑이 아무리 깊어도 하늘 아버지의 사랑을 따라갈 수 없다." — <strong>회복의 소망</strong></li>
+            </ol>
+          </section>
+
+          <hr class="divider">
+
+          <section id="argument" aria-labelledby="argument-title">
+            <h2 id="argument-title"><span class="section-index">08</span>【사고 프레임 &amp; 논증 방식 분석】</h2>
+            <ul>
+              <li><strong>사고의 틀:</strong> 성경의 '창조-타락-구속-영화'라는 거대 담론(Metanarrative)을 기반으로 인간의 심리와 삶의 문제를 분석하는 <strong>'성경적 세계관 프레임'</strong>을 사용합니다.</li>
+              <li>
+                <strong>논증 스타일:</strong>
+                <ul>
+                  <li><strong>사례 중심:</strong> 니나(이혼), 베스(성폭력 피해), 란디(외도) 등 구체적이고 비극적인 삶의 사례를 제시하여 복음의 필요성을 역설합니다.</li>
+                  <li><strong>대조법:</strong> 가짜 복음(자기계발, 종교)과 진짜 복음을 끊임없이 대조하여 독자가 자신의 상태를 점검하게 합니다.</li>
+                  <li><strong>사고 실험:</strong> "아버지가 탕자를 맞이할 때의 심정은 어떠했겠는가?"와 같은 질문을 통해 독자의 정서적 공감을 끌어냅니다.</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+
+          <hr class="divider">
+
+          <section id="critical-review" aria-labelledby="critical-review-title">
+            <h2 id="critical-review-title"><span class="section-index">09</span>【비판적 검토 및 방어 기제】</h2>
+            <ul>
+              <li><strong>논리적 약점:</strong> 모든 심리적, 관계적 문제의 원인을 '죄'와 '하나님과의 관계'로만 귀결시킴으로써, 생물학적 요인이나 환경적 영향에 대한 고려가 부족해 보일 수 있습니다. (원문 내에서는 이를 '일반 은총'이라는 개념으로 일부 보완하지만, 주된 초점은 영적 회복에 있습니다.)</li>
+              <li><strong>저자의 방어:</strong> 저자는 인간이 동원하는 상담이나 노력이 '잠시 동안은 괜찮아 보일 수 있다'는 점을 인정하지만, 그것이 근본적인 뿌리를 뽑지 못하면 결국 더 큰 좌절을 낳는다는 것을 수많은 실패 사례를 통해 방어합니다.</li>
+              <li><strong>반대 관점:</strong> 인본주의적 심리학이나 자기계발론은 인간의 자아 존중감과 의지를 변화의 핵심 동력으로 보지만, 이 책은 그것이 오히려 구속의 방해물이라고 주장합니다.</li>
+            </ul>
+          </section>
+
+          <hr class="divider">
+
+          <section id="synthesis" aria-labelledby="synthesis-title">
+            <h2 id="synthesis-title"><span class="section-index">10</span>【확장적 적용 (Synthesis)】</h2>
+            <ul>
+              <li><strong>개인적 차원:</strong> 완벽해지려는 강박(가짜 신앙)을 버리고, 매일 자신의 약함을 하나님께 고백하며 그분의 자녀라는 정체성 안에서 안식을 누리는 삶으로의 전환.</li>
+              <li><strong>사회적/조직적 차원:</strong> 자신의 허물을 숨기지 않고 서로의 죄를 고백하며 복음으로 용납하는 '진실한 공동체'의 형성. 이는 성과 중심의 세상 질서와 정반대되는 '은혜의 질서'를 조직 내에 도입하는 결과를 가져옵니다.</li>
+            </ul>
+          </section>
+
+          <hr class="divider">
+
+          <section id="one-line" aria-labelledby="one-line-title">
+            <h2 id="one-line-title"><span class="section-index">11</span>【최종 요약 (The One Line)】</h2>
+            <div class="final-summary">
+              <p>"자기 구원의 헛된 시도를 멈추고, 망가진 우리를 찾아와 자녀 삼으신 예수 그리스도의 복음 안에서 참된 정체성과 회복을 시작하라."</p>
+            </div>
+          </section>
+
+          <a class="back-top" href="#top">문서 상단으로 돌아가기</a>
+        </article>
+      </main>
+    </div>
+
+    <footer>
+      『복음이 바꾼다』 전체요약 독서 노트
+    </footer>
+  </div>
+</body>
+</html>
