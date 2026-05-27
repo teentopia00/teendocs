@@ -1,24 +1,42 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-27T03:41:20.200Z",
+  "updatedAt": "2026-05-27T04:00:53.855Z",
   "items": [
     {
-      "slug": "01-제자도-discipleship",
+      "slug": "복음이-바꾼다-종합요약",
+      "shortId": "5gvwfd",
+      "url": "https://teentopia00.github.io/teendocs/s/5gvwfd/",
+      "canonicalUrl": "https://teentopia00.github.io/teendocs/%EB%B3%B5%EC%9D%8C%EC%9D%B4-%EB%B0%94%EA%BE%BC%EB%8B%A4-%EC%A2%85%ED%95%A9%EC%9A%94%EC%95%BD/",
+      "sourcePath": "sync/books/변증/복음이바꾼다/복음이 바꾼다 종합요약.md",
+      "artifactType": "faithful-note",
+      "title": "복음이 바꾼다 종합요약 (Recovering Redemption)",
+      "excerpt": "망가진 세상에서 부르는 회복의 노래 저자: 매트 챈들러, 마이클 스네처 | 역자: 정성묵 | 출판사: 두란노 (20140811) 이 문서는 『복음이 바꾼다』의 전체 도서 요약과 프롤로그 및 각 장(Chapter)별 상세 요약을 한 권의 문서로 집대성한 종합 요약본입니다. 개별 파일로 나누어져 있던 요약 노트들을 목차 순서",
+      "tags": [
+        "- 독서/복음이바꾼다",
+        "독서/복음이바꾼다",
+        "복음",
+        "매트 챈들러",
+        "마이클 스네처"
+      ],
+      "updatedAt": "2026-05-27T04:00:53.855Z"
+    },
+    {
+      "slug": "01-ì ìë-discipleship",
       "shortId": "lyx9af",
       "url": "https://teentopia00.github.io/teendocs/s/lyx9af/",
       "canonicalUrl": "https://teentopia00.github.io/teendocs/01-%EC%A0%9C%EC%9E%90%EB%8F%84-discipleship/",
-      "sourcePath": "sync/books/신앙생활/long obedience/01 제자도 - Discipleship.md",
+      "sourcePath": "sync/books/ì ììí/long obedience/01 ì ìë - Discipleship.md",
       "artifactType": "faithful-note",
-      "title": "1장 제자도 (Discipleship)",
-      "excerpt": "[[Long Obedience 목차|목차]] | [[Long Obedience 요약|전체 요약]] 1. 【장 개요】 핵심 주제와 저자의 의도: 이 장은 현대의 빠르고 즉각적인 만족을 추구하는 '인스턴트 사회' 속에서 기독교 신앙이 '관광객'의 마인드로 변질되었음을 진단합니다. 저자는 진정한 기독교 제자도는 '순례자'이자 ",
+      "title": "1ì¥ ì ìë (Discipleship)",
+      "excerpt": "[[Long Obedience ëª©ì°¨|ëª©ì°¨]] | [[Long Obedience ìì½|ì ì²´ ìì½]] 1. ãì¥ ê°ìã íµì¬ ì£¼ì ì ì ìì ìë: ì´ ì¥ì íëì ë¹ ë¥´ê³  ì¦ê°ì ì¸ ë§ì¡±ì ì¶êµ¬íë 'ì¸ì¤í´í¸ ì¬í' ììì ê¸°ëêµ ì ìì´ 'ê´ê´ê°'ì ë§ì¸ëë¡ ë³ì§ëììì ì§ë¨í©ëë¤. ì ìë ì§ì í ê¸°ëêµ ì ìëë 'ìë¡ì'ì´ì ",
       "tags": [
-        "책",
-        "독서노트",
-        "신앙생활",
+        "ì±",
+        "ëìë¸í¸",
+        "ì ììí",
         "long-obedience",
-        "장별노트",
-        "제자도",
-        "순종"
+        "ì¥ë³ë¸í¸",
+        "ì ìë",
+        "ìì¢"
       ],
       "updatedAt": "2026-05-27T03:41:20.200Z"
     }
