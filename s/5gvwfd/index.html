@@ -1,0 +1,1340 @@
+<!doctype html>
+<html lang="ko">
+<head>
+
+
+<title>복음이 바꾼다 종합요약 | Recovering Redemption</title>
+
+<style>
+:root{
+  --bg:#f7f5f0;
+  --paper:#fffdf9;
+  --ink:#24231f;
+  --muted:#665f55;
+  --line:#ddd5c7;
+  --brand:#6c4534;
+  --brand-2:#98684d;
+  --accent:#e8d7b5;
+  --accent-soft:#f4ecdc;
+  --quote:#f3eee5;
+  --mark:#fff0a7;
+  --good:#355c4d;
+  --shadow:0 18px 48px rgba(48,38,27,.07);
+  --radius:18px;
+  --serif:"Noto Serif KR","Nanum Myeongjo","Batang","Times New Roman",serif;
+  --sans:"Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  color:var(--ink);
+  background:var(--bg);
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.82;
+  word-break:keep-all;
+}
+a{color:var(--brand);text-decoration:none}
+a:hover{text-decoration:underline}
+.skip{
+  position:absolute;left:-9999px;top:0;
+}
+.skip:focus{
+  left:16px;top:16px;z-index:10;
+  background:#fff;padding:10px 14px;border-radius:10px;
+}
+.page{
+  display:grid;
+  grid-template-columns:290px minmax(0,820px);
+  gap:42px;
+  max-width:1210px;
+  margin:0 auto;
+  padding:28px 28px 72px;
+}
+.sidebar{
+  position:sticky;
+  top:22px;
+  align-self:start;
+  max-height:calc(100vh - 44px);
+  overflow:auto;
+  padding:22px 19px;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:rgba(255,253,249,.92);
+}
+.sidebar .book{
+  margin:0 0 18px;
+  padding:0 0 18px;
+  border-bottom:1px solid var(--line);
+}
+.sidebar .book strong{
+  display:block;
+  font-family:var(--serif);
+  font-size:1.28rem;
+  line-height:1.45;
+  color:var(--brand);
+}
+.sidebar small{display:block;color:var(--muted);margin-top:6px;line-height:1.55}
+.sidebar h2{
+  margin:18px 0 10px;
+  font-size:.83rem;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  color:var(--muted);
+}
+.nav-list,.nav-list ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+.nav-list>li{margin:7px 0}
+.nav-list a{
+  display:block;
+  padding:4px 6px;
+  border-radius:8px;
+  color:#463f36;
+  line-height:1.45;
+  font-size:.93rem;
+}
+.nav-list a:hover{background:var(--accent-soft);text-decoration:none}
+.nav-list ul{
+  margin:4px 0 12px 11px;
+  padding-left:11px;
+  border-left:1px solid var(--line);
+}
+.nav-list ul a{font-size:.86rem;color:var(--muted)}
+main{min-width:0}
+.hero{
+  position:relative;
+  overflow:hidden;
+  padding:54px 54px 44px;
+  margin-bottom:28px;
+  border-radius:26px;
+  background:var(--paper);
+  border:1px solid var(--line);
+  box-shadow:var(--shadow);
+}
+.hero:before{
+  content:"";
+  position:absolute;
+  width:240px;height:240px;
+  top:-95px;right:-70px;
+  border-radius:50%;
+  background:var(--accent-soft);
+}
+.kicker{
+  margin:0 0 15px;
+  font-size:.78rem;
+  font-weight:700;
+  color:var(--brand-2);
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+h1{
+  position:relative;
+  margin:0 0 16px;
+  font-family:var(--serif);
+  font-size:clamp(2.1rem,4.2vw,3.15rem);
+  line-height:1.32;
+  letter-spacing:-.05em;
+}
+.subtitle{
+  position:relative;
+  margin:0 0 27px;
+  font-family:var(--serif);
+  font-size:1.18rem;
+  color:var(--brand);
+}
+.lead{
+  position:relative;
+  margin:0;
+  color:#423c34;
+  font-size:1.04rem;
+}
+.meta{
+  position:relative;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:0;
+  margin-top:33px;
+  border-top:1px solid var(--line);
+}
+.meta div{
+  padding:14px 16px 0 0;
+}
+.meta dt{
+  font-size:.78rem;
+  color:var(--muted);
+  font-weight:700;
+  letter-spacing:.04em;
+}
+.meta dd{
+  margin:3px 0 0;
+  font-size:.94rem;
+}
+.tag{
+  display:inline-block;
+  margin:4px 5px 0 0;
+  padding:2px 10px;
+  border-radius:999px;
+  background:var(--accent-soft);
+  color:var(--brand);
+  font-size:.83rem;
+}
+section{
+  margin:28px 0;
+  padding:36px 40px;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:var(--paper);
+}
+.part{
+  margin-top:45px;
+  border-top:5px solid var(--brand);
+}
+h2{
+  margin:0 0 21px;
+  font-family:var(--serif);
+  letter-spacing:-.04em;
+  line-height:1.42;
+  font-size:1.72rem;
+}
+h3{
+  margin:31px 0 13px;
+  color:var(--brand);
+  font-family:var(--serif);
+  line-height:1.5;
+  letter-spacing:-.035em;
+  font-size:1.34rem;
+}
+h4{
+  margin:27px 0 10px;
+  font-size:1.07rem;
+  line-height:1.55;
+  color:#423b32;
+}
+p{margin:10px 0 16px}
+hr{
+  border:0;
+  border-top:1px solid var(--line);
+  margin:33px 0;
+}
+ul,ol{
+  margin:10px 0 19px;
+  padding-left:23px;
+}
+li{margin:6px 0}
+strong{font-weight:700}
+mark{
+  padding:0 .2em;
+  background:var(--mark);
+  color:inherit;
+}
+blockquote{
+  margin:18px 0;
+  padding:17px 21px;
+  border-left:4px solid var(--brand-2);
+  background:var(--quote);
+  color:#38342e;
+  font-family:var(--serif);
+  font-size:1.02rem;
+}
+blockquote p{margin:0}
+blockquote footer{
+  margin-top:10px;
+  font-family:var(--sans);
+  font-size:.86rem;
+  color:var(--muted);
+}
+.note{
+  padding:17px 20px;
+  margin:17px 0;
+  background:var(--accent-soft);
+  border-radius:12px;
+  color:#403a31;
+}
+.one-line{
+  margin:25px 0 0;
+  padding:25px 27px;
+  background:var(--brand);
+  color:#fffaf2;
+  border-radius:14px;
+  font-family:var(--serif);
+  font-size:1.12rem;
+  line-height:1.72;
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+  margin:17px 0;
+}
+.card{
+  padding:18px 19px;
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius:13px;
+}
+.card h4{margin:0 0 7px;color:var(--brand);font-size:1rem}
+.card p{margin:0;color:#4c473e;font-size:.94rem}
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin:18px 0 25px;
+  font-size:.94rem;
+}
+th,td{
+  border:1px solid var(--line);
+  padding:12px 13px;
+  vertical-align:top;
+  text-align:left;
+}
+th{
+  background:var(--accent-soft);
+  color:#423b32;
+  font-weight:700;
+}
+.callout{
+  margin:17px 0;
+  padding:19px 22px;
+  border-radius:12px;
+  border-left:4px solid var(--good);
+  background:#eef3ef;
+}
+.callout strong{color:var(--good)}
+.chapter-label{
+  display:inline-block;
+  margin:0 0 13px;
+  padding:4px 11px;
+  background:var(--accent-soft);
+  color:var(--brand);
+  border-radius:999px;
+  font-size:.8rem;
+  font-weight:700;
+}
+.quote-list blockquote{margin:10px 0}
+.analysis{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+  margin-top:19px;
+}
+.analysis article{
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:16px 18px;
+}
+.analysis h4{margin-top:0}
+.checklist{
+  list-style:none;
+  padding:0;
+}
+.checklist li{
+  position:relative;
+  padding:10px 0 10px 34px;
+  border-bottom:1px dashed var(--line);
+}
+.checklist li:before{
+  content:"";
+  position:absolute;
+  left:1px;top:15px;
+  width:17px;height:17px;
+  border:2px solid var(--brand-2);
+  border-radius:4px;
+  background:#fff;
+}
+.footnotes{
+  font-size:.93rem;
+  color:#4e4941;
+}
+.footnotes article{
+  padding:18px 20px;
+  margin:12px 0;
+  border-radius:12px;
+  background:#faf7f1;
+  border:1px solid var(--line);
+}
+.footnotes h4{margin:0 0 10px}
+.backtop{
+  display:block;
+  margin-top:26px;
+  font-size:.86rem;
+  color:var(--muted);
+}
+footer.page-end{
+  margin:35px 0 0;
+  padding:26px 30px;
+  border-radius:16px;
+  background:#30291f;
+  color:#e9dfd1;
+  font-size:.93rem;
+}
+@media (max-width:980px){
+  .page{display:block;padding:16px 14px 48px}
+  .sidebar{position:static;max-height:none;margin-bottom:18px}
+  .sidebar .nav-list{columns:2;column-gap:22px}
+  .sidebar .nav-list li{break-inside:avoid}
+  .hero{padding:38px 25px 31px}
+  section{padding:27px 22px}
+}
+@media (max-width:640px){
+  body{font-size:15px;line-height:1.75}
+  .sidebar .nav-list{columns:1}
+  .meta,.grid,.analysis{display:block}
+  .card,.analysis article{margin:10px 0}
+  h2{font-size:1.47rem}
+  h3{font-size:1.2rem}
+  th,td{padding:9px 8px;font-size:.87rem}
+}
+</style>
+<meta property="og:type" content="article">
+<meta property="og:title" content="복음이 바꾼다 종합요약 (Recovering Redemption)">
+<meta property="og:description" content="망가진 세상에서 부르는 회복의 노래 저자: 매트 챈들러, 마이클 스네처 | 역자: 정성묵 | 출판사: 두란노 (20140811) 이 문서는 『복음이 바꾼다』의 전체 도서 요약과 프롤로그 및 각 장(Chapter)별 상세 요약을 한 권의 문서로 집대성한 종합 요약본입니다. 개별 파일로 나누어져 있던 요약 노트들을 목차 순서">
+<meta property="og:url" content="https://teentopia00.github.io/teendocs/s/5gvwfd/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="복음이 바꾼다 종합요약 (Recovering Redemption)">
+<meta name="twitter:description" content="망가진 세상에서 부르는 회복의 노래 저자: 매트 챈들러, 마이클 스네처 | 역자: 정성묵 | 출판사: 두란노 (20140811) 이 문서는 『복음이 바꾼다』의 전체 도서 요약과 프롤로그 및 각 장(Chapter)별 상세 요약을 한 권의 문서로 집대성한 종합 요약본입니다. 개별 파일로 나누어져 있던 요약 노트들을 목차 순서">
+<link rel="canonical" href="https://teentopia00.github.io/teendocs/s/5gvwfd/">
+</head>
+<body>
+<a class="skip" href="#content">본문으로 바로가기</a>
+<div class="page" id="top">
+  <aside class="sidebar" aria-label="문서 내비게이션">
+    <div class="book">
+      <strong>복음이 바꾼다</strong>
+      <small>망가진 세상에서 부르는 회복의 노래<br>종합요약 · Recovering Redemption</small>
+    </div>
+    <h2>목차</h2>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="#overview">도서 전체 개요 &amp; 구조</a>
+          <ul>
+            <li><a href="#architecture">책 전체 구조 맵</a></li>
+            <li><a href="#concepts">핵심 개념</a></li>
+            <li><a href="#claims">핵심 주장 Top 5</a></li>
+            <li><a href="#one-line">최종 요약</a></li>
+          </ul>
+        </li>
+        <li><a href="#prologue">프롤로그. 가짜 신앙</a></li>
+        <li><a href="#part1">PART 1. 정말 이렇게밖에 살 수 없는 건가?</a>
+          <ul>
+            <li><a href="#ch1">1. 실망감의 바다에서 표류하다</a></li>
+            <li><a href="#ch2">2. 벗어나려 할수록 항구는 멀어졌다</a></li>
+            <li><a href="#diagnosis">가짜 신앙 진단</a></li>
+          </ul>
+        </li>
+        <li><a href="#part2">PART 2. 복음이 우리를 찾아왔다</a>
+          <ul>
+            <li><a href="#ch3">1. 복음, 내 방식을 내려놓게 하다</a></li>
+            <li><a href="#ch4">2. 복음, 죄를 슬퍼하게 하다</a></li>
+            <li><a href="#ch5">3. 복음, 진짜 나를 보게 하다</a></li>
+            <li><a href="#ch6">4. 복음, 매일 하나님께로 방향을 돌리게 하다</a></li>
+          </ul>
+        </li>
+        <li><a href="#part3">PART 3. 죄로 뒤엉킨 속마음, 복음대로 풀라</a>
+          <ul>
+            <li><a href="#ch7">1. 내면의 폭풍을 잠재우라</a></li>
+            <li><a href="#ch8">2. '하나님을 믿는 믿음' 안에서 쉬라</a></li>
+            <li><a href="#ch9">3. 날마다 '그날 승리하는 데' 집중하라</a></li>
+          </ul>
+        </li>
+        <li><a href="#part4">PART 4. 포기하고 싶은 공동체, 복음대로 품으라</a>
+          <ul>
+            <li><a href="#ch10">1. 먼저 잘못을 인정하고 먼저 손 내밀라</a></li>
+            <li><a href="#ch11">2. 당장은 속상해도 책망하라</a></li>
+          </ul>
+        </li>
+        <li><a href="#part5">PART 5. 승전가를 부르라, 복음이 바꾼다!</a>
+          <ul>
+            <li><a href="#ch12">1. 전부를 팔아 복음을 사라</a></li>
+            <li><a href="#epilogue">에필로그. 진짜 신앙</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main id="content">
+    <header class="hero">
+      <p class="kicker">Book Synthesis · 종합요약</p>
+      <h1>복음이 바꾼다 종합요약<br><span lang="en">(Recovering Redemption)</span></h1>
+      <p class="subtitle">망가진 세상에서 부르는 회복의 노래</p>
+      <p class="lead">이 문서는 『복음이 바꾼다』의 전체 도서 요약과 프롤로그 및 각 장별 상세 요약을 한 권의 문서로 집대성한 종합 요약본입니다. 개별 파일로 나누어져 있던 요약 노트들을 목차 순서에 맞춰 유기적으로 정돈하고 통합하였습니다.</p>
+      <dl class="meta">
+        <div><dt>저자</dt><dd>매트 챈들러, 마이클 스네처</dd></div>
+        <div><dt>역자</dt><dd>정성묵</dd></div>
+        <div><dt>출판사 · 출간일</dt><dd>두란노 · 2014-08-11</dd></div>
+        <div><dt>ISBN13</dt><dd>9788953120709</dd></div>
+        <div><dt>유형</dt><dd>종합요약</dd></div>
+        <div><dt>태그</dt><dd><span class="tag">독서/복음이바꾼다</span><span class="tag">복음</span></dd></div>
+      </dl>
+    </header>
+
+    <section id="overview">
+      <h2>도서 전체 개요 &amp; 구조</h2>
+      <p>이 문서는 제공된 도서 원문 데이터인 『복음이 바꾼다』(<span lang="en">Recovering Redemption</span>, 매트 챈들러 외 저)의 핵심 내용을 심층적으로 분석하고 합성한 브리핑 문서입니다.</p>
+
+      <h3>1. 배경 및 맥락 <span lang="en">(Context)</span></h3>
+      <ul>
+        <li><strong>저자의 의도:</strong> 세상이 근본적으로 망가졌다는 현실을 직시하게 하고, 인간이 스스로를 구원하려는 모든 시도, 곧 자기계발과 종교적 노력 등이 실패할 수밖에 없음을 드러내고자 합니다. 궁극적으로는 예수 그리스도의 ‘복음’만이 인간을 온전하게 회복시키고 구속할 수 있다는 진리를 전하는 것이 목표입니다.</li>
+        <li><strong>시대적·지적 배경:</strong> 범죄, 질병, 재난, 가정 붕괴 등 비극이 만연한 현대 사회 속에서 인간은 끊임없이 실망감과 불만족을 느낍니다. 저자들은 이러한 현상을 하나님의 창조 섭리에서 벗어난 ‘타락’의 결과로 진단하며, 세상이 제시하는 단편적인 해결책을 비판합니다.</li>
+        <li><strong>타깃 독자:</strong> 스스로의 힘으로 삶을 변화시키려다 좌절한 사람, 죄책감과 수치심에 시달리는 신자, 복음을 단지 ‘천국행 티켓’으로만 여기며 일상의 변화를 경험하지 못하는 모든 이들입니다.</li>
+      </ul>
+
+      <h3>2. 전체 개요 &amp; 문제 의식</h3>
+      <div class="grid">
+        <article class="card">
+          <h4>핵심 주제문 1</h4>
+          <p>세상과 인간은 타락으로 인해 근본적으로 망가졌으며, 인간의 자발적인 노력으로는 결코 회복될 수 없다.</p>
+        </article>
+        <article class="card">
+          <h4>핵심 주제문 2</h4>
+          <p>복음은 단순히 죽어서 천국에 가는 수단이 아니라, 현재의 삶을 근본적으로 변화시키는 구속의 회복을 의미한다.</p>
+        </article>
+        <article class="card">
+          <h4>핵심 주제문 3</h4>
+          <p>참된 변화는 자신의 무능함을 인정하고 하나님의 주권적인 사랑과 은혜 안에 거할 때 시작된다.</p>
+        </article>
+        <article class="card">
+          <h4>문제 제기</h4>
+          <p>“정말 이렇게밖에 살 수 없는가?” 인간은 여러 도구를 동원하지만 그것은 잡초의 윗부분만 잘라내는 미봉책이며, 근본적인 마음의 문제를 해결하지 못한다.</p>
+        </article>
+      </div>
+
+      <h3 id="architecture">3. 책 전체 구조 맵 <span lang="en">(Architecture)</span></h3>
+      <table>
+        <thead>
+          <tr><th>구분</th><th>단계</th><th>주요 내용 및 기능</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>PART 1</strong></td><td><strong>현상 진단</strong></td><td>망가진 세상의 현실과 인간이 동원하는 ‘가짜 복음’의 무용성을 고발함.</td></tr>
+          <tr><td><strong>PART 2</strong></td><td><strong>복음의 개입</strong></td><td>복음이 인간을 어떻게 찾아오며, 칭의와 양자됨, 성화를 통해 어떻게 변화시키는가에 대한 원리 제시.</td></tr>
+          <tr><td><strong>PART 3</strong></td><td><strong>내면적 적용</strong></td><td>죄책감과 수치심이라는 내면의 폭풍을 복음으로 잠재우는 실제적인 방법 제시.</td></tr>
+          <tr><td><strong>PART 4</strong></td><td><strong>관계적 확장</strong></td><td>공동체와 관계 속에서 복음대로 품고 화해하는 원리 설명.</td></tr>
+          <tr><td><strong>PART 5</strong></td><td><strong>미래 전망</strong></td><td>전부를 팔아 복음을 사는 삶, 곧 복음이 바꾸는 최종적인 승리를 선포함.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>4. 장별 핵심 요약 <span lang="en">(Compressed View)</span></h3>
+      <ul>
+        <li><strong>PART 1. 정말 이렇게밖에 살 수 없는가?</strong> 망가진 세상 속에서 인간이 느끼는 끊임없는 실망감은 창조주가 심어놓은 완벽한 평화, 곧 샬롬에 대한 갈망의 반작용입니다. 인간은 스스로를 구원하려 애쓰지만, 그럴수록 구원의 항구에서 멀어질 뿐입니다.</li>
+        <li><strong>PART 2. 복음이 우리를 찾아왔다</strong> 복음은 우리가 아직 연약할 때 찾아온 하나님의 반전입니다. 복음은 우리 자신의 방식을 내려놓게 하고, 그리스도 안에서 새로운 정체성인 의인과 자녀 됨을 부여하며, 평생의 과정인 성화로 우리를 이끕니다.</li>
+        <li><strong>PART 3. 죄로 뒤엉킨 속마음, 복음대로 풀라</strong> 내면의 고통인 죄책감과 수치심은 인간의 노력으로 지울 수 없습니다. 오직 우리를 온전히 받아주시는 하나님의 사랑만이 이 폭풍을 잠재우고 진정한 안식을 줍니다.</li>
+        <li><strong>PART 4~5. 공동체와 승리</strong> 복음은 개인을 넘어 공동체로 확장됩니다. 자신의 잘못을 먼저 인정하고 손을 내미는 화해의 역사가 복음을 통해 일어나며, 신자는 전부를 걸고 이 복음의 가치를 누리는 승전가를 부르게 됩니다.</li>
+      </ul>
+
+      <h3 id="concepts">5. 핵심 개념 및 관계망 <span lang="en">(Knowledge Graph)</span></h3>
+      <table>
+        <thead><tr><th>키워드</th><th>의미</th></tr></thead>
+        <tbody>
+          <tr><td><strong>구속 <span lang="en">(Redemption)</span></strong></td><td>망가진 것을 다시 사서 원상태로 회복시키는 하나님의 역사.</td></tr>
+          <tr><td><strong>타락 <span lang="en">(Fall)</span></strong></td><td>에덴에서의 반역으로 인해 세상의 평화, 곧 샬롬이 깨진 사건.</td></tr>
+          <tr><td><strong>가짜 신앙 <span lang="en">(False Faith)</span></strong></td><td>자신의 노력으로 하나님의 점수를 따려 하거나, 복음을 사적인 위안으로만 여기는 태도.</td></tr>
+          <tr><td><strong>수치심 vs 죄책감</strong></td><td>수치심은 “나라는 존재가 나쁘다”는 정체성의 파괴이며, 죄책감은 “내가 나쁜 짓을 했다”는 행동의 판단임.</td></tr>
+          <tr><td><strong>성화 <span lang="en">(Sanctification)</span></strong></td><td>구원받은 자가 성령의 도우심으로 매일 거룩하게 변화되어 가는 긴 과정.</td></tr>
+        </tbody>
+      </table>
+      <p class="note"><strong>개념 간 관계:</strong> ‘타락’으로 인해 ‘수치심과 죄책감’이 발생했고, 인간은 ‘가짜 신앙’으로 이를 해결하려 하나 실패합니다. ‘복음’은 하나님의 ‘구속’을 통해 이 문제를 해결하며, 신자는 ‘성화’를 통해 그 결과를 삶에서 실현해 나갑니다.</p>
+
+      <h3 id="claims">6. 저자의 핵심 주장 Top 5 &amp; 논거</h3>
+      <ol>
+        <li><strong>“우리는 스스로를 절대 구원할 수 없다.”</strong><br>인간의 자기계발 노력은 결국 사막과 광야로 이어지며, 율법주의적 종교 행위는 밑 빠진 웅덩이에 물을 가두려는 헛수고에 불과합니다.</li>
+        <li><strong>“진짜 문제는 마음의 문제다.”</strong><br>겉으로 드러나는 중독이나 나쁜 습관은 잡초의 잎사귀일 뿐이며, 그 뿌리에는 하나님에 대한 반역과 마음의 부패가 자리 잡고 있습니다.</li>
+        <li><strong>“칭의와 양자됨은 단번에 일어나지만, 그 누림은 평생의 과정이다.”</strong><br>우리는 천국 법정에서 무죄 판결을 받고 하나님의 가족으로 입양되었지만, 이 정체성을 일상에서 누리기 위해 지속적인 회개와 성화가 필요합니다.</li>
+        <li><strong>“수치심의 유일한 해법은 하나님의 완전한 용납이다.”</strong><br>수치심은 비밀을 먹고 자라지만, 우리를 온전히 아시면서도 사랑하시는 하나님 앞에 자신을 드러낼 때 치유됩니다.</li>
+        <li><strong>“성화는 살림과 죽임의 두 축으로 이루어진다.”</strong><br>예수님을 생각함으로 마음을 살리고, 성령의 능력으로 죄의 습관을 죽이는 적극적인 훈련이 필요합니다.</li>
+      </ol>
+
+      <h3>7. 원문 핵심 인용 <span lang="en">(The Essence)</span></h3>
+      <div class="quote-list">
+        <blockquote><p>“우리가 아직 연약할 때에… 그리스도께서 우리를 위하여 죽으심으로 하나님께서 우리에 대한 자기의 사랑을 확증하셨느니라.”</p><footer>롬 5:6-8 · 복음의 핵심 근거</footer></blockquote>
+        <blockquote><p>“복음의 묘미는 하나님이 일으키시는 ‘반전’이다.”</p><footer>복음의 역동성</footer></blockquote>
+        <blockquote><p>“죄는 우리를 더럽히는 것이 아니라, 우리가 죄인이기 때문에 죄를 짓는 것이다. 문제의 핵심은 마음이다.”</p><footer>인간론적 통찰</footer></blockquote>
+        <blockquote><p>“회개는 구속의 살아 있는 열매다. 복음 앞에서의 올바른 반응은 지속적인 회개다.”</p><footer>변화의 열쇠</footer></blockquote>
+        <blockquote><p>“하나님은 우리를 구속하기 위해 우리의 삶 속으로 들어오셨다. 그 아버지의 사랑이 아무리 깊어도 하늘 아버지의 사랑을 따라갈 수 없다.”</p><footer>회복의 소망</footer></blockquote>
+      </div>
+
+      <h3>8. 사고 프레임 &amp; 논증 방식 분석</h3>
+      <ul>
+        <li><strong>사고의 틀:</strong> 성경의 ‘창조-타락-구속-영화’라는 거대 담론을 기반으로 인간의 심리와 삶의 문제를 분석하는 성경적 세계관 프레임을 사용합니다.</li>
+        <li><strong>사례 중심:</strong> 니나의 이혼, 베스의 성폭력 피해, 란디의 외도 등 구체적이고 비극적인 삶의 사례를 제시하여 복음의 필요성을 역설합니다.</li>
+        <li><strong>대조법:</strong> 가짜 복음과 진짜 복음을 끊임없이 대조하여 독자가 자신의 상태를 점검하게 합니다.</li>
+        <li><strong>사고 실험:</strong> “아버지가 탕자를 맞이할 때의 심정은 어떠했겠는가?”와 같은 질문을 통해 정서적 공감을 이끌어냅니다.</li>
+      </ul>
+
+      <h3>9. 비판적 검토 및 방어 기제</h3>
+      <ul>
+        <li><strong>논리적 약점:</strong> 모든 심리적·관계적 문제의 원인을 죄와 하나님과의 관계로만 귀결시킴으로써 생물학적 요인이나 환경적 영향에 대한 고려가 부족해 보일 수 있습니다.</li>
+        <li><strong>저자의 방어:</strong> 인간이 동원하는 상담이나 노력이 잠시 동안은 괜찮아 보일 수 있음을 인정하지만, 그것이 근본적인 뿌리를 뽑지 못하면 결국 더 큰 좌절을 낳는다고 설명합니다.</li>
+        <li><strong>반대 관점:</strong> 인본주의적 심리학이나 자기계발론은 인간의 자아 존중감과 의지를 변화의 핵심 동력으로 보지만, 이 책은 그것이 오히려 구속의 방해물이라고 주장합니다.</li>
+      </ul>
+
+      <h3>10. 확장적 적용 <span lang="en">(Synthesis)</span></h3>
+      <ul>
+        <li><strong>개인적 차원:</strong> 완벽해지려는 강박, 곧 가짜 신앙을 버리고, 매일 자신의 약함을 하나님께 고백하며 그분의 자녀라는 정체성 안에서 안식을 누리는 삶으로 전환합니다.</li>
+        <li><strong>사회적·조직적 차원:</strong> 자신의 허물을 숨기지 않고 서로의 죄를 고백하며 복음으로 용납하는 진실한 공동체를 형성합니다. 이는 성과 중심의 세상 질서와 정반대되는 은혜의 질서를 조직 안에 도입합니다.</li>
+      </ul>
+
+      <h3 id="one-line">11. 최종 요약 <span lang="en">(The One Line)</span></h3>
+      <p class="one-line">“자기 구원의 헛된 시도를 멈추고, 망가진 우리를 찾아와 자녀 삼으신 예수 그리스도의 복음 안에서 참된 정체성과 회복을 시작하라.”</p>
+      <a class="backtop" href="#top">맨 위로 ↑</a>
+    </section>
+
+    <section id="prologue" class="part">
+      <span class="chapter-label">프롤로그</span>
+      <h2>가짜 신앙</h2>
+
+      <h3>1. 장 개요</h3>
+      <p>이 장의 핵심 주제와 저자의 의도는 독자들이 자신이 ‘복음’이라고 믿어왔던 것이 실상은 행위와 두려움에 기반한 율법주의적 ‘가짜 신앙’일 수 있음을 직면하게 만드는 것입니다. 저자는 억압적인 종교적 굴레를 벗어나 진정한 은혜와 회복을 노래하는 ‘진짜 복음’으로 독자를 초대하고자 합니다.</p>
+      <p>이 장은 책 전체의 <strong>서론이자 진단 키트 역할</strong>을 수행합니다. 독자가 스스로 복음을 잘 안다는 영적 교만이나 익숙함을 내려놓고, 이후 전개될 ‘구속과 회복’의 본론을 절실한 마음으로 받아들이도록 토양을 기경합니다.</p>
+
+      <h3>2. 논증 구조 <span lang="en">(Argument Map)</span></h3>
+      <ul>
+        <li><strong>핵심 주장:</strong> 우리는 진정한 복음이 아닌, 행위의 짐을 지우는 ‘가짜 신앙’에 빠져 영적으로 탈진해 있으며, 이제 잃어버린 ‘진짜 복음의 노래’를 다시 들어야 한다.</li>
+        <li><strong>근거:</strong> 신앙생활을 열심히 하려다 실패하여 느끼는 짙은 좌절감, 남들 앞에서는 경건한 척하지만 내면은 곪아 있는 기독교인들의 보편적인 경험.</li>
+        <li><strong>결론:</strong> 진정한 변화는 하나님께 점수를 따려는 노력이 아니라, 은혜 안에서 우리를 자녀로 받아주신 복음을 온전히 누릴 때 비로소 시작된다.</li>
+      </ul>
+
+      <h3>3. 핵심 논점 &amp; 전개</h3>
+      <div class="grid">
+        <article class="card">
+          <h4>복음이라는 잊힌 노래의 재발견</h4>
+          <p>복음은 늘 우리 주변에 들려오던 노래와 같지만, 그 은혜가 마음을 강타할 때 비로소 삶의 주파수가 바뀝니다.</p>
+        </article>
+        <article class="card">
+          <h4>가짜 신앙 1: 헛수고 신앙</h4>
+          <p>하나님의 은혜를 믿지 못하고 자신의 자기계발과 도덕적 노력으로 의를 쟁취하려는 태도입니다. 행위 구원론적 접근은 결국 절망과 은밀한 죄로 귀결됩니다.</p>
+        </article>
+        <article class="card">
+          <h4>가짜 신앙 2: 스파이 신앙</h4>
+          <p>신앙을 사적인 차원으로 축소하고 자신의 진짜 모습이 드러나는 것을 두려워하여 숨는 태도입니다. 수치심은 신앙을 고립시키고 위선으로 이끕니다.</p>
+        </article>
+        <article class="card">
+          <h4>다시 들어야 할 진짜 복음</h4>
+          <p>진짜 복음은 나를 뜯어고쳐 완벽해지는 것이 아니라, 불완전한 나를 안으시는 하나님의 주권적 사랑에 압도되는 것입니다.</p>
+        </article>
+      </div>
+
+      <h3>4. 원문 핵심 인용</h3>
+      <blockquote><p>“이 가짜 신앙은 ‘헛수고’ 신앙이다. 하나님이 당신을 사랑하시고 기뻐하신다고 얼마나 수없이 말씀하셨는가? … 그런데도 당신은 노력으로 의를 얻을 필요가 없다는 사실을 도통 받아들이지 못한다.”</p></blockquote>
+      <blockquote><p>“결국, 당신은 자포자기에 이른다. 의욕을 잃어버린다. 그래서 좋은 신앙인들이 하지 않는 행동, 즉 당신 자신도 하고 싶지 않은 행동을 하기 시작한다.”</p></blockquote>
+      <blockquote><p>“진짜 복음이다. … 종이 아니라 자녀로서의 삶. A학점을 받기 위한 노력이 아니라 은혜 안에서 자라가는 것.”</p></blockquote>
+      <blockquote><p>“우리가 그리스도 안에서 회복되었고 매일같이 회복되고 있다는 깊은 확신.”</p></blockquote>
+
+      <h3>5. 핵심 개념 &amp; 키워드</h3>
+      <table>
+        <tbody>
+          <tr><th>가짜 신앙</th><td>하나님의 주권적 은혜를 배제한 채 인간의 의지, 노력, 체면을 동력으로 삼는 종교적 행태.</td></tr>
+          <tr><th>헛수고 신앙</th><td>스스로 기준을 세우고 하나님께 칭찬받기 위해 자신을 채찍질하다 탈진하는 성과주의 신앙.</td></tr>
+          <tr><th>스파이 신앙</th><td>자신의 연약함과 죄성이 공동체에 들킬까 봐 안전한 거리에서만 종교를 소비하는 신앙.</td></tr>
+          <tr><th>복음의 노래</th><td>하나님이 거저 주시는 은혜와 구속의 기쁨을 비유한 개념.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>6. 구조적 특징 분석</h3>
+      <ul>
+        <li><strong>비유와 은유:</strong> 서론 전체를 음악, 곧 노래·불협화음·화음·박자의 감각적 비유로 이끕니다.</li>
+        <li><strong>2인칭 대명사의 도발적 사용:</strong> “당신”을 반복하여 독자의 종교적 방어기제를 허물고 내면의 민낯을 직면하도록 의도적으로 압박합니다.</li>
+      </ul>
+
+      <h3>7. 흐름 속 위치</h3>
+      <p>가짜 신앙에 빠지는 근본 원인이 인간의 본질적 타락과 망가짐에 있음을 규명하기 위해, 이어지는 PART 1은 실망감의 바다 속으로 자연스럽게 들어갑니다. 이 프롤로그는 독자가 “나는 이미 복음을 잘 알고 있다”는 착각을 깨뜨리고 본론을 받아들이게 하는 충격 요법의 장입니다.</p>
+
+      <h3>8. 비판적 검토</h3>
+      <p>‘가짜 신앙’을 명확히 규정하여 공감을 주지만, 신앙 여정에서 필연적으로 겪게 되는 건강한 영적 고뇌나 성화를 위한 경건의 훈련조차 행위 구원론적 가짜 신앙으로 성급히 매도될 위험성이 있습니다. 또한 독자가 이미 교회 안에서 종교적 피로감과 좌절을 겪어본 기독교인이라는 전제를 강하게 깔고 있습니다.</p>
+
+      <h3>9. 독자 적용 포인트</h3>
+      <ol>
+        <li><strong>내면의 동기 진단하기:</strong> 오늘의 경건 시간이나 봉사가 하나님께 A학점을 받아 혼나지 않으려는 두려움 때문인지, 이미 구원받은 자녀로서의 기쁨 때문인지 질문해 봅니다.</li>
+        <li><strong>안전한 은혜의 환경 조성:</strong> 공동체 안에서 스파이 신앙인들이 위선의 가면을 벗을 수 있도록 리더가 먼저 실패와 연약함을 고백하는 모범을 보입니다.</li>
+      </ol>
+
+      <h3>10. 보완: 영적 교만</h3>
+      <div class="callout">
+        <strong>가짜 신앙의 세 번째 유형</strong>
+        <p>헛수고나 스파이 신앙처럼 위축된 형태뿐 아니라, 진리에 관해 자신이 하나님보다 더 잘 안다고 믿으며 자기 소견에 옳은 대로 행하는 오만함 역시 가짜 신앙의 또 다른 축입니다.</p>
+        <blockquote><p>“진리에 관해 자신이 하나님보다 더 잘 안다고 믿는 사람들, 자신이 하나님 말씀을 하나님보다도 더 잘 해석할 수 있다고 믿는 사람들. 한마디로, 그들은 자신이 곧 하나님인 것처럼 군다.”</p></blockquote>
+      </div>
+
+      <h3>설교용 확장</h3>
+      <ol>
+        <li>우리는 익숙함에 속아 진정한 복음의 노래를 잃어버렸습니다.</li>
+        <li>복음을 잃은 마음의 빈자리는 피곤한 가짜 신앙, 곧 행위와 위선이 차지하게 됩니다.</li>
+        <li>행위의 짐을 벗고, 종이 아닌 자녀로 부르시는 은혜의 진짜 복음을 다시 들어야 합니다.</li>
+      </ol>
+
+      <h3>하브루타용 토론 질문</h3>
+      <ol>
+        <li>신앙생활을 하면서 복음이 노동요처럼 무겁게 느껴졌던 헛수고 신앙의 경험은 언제입니까?</li>
+        <li>나의 솔직한 연약함을 감추려 했던 스파이 신앙의 모습이 내게도 있습니까?</li>
+        <li>“A학점을 받기 위한 노력이 아니라 은혜 안에서 자라가는 것”이라는 문장은 현재의 신앙에 어떤 도전을 줍니까?</li>
+        <li>복음이 나를 강렬하게 사로잡았던 첫 경험은 언제입니까?</li>
+        <li>우리 공동체가 가짜 신앙의 껍질을 벗기 위해 버려야 할 종교적 허례허식은 무엇입니까?</li>
+      </ol>
+      <a class="backtop" href="#top">맨 위로 ↑</a>
+    </section>
+
+    <section id="part1" class="part">
+      <span class="chapter-label">PART 1</span>
+      <h2>정말 이렇게밖에 살 수 없는 건가?</h2>
+      <p class="lead">망가진 세상의 현실과, 인간이 스스로를 구원하기 위해 고안해 낸 대체 수단들의 파산을 드러내는 진단의 장입니다.</p>
+    </section>
+
+    <section id="ch1">
+      <span class="chapter-label">PART 1 · Chapter 1</span>
+      <h2>실망감의 바다에서 표류하다</h2>
+
+      <h3>1. 장 개요</h3>
+      <p>이 장의 핵심 주제는 인간이 일상에서 느끼는 깊은 실망감과 좌절이 단순한 감정적 우울이 아니라, 잃어버린 에덴, 곧 완벽한 창조 세계를 향한 영혼의 <strong>환상지통</strong>임을 깨닫게 하는 것입니다. 저자는 망가진 세상을 스스로 고치려는 헛된 노력을 멈추고 주님 앞에 항복할 것을 촉구합니다.</p>
+      <p>이 장은 책 전체의 기저를 이루는 <strong>성경적 세계관, 창조와 타락</strong>을 확립합니다. 복음, 곧 구속이 왜 필요한지를 이해하기 위해 우리의 현주소인 망가짐과 원래의 정상 상태인 샬롬을 대조하여 보여주는 진단서와 같습니다.</p>
+
+      <h3>2. 논증 구조</h3>
+      <p class="callout"><strong>핵심 주장:</strong> <mark>우리가 겪는 끝없는 실망감은 타락으로 인해 깨어진 완벽한 창조의 샬롬에 대한 갈망에서 비롯되며, 망가진 삶은 인간의 힘이 아닌 오직 하나님의 능력으로만 고칠 수 있다.</mark></p>
+      <ol>
+        <li><strong>현상 진단:</strong> 세상이 철저히 망가졌고 우리는 끊임없는 실망감 속에 살고 있습니다.</li>
+        <li><strong>원인 규명:</strong> 그 실망감은 흠 없는 창조, 에덴에 대한 영혼의 기억 때문입니다.</li>
+        <li><strong>문제의 발생:</strong> 타락으로 인해 샬롬이 깨지고 고통과 허무가 들어왔습니다.</li>
+        <li><strong>해결책:</strong> 찢어진 종이조각 같은 삶을 스스로 맞추려는 몸부림을 버리고, 주님 앞에 항복해야 합니다.</li>
+      </ol>
+
+      <h3>3. 핵심 논점 &amp; 전개</h3>
+      <div class="grid">
+        <article class="card">
+          <h4>망가진 세상과 실망감</h4>
+          <p>범죄, 사고, 일상의 피로 등 세상의 흉측함은 우리가 지독한 결핍 속에 살고 있음을 증명합니다.</p>
+        </article>
+        <article class="card">
+          <h4>환상지통</h4>
+          <p>절단된 팔다리의 통증처럼, 인간은 상실된 에덴과 샬롬을 영혼 깊은 곳에서 갈망합니다. 이 실망감은 구속자를 찾게 하는 영적 나침반입니다.</p>
+        </article>
+        <article class="card">
+          <h4>샬롬의 파괴</h4>
+          <p>창세기 3장의 반역으로 창조의 하모니가 깨졌고 죽음, 고통, 수치심이 인간의 삶에 스며들었습니다.</p>
+        </article>
+        <article class="card">
+          <h4>자력 구원의 포기</h4>
+          <p>망가진 인생을 우리 힘으로 다시 맞추려는 것은 불가능합니다. 회복은 항복에서 시작됩니다.</p>
+        </article>
+      </div>
+
+      <h3>4. 원문 핵심 인용</h3>
+      <blockquote><p>“이 세상이 망가졌다.”</p></blockquote>
+      <blockquote><p>“환상지통은 고통이 코앞에 있다는 사실을 끊임없이 일깨워 준다. … 사실, 이 실망감은 우리를 지으신 분의 선물이다.”</p></blockquote>
+      <blockquote><p>“복음에 대한 이해는 하나님의 말씀이 시작되는 곳, 즉 흠 없는 창조의 영광 그 한복판에서부터 시작되어야 한다.”</p></blockquote>
+      <blockquote><p>“하지만 너는 지금 그러려고 애쓰고 있지 않느냐? 삶의 깨진 조각들을 다시 맞추려고 안간힘을 쓰고 있어. … 나 없이는 절대 불가능하다.”</p></blockquote>
+
+      <h3>5. 핵심 개념</h3>
+      <table>
+        <tbody>
+          <tr><th>실망감</th><td>피조물이 창조의 본래 목적, 곧 샬롬을 상실했기 때문에 겪는 영적 갈증.</td></tr>
+          <tr><th>환상지통</th><td>상실된 에덴에서의 삶과 하나님과의 완벽한 관계를 여전히 갈망하며 느끼는 고통의 은유.</td></tr>
+          <tr><th>샬롬</th><td>부족함이나 왜곡이 없는 완벽한 평화와 조화의 상태.</td></tr>
+          <tr><th>항복</th><td>무너진 삶을 스스로 해결하려는 몸부림을 멈추고 창조주께 내어드리는 태도.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>6. 니나의 찢어진 종이조각</h3>
+      <div class="note">
+        <p><strong>사건의 배경:</strong> 니나는 10년을 함께 산 남편에게 전화 한 통으로 일방적인 이혼 통보를 받고, 네 명의 아이를 홀로 키워야 하는 상황에 놓였습니다. 자기 힘으로 상황을 수습하려 했지만, 체력은 고갈되고 책임은 감당하기 어려울 만큼 커졌습니다.</p>
+        <p><strong>종이찢기 장면:</strong> 예배당에서 소망을 잃은 채 종이를 찢던 니나에게 “더 찢어라. 조각조각 내라”는 음성이 들립니다. 종이가 수백 조각이 되었을 때 “이제 그 종이를 다시 짝 맞춰라”는 요청을 받습니다. 그녀가 “그건 불가능해요”라고 답하자, 자신이 삶의 깨진 조각들을 바로 그렇게 맞추려 애쓰고 있음을 깨닫습니다.</p>
+        <p><strong>항복의 의미:</strong> 결국 그녀는 종잇조각을 두 손에 담아 위로 팔을 뻗습니다. 이 망가진 삶을 고치는 것은 그녀가 아니라 하나님의 몫이라는 사실을 인정하는 항복의 몸짓입니다.</p>
+      </div>
+
+      <h3>7. 비판적 검토</h3>
+      <p>모든 종류의 실망감과 정신적 고통을 잃어버린 에덴에 대한 영적 갈망으로 단일화하는 경향이 있습니다. 현대 심리학이나 의학적 관점의 우울증과 임상적 고통마저 영적인 원인으로만 치환할 경우, 현실적인 치료를 기피하게 만들 위험성이 존재합니다.</p>
+
+      <h3>8. 적용과 토론</h3>
+      <ol>
+        <li>삶에서 원인을 알 수 없는 깊은 공허함이 밀려올 때, 그것을 환경 탓으로만 돌리지 않고 내 영혼이 샬롬을 목말라하고 있음을 인식합니다.</li>
+        <li>이혼, 파산, 질병으로 무너진 이를 위로할 때 섣부른 해결책보다 하나님 앞에 삶을 맡기도록 돕습니다.</li>
+        <li>당신이 지금 손에 쥐고 억지로 맞추려 하는 종이조각, 곧 관계·재정·자녀 문제·중독은 무엇입니까?</li>
+      </ol>
+      <a class="backtop" href="#top">맨 위로 ↑</a>
+    </section>
+
+    <section id="ch2">
+      <span class="chapter-label">PART 1 · Chapter 2</span>
+      <h2>벗어나려 할수록 항구는 멀어졌다</h2>
+
+      <h3>1. 장 개요</h3>
+      <p>이 장은 타락으로 인해 망가진 삶과 실망감을 마주한 인간이 <mark>스스로를 구원하기 위해 고안해 낸 네 가지 거짓된 방식, 곧 자기계발·타인·쾌락·종교의 철저한 무능력</mark>을 폭로합니다. 겉으로 드러난 행동을 수정하려는 노력은 잡초를 베는 것과 같으며, 근본적인 마음의 문제, 곧 뿌리를 수술해야 한다고 역설합니다.</p>
+
+      <h3>2. 네 가지 거짓 구원 방식</h3>
+      <table>
+        <thead><tr><th>방식</th><th>설명</th><th>결과</th></tr></thead>
+        <tbody>
+          <tr><td><strong>자기계발</strong></td><td>미래의 완벽한 자아를 만들어 세상을 바로잡으려 함.</td><td>스스로를 신뢰하는 영적 파국.</td></tr>
+          <tr><td><strong>타인에 대한 집착</strong></td><td>배우자, 연인, 자녀에게 내면의 구멍을 메워달라고 요구함.</td><td>상대에게 신의 역할이라는 무거운 짐을 지우고 관계를 파괴함.</td></tr>
+          <tr><td><strong>세상적 쾌락</strong></td><td>물건, 음식, 술, 성 등을 통해 참된 만족을 얻으려 함.</td><td>일시적 마취 뒤 더 큰 공허와 중독.</td></tr>
+          <tr><td><strong>종교 행위</strong></td><td>선행과 의식으로 하나님의 평가 저울을 유리하게 만들려 함.</td><td>은혜를 거래로 바꾸는 율법주의.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>3. 문제의 핵심: 행동이 아닌 마음</h3>
+      <blockquote><p>“우리 문제의 핵심(<span lang="en">heart</span>)은 마음(<span lang="en">heart</span>)의 문제다.”</p></blockquote>
+      <p>폭식, 음란, 관계 단절과 같은 행동은 표면적 증상, 곧 잡초입니다. 진짜 문제는 그 아래 숨은 분노, 두려움, 정욕, 인정 욕구, 통제 욕구와 같은 마음의 뿌리입니다. 저자는 마가복음 7장 15-16절을 통해 죄가 외부 환경에서 우리 안으로 들어오는 것이 아니라 이미 부패한 내면에서 밖으로 나오는 것임을 설명합니다.</p>
+
+      <h3>4. 원문 핵심 인용</h3>
+      <blockquote><p>“우리는 마침내 완벽에 이른 미래의 자신을 상상했다. 그 완벽한 인간이 뒤집어진 우리의 세상을 바로잡아 주리라 믿었다.”</p></blockquote>
+      <blockquote><p>“다른 누군가가 내 모든 문제에 대한 답이 되어 줄 수 있다는 기대를 품는 것은 그들에게 너무 무거운 짐을 강제로 지우는 것이다. 그렇게 되면 나만이 아니라 주변 모든 사람이 불행해진다.”</p></blockquote>
+      <blockquote><p>“표면적으로 드러난 중독과 나쁜 습관, 경험보다는 그 밑바닥에 흐르는 근본 문제를 다루는 것이 중요하다. … 그 어떤 인간적인 구속의 노력으로도 이 문제를 해결할 수 없다.”</p></blockquote>
+
+      <h3>5. 베스: 사람을 구원자로 삼다</h3>
+      <p>베스는 내면 깊은 곳의 외로움을 하나님의 사랑이 아니라 남자의 관심으로 대체하려 했습니다. 대학 시절 성폭력 피해를 겪고 분노와 자기 혐오를 짊어진 후에도, 하나님께 돌아가기보다 결혼할 남자가 자신의 망가진 삶을 고쳐 줄 것이라고 믿었습니다. 그러나 10년 뒤 결혼은 이혼으로 끝났고 절망은 더 깊어졌습니다.</p>
+      <div class="callout">
+        <strong>관계의 영적 원리</strong>
+        <p>배우자는 우리를 완전하게 만들어 줄 수 있는 신이 아닙니다. 상대방에게 내 텅 빈 마음을 완벽히 채워달라고 요구하는 것은 상대의 어깨에 감당할 수 없는 구원자의 짐을 얹는 일입니다.</p>
+      </div>
+
+      <h3>6. 새 차와 알코올: 같은 패턴의 쾌락</h3>
+      <p>새 차와 새 물건은 며칠간 자신이 더 나은 사람이 된 듯한 고양감을 주지만, 곧 익숙해지고 낡아집니다. 그럼에도 인간은 바닥난 밀크셰이크 잔을 들여다보며 실망할 줄 알면서도 또 주문대 앞으로 갑니다. 저자는 이를 알코올 중독자의 악순환과 연결합니다. 소비와 중독은 겉모습이 다르지만, 모두 영혼의 결핍을 세상적인 것으로 마취하려는 동일한 패턴을 가집니다.</p>
+
+      <h3>7. 하나님의 저울이라는 착각</h3>
+      <p>많은 기독교인은 자신의 선행과 악행을 다는 가상의 저울이 있다고 믿으며, 죄를 지었을 때 봉사나 헌신으로 그 저울을 자기 쪽으로 기울이려 합니다. 그러나 저자는 복음 안에는 그러한 저울이 존재하지 않는다고 단언합니다.</p>
+      <blockquote><p>“우리는 예수 그리스도의 피로 완벽히 의로워졌거나, 전혀 의로워지지 않았거나 둘 중 하나다. 중간 지점은 없다.”</p></blockquote>
+
+      <h3>8. 비판적 검토</h3>
+      <p>모든 인간의 노력, 관계, 습관 교정까지 자기 구원의 시도로 묶어 무용지물화하는 것으로 읽힐 위험이 있습니다. 일반 은총의 영역에서 상담, 좋은 관계, 습관 교정이 주는 유익을 부정하는 것이 아니라, 그것들이 궁극적인 구속의 자리를 대신할 수 없다는 점을 분명히 구별할 필요가 있습니다.</p>
+
+      <h3>9. 적용</h3>
+      <ol>
+        <li>스트레스나 우울함 속에서 가장 먼저 달려가는 대상이 쇼핑, 특정 사람의 인정, 폭식, 일 중독인지 기록하고, 그것이 거짓 구원자 역할을 하고 있는지 점검합니다.</li>
+        <li>자녀나 제자의 행동을 교정할 때 행동 자체만 책망하지 말고, 그 아래 어떤 두려움이나 상처가 있는지 질문합니다.</li>
+      </ol>
+      <a class="backtop" href="#top">맨 위로 ↑</a>
+    </section>
+
+    <section id="diagnosis">
+      <span class="chapter-label">SELF-DIAGNOSIS CHECKLIST</span>
+      <h2>가짜 신앙 진단</h2>
+      <p>1부 내용을 바탕으로, 내 안에 숨겨진 ‘가짜 신앙’을 스스로 점검해 볼 수 있는 진단 질문 목록입니다. 아래 질문들에 자주 “그렇다”고 답하게 된다면 진정한 복음이 아닌 가짜 신앙에 빠져 있을 가능성을 진지하게 점검해야 합니다.</p>
+
+      <h3>1. 헛수고 신앙 진단: 행위와 성과주의</h3>
+      <ul class="checklist">
+        <li>하나님이 나를 이미 용서하시고 자녀로 받아주셨다는 사실을 알지만, 여전히 내 노력으로 의를 얻고 점수를 따야 한다고 느끼는가?</li>
+        <li>신앙생활의 열심이 부담감으로 변하여 억지로 노력하다가, 결국 지쳐서 자포자기한 적이 있는가?</li>
+        <li>신앙적인 노력을 하다가 무너지면, 옛 죄의 습관으로 다시 도피하곤 하는가?</li>
+        <li>신앙생활의 목적이 은혜 안에서 자라가는 것이 아니라 하나님께 A학점을 받기 위한 노력으로 변질되었는가?</li>
+      </ul>
+
+      <h3>2. 스파이 신앙 진단: 위선과 고립</h3>
+      <ul class="checklist">
+        <li>신앙을 개인적 묵상이나 혼자 듣는 찬양에만 제한하며, 남들 앞에서는 그리스도인임을 티 내지 않으려 하는가?</li>
+        <li>가면 뒤에 숨겨진 진짜 얼굴, 곧 연약함과 은밀한 죄를 사람들이 알게 된다면 나를 사랑하지 않을 것이라는 두려움이 있는가?</li>
+      </ul>
+
+      <h3>3. 영적 교만 진단: 자기중심성</h3>
+      <ul class="checklist">
+        <li>진리에 관해 내가 하나님보다 더 잘 안다고 은연중에 믿거나, 내 생각이 곧 하나님의 생각이라고 착각하는가?</li>
+        <li>하나님의 말씀을 있는 그대로 받아들이기보다 내 입맛에 맞게 해석하며 스스로 하나님인 것처럼 행동할 때가 있는가?</li>
+      </ul>
+
+      <h3>4. 종교적 저울 진단: 율법주의와 거래</h3>
+      <ul class="checklist">
+        <li>죄를 지었을 때 봉사나 헌신 같은 종교 행위로 하나님의 저울을 유리하게 기울이려 애쓰는가?</li>
+        <li>천국행 티켓에 감사해서 선행을 하는 것이 아니라, 그 티켓을 사거나 유지하기 위해 하나님을 기쁘시게 하려 발버둥 치는가?</li>
+      </ul>
+
+      <h3>5. 거짓 구원자 진단: 세상적 대안</h3>
+      <ul class="checklist">
+        <li>내면의 불만족과 실망감을 하나님이 아닌 미래의 완벽한 나, 나를 채워 줄 사람, 새로운 물건이나 쾌락을 통해 해결하려 하는가?</li>
+      </ul>
+
+      <h3>요약</h3>
+      <p class="one-line">진정한 복음은 무거운 짐을 내려놓고 우리의 무능력을 인정한 채, 십자가의 완벽한 탕감과 자녀 삼아주심 안에서 쉬는 것입니다.</p>
+      <a class="backtop" href="#top">맨 위로 ↑</a>
+    </section>
+
+    <section id="part2" class="part">
+      <span class="chapter-label">PART 2</span>
+      <h2>복음이 우리를 찾아왔다</h2>
+      <p class="lead">자력 구원의 철저한 파산 이후, 인간이 가장 연약할 때 외부로부터 찾아오는 하나님의 반전과 새로운 정체성을 다룹니다.</p>
+    </section>
+
+    <section id="ch3">
+      <span class="chapter-label">PART 2 · Chapter 1</span>
+      <h2>복음, 내 방식을 내려놓게 하다</h2>
+
+      <h3>1. 장 개요</h3>
+      <p>이 장의 핵심 주제는 인간이 철저히 무능력하고 망가져 스스로를 구원할 수 없는 가장 연약한 순간에 외부로부터 찾아와 모든 것을 뒤바꾸는 <strong>하나님의 주권적 개입, 곧 복음</strong>입니다. 복음은 인간이 의지했던 자기 자신, 타인, 세상 쾌락, 위선적 종교라는 네 가지 거짓 구원 방식을 내려놓게 만듭니다.</p>
+
+      <h3>2. 복음의 반전</h3>
+      <blockquote><p>“이처럼 복음의 묘미는 하나님이 일으키시는 ‘반전’이다.”</p></blockquote>
+      <blockquote><p>“우리가 아직 연약할 때에 … 그리스도께서 우리를 위하여 죽으심으로 하나님께서 우리에 대한 자기의 사랑을 확증하셨느니라.”</p><footer>로마서 5장 6-8절</footer></blockquote>
+
+      <h3>3. 내려놓게 되는 네 방식</h3>
+      <table>
+        <thead><tr><th>내려놓음</th><th>복음이 가르치는 전환</th></tr></thead>
+        <tbody>
+          <tr><td><strong>나 자신 의지하기</strong></td><td>진흙탕에서 스스로 빠져나올 수 없음을 인정하고 “주님, 고쳐 주세요”라고 엎드립니다.</td></tr>
+          <tr><td><strong>타인의 평가</strong></td><td>인정은 하나님으로부터 오며, 복음은 죄인이라는 겸손과 사랑받는 자녀라는 자신감을 동시에 줍니다.</td></tr>
+          <tr><td><strong>세상 쾌락</strong></td><td>음식, 성, 예술과 같은 일반 은총의 선물을 우상으로 삼지 않고 하나님을 찬양하는 통로로 누립니다.</td></tr>
+          <tr><td><strong>종교를 위한 종교</strong></td><td>종교는 밖에서 안으로 보상을 구하지만, 복음은 안에서 밖으로 새 생명이 흘러나오게 합니다.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>4. 마이클의 회심: 가장 연약할 때</h3>
+      <p>마이클의 삶은 마약과 술, 이혼, 교통사고와 강제 입원으로 무너졌습니다. 가족들조차 그가 오래 살아남지 못하리라 예상할 만큼 그는 철저한 밑바닥에 있었습니다. 그 순간은 로마서 5장이 말하는 “우리가 아직 연약할 때”의 실존적 모습이었습니다.</p>
+      <blockquote><p>“이제 그만하고 내게로 오너라. 네가 내 것이라는 걸 잘 알지 않느냐?”</p></blockquote>
+      <p>이 말씀은 단지 마약을 끊으라는 도덕적 명령이 아니라, 스스로 삶을 통제하려던 헛수고를 멈추고 하나님의 소유와 자녀 됨 안으로 들어오라는 초청입니다.</p>
+
+      <h3>5. 감람나무 비유</h3>
+      <p>수백 년 묵은 감람나무는 겉으로는 비틀리고 죽은 것처럼 보여도 뿌리에서 다시 생명이 솟아날 수 있습니다. 저자는 이 비유를 확장하여, 복음은 살아 있는 뿌리에서 새 잎을 돋우는 정도가 아니라 <strong>죽은 뿌리조차 되살려 낸다</strong>고 선언합니다.</p>
+      <blockquote><p>“나아가 감람나무와 달리 복음은 죽은 ‘뿌리’조차 되살려 낸다. … 한 번만이 아니라 계속해서, 계속해서 새롭게 하신다.”</p></blockquote>
+
+      <h3>6. 비판적 검토</h3>
+      <p>사례 속 회심 경험이 매우 극적으로 제시되기 때문에, 오랜 시간 조용하고 점진적인 회심을 경험한 독자는 자신의 구원이 상대적으로 빈약하다고 느낄 수 있습니다. 그러나 이 장의 핵심은 경험의 극적 정도가 아니라, 어떤 형태이든 구원의 주체는 인간이 아니라 하나님이라는 사실입니다.</p>
+
+      <h3>7. 적용</h3>
+      <ol>
+        <li>악습에 빠졌을 때 “내일부터 진짜 안 해야지”라는 자기 의존적 다짐보다 “저를 건져 주세요”라는 연약함의 기도를 드립니다.</li>
+        <li>타인의 칭찬과 비판으로 마음이 요동할 때, 나는 죄인이며 동시에 하나님의 무한한 사랑을 받는 자녀임을 기억합니다.</li>
+      </ol>
+      <a class="backtop" href="#top">맨 위로 ↑</a>
+    </section>
+
+    <section id="ch4">
+      <span class="chapter-label">PART 2 · Chapter 2</span>
+      <h2>복음, 죄를 슬퍼하게 하다</h2>
+
+      <h3>1. 장 개요</h3>
+      <p>이 장의 핵심 주제는 회개가 불신자 시절에 구원받기 위해 한 번 하는 사건이 아니라, 신자의 일평생에 걸쳐 매일 이루어져야 하는 <strong>지속적인 삶의 방식</strong>이라는 점입니다. 저자는 파괴적인 세상적 슬픔과 생명을 살리는 성경적 슬픔을 대조하여 참된 회개의 모습을 제시합니다.</p>
+
+      <h3>2. 지속적 회개</h3>
+      <blockquote><p>“회개하고 믿는 것은 단순히 일회적인 사건이 아니다. … 이것은 우리가 예수 그리스도를 믿은 뒤에도 계속해서 지켜야 할 명령이다.”</p></blockquote>
+      <p>회개는 단순히 외적 행동을 조절하는 일이 아닙니다. 진짜 크리스천은 내면 깊은 곳의 죄를 미워하고, 새 마음을 갈망하며, 매일 복음께로 방향을 돌립니다.</p>
+
+      <h3>3. 세상적 슬픔과 성경적 슬픔</h3>
+      <table>
+        <thead><tr><th>구분</th><th>특징</th><th>결과</th></tr></thead>
+        <tbody>
+          <tr><td><strong>수평적인 슬픔</strong></td><td>하나님보다 사람에게 들키거나 손해 보는 것을 걱정함.</td><td>죄의 본질인 하나님에 대한 반역을 보지 못함.</td></tr>
+          <tr><td><strong>감정적인 슬픔</strong></td><td>통곡하지만 감정이 잦아들면 다시 예전으로 돌아감.</td><td>삶의 변화가 없는 일시적 후회.</td></tr>
+          <tr><td><strong>수동적인 슬픔</strong></td><td>상황이나 타인의 통제로 억지로 죄를 멈춤.</td><td>마음의 방향 전환이 없음.</td></tr>
+          <tr><td><strong>엉뚱한 슬픔</strong></td><td>죄보다 낮아진 체면과 자존심을 슬퍼함.</td><td>자기 연민으로 귀결됨.</td></tr>
+          <tr><td><strong>성경적 슬픔</strong></td><td>죄의 실체를 보고 비통해하며 자발적으로 고백함.</td><td>회복과 생명, 구속자의 기쁨으로 이어짐.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>4. 말씀은 수술 칼이며 MRI다</h3>
+      <blockquote><p>“하나님의 말씀은 수술 칼처럼 우리를 쪼개 안에 있는 것을 드러낸다. MRI처럼 우리 안을 훤히 비춘다. … 하나님이 우리의 죄를 드러내는 것은 창피를 주려는 게 아니라 구속하시려는 것이다.”</p></blockquote>
+      <p>죄를 직면하는 일은 고통스럽지만, 그 폭로는 정죄를 위한 것이 아니라 치료를 위한 것입니다. 복음 안에서는 죄의 공개가 수치의 끝이 아니라 구속의 시작이 됩니다.</p>
+
+      <h3>5. 교회의 역할</h3>
+      <blockquote><p>“자신의 죄를 사람들에게 솔직히 밝히고, 아울러 문제투성이인 자신을 그리스도처럼 변화시키고 계시는 하나님을 공개적으로 찬양하는 것이 최선의 길이다. 여기서 교회의 역할이 중요해진다.”</p></blockquote>
+      <p>교회는 고질적인 죄를 털어놓고 서로에게 구주의 필요성을 일깨워 줄 수 있는 곳이어야 합니다. 그러나 고백은 안전하고 성숙한 공동체라는 전제 안에서 다뤄져야 하며, 무분별한 노출이 새로운 상처를 낳지 않도록 지혜가 필요합니다.</p>
+
+      <h3>6. 적용</h3>
+      <ol>
+        <li>최근의 회개나 사과가 들켜서 곤란했기 때문인지, 내 체면이 상했기 때문인지, 하나님 앞에서 죄 자체를 슬퍼했기 때문인지 점검합니다.</li>
+        <li>공동체가 잘 사는 척하는 공간이 아니라 연약함을 고백해도 판단받지 않는 은혜의 공간이 되도록 문화를 세웁니다.</li>
+      </ol>
+      <a class="backtop" href="#top">맨 위로 ↑</a>
+    </section>
+
+    <section id="ch5">
+      <span class="chapter-label">PART 2 · Chapter 3</span>
+      <h2>복음, 진짜 나를 보게 하다</h2>
+
+      <h3>1. 장 개요</h3>
+      <p>참된 회개를 통해 십자가 앞에 선 신자는 <strong>칭의 <span lang="en">(Justification)</span></strong>와 <strong>입양 <span lang="en">(Adoption)</span></strong>이라는 두 가지 기적적인 은혜를 통해 완전히 새로운 정체성을 부여받습니다. 복음은 우리를 단지 용서받은 죄인으로 남겨두지 않고 온전히 사랑받는 하나님의 자녀로 세웁니다.</p>
+
+      <h3>2. 구원의 두 선물</h3>
+      <div class="grid">
+        <article class="card">
+          <h4>칭의: 천국 법정의 무죄 판결</h4>
+          <p>우리가 지은 모든 죄가 그리스도께 전가되고, 그분의 의가 우리에게 덧입혀집니다. 하나님은 그리스도의 대속을 근거로 우리를 완전히 의롭다고 선언하십니다.</p>
+        </article>
+        <article class="card">
+          <h4>입양: 하나님의 아들딸 됨</h4>
+          <p>하나님은 단지 재판장으로서 죄인을 풀어주는 데 그치지 않고, 그 죄인을 자신의 가족으로 받아들여 상속자와 사랑받는 자녀로 삼으십니다.</p>
+        </article>
+      </div>
+
+      <h3>3. 원문 핵심 인용</h3>
+      <blockquote><p>“구원의 유익은 우리 삶의 구석구석까지 광범위하게 미친다. 물론 이것은 복음을 수많은 선택사항 가운데 하나로 취급하는 사람에게는 해당하지 않는 이야기다.”</p></blockquote>
+      <blockquote><p>“예수님이 성육신으로 우리에게 오셔서 우리가 받아 마땅한 진노의 잔을 모두 마셨다! … 이 놀라운 기적이 이뤄진 것이다. 이것이 전부가 아니다.”</p></blockquote>
+      <blockquote><p>“하나님은 단순히 우리를 봐 주신 게 아니라 새로운 정체성까지 주셨다. 그분은 우리의 재판장만이 아니라 우리의 아버지가 되어 주셨다.”</p></blockquote>
+
+      <h3>4. 성령의 증언</h3>
+      <p>우리가 연약하여 하나님의 사랑을 의심하고 방황할 때, 우리 안에 계신 성령께서 우리가 하나님의 자녀임을 증언하시고 옳은 길로 이끄십니다.</p>
+      <blockquote><p>“성령이 친히 우리의 영과 더불어 우리가 하나님의 자녀인 것을 증언하시나니.”</p><footer>로마서 8장 16절</footer></blockquote>
+
+      <h3>5. 법정과 가정의 은유</h3>
+      <table>
+        <thead><tr><th>공간</th><th>복음의 사건</th><th>신자에게 주어지는 의미</th></tr></thead>
+        <tbody>
+          <tr><td><strong>법정</strong></td><td>칭의</td><td>정죄와 심판에서 해방되는 객관적·법적 선언.</td></tr>
+          <tr><td><strong>가정</strong></td><td>입양</td><td>하나님의 식탁과 사랑 안으로 불리는 관계적·정서적 수용.</td></tr>
+          <tr><td><strong>내면</strong></td><td>성령의 증언</td><td>흔들리는 마음에 새 정체성을 지속적으로 확증함.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>6. 비판적 검토와 적용</h3>
+      <p>칭의와 입양의 은혜가 완전하게 주어지는 만큼 이를 값싼 은혜로 오해하여 성화의 투쟁을 느슨하게 여길 가능성이 있습니다. 그러나 저자는 성령이 신자를 옳은 길로 이끄신다는 사실을 강조하며, 이어지는 성화의 장에서 이 균형을 보완합니다.</p>
+      <ol>
+        <li>과거의 죄가 떠올라 마음이 괴로울 때 “나는 예수님의 피로 무죄 판결을 받은 하나님의 자녀다”라는 정체성을 붙듭니다.</li>
+        <li>기도할 때 하나님을 멀고 차가운 재판장으로만 여기지 않고, 나를 입양하신 아버지로 부르며 친밀함을 회복합니다.</li>
+      </ol>
+      <a class="backtop" href="#top">맨 위로 ↑</a>
+    </section>
+
+    <section id="ch6">
+      <span class="chapter-label">PART 2 · Chapter 4</span>
+      <h2>복음, 매일 하나님께로 방향을 돌리게 하다</h2>
+
+      <h3>1. 장 개요</h3>
+      <p>구원은 단회적 사건인 칭의로 끝나는 것이 아니라, 평생에 걸쳐 적극적으로 거룩함을 이루어가는 <strong>성화 <span lang="en">(Sanctification)</span></strong>의 긴 과정입니다. 성화는 우리 안의 죄를 죽이고 예수님을 살리는 치열한 훈련이며, 신분의 변화를 삶의 변화로 연결하는 교량입니다.</p>
+
+      <h3>2. 칭의에서 성화로</h3>
+      <p>이스라엘 백성이 홍해를 건넌 것이 구원의 시작이었다면, 약속의 땅을 향해 광야를 지나는 과정은 훈련과 성화의 여정이었습니다. 하나님은 우리를 의롭다 선언하시는 데 그치지 않고, 실제 삶에서 점점 더 거룩하게 자라도록 부르십니다.</p>
+      <blockquote><p>“성화는 우리가 값없이 받는 선물이라기보다는 적극적으로 동참해야 하는 일이다. … 우리의 적극적인 협력을 통해 진행되는 과정이다.”</p></blockquote>
+
+      <h3>3. 성화의 두 기둥</h3>
+      <div class="grid">
+        <article class="card">
+          <h4>살림 <span lang="en">(Vivification)</span></h4>
+          <p>복음과 진리, 예수님에 대한 생각으로 마음과 영혼을 채워 새 생명을 활성화하는 긍정적 훈련입니다. 정원의 토양에 비료를 주는 일과 같습니다.</p>
+        </article>
+        <article class="card">
+          <h4>죽임 <span lang="en">(Mortification)</span></h4>
+          <p>내면의 이기적인 욕망, 정욕, 탐심과 같은 죄의 본성을 방치하지 않고 적극적으로 뽑아버리는 전투적 훈련입니다. 잡초를 뿌리째 뽑는 일과 같습니다.</p>
+        </article>
+      </div>
+      <blockquote><p>“성화는 기본적으로 이 두 가지 요소로 이루어진다. 그것은 바로 ‘살림’과 ‘죽임’이다.”</p></blockquote>
+
+      <h3>4. 위장을 벗어라</h3>
+      <p>성화를 방해하는 가장 큰 걸림돌은 매사에 “나는 괜찮아”로 일관하며 자신의 진짜 죄를 숨기는 위장입니다. 교회와 공동체 안에서 깔끔하게 포장된 신앙인의 모습을 유지하는 동안, 내면의 중독과 관계적 상처는 어둠 속에서 계속 자랍니다.</p>
+      <blockquote><p>“더러운 중독에 시달리고 있는가? 털어놓으라. 악의 힘을 제거하는 최선의 첫 단계는 그 시꺼먼 괴물을 빛 가운데로 끌어내는 것이다.”</p></blockquote>
+
+      <h3>5. 구조적 특징</h3>
+      <ul>
+        <li><strong>정원 가꾸기의 비유:</strong> 살림과 죽임을 비료와 잡초 뽑기로 표현하여 성화가 공급과 제거의 균형임을 보여줍니다.</li>
+        <li><strong>새 동네 운��의 비유:</strong> 처음에는 옛 습관으로 핸들을 돌리지만, 반복적으로 새 방향을 선택하면 결국 자동 방향 전환이 일어난다고 설명합니다.</li>
+      </ul>
+
+      <h3>6. 비판적 검토와 적용</h3>
+      <p>성화를 인간의 적극적 노력 측면에서 강하게 서술할 때, 독자가 다시 헛수고 신앙으로 돌아가는 듯한 압박을 느낄 수 있습니다. 따라서 성화의 노력은 이미 자녀가 된 신자가 은혜를 동력 삼아 참여하는 과정이라는 점이 함께 강조되어야 합니다.</p>
+      <ol>
+        <li>오늘 내 영혼을 황폐하게 하는 활동 하나를 죽임의 대상으로 정하고, 그 시간에 말씀과 기도로 살림의 활동을 배치합니다.</li>
+        <li>공동체 안에서 완벽한 척하기보다, 구체적인 유혹과 연약함을 믿을 만한 사람에게 나누고 기도를 요청합니다.</li>
+      </ol>
+      <a class="backtop" href="#top">맨 위로 ↑</a>
+    </section>
+
+    <section id="part3" class="part">
+      <span class="chapter-label">PART 3</span>
+      <h2>죄로 뒤엉킨 속마음, 복음대로 풀라</h2>
+      <p class="lead">앞서 확립한 새로운 정체성을 붙들고, 죄책감·수치심·두려움·걱정이라는 내면의 폭풍 속에 복음을 적용하는 실전의 장입니다.</p>
+    </section>
+
+    <section id="ch7">
+      <span class="chapter-label">PART 3 · Chapter 1</span>
+      <h2>내면의 폭풍을 잠재우라</h2>
+
+      <h3>1. 장 개요</h3>
+      <p>인간의 내면을 쑥대밭으로 만드는 거대한 폭풍은 <strong>죄책감</strong>과 <strong>수치심</strong>입니다. 이 감정들은 방치될 때 분노와 중독, 정욕으로 변질됩니다. 저자는 이 폭풍을 잠재울 수 있는 유일한 해결책이 우리의 모든 죄를 탕감하시고 우리를 온전히 받아주신 그리스도의 복음, 곧 칭의와 입양이라고 강조합니다.</p>
+
+      <h3>2. 죄책감과 수치심의 차이</h3>
+      <table>
+        <thead><tr><th>감정</th><th>핵심 문장</th><th>영향</th></tr></thead>
+        <tbody>
+          <tr><td><strong>죄책감 <span lang="en">(Guilt)</span></strong></td><td>“내가 나쁜 짓을 했다.”</td><td>행동의 문제와 연결되며 회개와 교정으로 다뤄질 수 있음.</td></tr>
+          <tr><td><strong>수치심 <span lang="en">(Shame)</span></strong></td><td>“나는 나쁜 사람이다.”</td><td>정체성 전체를 파괴하며 자기혐오, 분노, 통제욕, 중독으로 번짐.</td></tr>
+        </tbody>
+      </table>
+      <blockquote><p>“죄책감은 우리의 행동과 관련이 있는 반면, 수치심은 우리의 정체성과 관련이 있다.”</p></blockquote>
+
+      <h3>3. 수치심이 낳는 괴물</h3>
+      <p>수치심을 마음속에 가둬두면 자기혐오와 열등감이 타인을 향한 분노로 표출되거나, 다른 사람을 쾌락의 도구로 취급하는 정욕과 중독으로 이어질 수 있습니다. 저자는 난폭한 성미, 폭주 습관, 성적 타락, 중독의 뿌리가 죄책감이나 수치심에 있는지 묻도록 독자를 이끕니다.</p>
+
+      <h3>4. 모든 죄의 탕감과 입양의 수용</h3>
+      <blockquote><p>“범죄와 육체의 무할례로 죽었던 너희를 하나님이 그와 함께 살리시고 우리의 ‘모든’ 죄를 사하시고…”</p><footer>골로새서 2장 13-14절</footer></blockquote>
+      <p>복음은 과거의 죄만이 아니라 현재와 미래의 실패까지도 십자가의 완전한 탕감 아래 놓였다고 선언합니다. 동시에 하나님은 돌아온 탕자를 수치스럽게 세워두지 않고 기뻐 안아주시는 아버지처럼, 우리를 자녀로 받아주십니다.</p>
+      <blockquote><p>“복음은 죄책감에 빠진 우리에게 칭의를 일깨워 준다. 복음은 성화를 통해 우리의 거짓 이상을 깨부순다. 복음은 수치심으로 분노하는 우리에게 입양 사실을 일깨워 준다.”</p></blockquote>
+
+      <h3>5. 비판적 검토와 적용</h3>
+      <p>수치심의 근원을 인간의 죄나 거짓 이상에 집중하여 설명할 경우, 타인의 폭력과 학대로 피해자가 떠안게 된 부여된 수치심을 충분히 다루지 못할 수 있습니다. 피해자의 수치심에는 정죄가 아니라 보호와 치유, 정의가 함께 필요합니다.</p>
+      <ol>
+        <li>누군가에게 화가 치밀거나 충동적 쾌락을 찾고 싶을 때, 내 안의 어떤 수치심이나 열등감이 자극되었는지 질문합니다.</li>
+        <li>과거의 죄가 떠올라 수치심에 눌릴 때, 골로새서 2장의 선언을 붙들고 모든 죄가 사해졌음을 기억합니다.</li>
+      </ol>
+      <a class="backtop" href="#top">맨 위로 ↑</a>
+    </section>
+
+    <section id="ch8">
+      <span class="chapter-label">PART 3 · Chapter 2</span>
+      <h2>'하나님을 믿는 믿음' 안에서 쉬라</h2>
+
+      <h3>1. 장 개요</h3>
+      <p>이 장은 과거의 상처에서 시선을 미래로 돌려, 인간을 마비시키는 <strong>두려움과 걱정</strong>의 실체가 단순한 감정적 불안이 아니라 하나님의 선하심을 온전히 신뢰하지 못하는 영적 불신과 연결될 수 있음을 밝힙니다. 극심한 위기 앞에서도 강한 척하는 위장을 버리고, 두려움을 빛 가운데로 끌어내어 하늘 아버지께 맡기라고 권합니다.</p>
+
+      <h3>2. 저자의 실제 위기</h3>
+      <p>저자 매트 챈들러는 악성 뇌종양 판정과 죽음의 공포를 직접 통과했습니다. 이 장의 두려움에 관한 논지는 추상적인 충고가 아니라, 항암치료와 재발의 가능성 속에서 요동치는 마음을 붙들며 기록한 고백입니다.</p>
+      <blockquote><p>“예수 그리스도의 복음은 우리의 안절부절못하는 마음에 확실한 답이 되어 준다. 아니, 그 외의 모든 문제에 대한 답이 되어 준다.”</p></blockquote>
+
+      <h3>3. 두려움은 우선순위를 드러낸다</h3>
+      <blockquote><p>“백 마디 말보다 우리의 두려움이 우리의 우선순위를 더 정확히 보여 준다.”</p></blockquote>
+      <p>자녀의 건강, 재정, 생명과 같은 것을 잃을까 봐 두려워하는 감정 자체는 인간적으로 자연스럽습니다. 그러나 두려움은 우리가 무엇을 가장 안전하게 붙잡고 싶어 하는지, 무엇을 하나님보다 더 통제하려 하는지 드러내는 진단기가 됩니다.</p>
+
+      <h3>4. 걱정의 뿌리와 해결책</h3>
+      <blockquote><p>“대부분의 두려움과 걱정은 하나님의 선하심을 믿지 못하는 데서 비롯한다. 걱정한다는 것은 하나님이 필요한 것을 채워 주실 줄 믿지 못하는 것이다.”</p></blockquote>
+      <blockquote><p>“복음은 두려움과 걱정을 ‘빛 가운데’ 끌어내라고 말한다. 두려움과 걱정을 없애는 방법은 도망치는 게 아니라 그것을 빛 가운데로 끌어내 우리 아버지께 맡기는 것이다.”</p></blockquote>
+      <blockquote><p>“두려움과 걱정 앞에서 우리가 할 수 있는 최악의 행동은 강한 척하는 것이다. 반면에 최선의 행동은 그 모든 두려움과 걱정을 주님께 맡기는 것이다.”</p></blockquote>
+
+      <h3>5. 비판적 검토</h3>
+      <p>극도의 고난 속에서도 두려움을 신뢰로 바꾸라는 메시지는 공황장애나 임상적 불안증을 겪는 이들에게 “내 믿음이 부족해서 아픈가?”라는 또 다른 정죄감을 유발할 수 있습니다. 저자는 두려움 자체가 죄라고 말하기보다, 그것을 숨기지 않고 하나님과 공동체 앞에 가져오는 것이 핵심이라고 분명히 합니다.</p>
+
+      <h3>6. 적용</h3>
+      <ol>
+        <li>현재 나를 잠 못 들게 하는 걱정거리 세 가지를 적고, 그것들이 내가 하나님보다 더 통제하려 했던 우선순위인지 점검합니다.</li>
+        <li>큰 위기 앞에서 “괜찮다”고 포장하지 않고, 신뢰하는 공동체에게 “솔직히 두렵다”고 말하며 기도를 요청합니다.</li>
+      </ol>
+      <a class="backtop" href="#top">맨 위로 ↑</a>
+    </section>
+
+    <section id="ch9">
+      <span class="chapter-label">PART 3 · Chapter 3</span>
+      <h2>날마다 '그날 승리하는 데' 집중하라</h2>
+
+      <h3>1. 장 개요</h3>
+      <p>기독교 신앙은 모든 문제를 단숨에 해결해 주는 마법의 은 탄환이 아닙니다. 지독한 옛 습관을 버리고 새 마음을 심는 <strong>매일의 고단한 과정</strong>입니다. 저자는 평생에 걸친 성화의 무게에 압도되지 말고 오직 오늘 하루의 승리에 집중하며 하나님의 도우심을 구하라고 권면합니다.</p>
+
+      <h3>2. 복음은 편한 삶의 보증이 아니다</h3>
+      <blockquote><p>“크리스천의 삶은 결코 편한 삶이 아니다. 그 길은 가시밭길이다.”</p></blockquote>
+      <p>미셸은 과거의 학대와 중독, 우울의 사슬을 끊어내는 과정에서 삶이 오히려 훨씬 더 힘들어졌다고 고백합니다. 구원받기 전에는 양심의 가책 없이 살던 죄가, 복음을 알고 난 후에는 견딜 수 없이 고통스러운 싸움의 대상이 되었기 때문입니다.</p>
+
+      <h3>3. 은 탄환은 통하지 않는다</h3>
+      <blockquote><p>“이 변화는 말 그대로 과정이다. 단번에 치료되는 게 아니다. ‘은 탄환’은 통하지 않는다.”</p></blockquote>
+      <p>한 번의 집회, 한 번의 결심, 한 번의 감정적 은혜로 모든 습관이 즉시 사라질 것이라는 기대는 성화의 현실을 오해하는 것입니다. 변화는 반복적이고 점진적이며, 매일의 선택과 은혜 의존 속에서 진행됩니다.</p>
+
+      <h3>4. 크리스천의 훈련 세 단계</h3>
+      <table>
+        <thead><tr><th>단계</th><th>내용</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1. 버린다</strong></td><td>옛 사람과 죄의 습관을 적극적으로 끊어냅니다.</td></tr>
+          <tr><td><strong>2. 다시 심는다</strong></td><td>비워진 자리에 말씀, 진리, 감사, 섬김과 같은 새 생명의 습관을 채웁니다.</td></tr>
+          <tr><td><strong>3. 요청한다</strong></td><td>이 변화의 과정을 이어갈 수 있도록 하나님께 지속적으로 도움을 구합니다.</td></tr>
+        </tbody>
+      </table>
+      <blockquote><p>“오늘의 승리, 이것이 목표다. 온전한 삶의 걸음들을 그냥 놔두시지 않는 하나님께 감사하며 오늘도 계속해서 전진해야만 한다.”</p></blockquote>
+
+      <h3>5. 적용</h3>
+      <ol>
+        <li>평생의 순결이나 평생의 금주를 미리 감당하려다 지치기보다, 오늘 하루 주님의 은혜로 그 유혹을 거절하겠다고 기도합니다.</li>
+        <li>죄의 습관을 끊는 데서 멈추지 말고, 그 빈 시간과 공간에 말씀 묵상, 감사 기록, 섬김과 같은 새로운 습관을 구체적으로 심습니다.</li>
+      </ol>
+
+      <h3>6. 3부의 결론</h3>
+      <p>과거의 수치심, 미래의 두려움, 오늘의 죄와의 싸움까지 다룬 3부는 복음이 단순한 교리가 아니라 일상의 내면을 실제로 새롭게 하는 능력임을 보여줍니다. 이제 그 변화는 개인의 내면을 넘어 타인과의 관계와 공동체로 확장됩니다.</p>
+      <a class="backtop" href="#top">맨 위로 ↑</a>
+    </section>
+
+    <section id="part4" class="part">
+      <span class="chapter-label">PART 4</span>
+      <h2>포기하고 싶은 공동체, 복음대로 품으라</h2>
+      <p class="lead">복음은 개인의 평안에 머물지 않고, 갈등 속에서 먼저 사과하고 사랑으로 직면하며 서로의 거룩을 책임지는 관계적 순종으로 확장됩니다.</p>
+    </section>
+
+    <section id="ch10">
+      <span class="chapter-label">PART 4 · Chapter 1</span>
+      <h2>먼저 잘못을 인정하고 먼저 손 내밀라</h2>
+
+      <h3>1. 장 개요</h3>
+      <p>하나님의 은혜로 수직적인 구속을 경험한 신자는 반드시 이웃과의 수평적인 화해를 추구해야 합니다. 이를 위해 누가 옳은지 따지는 자기중심성을 버리고, 자기 몫의 죄에 대해서는 변명 없이 책임지는 회개를 실천해야 합니다.</p>
+
+      <h3>2. 핵심 주장</h3>
+      <p class="callout"><strong>복음의 관계 윤리:</strong> 상대방의 잘못을 따지기 전에 내 눈의 들보를 먼저 보고, 어떠한 변명도 없이 내 잘못에 대해 책임지며 먼저 화해를 구하라.</p>
+
+      <h3>3. 원문 핵심 인용</h3>
+      <blockquote><p>“하나님이 구원을 통해 주신 은혜와 용서를 진심으로 받아들일 때 그에 대한 감사가 이웃 사랑의 모습으로 주변으로 흘러넘친다.”</p></blockquote>
+      <blockquote><p>“끝까지 누가 옳은지 따지는 것보다 하나님의 뜻에 따라 화목을 추구하는 것이 더 중요하다.”</p></blockquote>
+      <blockquote><p>“내 죄의 20퍼센트가 상대방의 80퍼센트에 비해 작을지 몰라도 엄연히 죄는 죄다.”</p></blockquote>
+      <blockquote><p>“전적으로 책임을 지라. 자신이 저지른 죄에 대해 백 퍼센트 이상으로 책임을 지라.”</p></blockquote>
+      <blockquote><p>“변명을 하지 마라. ‘하지만…’과 같은 식으로 토를 달지 마라.”</p></blockquote>
+
+      <h3>4. 관계의 네 가지 교정</h3>
+      <table>
+        <thead><tr><th>왜곡된 태도</th><th>복음적 교정</th></tr></thead>
+        <tbody>
+          <tr><td>내가 옳다는 것을 증명하려 함</td><td>권위를 하나님께 넘기고 화목을 추구함.</td></tr>
+          <tr><td>상대의 티만 바라봄</td><td>내 눈의 들보와 내 책임의 지분을 먼저 직시함.</td></tr>
+          <tr><td>“네가 먼저 그랬다”고 변명함</td><td>상대방의 죄를 사과문에 끌어들이지 않고 내 죄만 고백함.</td></tr>
+          <tr><td>사과 후 상대의 용서를 요구함</td><td>상대의 반응을 통제하지 않고 순종의 몫을 하나님께 맡김.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>5. 안전에 관한 예외</h3>
+      <p>저자는 쌍방 과실을 강조하면서도 아동 학대, 근친상간, 강간과 같은 극단적 폭력은 예외가 될 수 있음을 언급합니다. 이 원리는 피해자에게 가해자의 책임을 나누어 지우는 방식으로 사용되어서는 안 됩니다.</p>
+
+      <h3>6. 비판적 검토와 적용</h3>
+      <p>“상대의 처분에 맡기라”는 지침은 상습적인 가스라이팅이나 정서적 조종을 가하는 관계에 무분별하게 적용될 경우 악용될 위험이 있습니다. 로마서 12장 18절의 “할 수 있거든”이라는 경계 안에서, 안전과 진실을 함께 고려해야 합니다.</p>
+      <ol>
+        <li>최근의 갈등에서 상대의 잘못을 제외하고 오직 내 행동의 잘못만 담은, “하지만”이 없는 사과를 작성합니다.</li>
+        <li>갈등 속에서 “내가 옳다”는 마음이 올라올 때, 판단의 권위는 나에게 있지 않고 하나님께 있음을 기억합니다.</li>
+      </ol>
+      <a class="backtop" href="#top">맨 위로 ↑</a>
+    </section>
+
+    <section id="ch11">
+      <span class="chapter-label">PART 4 · Chapter 2</span>
+      <h2>당장은 속상해도 책망하라</h2>
+
+      <h3>1. 장 개요</h3>
+      <p>타인의 명백한 죄나 파괴적인 행동을 목격했을 때, 갈등이 두려워 모른 체하는 회피나 상대를 파괴하려는 공격의 양극단을 버리고, 오직 상대를 살리기 위해 <strong>사심 없이, 겸손하고, 친절하게</strong> 진실을 말하라는 장입니다.</p>
+
+      <h3>2. 도망과 공격을 넘어</h3>
+      <table>
+        <thead><tr><th>반응</th><th>문제</th><th>복음적 대안</th></tr></thead>
+        <tbody>
+          <tr><td><strong>도망·회피</strong></td><td>평화를 가장하지만 실제로는 무관심이며 쓴 뿌리를 키움.</td><td rowspan="2">사랑 안에서 참된 것을 말하여 상대의 회복을 추구함.</td></tr>
+          <tr><td><strong>공격·정죄</strong></td><td>정의를 가장하지만 상대를 쓰러뜨리고 자기 옳음을 입증하려 함.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>3. 원문 핵심 인용</h3>
+      <blockquote><p>“우리를 하나로 연결해 주는 복음은 서로 간의 안전한 거리를 허용하지 않는다. 복음은 우리를 하나님께로 부를 뿐 아니라 서로에게로 부른다.”</p></blockquote>
+      <blockquote><p>“깔아뭉개는 것만큼이나 모른 체하는 것도 싸구려 사랑이다. ‘진짜’ 사랑은 속이 쓰려도, 죽기보다 하기 싫어도, 해야 할 말을 하는 것이다.”</p></blockquote>
+      <blockquote><p>“예수 그리스도를 삶의 주인으로 모시지 않으면서 크리스천 행세를 하는 사람들을 그냥 보고만 있는 것이 그 사람들에게 진정으로 몹쓸 짓이요 교회에도 지독히 해로워서다.”</p></blockquote>
+
+      <h3>4. 언약 공동체</h3>
+      <p>교회는 단순한 친목 모임이 아니라, 서로의 삶에 개입하여 영적 안전을 책임지고 거룩으로 이끌어주기로 하나님 앞에서 연결된 공동체입니다. 마태복음 18장의 지침은 죄를 범한 형제에게 개인적으로 권고하고, 듣지 않으면 증인을 동반하며, 끝내 거부할 때 교회의 공적 책임으로 다루라는 질서를 제시합니다.</p>
+
+      <h3>5. 비판적 검토</h3>
+      <p>형제의 죄를 직면하라는 원리는 건강한 영적 리더십과 성숙한 신뢰가 형성된 공동체 안에서만 안전하게 작동합니다. 권위주의가 팽배한 공동체에서는 통제와 영적 학대의 도구로 악용될 수 있습니다. 따라서 책망의 목적은 자기 이익이나 공격이 아니라 상대의 치유와 회복이어야 하며, 방식 또한 사심 없이 겸손하고 친절해야 합니다.</p>
+
+      <h3>6. 적용</h3>
+      <ol>
+        <li>사랑하는 사람이 명백한 파괴적 행동에 빠져 있는데 관계가 어색해질까 봐 침묵하고 있지는 않은지 점검합니다.</li>
+        <li>공동체가 안전거리만 유지하는 친목 모임인지, 사랑과 진실 안에서 서로의 거룩을 책임지는 언약 공동체인지 돌아봅니다.</li>
+      </ol>
+      <a class="backtop" href="#top">맨 위로 ↑</a>
+    </section>
+
+    <section id="part5" class="part">
+      <span class="chapter-label">PART 5</span>
+      <h2>승전가를 부르라, 복음이 바꾼다!</h2>
+      <p class="lead">지독한 내면의 훈련과 공동체적 갈등을 넘어, 끝까지 이 신앙의 길을 걷게 하는 궁극적인 동력, 곧 비교할 수 없는 기쁨을 노래하는 결론입니다.</p>
+    </section>
+
+    <section id="ch12">
+      <span class="chapter-label">PART 5 · Chapter 1</span>
+      <h2>전부를 팔아 복음을 사라</h2>
+
+      <h3>1. 장 개요</h3>
+      <p>험난한 성화의 삶을 평생 지속하게 만드는 동력은 의무감이나 두려움이 아니라 예수 그리스도 안에서 발견하는 <strong>가장 크고 참된 기쁨</strong>입니다. 인간은 본질적으로 기쁨을 추구하는 존재이며, 이 욕구를 억누를 것이 아니라 세상의 하찮은 기쁨에서 돌이켜 그리스도라는 무한한 기쁨으로 향하게 해야 합니다.</p>
+
+      <h3>2. 논증 구조</h3>
+      <ol>
+        <li><strong>본성 인정:</strong> 신앙생활은 무거운 의무가 아니라 가장 큰 기쁨을 좇는 행위입니다.</li>
+        <li><strong>세상 기쁨의 한계:</strong> 돈, 성, 야망 등은 일시적인 쾌락만 주며 결국 영혼을 공허하게 만듭니다.</li>
+        <li><strong>진짜 보화의 발견:</strong> 예수 그리스도라는 보화를 발견할 때 이전의 하찮은 기쁨은 억지로 참는 대상이 아니라 자연스럽게 밀려나는 대상이 됩니다.</li>
+        <li><strong>변화된 삶:</strong> 구속받은 자는 말씀과 교제, 섬김과 사명으로 그 기쁨을 삶 속에 구현합니다.</li>
+      </ol>
+
+      <h3>3. 원문 핵심 인용</h3>
+      <blockquote><p>“모든 사람은 행복을 추구한다. 단 한 명의 예외도 없다. … 심지어 목매어 죽는 사람도 마찬가지다.”</p><footer>파스칼 인용</footer></blockquote>
+      <blockquote><p>“우리는 무한한 기쁨을 제시받고도 겨우 술과 섹스, 야망에나 빠져 있는 어리석은 존재들이다. 마치 휴일에 해변에서 즐기는 만찬을 상상하지 못해 빈민가에서 진흙 파이나 만들면서 즐거워하는 무지한 아이와도 같다.”</p><footer>C.S. 루이스 인용</footer></blockquote>
+      <blockquote><p>“죄와 이기주의를 낳는 쾌락주의적인 욕구를 무조건 억누를 필요가 없다. 그 욕구를 진정한 기쁨이 있는 방향으로 돌리기만 하면 된다. 한 번 그 기쁨을 맛보고 나면 영원히 맛보고 싶어진다.”</p></blockquote>
+
+      <h3>4. 밭에 감추인 보화</h3>
+      <p>예수님의 비유 속 남자는 보물을 얻기 위해 전 재산을 팔면서 억울해하거나 억지 희생을 감수하지 않습니다. 그는 보화를 발견한 기쁨 때문에 기꺼이 모든 것을 팝니다. 저자는 이를 통해 성화의 훈련과 자기 방식의 내려놓음이 단순한 고통이 아니라 더 큰 기쁨을 얻은 자의 환희임을 설명합니다.</p>
+
+      <h3>5. 영적 쾌락주의</h3>
+      <table>
+        <thead><tr><th>세상의 오해</th><th>복음의 관점</th></tr></thead>
+        <tbody>
+          <tr><td>기독교는 재미없는 금욕의 종교다.</td><td>기독교는 시시한 기쁨을 버리고 하나님 안의 무한한 기쁨을 누리는 길이다.</td></tr>
+          <tr><td>죄를 끊지 못하는 이유는 욕망이 너무 강해서다.</td><td>문제는 욕망이 너무 작은 것, 곧 하찮은 것에 너무 쉽게 만족하는 데 있다.</td></tr>
+          <tr><td>순종은 억지 희생이다.</td><td>순종은 보화를 발견한 사람이 기쁨으로 선택하는 삶이다.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>6. 적용</h3>
+      <ol>
+        <li>하나님보다 더 큰 기쁨을 얻으려 붙들고 있는 인정욕구, 돈, 중독, 성공과 같은 진흙 파이가 무엇인지 이름 붙입니다.</li>
+        <li>단순히 욕망을 억누르기보다 복음이 주는 더 크고 영광스러운 기쁨을 묵상하며 방향을 전환합니다.</li>
+      </ol>
+      <a class="backtop" href="#top">맨 위로 ↑</a>
+    </section>
+
+    <section id="epilogue">
+      <span class="chapter-label">에필로그</span>
+      <h2>진짜 신앙</h2>
+
+      <h3>1. 영적 기능 장애를 경계하라</h3>
+      <table>
+        <thead><tr><th>진단</th><th>상태</th><th>질문</th></tr></thead>
+        <tbody>
+          <tr><td><strong>영적 빈혈</strong></td><td>말씀과 예배, 교제를 소홀히 하여 영양분을 공급받지 못하는 상태.</td><td>나는 생명의 공급 없이 버티고 있지 않은가?</td></tr>
+          <tr><td><strong>영적 과식</strong></td><td>은혜를 삶으로 소화하지 못하고 듣기 좋은 말씀만 찾아다니는 상태.</td><td>나는 배운 진리를 실제 순종으로 옮기고 있는가?</td></tr>
+          <tr><td><strong>영적 비만</strong></td><td>영적 지식만 축적하고 섬김과 사명으로 전환하지 못하는 상태.</td><td>내 지식은 사랑과 행동의 근육이 되고 있는가?</td></tr>
+        </tbody>
+      </table>
+
+      <h3>2. 전체 흐름의 결론</h3>
+      <ol>
+        <li><strong>1부:</strong> 삶의 찢어진 조각들을 쥐고 내 방식으로 해결하려다 실패합니다.</li>
+        <li><strong>2부:</strong> 두 손을 들고 항복하여 칭의와 입양이라는 새로운 신분을 선물 받습니다.</li>
+        <li><strong>3부:</strong> 그 신분을 붙들고 수치심과 두려움의 폭풍을 잠재우며 오늘 하루의 전투에 집중합니다.</li>
+        <li><strong>4부:</strong> 치유된 마음으로 공동체 안에서 사과하고, 사랑으로 진실을 말합니다.</li>
+        <li><strong>5부와 에필로그:</strong> 이 모든 여정을 끝까지 걷게 하는 힘이 의무감이 아니라 밭에 감추인 보화를 발견한 자의 기쁨임을 깨닫습니다.</li>
+      </ol>
+
+      <blockquote><p>“이 약속 덕분에 우리는 자아와 안전, 헛된 명성에 대한 인류의 집착에서 해방되었다. 아침마다 우리는 오직 주님께 영광을 돌리겠다는 일념으로 눈을 뜰 수 있다. … 구속받은 자답게 살라. 변화되라!”</p></blockquote>
+
+      <h3>최종 적용</h3>
+      <ol>
+        <li><strong>내 안의 진흙 파이 던져버리기:</strong> 하나님보다 더 기쁨을 얻으려 붙잡는 중독, 인정욕구, 돈, 성공이 무엇인지 직면하고 복음이 주는 더 큰 기쁨을 묵상합니다.</li>
+        <li><strong>나의 영적 질병 진단하기:</strong> 말씀을 안 읽는 빈혈인지, 좋은 설교만 소비하는 과식인지, 아는 것은 많지만 이웃을 섬기지 않는 비만인지 점검하고 삶의 순종으로 옮깁니다.</li>
+      </ol>
+
+      <p class="one-line">“복음은 망가진 인생의 잡초를 깎아내는 피곤한 도덕 수업이 아니라, 내 방식에 대한 처절한 항복을 통해 우리를 하늘 법정의 의인이자 하나님의 사랑받는 자녀로 만들어, 마침내 멈출 수 없는 기쁨의 춤을 추게 하는 영원한 생명의 외과 수술이다.”</p>
+      <a class="backtop" href="#top">맨 위로 ↑</a>
+    </section>
+
+    <section class="footnotes" aria-label="보충 해설">
+      <h2>보충 해설</h2>
+
+      <article>
+        <h4>가짜 신앙의 세 가지 양태</h4>
+        <p><strong>헛수고 신앙</strong>은 은혜를 머리로는 알면서도 자신의 행위로 하나님께 점수를 따려다 지쳐버리는 종교적 번아웃입니다. 노력하다 지치면 자포자기하고, 결국 스스로도 원치 않던 옛 죄의 습관으로 돌아갑니다.</p>
+        <p><strong>스파이 신앙</strong>은 자신의 진짜 모습이 드러나면 사랑받지 못하리라는 두려움 때문에 신앙과 연약함을 숨기는 태도입니다. 수치심은 고립과 위선을 키웁니다.</p>
+        <p><strong>영적 교만</strong>은 자신의 생각을 하나님의 생각보다 높이며, 말씀을 있는 그대로 받기보다 취사선택하는 통제욕입니다. 이는 자신이 하나님인 것처럼 행동하는 가짜 신앙입니다.</p>
+      </article>
+
+      <article>
+        <h4>포르노 중독과 마음의 뿌리</h4>
+        <p>저자는 표면적인 성적 행동만을 다루는 접근이 잡초를 베는 수준에 머물 수 있다고 설명합니다. 외부의 유혹만 탓하기보다, 그 아래 자리한 분노, 통제 욕구, 불안정, 사람을 도구화하려는 내면의 동기를 직면해야 한다고 주장합니다. 진정한 회복은 행동 수정만이 아니라 마음의 뿌리가 복음 앞에 드러나고 치유되는 데서 시작됩니다.</p>
+      </article>
+
+      <article>
+        <h4>성경과 신학 연결</h4>
+        <table>
+          <thead><tr><th>주제</th><th>성경 본문</th><th>신학적 연결</th></tr></thead>
+          <tbody>
+            <tr><td>가짜 신앙과 은혜</td><td>갈라디아서 3:3</td><td>마틴 루터의 이신칭의</td></tr>
+            <tr><td>망가진 세상과 탄식</td><td>로마서 8:20-22</td><td>아우구스티누스의 안식하지 못하는 마음</td></tr>
+            <tr><td>마음의 문제와 우상</td><td>마가복음 7:15-16</td><td>칼뱅의 ‘우상을 만드는 공장’</td></tr>
+            <tr><td>연약할 때 찾아오는 복음</td><td>로마서 5:6-8</td><td>전적 타락과 은혜의 주도성</td></tr>
+            <tr><td>지속적 회개</td><td>고린도후서 7:10</td><td>루터 95개조 제1조</td></tr>
+            <tr><td>칭의와 입양</td><td>로마서 8:15-17</td><td>J. I. 패커의 입양 신학</td></tr>
+            <tr><td>죄 죽임과 성화</td><td>골로새서 3:5</td><td>존 오웬의 『죄 죽이기』</td></tr>
+            <tr><td>염려와 섭리</td><td>마태복음 6:25-34</td><td>칼뱅의 하나님의 섭리</td></tr>
+            <tr><td>화해와 책임</td><td>마태복음 5:23-24</td><td>수직적 화해와 수평적 연합</td></tr>
+            <tr><td>사랑의 책망</td><td>에베소서 4:15</td><td>교회의 권징과 언약 공동체</td></tr>
+          </tbody>
+        </table>
+      </article>
+    </section>
+
+    <footer class="page-end">
+      <strong>『복음이 바꾼다』 종합요약</strong><br>
+      매트 챈들러 · 마이클 스네처 지음 / 정성묵 옮김 / 두란노 / 2014-08-11<br>
+      주제: 망가진 삶을 찾아오는 복음, 칭의와 입양, 성화, 공동체, 진정한 기쁨
+    </footer>
+  </main>
+</div>
+</body>
+</html>
