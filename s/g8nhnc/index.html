@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  
+  
+  <title>도둑맞은 집중력: 현대인의 집중력 위기에 대한 입체적 분석</title>
+  <style>
+    :root {
+      --bg: #f6f3ee;
+      --paper: #fffdf9;
+      --paper-soft: #fbf7f0;
+      --ink: #1f2933;
+      --muted: #667085;
+      --line: #ded6c9;
+      --accent: #8f3f2d;
+      --accent-2: #176b67;
+      --accent-soft: #f3ddd4;
+      --shadow: 0 18px 45px rgba(35, 31, 25, 0.10);
+      --radius: 8px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(180deg, rgba(143, 63, 45, 0.08), transparent 380px),
+        var(--bg);
+      color: var(--ink);
+      font-family: "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+      line-height: 1.78;
+      letter-spacing: 0;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 32px 20px 72px;
+    }
+
+    .hero {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: clamp(28px, 5vw, 56px);
+      margin-bottom: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-top: 7px solid var(--accent);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--accent);
+      font-size: 0.86rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 920px;
+      font-family: Georgia, "Noto Serif KR", serif;
+      font-size: clamp(2.15rem, 5vw, 4.1rem);
+      line-height: 1.18;
+      letter-spacing: 0;
+      color: #171717;
+    }
+
+    .lead {
+      max-width: 860px;
+      margin: 22px 0 0;
+      font-size: clamp(1.05rem, 2vw, 1.22rem);
+      color: #44515f;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: 28px;
+      align-items: start;
+    }
+
+    .toc {
+      position: sticky;
+      top: 20px;
+      background: rgba(255, 253, 249, 0.88);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: 0 8px 25px rgba(35, 31, 25, 0.06);
+    }
+
+    .toc h2 {
+      margin: 0 0 12px;
+      font-size: 0.95rem;
+      color: var(--accent);
+    }
+
+    .toc ol {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 8px;
+    }
+
+    .toc a {
+      display: block;
+      padding: 8px 10px;
+      border-radius: 6px;
+      color: #3f4a56;
+      text-decoration: none;
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+
+    .toc a:hover,
+    .toc a:focus {
+      background: var(--accent-soft);
+      color: #672717;
+      outline: none;
+    }
+
+    main {
+      display: grid;
+      gap: 22px;
+    }
+
+    section {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: clamp(22px, 4vw, 36px);
+      box-shadow: 0 10px 28px rgba(35, 31, 25, 0.055);
+      scroll-margin-top: 24px;
+    }
+
+    h2 {
+      margin: 0 0 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+      font-family: Georgia, "Noto Serif KR", serif;
+      font-size: clamp(1.35rem, 3vw, 2rem);
+      line-height: 1.35;
+      color: #1c252e;
+    }
+
+    p {
+      margin: 0 0 16px;
+    }
+
+    ul,
+    ol {
+      margin: 0;
+      padding-left: 1.35rem;
+    }
+
+    li {
+      margin: 0.55rem 0;
+      padding-left: 0.12rem;
+    }
+
+    strong {
+      color: #222;
+      font-weight: 800;
+    }
+
+    em {
+      color: #55515a;
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--line), transparent);
+      margin: 8px 0;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper-soft);
+    }
+
+    table {
+      width: 100%;
+      min-width: 680px;
+      border-collapse: collapse;
+      font-size: 0.96rem;
+    }
+
+    th,
+    td {
+      padding: 15px 16px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      background: #efe5d8;
+      color: #31271f;
+      font-weight: 800;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .concept-list {
+      display: grid;
+      gap: 12px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .concept-list li,
+    .quote-list li,
+    .claim-list li {
+      background: var(--paper-soft);
+      border-left: 4px solid var(--accent-2);
+      border-radius: 6px;
+      padding: 14px 16px;
+      margin: 0;
+    }
+
+    .quote-list {
+      list-style-position: inside;
+      padding-left: 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .quote-list li {
+      border-left-color: var(--accent);
+      font-family: Georgia, "Noto Serif KR", serif;
+      color: #2f3337;
+    }
+
+    .claim-list {
+      padding-left: 0;
+      list-style: none;
+      counter-reset: claims;
+      display: grid;
+      gap: 14px;
+    }
+
+    .claim-list > li {
+      counter-increment: claims;
+      border-left-color: var(--accent);
+      position: relative;
+      padding-left: 58px;
+    }
+
+    .claim-list > li::before {
+      content: counter(claims);
+      position: absolute;
+      left: 16px;
+      top: 16px;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.86rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .claim-list p {
+      margin: 8px 0 0;
+      color: #55515a;
+    }
+
+    .compressed li {
+      margin-bottom: 0.8rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .note-card {
+      background: var(--paper-soft);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+    }
+
+    .note-card h3 {
+      margin: 0 0 10px;
+      color: var(--accent-2);
+      font-size: 1.05rem;
+    }
+
+    .one-line {
+      background: #202a32;
+      color: #fff8ed;
+      border-color: #202a32;
+    }
+
+    .one-line h2 {
+      color: #fff;
+      border-bottom-color: rgba(255, 255, 255, 0.18);
+    }
+
+    .one-line p {
+      margin-bottom: 0;
+      font-size: clamp(1.12rem, 2vw, 1.32rem);
+      line-height: 1.75;
+    }
+
+    @media (max-width: 900px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .toc {
+        position: static;
+      }
+
+      .toc ol {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 620px) {
+      .page {
+        padding: 18px 12px 48px;
+      }
+
+      .hero,
+      section,
+      .toc {
+        border-radius: 0;
+      }
+
+      .toc ol {
+        grid-template-columns: 1fr;
+      }
+
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .claim-list > li {
+        padding-left: 16px;
+        padding-top: 48px;
+      }
+
+      .claim-list > li::before {
+        top: 14px;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .page {
+        max-width: none;
+        padding: 0;
+      }
+
+      .hero,
+      section,
+      .toc {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+
+      .toc {
+        position: static;
+      }
+
+      a {
+        text-decoration: none;
+      }
+    }
+  </style>
+<meta property="og:type" content="article">
+<meta property="og:title" content="도둑맞은 집중력: 현대인의 집중력 위기에 대한 입체적 분석">
+<meta property="og:description" content="본 보고서는 요한 하리의 저서 『도둑맞은 집중력(Stolen Focus)』의 핵심 내용을 분석하고, 저자가 제시하는 집중력 위기의 본질과 그 해결책을 체계적으로 정리한 브리핑 문서입니다. 1. 【배경 및 맥락 (Context)】 저자의 의도: 저자는 자신과 주변 사람들(특히 대부자녀 애덤)이 스크린에 중독되어 현실의 아름">
+<meta property="og:url" content="https://teentopia00.github.io/teendocs/s/g8nhnc/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="도둑맞은 집중력: 현대인의 집중력 위기에 대한 입체적 분석">
+<meta name="twitter:description" content="본 보고서는 요한 하리의 저서 『도둑맞은 집중력(Stolen Focus)』의 핵심 내용을 분석하고, 저자가 제시하는 집중력 위기의 본질과 그 해결책을 체계적으로 정리한 브리핑 문서입니다. 1. 【배경 및 맥락 (Context)】 저자의 의도: 저자는 자신과 주변 사람들(특히 대부자녀 애덤)이 스크린에 중독되어 현실의 아름">
+<link rel="canonical" href="https://teentopia00.github.io/teendocs/s/g8nhnc/">
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <p class="eyebrow">Faithful Note · Editorial Reading Document</p>
+      <h1>도둑맞은 집중력: 현대인의 집중력 위기에 대한 입체적 분석</h1>
+      <p class="lead">본 보고서는 요한 하리의 저서 『도둑맞은 집중력(Stolen Focus)』의 핵심 내용을 분석하고, 저자가 제시하는 집중력 위기의 본질과 그 해결책을 체계적으로 정리한 브리핑 문서입니다.</p>
+    </header>
+
+    <div class="layout">
+      <nav class="toc" aria-label="문서 목차">
+        <h2>목차</h2>
+        <ol>
+          <li><a href="#context">1. 배경 및 맥락</a></li>
+          <li><a href="#problem">2. 전체 개요 &amp; 문제 의식</a></li>
+          <li><a href="#architecture">3. 책 전체 구조 맵</a></li>
+          <li><a href="#compressed">4. 장별 핵심 요약</a></li>
+          <li><a href="#knowledge">5. 핵심 개념 및 관계망</a></li>
+          <li><a href="#claims">6. 핵심 주장 Top 5 &amp; 논거</a></li>
+          <li><a href="#essence">7. 원문 핵심 인용</a></li>
+          <li><a href="#frame">8. 사고 프레임 &amp; 논증 방식</a></li>
+          <li><a href="#critique">9. 비판적 검토 및 방어 기제</a></li>
+          <li><a href="#synthesis">10. 확장적 적용</a></li>
+          <li><a href="#summary">11. 최종 요약</a></li>
+        </ol>
+      </nav>
+
+      <main>
+        <section id="context">
+          <h2>1. 【배경 및 맥락 (Context)】</h2>
+          <ul>
+            <li><strong>저자의 의도:</strong> 저자는 자신과 주변 사람들(특히 대부자녀 애덤)이 스크린에 중독되어 현실의 아름다움과 깊은 사고 능력을 잃어가는 현상에 큰 충격을 받았습니다. 그는 집중력 저하가 단순히 개인의 의지력 부족 때문이 아니라, 우리를 둘러싼 거대한 사회적 시스템에 의해 '도둑맞고 있다'는 사실을 증명하고 대안을 모색하고자 이 책을 집필했습니다.</li>
+            <li><strong>시대적/지적 배경:</strong> 21세기 초반, 스마트폰과 소셜 미디어의 폭발적 보급으로 인해 인류의 정보 처리 속도는 급격히 빨라졌으나 깊은 사고는 불가능해진 시대적 상황을 배경으로 합니다. 저자는 개인의 습관 교정만을 강조하는 기존의 '자기계발서'적 접근(잔혹한 낙관주의)을 비판하며, 시스템 사고와 사회과학적 데이터에 기반한 분석을 시도합니다.</li>
+            <li><strong>타겟 독자:</strong> 매일 스마트폰 알림에 시달리며 책 한 권을 끝까지 읽지 못하는 현대인들, 아이들의 ADHD 증상으로 고민하는 부모들, 그리고 생산성 저하와 만성 스트레스에 시달리는 조직 구성원들을 주된 독자로 상정합니다.</li>
+          </ul>
+        </section>
+
+        <section id="problem">
+          <h2>2. 【전체 개요 &amp; 문제 의식】</h2>
+          <ul>
+            <li><strong>핵심 주제문:</strong> 집중력은 단순히 개인의 의지로 지켜낼 수 있는 것이 아니며, 현재 우리 사회는 인간의 집중력을 조직적으로 파괴하고 약탈하는 시스템 위에 놓여 있습니다. 우리는 개인적인 차원의 노력을 넘어, 집중력을 되찾기 위한 사회적·정치적 투쟁(집중력 반란)에 나서야 합니다.</li>
+            <li><strong>문제 제기 (Problem Statement):</strong> 왜 우리는 그 어느 때보다 많은 정보를 접하면서도 더 깊이 사고하기 어려워졌는가? 저자는 '의지력'이라는 얄팍한 해답 대신, 우리를 잠들지 못하게 하고, 멀티태스킹을 강요하며, 식단을 망치고, 아이들을 실내에 가두는 12가지 사회적 요인을 지목합니다.</li>
+          </ul>
+        </section>
+
+        <section id="architecture">
+          <h2>3. 【책 전체 구조 맵 (Architecture)】</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>단계</th>
+                  <th>주요 내용</th>
+                  <th>기능 및 역할</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>현상 진단</strong></td>
+                  <td>저자의 개인적 경험과 애덤의 사례</td>
+                  <td>문제의 심각성을 환기하고 독자의 공감 유도</td>
+                </tr>
+                <tr>
+                  <td><strong>개인적 요인</strong></td>
+                  <td>속도, 멀티태스킹, 몰입의 상실, 수면 부족</td>
+                  <td>집중력을 저하시키는 일상적 환경의 문제점 규명</td>
+                </tr>
+                <tr>
+                  <td><strong>시스템적 요인</strong></td>
+                  <td>소셜 미디어의 비즈니스 모델, 감시 자본주의</td>
+                  <td>집중력 약탈의 배후에 있는 거대 테크 기업의 전략 폭로</td>
+                </tr>
+                <tr>
+                  <td><strong>환경적 요인</strong></td>
+                  <td>스트레스, 식단, ADHD 오진, 놀이의 상실</td>
+                  <td>사회적 환경이 뇌와 심리에 미치는 영향 분석</td>
+                </tr>
+                <tr>
+                  <td><strong>대안 및 전망</strong></td>
+                  <td>4일 근무제, 테크 기업 규제, 아동의 자유 회복</td>
+                  <td>개인과 사회가 나아가야 할 구체적인 방향 제시</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="compressed">
+          <h2>4. 【장별 핵심 요약 (Compressed View)】</h2>
+          <ul class="compressed">
+            <li><strong>1장:</strong> 멀티태스킹은 뇌의 처리 능력을 분산시켜 지능 지수를 떨어뜨리는 '전환 비용 효과'를 발생시킵니다. (연결: 이러한 속도의 과부하는 '몰입'의 기회를 앗아갑니다.)</li>
+            <li><strong>2장:</strong> 몰입은 한 가지 목표에 완전히 빠져드는 상태이지만, 현대의 잦은 방해는 몰입 상태로의 진입 자체를 막습니다. (연결: 몰입하지 못한 뇌는 휴식을 찾지만, 그 휴식인 '수면'마저 위협받고 있습니다.)</li>
+            <li><strong>3장:</strong> 수면 부족은 뇌가 독소를 청소하는 과정을 방해하여 집중력을 근본적으로 무너뜨립니다. (연결: 신체적 기반이 무너진 상황에서 우리의 독서 문화도 위기를 맞습니다.)</li>
+            <li><strong>4~5장:</strong> 긴 텍스트를 읽는 능력의 상실은 공감 능력의 저하로 이어지며, 멍하게 있는 '딴생각'의 시간마저 사라지고 있습니다. (연결: 이 모든 빈틈을 테크 기업의 알고리즘이 파고듭니다.)</li>
+            <li><strong>6~7장:</strong> 테크 기업은 사용자의 시선을 붙잡아 두기 위해 설계된 '감시 자본주의' 모델을 통해 수익을 창출합니다. (연결: 이러한 시스템적 문제를 개인의 탓으로 돌리는 것은 '잔혹한 낙관주의'입니다.)</li>
+            <li><strong>8~11장:</strong> 만성적인 스트레스와 각성 상태, 노동 시간의 과다는 집중력을 불가능하게 만듭니다. (연결: 신체 내부로 들어가면 잘못된 식단이 뇌를 자극합니다.)</li>
+            <li><strong>12~14장:</strong> 값싼 가공식품과 아동에 대한 과잉 진단, 자유로운 놀이의 부재가 다음 세대의 집중력을 파괴하고 있습니다.</li>
+          </ul>
+        </section>
+
+        <section id="knowledge">
+          <h2>5. 【핵심 개념 및 관계망 (Knowledge Graph)】</h2>
+          <ul class="concept-list">
+            <li><strong>전환 비용 효과 (Switch-Cost Effect):</strong> 집중 대상을 바꿀 때마다 뇌가 재적응하는 데 에너지를 소모하여 성능이 저하되는 현상.</li>
+            <li><strong>몰입 (Flow):</strong> 자아 의식이 사라질 정도로 목표에 완전히 집중하는 상태 (미하이 칙센트미하이).</li>
+            <li><strong>감시 자본주의:</strong> 사용자의 행동 데이터를 수집하고 예측하여 집중력을 상품화하는 경제 시스템.</li>
+            <li><strong>잔혹한 낙관주의:</strong> 거대한 시스템적 문제를 개인의 의지나 습관 탓으로 돌리며 단순한 해결책을 제시하는 태도.</li>
+            <li><strong>사전 약속 (Pre-commitment):</strong> 유혹에 빠지기 전 스스로를 구속하는 장치 (예: 금고에 스마트폰 넣기).</li>
+          </ul>
+        </section>
+
+        <section id="claims">
+          <h2>6. 【저자의 핵심 주장 Top 5 &amp; 논거】</h2>
+          <ol class="claim-list">
+            <li>
+              <strong>집중력 위기는 개인의 실패가 아닌 시스템의 산물이다.</strong>
+              <p><em>원문 근거:</em> "우리가 집중하지 못하는 이유는 우리 뇌에 문제가 생겨서가 아니라, 우리를 집중하지 못하게 만드는 사회적 환경 속에 살고 있기 때문이다."</p>
+            </li>
+            <li>
+              <strong>테크 기업의 비즈니스 모델은 인간의 집중력을 해킹하도록 설계되었다.</strong>
+              <p><em>원문 근거:</em> 테크 기업 엔지니어들은 인간의 심리적 취약점을 공략하여 '무한 스크롤'과 '알림'을 설계했으며, 이는 사용자의 시간을 더 많이 확보하기 위함이다.</p>
+            </li>
+            <li>
+              <strong>멀티태스킹은 인지적 환상에 불과하며 생산성을 심각하게 저하시킨다.</strong>
+              <p><em>원문 근거:</em> 휼렛패커드 연구에 따르면, 멀티태스킹을 할 때 IQ가 대마초를 피웠을 때보다 두 배나 더 많이 떨어진다.</p>
+            </li>
+            <li>
+              <strong>수면 부족은 전 세계적인 집중력 대유행의 핵심 원인이다.</strong>
+              <p><em>원문 근거:</em> 뇌는 잠자는 동안 '글림프 시스템'을 통해 노폐물을 배출하는데, 현대인은 100년 전보다 평균 1~2시간 적게 자며 이 기회를 잃고 있다.</p>
+            </li>
+            <li>
+              <strong>아이들의 집중력 문제는 환경적 요인이 크며, 자유로운 '놀이'가 해결책이다.</strong>
+              <p><em>원문 근거:</em> 신체적으로 감금된 상태와 고도로 가공된 식단이 아이들의 뇌를 각성 상태로 몰아넣고 있으며, 이를 단순 ADHD로 진단하는 것은 문제의 본질을 가리는 것이다.</p>
+            </li>
+          </ol>
+        </section>
+
+        <section id="essence">
+          <h2>7. 【원문 핵심 인용 (The Essence)】</h2>
+          <ol class="quote-list">
+            <li>"당신의 집중력은 무너지지 않았다. 도둑맞았을 뿐이다." (책의 핵심 선언)</li>
+            <li>"우리는 집중력이라는 한정된 자원을 놓고 벌어지는 거대한 전쟁의 전쟁터가 되었다." (현실 진단)</li>
+            <li>"집중력 문제는 비만율 증가와 비슷하다. 이는 개인의 탐욕이 아니라 변화된 환경에 대한 신체의 반응이다." (비유적 통찰)</li>
+            <li>"우리가 문제를 우리 자신에게만 돌린다면, 우리를 공격하는 시스템은 그대로 유지될 것이다." (비판적 관점)</li>
+            <li>"우리는 집중력을 되찾기 위해 집단적으로 반란을 일으켜야 한다." (행동 촉구)</li>
+          </ol>
+        </section>
+
+        <section id="frame">
+          <h2>8. 【사고 프레임 &amp; 논증 방식 분석】</h2>
+          <ul>
+            <li><strong>사고의 틀:</strong> <strong>시스템 사고(System Thinking)</strong>. 문제를 개별 요소의 결함이 아닌, 요소들 간의 관계와 환경적 맥락 속에서 파악합니다. 또한 <strong>생태학적 관점</strong>에서 인간의 뇌를 환경과 상호작용하는 유기체로 봅니다.</li>
+            <li><strong>논증 스타일:</strong> 전 세계 250명 이상의 전문가 인터뷰와 방대한 과학적 데이터를 제시하면서도, 저자 자신의 개인적 고백(애덤과의 여행 등)을 섞어 논리적 설득력과 감정적 호소력을 동시에 확보합니다.</li>
+          </ul>
+        </section>
+
+        <section id="critique">
+          <h2>9. 【비판적 검토 및 방어 기제】</h2>
+          <ul>
+            <li><strong>논리적 약점:</strong> 일부 주장(예: 식단과 ADHD의 상관관계)은 상관관계와 인과관계가 명확히 분리되지 않았다는 비판을 받을 수 있으며, 기술의 긍정적 측면보다는 부정적 측면에 집중되어 있습니다.</li>
+            <li><strong>저자의 방어:</strong> 저자는 자신이 과학자가 아닌 '기자'임을 명시하며, 완벽한 과학적 결론을 기다리기에는 현재의 집중력 붕괴가 너무나 시급한 사회적 위기임을 강조합니다.</li>
+            <li><strong>반대 관점:</strong> 기술 결정론을 부정하고 인간의 적응력을 신뢰하는 학설이나, 디지털 기기가 오히려 인지적 효율성을 높여준다는 주장들이 이 책과 대조될 수 있습니다.</li>
+          </ul>
+        </section>
+
+        <section id="synthesis">
+          <h2>10. 【확장적 적용 (Synthesis)】</h2>
+          <div class="two-col">
+            <article class="note-card">
+              <h3>개인적 차원</h3>
+              <p>'사전 약속' 장치를 마련하고(예: kSafe 사용), SNS 사용 시간을 의도적으로 제한하며, 멍하게 있는 시간과 충분한 수면을 확보하는 생활 습관의 변화가 필요합니다.</p>
+            </article>
+            <article class="note-card">
+              <h3>사회적/조직적 차원</h3>
+              <p>조직은 4일 근무제 도입이나 퇴근 후 연락 금지법 등 구성원의 집중력을 보호할 수 있는 제도적 장치를 마련해야 합니다. 또한 테크 기업의 약탈적 비즈니스 모델을 규제하는 정치적 움직임이 수반되어야 합니다.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="summary" class="one-line">
+          <h2>11. 【최종 요약 (The One Line)】</h2>
+          <p>집중력 위기는 개인의 의지력 부족이 아니라, 인간의 관심을 착취하는 거대 시스템과 가속화된 현대 문명이 초래한 <strong>'사회적 전염병'</strong>이다.</p>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
