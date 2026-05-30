@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문화와 도덕적 기반 - C.S. 루이스 '순전한 기독교' 해제</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display for headers, Inter & Noto Sans KR for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Pretendard:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS Custom Configuration -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Pretendard', 'system-ui', 'sans-serif'],
+                        serif: ['Noto Serif KR', 'Georgia', 'serif'],
+                        display: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        sepia: {
+                            50: '#FAF6EE',
+                            100: '#F4ECE1',
+                            200: '#E6D7C3',
+                            800: '#433422',
+                            900: '#2B2013',
+                        },
+                        amber: {
+                            750: '#B45309',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: rgba(180, 83, 9, 0.3);
+            border-radius: 9999px;
+        }
+        /* Page Load Transitions */
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-sepia-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 font-sans transition-colors duration-300">
+
+<!-- Top Progress Bar -->
+<div class="fixed top-0 left-0 w-full h-1.5 bg-sepia-100 dark:bg-slate-900 z-50">
+    <div id="progressBar" class="h-full bg-gradient-to-r from-amber-500 to-amber-700 w-0 transition-all duration-100"></div>
+</div>
+
+<!-- Header / Navigation Bar -->
+<header class="sticky top-0 bg-sepia-50/90 dark:bg-slate-950/90 backdrop-blur-md border-b border-sepia-200/50 dark:border-slate-800/50 z-40 transition-colors duration-300">
+    <div class="max-w-2xl mx-auto px-4 py-3.5 flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+            <span class="text-amber-600 dark:text-amber-400 font-display font-bold text-lg">C.S. Lewis</span>
+            <span class="text-xs text-slate-400 dark:text-slate-500">|</span>
+            <span class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Mere Christianity</span>
+        </div>
+        <!-- Theme Toggle -->
+        <button id="themeToggle" class="p-2 rounded-full hover:bg-sepia-100 dark:hover:bg-slate-900 text-amber-600 dark:text-amber-400 focus:outline-none transition-colors" aria-label="테마 전환">
+            <!-- Sun Icon (shown in dark mode) -->
+            <svg id="sunIcon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+            </svg>
+            <!-- Moon Icon (shown in light mode) -->
+            <svg id="moonIcon" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+        </button>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section class="max-w-2xl mx-auto px-4 pt-8 pb-6 fade-in">
+    <div class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 text-xs font-semibold mb-4">
+        <span>📖 독서 가이드 & 해설</span>
+    </div>
+    <h1 class="font-serif text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight mb-4">
+        문화와 도덕적 기반
+    </h1>
+    <p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed font-serif italic border-l-2 border-amber-500 pl-4 py-1">
+        "인간이 창조해 낸 단순한 사회적 약속과, 우주에 실재하는 도덕률에는 무서우리만큼 확고한 차이가 존재한다."
+    </p>
+    <div class="flex items-center space-x-3 mt-6 text-xs text-slate-500 dark:text-slate-400">
+        <span class="flex items-center"><svg class="w-4 h-4 mr-1 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l4 2" /></svg>읽는 시간 약 6분</span>
+        <span>•</span>
+        <span>저자: C.S. 루이스 해제</span>
+    </div>
+</section>
+
+<!-- Introduction Card -->
+<main class="max-w-2xl mx-auto px-4 pb-24 space-y-12 fade-in">
+    <div class="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow-sm border border-sepia-200/40 dark:border-slate-800/60 leading-relaxed space-y-4">
+        <p class="text-slate-700 dark:text-slate-300">
+            저자는 인류가 공유하는 보편적인 도덕률, 즉 <strong class="text-amber-700 dark:text-amber-400 font-medium">‘인간 본성의 법칙’</strong>이 존재하며 그 배후에는 영원한 진리이신 분이 계신다고 믿습니다.
+        </p>
+        <p class="text-slate-700 dark:text-slate-300">
+            '문화 혹은 관습'과 '도덕적 기반'의 차이는 저자가 세상의 도덕 상대주의자들에게 가장 명확히 선을 긋고 싶었던 핵심 주제이기도 합니다. 이 둘의 명쾌한 차이를 지금 확인해 보십시오.
+        </p>
+    </div>
+
+    <!-- Interactive Tabs: Concept Switcher -->
+    <section class="space-y-4">
+        <h2 class="text-xl font-serif font-bold text-slate-900 dark:text-white flex items-center">
+            <span class="mr-2 text-amber-600">⚡</span> 두 핵심 개념의 정의
+        </h2>
+        
+        <!-- Toggle Switch Layout -->
+        <div class="grid grid-cols-2 p-1 bg-sepia-100 dark:bg-slate-900 rounded-xl mb-4">
+            <button onclick="switchTab('culture')" id="btn-culture" class="py-2.5 text-sm font-semibold rounded-lg transition-all duration-300 bg-white dark:bg-slate-800 text-amber-700 dark:text-amber-400 shadow-sm">
+                1. 문화와 관습
+            </button>
+            <button onclick="switchTab('morality')" id="btn-morality" class="py-2.5 text-sm font-medium rounded-lg transition-all duration-300 text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200">
+                2. 도덕적 기반
+            </button>
+        </div>
+
+        <!-- Concept Cards Content -->
+        <div class="relative min-h-[300px] bg-white dark:bg-slate-900 rounded-2xl p-6 border border-sepia-200/50 dark:border-slate-800/80 shadow-md">
+            
+            <!-- Culture Tab Panel -->
+            <div id="panel-culture" class="space-y-4 transition-opacity duration-300">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs uppercase font-bold tracking-widest text-amber-600 dark:text-amber-400">Social Customs</span>
+                    <span class="px-2.5 py-0.5 rounded-full bg-orange-100 dark:bg-orange-950 text-orange-800 dark:text-orange-300 text-xs font-semibold">인위적 합의</span>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white">인간이 만들어낸 ‘사회적 약속’</h3>
+                <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                    문화나 관습은 특정한 문명, 시대, 지역의 사람들이 필요나 편의에 따라 합의하여 만들어낸 규칙입니다. 
+                </p>
+                <div class="bg-sepia-50 dark:bg-slate-950/60 p-4 rounded-xl border-l-4 border-orange-400 space-y-2">
+                    <p class="text-xs font-bold text-slate-500 dark:text-slate-400">💡 핵심 특징 및 예시 비유</p>
+                    <p class="text-sm text-slate-700 dark:text-slate-300">
+                        <strong class="text-slate-900 dark:text-white">특징:</strong> 시대와 장소에 따라 얼마든지 달라질 수 있으며, 그 자체에 절대적인 우열이 없습니다.
+                    </p>
+                    <p class="text-sm text-slate-700 dark:text-slate-300">
+                        <strong class="text-slate-900 dark:text-white">비유:</strong> '우측통행'이나 '의복 예절'. 영국에서는 차가 좌측으로, 한국에서는 우측으로 간다고 해서 어느 한쪽이 '악하다'고 볼 수는 없습니다. 이는 교육과 관습을 통한 사회적 약속입니다.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Morality Tab Panel (Hidden initially) -->
+            <div id="panel-morality" class="hidden space-y-4 transition-opacity duration-300">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs uppercase font-bold tracking-widest text-emerald-600 dark:text-emerald-400">Moral Foundation</span>
+                    <span class="px-2.5 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 text-xs font-semibold">객관적 실재</span>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white">우주에 실재하는 ‘객관적 진리’</h3>
+                <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                    도덕적 기반은 인간이 발명해낸 것이 아니라, 인류 출현 이전부터 우주에 아주 명백하게 실재하고 있는 '참 도덕'의 영원한 척도입니다.
+                </p>
+                <div class="bg-sepia-50 dark:bg-slate-950/60 p-4 rounded-xl border-l-4 border-emerald-400 space-y-2">
+                    <p class="text-xs font-bold text-slate-500 dark:text-slate-400">💡 핵심 특징 및 예시 비유</p>
+                    <p class="text-sm text-slate-700 dark:text-slate-300">
+                        <strong class="text-slate-900 dark:text-white">특징:</strong> 인간의 편의나 취향에 따라 좌우되지 않으며, 시공간을 초월해 인류 보편의 내면에 새겨져 있습니다.
+                    </p>
+                    <p class="text-sm text-slate-700 dark:text-slate-300">
+                        <strong class="text-slate-900 dark:text-white">비유:</strong> '구구단'이나 '수학의 법칙'. 뉴욕이든 서울이든 2 + 2 = 4인 것처럼, 고대 이집트나 바빌로니아, 그리스, 중국을 막론하고 이기주의나 배신을 훌륭하다고 찬미한 문명은 단 한 곳도 없었습니다.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Custom Card-based Table (Mobile Friendly) -->
+    <section class="space-y-4">
+        <h2 class="text-xl font-serif font-bold text-slate-900 dark:text-white flex items-center">
+            <span class="mr-2 text-amber-600">📌</span> 한눈에 보는 비교표
+        </h2>
+        
+        <!-- Mobile Card View (Visible on small screens) -->
+        <div class="block md:hidden space-y-4">
+            <!-- Card 1 -->
+            <div class="bg-white dark:bg-slate-900 rounded-xl p-5 border border-sepia-200/50 dark:border-slate-800/80 shadow-sm space-y-3">
+                <div class="flex items-center justify-between border-b pb-2 dark:border-slate-800">
+                    <span class="font-bold text-slate-900 dark:text-white">성격 (Nature)</span>
+                </div>
+                <div class="grid grid-cols-2 gap-2 text-xs">
+                    <div class="bg-orange-50 dark:bg-orange-950/20 p-2.5 rounded-lg">
+                        <span class="font-bold text-orange-800 dark:text-orange-400 block mb-1">문화 및 관습</span>
+                        인간이 스스로 만든 규칙과 사회적 편의
+                    </div>
+                    <div class="bg-emerald-50 dark:bg-emerald-950/20 p-2.5 rounded-lg">
+                        <span class="font-bold text-emerald-800 dark:text-emerald-400 block mb-1">도덕적 기반</span>
+                        우주에 원래부터 실재하고 있는 보편 법칙
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white dark:bg-slate-900 rounded-xl p-5 border border-sepia-200/50 dark:border-slate-800/80 shadow-sm space-y-3">
+                <div class="flex items-center justify-between border-b pb-2 dark:border-slate-800">
+                    <span class="font-bold text-slate-900 dark:text-white">비유 (Metaphor)</span>
+                </div>
+                <div class="grid grid-cols-2 gap-2 text-xs">
+                    <div class="bg-orange-50 dark:bg-orange-950/20 p-2.5 rounded-lg">
+                        <span class="font-bold text-orange-800 dark:text-orange-400 block mb-1">문화 및 관습</span>
+                        교통 법규<br>(우측/좌측 통행)
+                    </div>
+                    <div class="bg-emerald-50 dark:bg-emerald-950/20 p-2.5 rounded-lg">
+                        <span class="font-bold text-emerald-800 dark:text-emerald-400 block mb-1">도덕적 기반</span>
+                        수학의 법칙<br>(구구단 공식)
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white dark:bg-slate-900 rounded-xl p-5 border border-sepia-200/50 dark:border-slate-800/80 shadow-sm space-y-3">
+                <div class="flex items-center justify-between border-b pb-2 dark:border-slate-800">
+                    <span class="font-bold text-slate-900 dark:text-white">변화 여부 (Changeability)</span>
+                </div>
+                <div class="grid grid-cols-2 gap-2 text-xs">
+                    <div class="bg-orange-50 dark:bg-orange-950/20 p-2.5 rounded-lg">
+                        <span class="font-bold text-orange-800 dark:text-orange-400 block mb-1">문화 및 관습</span>
+                        시대, 환경, 장소에 따라 항상 변함
+                    </div>
+                    <div class="bg-emerald-50 dark:bg-emerald-950/20 p-2.5 rounded-lg">
+                        <span class="font-bold text-emerald-800 dark:text-emerald-400 block mb-1">도덕적 기반</span>
+                        시대가 흘러도 결코 절대 변하지 않음
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="bg-white dark:bg-slate-900 rounded-xl p-5 border border-sepia-200/50 dark:border-slate-800/80 shadow-sm space-y-3">
+                <div class="flex items-center justify-between border-b pb-2 dark:border-slate-800">
+                    <span class="font-bold text-slate-900 dark:text-white">판단 기준 (Standard)</span>
+                </div>
+                <div class="grid grid-cols-2 gap-2 text-xs">
+                    <div class="bg-orange-50 dark:bg-orange-950/20 p-2.5 rounded-lg">
+                        <span class="font-bold text-orange-800 dark:text-orange-400 block mb-1">문화 및 관습</span>
+                        문화적 '취향' 및 상황적 선호도 차이
+                    </div>
+                    <div class="bg-emerald-50 dark:bg-emerald-950/20 p-2.5 rounded-lg">
+                        <span class="font-bold text-emerald-800 dark:text-emerald-400 block mb-1">도덕적 기반</span>
+                        '옳고 그름'을 나누는 절대적 척도 존재
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Desktop View Table (Hidden on small screens) -->
+        <div class="hidden md:block overflow-hidden bg-white dark:bg-slate-900 rounded-xl border border-sepia-200 dark:border-slate-800 shadow-sm">
+            <table class="w-full text-sm text-left">
+                <thead class="bg-sepia-100 dark:bg-slate-800 text-xs uppercase text-slate-700 dark:text-slate-300">
+                    <tr>
+                        <th class="px-4 py-3">구분</th>
+                        <th class="px-4 py-3 text-orange-800 dark:text-orange-400">문화 및 관습 (Social Customs)</th>
+                        <th class="px-4 py-3 text-emerald-800 dark:text-emerald-400">도덕적 기반 (Moral Foundation)</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-sepia-200/50 dark:divide-slate-800">
+                    <tr class="hover:bg-sepia-50 dark:hover:bg-slate-850">
+                        <td class="px-4 py-3 font-semibold text-slate-900 dark:text-white">성격</td>
+                        <td class="px-4 py-3 text-slate-600 dark:text-slate-300">인간이 만들어낸 규칙과 편의</td>
+                        <td class="px-4 py-3 text-slate-600 dark:text-slate-300">우주에 원래 실재하는 법칙</td>
+                    </tr>
+                    <tr class="hover:bg-sepia-50 dark:hover:bg-slate-850">
+                        <td class="px-4 py-3 font-semibold text-slate-900 dark:text-white">성격 비유</td>
+                        <td class="px-4 py-3 text-slate-600 dark:text-slate-300">교통 법규 (우측 통행)</td>
+                        <td class="px-4 py-3 text-slate-600 dark:text-slate-300">수학의 법칙 (구구단)</td>
+                    </tr>
+                    <tr class="hover:bg-sepia-50 dark:hover:bg-slate-850">
+                        <td class="px-4 py-3 font-semibold text-slate-900 dark:text-white">변화 여부</td>
+                        <td class="px-4 py-3 text-slate-600 dark:text-slate-300">시대와 장소에 따라 변함</td>
+                        <td class="px-4 py-3 text-slate-600 dark:text-slate-300">유행이나 시대가 바뀌어도 변치 않음</td>
+                    </tr>
+                    <tr class="hover:bg-sepia-50 dark:hover:bg-slate-850">
+                        <td class="px-4 py-3 font-semibold text-slate-900 dark:text-white">판단 기준</td>
+                        <td class="px-4 py-3 text-slate-600 dark:text-slate-300">문화적 '취향'의 차이</td>
+                        <td class="px-4 py-3 text-slate-600 dark:text-slate-300">'옳고 그름'의 절대적 척도</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Case Study: Cannibalism and Nazi Morality -->
+    <section class="bg-gradient-to-br from-amber-50 to-orange-50 dark:from-slate-900 dark:to-orange-950/20 rounded-2xl p-6 border border-amber-200/40 dark:border-orange-900/40 space-y-4">
+        <h2 class="text-xl font-serif font-bold text-slate-900 dark:text-white flex items-center">
+            <span class="mr-2 text-red-500">🔥</span> '식인 풍습' 등 문화적 차이를 보는 시각
+        </h2>
+        
+        <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+            식인종의 사례처럼 언뜻 보기에 인류의 도덕이 완전히 달라 보이는 예외가 존재할 수 있습니다. 하지만 이는 도덕적 '기반'의 차이라기보다, <strong class="text-amber-700 dark:text-amber-400 font-semibold">사실에 대한 인식과 '관습'의 왜곡</strong>으로 보아야 합니다.
+        </p>
+
+        <blockquote class="bg-white/80 dark:bg-slate-950/80 p-4 rounded-xl border-l-4 border-amber-500 my-4 shadow-sm">
+            <p class="font-serif italic text-sm text-slate-800 dark:text-slate-200">
+                "약간의 차이가 전적인 차이를 의미하지는 않습니다."
+            </p>
+        </blockquote>
+
+        <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+            식인 풍습을 가졌던 이들도 "이유 없이 아군이나 가족을 죽여도 된다"는 도덕 기반을 가졌던 것이 아닙니다. 그들은 '인간(우리 편)'의 범위를 극도로 좁게 설정했거나, 식인을 통해 적의 힘을 흡수한다는 주술적 '사실'을 믿었던 것뿐입니다. 
+        </p>
+        
+        <div class="pt-2 border-t border-amber-200/50 dark:border-slate-800 space-y-3">
+            <h4 class="text-sm font-bold text-slate-900 dark:text-white">🚨 핵심 논증: 상대주의에 대한 반론</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                만약 도덕이 단순한 관습에 불과하다면, 우리는 나치의 도덕이나 식인종의 습성을 비판할 권리가 전혀 없어집니다. 우리가 "기독교의 도덕이 나치의 도덕보다 낫다"고 말할 수 있는 성숙한 판단력의 밑바탕에는, 두 문화의 우열을 가릴 수 있게 해주는 <strong class="text-amber-700 dark:text-amber-400">‘제3의 절대적 기준(보편적 도덕 기반)’이 이미 우리 내면에 존재하기 때문</strong>입니다.
+            </p>
+        </div>
+    </section>
+
+    <!-- The 4 Core Arguments Section -->
+    <section class="space-y-6">
+        <div class="text-center space-y-1">
+            <h2 class="text-2xl font-serif font-bold text-slate-900 dark:text-white">도덕률을 증명하는 4가지 논거</h2>
+            <p class="text-xs text-amber-600 dark:text-amber-400 font-medium">『순전한 기독교』에서 제시하는 핵심 논증 요약</p>
+        </div>
+
+        <!-- Argument 1 -->
+        <div class="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-sepia-200/50 dark:border-slate-800/80 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-start space-x-3">
+                <div class="w-8 h-8 rounded-lg bg-amber-100 dark:bg-amber-950 flex items-center justify-center text-amber-800 dark:text-amber-300 font-bold shrink-0">1</div>
+                <div class="space-y-2">
+                    <h3 class="text-base font-bold text-slate-900 dark:text-white">일상적인 다툼 속의 ‘합의된 기준’</h3>
+                    <p class="text-xs font-mono text-slate-400 dark:text-slate-500">The Argument from Everyday Quarrelling</p>
+                    <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                        사람들이 일상생활에서 말다툼을 벌일 때, 단순히 상대방의 행동이 내 마음에 들지 않는다고 감정적으로 떼를 쓰는 것이 아닙니다. 
+                    </p>
+                    <div class="bg-amber-50/50 dark:bg-slate-950/40 p-3 rounded-lg text-xs text-slate-600 dark:text-slate-400 space-y-1 border-l-2 border-amber-400">
+                        <p>📢 <strong>흔한 대화 속 지적:</strong> "누가 너한테 이런 짓 하면 좋겠어?", "내가 먼저 자리 잡았잖아"</p>
+                        <p class="mt-1">이러한 항의는 상대방도 당연히 알고 있고 동의할 것이라 기대되는 일종의 <strong>‘합의된 행동 기준’</strong>이 존재함을 뜻합니다. 만약 모두가 인정하는 객관적 기준이 없다면, 우리는 다투거나 설득하려 노력할 필요조차 없을 것입니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Argument 2 -->
+        <div class="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-sepia-200/50 dark:border-slate-800/80 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-start space-x-3">
+                <div class="w-8 h-8 rounded-lg bg-amber-100 dark:bg-amber-950 flex items-center justify-center text-amber-800 dark:text-amber-300 font-bold shrink-0">2</div>
+                <div class="space-y-2">
+                    <h3 class="text-base font-bold text-slate-900 dark:text-white">도덕적 진보와 비교의 가능성</h3>
+                    <p class="text-xs font-mono text-slate-400 dark:text-slate-500">The Argument from Moral Progress</p>
+                    <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                        도덕 상대주의자들의 주장처럼 모든 도덕이 단순한 문화적 관습에 불과하다면, 우리는 어떤 도덕관이 다른 도덕관보다 더 진실하고 가치 있다고 말할 수 없게 됩니다.
+                    </p>
+                    <div class="bg-amber-50/50 dark:bg-slate-950/40 p-3 rounded-lg text-xs text-slate-600 dark:text-slate-400 space-y-1 border-l-2 border-amber-400">
+                        <p>🎯 <strong>루이스의 통찰:</strong> 과거의 노예제 도덕보다 오늘의 인권 도덕이 '진보'했다고 생각하는가? 나치의 대학살 도덕보다 보편 인류애가 '더 낫다'고 느껴지는가?</p>
+                        <p class="mt-1">우리가 두 가지 도덕 상태를 비교하여 저울질하는 그 순간, 우리의 이성은 이미 두 대상을 평가할 수 있는 <strong>'제3의 완벽한 잣대(절대 도덕)'</strong>의 실재를 암묵적으로 인정하는 것입니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Argument 3 (With Interactive Visualizer) -->
+        <div class="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-sepia-200/50 dark:border-slate-800/80 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-start space-x-3">
+                <div class="w-8 h-8 rounded-lg bg-amber-100 dark:bg-amber-950 flex items-center justify-center text-amber-800 dark:text-amber-300 font-bold shrink-0">3</div>
+                <div class="space-y-2 w-full">
+                    <h3 class="text-base font-bold text-slate-900 dark:text-white">본능과 도덕률의 차이</h3>
+                    <p class="text-xs font-mono text-slate-400 dark:text-slate-500">The Conflict of Instincts</p>
+                    <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                        도덕이 생존을 위한 '집단 본능'에 불과하다는 설명이 있습니다. 하지만 위기 순간, 우리 내면에서는 수많은 상반된 본능이 거세게 충돌합니다.
+                    </p>
+
+                    <!-- Interactive Metaphor Simulator -->
+                    <div class="bg-slate-50 dark:bg-slate-950 p-4 rounded-xl border border-slate-200 dark:border-slate-800 my-4 space-y-3">
+                        <p class="text-xs font-bold text-amber-600 dark:text-amber-400 flex items-center">
+                            <svg class="w-4 h-4 mr-1 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" /></svg>
+                            [체험] 루이스의 '피아노 비유' 인터랙티브
+                        </p>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400">두 대립적인 본능 건반을 누른 뒤, 마지막으로 "도덕률" 지휘판을 눌러 차이를 느껴보세요.</p>
+                        
+                        <!-- Visual Piano Keyboard -->
+                        <div class="grid grid-cols-3 gap-2 py-2">
+                            <button id="piano-instinct1" onclick="playPiano('instinct1')" class="bg-white dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-700 rounded-lg p-3 text-center transition-all focus:outline-none hover:shadow-sm">
+                                <span class="block text-xs font-bold text-slate-800 dark:text-slate-200">건반 A</span>
+                                <span class="text-[10px] text-red-500">집단 본능</span>
+                                <span class="block text-[9px] text-slate-400">(달려가 돕기)</span>
+                            </button>
+                            <button id="piano-instinct2" onclick="playPiano('instinct2')" class="bg-white dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-700 rounded-lg p-3 text-center transition-all focus:outline-none hover:shadow-sm">
+                                <span class="block text-xs font-bold text-slate-800 dark:text-slate-200">건반 B</span>
+                                <span class="text-[10px] text-blue-500">자기 보존</span>
+                                <span class="block text-[9px] text-slate-400">(피하고 숨기)</span>
+                            </button>
+                            <button id="piano-morallaw" onclick="playPiano('morallaw')" class="bg-gradient-to-b from-amber-500 to-amber-600 text-white rounded-lg p-3 text-center transition-all focus:outline-none shadow-md hover:from-amber-600 hover:to-amber-700 font-bold">
+                                <span class="block text-xs">🎼 악보</span>
+                                <span class="text-[10px] text-amber-100">도덕률</span>
+                                <span class="block text-[9px] text-amber-200">(지휘 & 판단)</span>
+                            </button>
+                        </div>
+
+                        <!-- Metaphor Feedback box -->
+                        <div id="piano-feedback" class="bg-white dark:bg-slate-900 p-3 rounded-lg text-xs text-slate-600 dark:text-slate-400 min-h-[60px] flex items-center justify-center text-center">
+                            건반이나 악보 버튼을 터치하여 비유의 원리를 눈으로 이해하십시오.
+                        </div>
+                    </div>
+
+                    <p class="text-slate-600 dark:text-slate-300 text-xs leading-relaxed">
+                        본능이 피아노의 다양한 '건반'들이라면, 도덕률은 상황에 맞춰 어떤 건반을 언제 세게 쳐야 할지 지시하는 '악보'와 같으므로 본능 자체와는 완벽히 구별됩니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Argument 4 -->
+        <div class="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-sepia-200/50 dark:border-slate-800/80 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-start space-x-3">
+                <div class="w-8 h-8 rounded-lg bg-amber-100 dark:bg-amber-950 flex items-center justify-center text-amber-800 dark:text-amber-300 font-bold shrink-0">4</div>
+                <div class="space-y-2">
+                    <h3 class="text-base font-bold text-slate-900 dark:text-white">인간이 늘어놓는 ‘변명’의 의미</h3>
+                    <p class="text-xs font-mono text-slate-400 dark:text-slate-500">The Argument from Human Excuses</p>
+                    <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                        인간은 이성적으로 "절대적 기준 따윈 없다"고 도도하게 말하다가도, 정작 타인이 자신에게 불공정하게 굴면 가차 없이 분노를 터뜨립니다.
+                    </p>
+                    <div class="bg-amber-50/50 dark:bg-slate-950/40 p-3 rounded-lg text-xs text-slate-600 dark:text-slate-400 space-y-1 border-l-2 border-amber-400">
+                        <p>🕵️‍♂️ <strong>자기 합리화에 대한 폭로:</strong> 스스로 도덕률을 완벽히 지키지 못했을 때, 우리는 뻔뻔하게 인정하기보다는 "피곤했다", "불안했다", "어쩔 수 없는 상황이었다"라며 끊임없이 변명을 늘어놓습니다.</p>
+                        <p class="mt-1">구태여 변명을 한다는 사실이야말로, 우리가 <strong>'바른 길(도덕률)'</strong>의 가치를 뼈저리게 믿고 있으며 그 보이지 않는 중압감을 의식하고 있다는 가장 강력한 반증입니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Diagnostic Quiz -->
+    <section class="bg-slate-900 dark:bg-slate-900/60 text-slate-100 rounded-2xl p-6 shadow-xl space-y-6">
+        <div class="space-y-1 border-b border-slate-800 pb-3">
+            <span class="text-amber-400 font-bold text-xs uppercase tracking-wider">Lewis's Socratic Method</span>
+            <h3 class="text-lg font-serif font-bold text-white">생각의 거울: 나의 도덕률 인지 테스트</h3>
+            <p class="text-xs text-slate-400">짧은 문답을 통해 여러분 깊숙이 내재한 직관을 마주해 보세요.</p>
+        </div>
+
+        <!-- Quiz Container -->
+        <div id="quiz-box" class="min-h-[160px] flex flex-col justify-between">
+            <!-- Question 1 -->
+            <div id="q-step-1" class="space-y-4">
+                <p class="text-sm font-medium leading-relaxed">
+                    <strong>Q1.</strong> 지하철이나 카페에서 누군가가 당신의 짐을 아무런 양해 없이 멀리 치워두고 자리를 가로챘다면, 당신은 마음속으로 어떤 감정을 먼저 느끼십니까?
+                </p>
+                <div class="grid grid-cols-1 gap-2.5">
+                    <button onclick="handleQuiz('1A')" class="w-full text-left p-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs transition-all">
+                        A. "매우 불쾌하고 비상식적이야! 공정하지 못해!" 라며 규칙의 위반에 화를 낸다.
+                    </button>
+                    <button onclick="handleQuiz('1B')" class="w-full text-left p-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs transition-all">
+                        B. "화는 나지만 세상에 절대적 규칙은 없으니, 그저 내 개인적인 감정이 상했을 뿐이다."
+                    </button>
+                </div>
+            </div>
+
+            <!-- Question 2 (Hidden) -->
+            <div id="q-step-2" class="hidden space-y-4">
+                <p class="text-sm font-medium leading-relaxed">
+                    <strong>Q2.</strong> 만약 "기독교(혹은 보편 인권)의 상호존중주의"와 "나치 독일의 인종 말살주의"를 두고 절대 평가를 내린다면, 당신의 관점은 어디에 가깝습니까?
+                </p>
+                <div class="grid grid-cols-1 gap-2.5">
+                    <button onclick="handleQuiz('2A')" class="w-full text-left p-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs transition-all">
+                        A. "역사적·윤리적으로 보편 인권의 가치가 나치주의보다 객관적으로 절대 우월하다."
+                    </button>
+                    <button onclick="handleQuiz('2B')" class="w-full text-left p-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs transition-all">
+                        B. "둘 다 다른 문화적 흐름의 결과물일 뿐, 객관적으로 어느 한쪽이 우월하다고 가치평가 할 수 없다."
+                    </button>
+                </div>
+            </div>
+
+            <!-- Question 3 (Hidden) -->
+            <div id="q-step-3" class="hidden space-y-4">
+                <p class="text-sm font-medium leading-relaxed">
+                    <strong>Q3.</strong> 당신이 누군가와의 사소한 약속을 지키지 못하게 되었을 때, 자신의 행동을 돌이켜보며 느끼는 태도는 어떠합니까?
+                </p>
+                <div class="grid grid-cols-1 gap-2.5">
+                    <button onclick="handleQuiz('3A')" class="w-full text-left p-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs transition-all">
+                        A. "피치 못할 피로나 사정 탓"을 하며 마음 깊이 나의 정당성을 변명하고 싶어진다.
+                    </button>
+                    <button onclick="handleQuiz('3B')" class="w-full text-left p-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs transition-all">
+                        B. "어차피 규칙은 주관적이니 변명할 가치도 필요성도 느끼지 못하며 완전 평온하다."
+                    </button>
+                </div>
+            </div>
+
+            <!-- Result Box (Hidden) -->
+            <div id="quiz-result" class="hidden space-y-4 text-center py-4">
+                <div class="w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center mx-auto text-xl mb-2">💡</div>
+                <h4 id="result-title" class="font-bold text-base text-white">도덕률 탐색 결과</h4>
+                <p id="result-desc" class="text-xs text-slate-300 leading-relaxed px-2"></p>
+                <button onclick="resetQuiz()" class="mt-4 px-4 py-2 bg-amber-600 hover:bg-amber-700 text-xs rounded-lg font-semibold transition-colors">
+                    다시 진행하기
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophical Conclusion -->
+    <section class="border-t border-sepia-200 dark:border-slate-800 pt-8 space-y-4">
+        <h2 class="text-xl font-serif font-bold text-slate-900 dark:text-white">최종 결론</h2>
+        <div class="prose prose-slate dark:prose-invert text-slate-700 dark:text-slate-300 text-sm leading-relaxed space-y-3">
+            <p>
+                결론적으로 우주에는 단순히 눈에 보이는 관찰 가능한 과학적 사실 너머에, <strong>인간이 마땅히 따라야 하는 실재적 법(즉, 도덕률)</strong>이 존재합니다. 
+            </p>
+            <p>
+                모든 판단 기준을 인간의 편의나 시대의 취향에 의해 좌지우지된다는 상대주의적 시각으로는, 우리 내면에 깃든 숭고하고도 절대적인 선에 대한 열망을 결코 일관되게 설명해낼 수 없습니다.
+            </p>
+        </div>
+    </section>
+</main>
+
+<!-- Footer Section -->
+<footer class="bg-sepia-100 dark:bg-slate-950 text-slate-500 dark:text-slate-400 text-xs text-center py-10 border-t border-sepia-200/50 dark:border-slate-900 transition-colors">
+    <div class="max-w-2xl mx-auto px-4 space-y-3">
+        <p class="font-serif italic">"나의 본능은 건반이지만, 도덕률은 상황 속에서 아름다운 화음을 이끌어내기 위해 건반들을 조정하는 영혼의 악보이다."</p>
+        <div class="text-[10px] text-slate-400 dark:text-slate-600">
+            C.S. 루이스 『순전한 기독교』 도덕률 논증 장 핵심 정리
+        </div>
+        <p>© 2026 CS Lewis Masterclass App. Developed for Mobile & Tablet Readings.</p>
+    </div>
+</footer>
+
+<script>
+    // --- Dark/Light Mode Management ---
+    const themeToggleBtn = document.getElementById('themeToggle');
+    const sunIcon = document.getElementById('sunIcon');
+    const moonIcon = document.getElementById('moonIcon');
+
+    // Sync on initial load
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+        sunIcon.classList.remove('hidden');
+        moonIcon.classList.add('hidden');
+    } else {
+        document.documentElement.classList.remove('dark');
+        sunIcon.classList.add('hidden');
+        moonIcon.classList.remove('hidden');
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+        if (document.documentElement.classList.contains('dark')) {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+            sunIcon.classList.add('hidden');
+            moonIcon.classList.remove('hidden');
+        } else {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+            sunIcon.classList.remove('hidden');
+            moonIcon.classList.add('hidden');
+        }
+    });
+
+    // --- Top Reading Scroll Indicator ---
+    window.addEventListener('scroll', () => {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        document.getElementById('progressBar').style.width = scrolled + '%';
+    });
+
+    // --- Interactive Concept Switcher Tab Logic ---
+    function switchTab(activeTab) {
+        const btnCulture = document.getElementById('btn-culture');
+        const btnMorality = document.getElementById('btn-morality');
+        const panelCulture = document.getElementById('panel-culture');
+        const panelMorality = document.getElementById('panel-morality');
+
+        if (activeTab === 'culture') {
+            // Button Styles
+            btnCulture.className = "py-2.5 text-sm font-semibold rounded-lg transition-all duration-300 bg-white dark:bg-slate-800 text-amber-700 dark:text-amber-400 shadow-sm";
+            btnMorality.className = "py-2.5 text-sm font-medium rounded-lg transition-all duration-300 text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200";
+            
+            // Panels
+            panelMorality.classList.add('hidden');
+            panelCulture.classList.remove('hidden');
+        } else {
+            // Button Styles
+            btnMorality.className = "py-2.5 text-sm font-semibold rounded-lg transition-all duration-300 bg-white dark:bg-slate-800 text-emerald-700 dark:text-emerald-400 shadow-sm";
+            btnCulture.className = "py-2.5 text-sm font-medium rounded-lg transition-all duration-300 text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200";
+            
+            // Panels
+            panelCulture.classList.add('hidden');
+            panelMorality.classList.remove('hidden');
+        }
+    }
+
+    // --- Interactive Piano & Instinct Simulator Logic ---
+    function playPiano(item) {
+        const feedback = document.getElementById('piano-feedback');
+        
+        // Remove previous styles
+        document.getElementById('piano-instinct1').classList.remove('border-amber-500', 'bg-red-50', 'dark:bg-slate-900');
+        document.getElementById('piano-instinct2').classList.remove('border-amber-500', 'bg-blue-50', 'dark:bg-slate-900');
+        
+        if (item === 'instinct1') {
+            document.getElementById('piano-instinct1').classList.add('border-amber-500', 'bg-red-50', 'dark:bg-slate-900');
+            feedback.innerHTML = `<span class="text-red-600 dark:text-red-400 font-bold block mb-1">📢 집단 본능 건반 작동!</span>"위험에 뛰어들어 내 이웃을 돕자!"라는 강한 생존 본능적 외침입니다. 하지만 내면에 자기보전의 두려움이 충돌합니다.`;
+        } else if (item === 'instinct2') {
+            document.getElementById('piano-instinct2').classList.add('border-amber-500', 'bg-blue-50', 'dark:bg-slate-900');
+            feedback.innerHTML = `<span class="text-blue-600 dark:text-blue-400 font-bold block mb-1">📢 자기 보존 건반 작동!</span>"내가 다칠 수 있으니 도망쳐서 살아남아라!"라는 매우 원초적이고 자연스러운 경고 본능입니다.`;
+        } else if (item === 'morallaw') {
+            feedback.innerHTML = `<span class="text-amber-600 dark:text-amber-400 font-bold block mb-1">🎼 절대적 악보(도덕률)의 개입!</span>두 가지 본능 건반(달려가기 vs 도망치기) 사이에서 <strong>"비록 위험하지만 뛰어들어 돕는 것이 맞다!"</strong>라고 옳고 그름을 판별하고 더 강한 지령을 내리는 것은 건반이 아닌 <strong>악보(제3의 도덕률)</strong>입니다.`;
+        }
+    }
+
+    // --- Dynamic Self-Reflection Diagnostic Quiz Wizard ---
+    let userSelections = { q1: null, q2: null, q3: null };
+
+    function handleQuiz(option) {
+        const q1 = document.getElementById('q-step-1');
+        const q2 = document.getElementById('q-step-2');
+        const q3 = document.getElementById('q-step-3');
+        const result = document.getElementById('quiz-result');
+
+        if (option === '1A' || option === '1B') {
+            userSelections.q1 = option;
+            q1.classList.add('hidden');
+            q2.classList.remove('hidden');
+        } else if (option === '2A' || option === '2B') {
+            userSelections.q2 = option;
+            q2.classList.add('hidden');
+            q3.classList.remove('hidden');
+        } else if (option === '3A' || option === '3B') {
+            userSelections.q3 = option;
+            q3.classList.add('hidden');
+            calculateQuizResult();
+        }
+    }
+
+    function calculateQuizResult() {
+        const result = document.getElementById('quiz-result');
+        const title = document.getElementById('result-title');
+        const desc = document.getElementById('result-desc');
+        result.classList.remove('hidden');
+
+        const { q1, q2, q3 } = userSelections;
+
+        // Logic branching to analyze the user's moral core
+        if (q1 === '1A' && q2 === '2A' && q3 === '3A') {
+            title.innerHTML = "✨ 확고한 직관적 도덕론자 (C.S. 루이스의 동반자)";
+            desc.innerHTML = "당신은 본능적으로 타인의 부당함에 분노하며 보편적인 인륜의 규칙이 실재함을 수긍하고 있습니다. 실수를 저지르면 변명하려 애쓰는 태도 또한, 도덕적 이상(Ideal)의 눈부신 존재감을 당신이 무의식 깊이 인정하고 있다는 산 증거입니다. 루이스가 증명하고자 했던 핵심 철학과 가장 잘 부합하는 마음의 소유자입니다.";
+        } else if (q1 === '1B' && q2 === '2B' && q3 === '3B') {
+            title.innerHTML = "🧩 상대주의 지향 철학자 (도전적 탐구자)";
+            desc.innerHTML = "당신은 현대 사회의 문화적 가치 다원주의 및 도덕 상대주의에 매력을 느끼고 계십니다. 하지만 가슴 속 한 구석, 나치의 역사적 비극을 접할 때나 아주 부당한 일을 겪을 때 진실로 '옳고 그름'이 그저 유행 같은 관습에 불과하다고 말할 수 있을지 스스로 계속 질문해 보세요. 루이스의 변증법이 흥미로운 지적 여행이 될 것입니다.";
+        } else {
+            title.innerHTML = "⚖️ 이성적 도덕주의자 (조화로운 사색가)";
+            desc.innerHTML = "당신은 도덕적 가치가 분명히 존재한다고 느끼면서도 동시에 상황과 문화에 따라 변화할 수 있는 유연성을 균형감 있게 추구합니다. '인간 본성의 법칙'이 존재한다는 절대론과 문명의 변명들 사이에서 성찰을 즐깁니다. 일상의 자그마한 변명들이 내재된 규범의 압박을 나타낸다는 루이스의 4번째 논거를 곱씹어보세요.";
+        }
+    }
+
+    function resetQuiz() {
+        userSelections = { q1: null, q2: null, q3: null };
+        document.getElementById('quiz-result').classList.add('hidden');
+        document.getElementById('q-step-1').classList.remove('hidden');
+        document.getElementById('q-step-2').classList.add('hidden');
+        document.getElementById('q-step-3').classList.add('hidden');
+    }
+</script>
+</body>
+</html>
