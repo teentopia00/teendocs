@@ -1,0 +1,925 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  
+  
+  <title>가짜 신앙을 넘어 복음의 노래로 | 복음이 바꾼다 종합 연구 리포트</title>
+  
+  <style>
+    :root {
+      --ink: #1e2428;
+      --muted: #627074;
+      --soft: #f5f1e8;
+      --paper: #fffdf8;
+      --line: #ded7ca;
+      --accent: #8d3f2b;
+      --accent-2: #245c63;
+      --accent-3: #b98b35;
+      --wash: #eef5f4;
+      --card: #ffffff;
+      --shadow: 0 18px 48px rgba(40, 35, 28, 0.12);
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(180deg, rgba(245, 241, 232, 0.9), rgba(255, 253, 248, 1) 520px),
+        var(--paper);
+      font-family: "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.75;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    a {
+      color: var(--accent-2);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+
+    .page {
+      width: min(1120px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    header.hero {
+      padding: 76px 0 42px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .kicker {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      border: 1px solid rgba(141, 63, 43, 0.28);
+      border-radius: 999px;
+      padding: 6px 12px;
+      background: rgba(255, 253, 248, 0.82);
+    }
+
+    h1 {
+      margin: 24px 0 18px;
+      max-width: 920px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.5rem, 7vw, 5.8rem);
+      line-height: 1.03;
+      letter-spacing: 0;
+      color: #161b1e;
+    }
+
+    .subtitle {
+      max-width: 820px;
+      margin: 0;
+      color: #39464a;
+      font-size: clamp(1.08rem, 2.2vw, 1.42rem);
+      line-height: 1.65;
+      font-weight: 500;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 0.65fr;
+      gap: 32px;
+      align-items: end;
+      margin-top: 42px;
+    }
+
+    .share-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .share-card h2,
+    .toc h2,
+    .abstract h2,
+    .source-notes h2 {
+      margin: 0 0 12px;
+      font-size: 0.95rem;
+      color: var(--accent);
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .share-card p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .copy-block {
+      margin: 0;
+      padding: 14px;
+      background: #f8f6f0;
+      border: 1px dashed #cfc6b7;
+      border-radius: 6px;
+      color: #30383b;
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .meta span {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(36, 92, 99, 0.08);
+      color: #2c555b;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 270px;
+      gap: 44px;
+      padding: 46px 0 80px;
+      align-items: start;
+    }
+
+    article {
+      min-width: 0;
+    }
+
+    .toc {
+      position: sticky;
+      top: 24px;
+      background: rgba(255, 253, 248, 0.9);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+    }
+
+    .toc ol {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    .toc a {
+      color: #3d4b50;
+      text-decoration: none;
+    }
+
+    section {
+      margin: 0 0 52px;
+    }
+
+    .abstract,
+    .key-findings,
+    .evidence-panel,
+    .implications,
+    .ending {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: clamp(22px, 4vw, 34px);
+      box-shadow: 0 10px 30px rgba(40, 35, 28, 0.07);
+    }
+
+    .abstract p {
+      margin: 0;
+      font-size: 1.08rem;
+      color: #344145;
+    }
+
+    h2.section-title {
+      margin: 0 0 18px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      line-height: 1.18;
+      letter-spacing: 0;
+      color: #172024;
+    }
+
+    h3 {
+      margin: 28px 0 10px;
+      font-size: 1.25rem;
+      line-height: 1.4;
+      color: #20292d;
+    }
+
+    p {
+      margin: 0 0 18px;
+    }
+
+    .lead {
+      font-size: 1.14rem;
+      color: #344145;
+    }
+
+    .key-findings {
+      background: linear-gradient(135deg, #ffffff, #eef5f4);
+    }
+
+    .finding-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .finding {
+      border: 1px solid rgba(36, 92, 99, 0.18);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.72);
+      padding: 18px;
+    }
+
+    .finding strong {
+      display: block;
+      color: var(--accent-2);
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+
+    .finding p {
+      margin: 0;
+      color: #526166;
+      font-size: 0.94rem;
+    }
+
+    blockquote {
+      margin: 34px 0;
+      padding: 28px 30px;
+      border-left: 5px solid var(--accent);
+      background: #f8f3ea;
+      color: #2f383b;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.3rem, 3vw, 2rem);
+      line-height: 1.45;
+    }
+
+    blockquote cite {
+      display: block;
+      margin-top: 14px;
+      color: var(--muted);
+      font-family: "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", system-ui, sans-serif;
+      font-size: 0.92rem;
+      font-style: normal;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: white;
+      margin: 24px 0;
+    }
+
+    table {
+      width: 100%;
+      min-width: 760px;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+
+    th,
+    td {
+      padding: 16px 18px;
+      border-bottom: 1px solid #e8e1d6;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      background: #f2eadc;
+      color: #263237;
+      font-weight: 800;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    td:first-child {
+      font-weight: 800;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+
+    .diagnosis-list {
+      display: grid;
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .diagnosis {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 16px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #ffffff;
+    }
+
+    .badge {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--accent-2);
+      color: white;
+      font-weight: 900;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    .diagnosis h3 {
+      margin-top: 0;
+    }
+
+    .diagnosis ul,
+    .solution-grid ul,
+    .source-notes ul {
+      margin: 10px 0 0;
+      padding-left: 20px;
+    }
+
+    .diagram {
+      margin: 28px 0;
+      padding: 24px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(36, 92, 99, 0.22);
+      background: var(--wash);
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      align-items: stretch;
+    }
+
+    .flow div {
+      min-height: 116px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 14px;
+      border-radius: 6px;
+      background: white;
+      border: 1px solid rgba(36, 92, 99, 0.18);
+      text-align: center;
+    }
+
+    .flow strong {
+      color: var(--accent-2);
+      margin-bottom: 6px;
+    }
+
+    .flow span {
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    .solution-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .solution {
+      padding: 22px;
+      border-radius: var(--radius);
+      background: #ffffff;
+      border: 1px solid var(--line);
+    }
+
+    .solution h3 {
+      margin-top: 0;
+      color: var(--accent-2);
+    }
+
+    .note {
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .implications {
+      background: #262f32;
+      color: #f8f3ea;
+      border-color: #262f32;
+    }
+
+    .implications h2,
+    .implications p,
+    .implications li {
+      color: #f8f3ea;
+    }
+
+    .implications ol {
+      margin: 18px 0 0;
+      padding-left: 22px;
+    }
+
+    .implications li {
+      margin-bottom: 12px;
+    }
+
+    .source-notes {
+      border-top: 1px solid var(--line);
+      padding-top: 34px;
+    }
+
+    .source-notes li {
+      margin-bottom: 8px;
+      color: #4c5b60;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .tags span {
+      display: inline-flex;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: #f2eadc;
+      color: #6d3c2f;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+
+    .ending {
+      background:
+        linear-gradient(135deg, rgba(141, 63, 43, 0.08), rgba(36, 92, 99, 0.08)),
+        white;
+    }
+
+    .ending p:last-child {
+      margin-bottom: 0;
+    }
+
+    footer {
+      padding: 34px 0 48px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      main,
+      .finding-grid,
+      .solution-grid,
+      .flow {
+        grid-template-columns: 1fr;
+      }
+
+      .toc {
+        position: static;
+        order: -1;
+      }
+
+      main {
+        gap: 28px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .page {
+        width: min(100% - 24px, 1120px);
+      }
+
+      header.hero {
+        padding-top: 48px;
+      }
+
+      .diagnosis {
+        grid-template-columns: 1fr;
+      }
+
+      .badge {
+        width: 42px;
+        height: 42px;
+      }
+
+      blockquote {
+        padding: 22px;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      .toc,
+      .share-card {
+        box-shadow: none;
+      }
+
+      main {
+        display: block;
+      }
+
+      .toc {
+        position: static;
+        margin-bottom: 28px;
+      }
+    }
+  </style>
+<meta property="og:type" content="article">
+<meta property="og:title" content="가짜 신앙과 복음적 해법 종합 정리">
+<meta property="og:description" content="이 문서는 [[가짜 신앙 진단]] 노트를 바탕으로, 매트 챈들러의 저서 《복음이 바꾼다》 전체 요약 자료들을 참고하여 5대 가짜 신앙의 실체와 이를 극복하는 복음적 해법을 종합적으로 정리한 분석 노트입니다. 1. 잊어버린 &#39;복음의 노래&#39;와 가짜 신앙 우리가 복음을 잃어버릴 때, 신앙생활은 감격스럽게 흘러가는 음악이 아닌 ">
+<meta property="og:url" content="https://teentopia00.github.io/teendocs/s/1nend54/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="가짜 신앙과 복음적 해법 종합 정리">
+<meta name="twitter:description" content="이 문서는 [[가짜 신앙 진단]] 노트를 바탕으로, 매트 챈들러의 저서 《복음이 바꾼다》 전체 요약 자료들을 참고하여 5대 가짜 신앙의 실체와 이를 극복하는 복음적 해법을 종합적으로 정리한 분석 노트입니다. 1. 잊어버린 &#39;복음의 노래&#39;와 가짜 신앙 우리가 복음을 잃어버릴 때, 신앙생활은 감격스럽게 흘러가는 음악이 아닌 ">
+<link rel="canonical" href="https://teentopia00.github.io/teendocs/s/1nend54/">
+</head>
+<body>
+  <header class="hero">
+    <div class="page">
+      <span class="kicker">Research Report · Editorial Essay</span>
+      <h1>가짜 신앙을 넘어 복음의 노래로</h1>
+      <p class="subtitle">
+        《복음이 바꾼다》의 핵심 흐름을 바탕으로, 5대 가짜 신앙의 실체와 그 신앙을 무너뜨리는 복음적 해법을 종합한 공개용 연구 리포트.
+      </p>
+
+      <div class="hero-grid">
+        <div>
+          <div class="meta">
+            <span>주제: 기독교 · 복음 · 신앙 진단</span>
+            <span>형식: 블로그형 연구 보고서</span>
+            <span>초점: 진단에서 회복으로</span>
+          </div>
+          <div class="tags" aria-label="태그">
+            <span>#기독교</span>
+            <span>#복음</span>
+            <span>#신앙진단</span>
+            <span>#성숙</span>
+            <span>#해법</span>
+          </div>
+        </div>
+
+        <aside class="share-card" aria-label="공유 문구">
+          <h2>Share Framing</h2>
+          <p>이 글은 신앙의 열심이 왜 때로 피로와 위선으로 변하는지, 그리고 복음이 어떻게 그 구조를 뒤집는지 설명합니다.</p>
+          <p class="copy-block">가짜 신앙은 더 많이 애쓰지 못해서 생기는 문제가 아니라, 이미 주어진 은혜를 잊고 스스로를 구원하려는 데서 시작된다.</p>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <div class="page">
+    <main>
+      <article>
+        <section id="abstract" class="abstract">
+          <h2>Abstract</h2>
+          <p>
+            이 보고서는 〈가짜 신앙 진단〉 노트와 《복음이 바꾼다》 요약 자료들을 바탕으로, 신앙생활을 왜곡하는 다섯 가지 패턴을 분석한다. 핵심 논지는 분명하다. 가짜 신앙은 복음을 모르는 데서만 생기지 않는다. 복음을 안다고 말하면서도 실제 삶에서는 행위, 통제, 은폐, 거래, 대체 구원자를 붙드는 데서 발생한다. 따라서 해법은 더 강한 결심이 아니라, 자력 구원의 파산을 인정하고 칭의와 입양의 은혜 안에서 다시 살아가는 것이다.
+          </p>
+        </section>
+
+        <section id="findings" class="key-findings">
+          <h2 class="section-title">핵심 발견</h2>
+          <p class="lead">
+            가짜 신앙은 여러 얼굴을 갖지만, 뿌리는 하나다. 하나님께 받아들여졌다는 복음의 확신을 잃으면 인간은 반드시 다른 방식으로 자신을 증명하거나 구원하려 한다.
+          </p>
+
+          <div class="finding-grid">
+            <div class="finding">
+              <strong>1. 가짜 신앙은 피로를 남긴다</strong>
+              <p>은혜가 사라진 열심은 예배와 순종을 자유가 아니라 성과 관리로 바꾼다.</p>
+            </div>
+            <div class="finding">
+              <strong>2. 자력 구원은 문제를 깊게 한다</strong>
+              <p>행동만 고치려는 시도는 뿌리를 둔 채 잡초만 베는 방식에 머문다.</p>
+            </div>
+            <div class="finding">
+              <strong>3. 복음은 정체성을 재설정한다</strong>
+              <p>칭의와 입양은 죄책감과 수치심을 동시에 다루는 복음의 핵심 선물이다.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="opening">
+          <h2 class="section-title">1. 잊어버린 복음의 노래</h2>
+          <p>
+            복음은 본래 짐이 아니라 노래다. 그러나 그 노래를 잃어버릴 때 신앙생활은 감격의 리듬이 아니라 억지로 무거운 짐을 지고 부르는 노동요가 된다. 이때 신자는 열심을 내지만 쉬지 못하고, 고백은 하지만 숨기며, 순종을 말하지만 거래를 기대한다.
+          </p>
+          <p>
+            《복음이 바꾼다》가 겨냥하는 지점도 바로 여기다. 저자는 복음처럼 보이지만 실제로는 복음을 대체하는 종교적 양태들을 드러낸다. 이 보고서는 그 양태를 다섯 가지로 정리하고, 각 유형이 어떤 증상을 낳으며, 복음이 어떻게 그 구조를 해체하는지 살핀다.
+          </p>
+
+          <blockquote>
+            가짜 신앙의 핵심은 신앙이 없는 것이 아니라, 복음 없이도 스스로를 구원할 수 있다고 믿는 것이다.
+            <cite>종합 분석 명제</cite>
+          </blockquote>
+        </section>
+
+        <section id="types">
+          <h2 class="section-title">2. 5대 가짜 신앙 유형과 증상</h2>
+          <p class="lead">
+            아래의 다섯 유형은 서로 분리된 문제가 아니라 자주 겹쳐 나타난다. 한 사람 안에서 행위주의, 은폐, 교만, 거래, 우상적 대안이 동시에 작동할 수 있다.
+          </p>
+
+          <div class="table-wrap" role="region" aria-label="가짜 신앙 유형 요약 표" tabindex="0">
+            <table>
+              <thead>
+                <tr>
+                  <th>유형</th>
+                  <th>핵심 특징</th>
+                  <th>주요 증상</th>
+                  <th>복음적 반전</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>헛수고 신앙</td>
+                  <td>은혜를 알지만 성과로 하나님의 인정을 얻으려 한다.</td>
+                  <td>의무감, 번아웃, 실패 후 자포자기.</td>
+                  <td>칭의: 이미 의롭다 하심을 받은 자로 산다.</td>
+                </tr>
+                <tr>
+                  <td>스파이 신앙</td>
+                  <td>신앙과 연약함을 숨기며 고립된 안전지대를 만든다.</td>
+                  <td>수치심, 위선, 공동체 회피.</td>
+                  <td>입양: 드러나도 버림받지 않는 자녀의 정체성.</td>
+                </tr>
+                <tr>
+                  <td>영적 교만</td>
+                  <td>말씀보다 자기 판단과 경험을 더 높은 기준에 둔다.</td>
+                  <td>취사선택, 판단, 회개 회피.</td>
+                  <td>항복: 진리 앞에서 자아의 통제를 내려놓는다.</td>
+                </tr>
+                <tr>
+                  <td>종교적 저울</td>
+                  <td>봉사와 헌신으로 하나님과 거래하려 한다.</td>
+                  <td>보상 심리, 비교, 십자가 은혜의 약화.</td>
+                  <td>은혜: 티켓을 사는 삶이 아니라 받은 티켓에 감사하는 삶.</td>
+                </tr>
+                <tr>
+                  <td>거짓 구원자</td>
+                  <td>자기계발, 타인, 쾌락으로 내면의 결핍을 채우려 한다.</td>
+                  <td>관계 파괴, 중독적 반복, 허무감.</td>
+                  <td>만족: 피조물이 아닌 하나님 안에서 결핍을 다룬다.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="diagnosis-list">
+            <div class="diagnosis">
+              <div class="badge">1</div>
+              <div>
+                <h3>헛수고 신앙: 행위와 성과주의</h3>
+                <p>하나님의 은혜를 머리로는 인지하지만 마음 깊은 곳에서는 자신의 노력과 성과로 점수를 따려는 태도다. 신앙의 열심은 어느 순간 의무감과 피로감으로 바뀌고, 한계에 부딪히면 과거에 혐오하던 죄의 습관으로 돌아가는 악순환이 생긴다.</p>
+                <ul>
+                  <li>주요 징후: 영적 번아웃, 반복되는 자책, 하나님 앞에서의 성과 불안.</li>
+                  <li>관련 자료: 〈00 프롤로그 - 가짜 신앙〉</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="diagnosis">
+              <div class="badge">2</div>
+              <div>
+                <h3>스파이 신앙: 위선과 고립</h3>
+                <p>신앙을 사적 영역에 가두고, 공동체와 세상 속에서는 자신의 정체성과 연약함을 숨기는 방식이다. 겉으로는 안전해 보이지만 실제로는 수치심의 감옥을 만든다.</p>
+                <ul>
+                  <li>주요 징후: 신앙 정체성 은폐, 고백 회피, 민낯이 드러날 것에 대한 두려움.</li>
+                  <li>관련 자료: 〈00 프롤로그 - 가짜 신앙〉</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="diagnosis">
+              <div class="badge">3</div>
+              <div>
+                <h3>영적 교만: 자기중심적 통제</h3>
+                <p>진리 앞에서 자아를 꺾기보다 자기 생각과 경험을 절대화하는 태도다. 말씀의 통제를 받는 대신, 말씀을 내 상황과 취향에 맞게 편집한다.</p>
+                <ul>
+                  <li>주요 징후: 회개보다 판단, 순종보다 해석의 장악, 타인을 향한 재판장 의식.</li>
+                  <li>관련 자료: 〈00 프롤로그 - 가짜 신앙〉</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="diagnosis">
+              <div class="badge">4</div>
+              <div>
+                <h3>종교적 저울: 율법주의와 거래</h3>
+                <p>선행, 봉사, 헌금, 종교적 열심을 하나님의 호의를 얻는 거래 수단으로 여긴다. 이 방식은 복음을 선물이 아니라 계약서로 바꾼다.</p>
+                <ul>
+                  <li>주요 징후: “이만큼 했으니 하나님이 보상해야 한다”는 심리, 비교와 원망.</li>
+                  <li>관련 자료: 〈01-02 벗어나려 할수록 항구는 멀어졌다〉</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="diagnosis">
+              <div class="badge">5</div>
+              <div>
+                <h3>거짓 구원자: 세상적 대안</h3>
+                <p>내면의 결핍과 실망감을 하나님이 아닌 피조물로 채우려는 시도다. 완벽해진 미래의 자신, 배우자나 연인, 소비와 쾌락이 구원자의 자리에 앉는다.</p>
+                <ul>
+                  <li>주요 징후: 자기착취, 관계에 대한 과도한 기대, 일시적 자극 뒤의 허무.</li>
+                  <li>관련 자료: 〈01-01 실망감의 바다에서 표류하다〉, 〈01-02 벗어나려 할수록 항구는 멀어졌다〉</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="cause">
+          <h2 class="section-title">3. 근본 원인: 자력 구원의 시도</h2>
+          <p>
+            다섯 유형의 공통 뿌리는 자력 구원이다. 인간은 깨어진 샬롬을 마주할 때 두려움과 수치심을 느낀다. 그리고 그 불편한 현실을 견디지 못해 스스로를 고치고, 숨기고, 증명하고, 보상받고, 다른 대상으로 채우려 한다.
+          </p>
+          <p>
+            그러나 행동만 고치는 방식은 뿌리를 놓아둔 채 겉으로 드러난 잡초만 베는 것과 같다. 잠시 깨끗해 보일 수는 있지만, 마음의 방향이 바뀌지 않으면 같은 죄와 결핍은 다른 형태로 다시 자라난다.
+          </p>
+
+          <div class="diagram" aria-label="가짜 신앙 형성 흐름도">
+            <div class="flow">
+              <div>
+                <strong>깨어진 샬롬</strong>
+                <span>실망감과 결핍을 경험한다</span>
+              </div>
+              <div>
+                <strong>두려움과 수치심</strong>
+                <span>있는 그대로 드러나는 것을 피한다</span>
+              </div>
+              <div>
+                <strong>자력 구원</strong>
+                <span>스스로 고치고 증명하려 한다</span>
+              </div>
+              <div>
+                <strong>가짜 신앙</strong>
+                <span>행위, 은폐, 거래, 우상으로 흐른다</span>
+              </div>
+              <div>
+                <strong>복음의 개입</strong>
+                <span>항복과 은혜로 정체성이 재설정된다</span>
+              </div>
+            </div>
+          </div>
+
+          <blockquote>
+            문제는 열심이 부족한 것이 아니라, 열심의 출발점이 이미 은혜가 아닌 불안이 되어버린 것이다.
+            <cite>원인 분석 요약</cite>
+          </blockquote>
+        </section>
+
+        <section id="solutions">
+          <h2 class="section-title">4. 가짜 신앙을 무너뜨리는 복음적 해법</h2>
+          <p class="lead">
+            복음적 해법은 자기 개선 프로그램이 아니다. 그것은 인간이 더 이상 자기 자신을 구원자로 세우지 않도록 만드는 하나님의 주권적 개입이며, 그 개입은 항복, 정체성, 회개, 성화의 질서로 삶을 재구성한다.
+          </p>
+
+          <div class="solution-grid">
+            <div class="solution">
+              <h3>1. 전적인 파산 선언과 항복</h3>
+              <p>복음은 우리가 스스로를 구원할 능력이 없을 때 외부로부터 찾아오는 하나님의 은혜다. 그러므로 시작점은 “내일부터는 잘하겠다”가 아니라, “나는 나를 구원할 수 없다”는 정직한 항복이다.</p>
+              <p class="note">적용 자료: 〈02-01 복음, 내 방식을 내려놓게 하다〉</p>
+            </div>
+
+            <div class="solution">
+              <h3>2. 칭의와 입양의 정체성</h3>
+              <p>칭의는 죄책감에 답한다. 십자가 안에서 죄가 탕감되고 의롭다 선언되었다는 복음이다. 입양은 수치심에 답한다. 하나님이 우리를 단순히 사면된 죄인이 아니라 사랑받는 자녀로 받아들이셨다는 복음이다.</p>
+              <p class="note">적용 자료: 〈02-03 복음, 진짜 나를 보게 하다〉, 〈03-01 내면의 폭풍을 잠재우라〉</p>
+            </div>
+
+            <div class="solution">
+              <h3>3. 세상적 슬픔에서 성경적 슬픔으로</h3>
+              <p>거짓 회개는 사람들의 시선, 감정의 요동, 벌을 피하려는 계산, 낮아진 자존심에 머문다. 참된 회개는 말씀 앞에서 죄의 실체를 직면하고, 상한 심령으로 하나님과 공동체 앞에 나아간다.</p>
+              <p class="note">적용 자료: 〈02-02 복음, 죄를 슬퍼하게 하다〉</p>
+            </div>
+
+            <div class="solution">
+              <h3>4. 살림과 죽임, 그리고 위장의 해체</h3>
+              <p>성화는 은혜로 방치되는 삶이 아니다. 내 영혼을 그리스도의 은혜로 채우는 살림, 죄 된 본성을 십자가에 못 박는 죽임, “괜찮다”는 가면을 벗는 위장 해체가 함께 간다.</p>
+              <p class="note">적용 자료: 〈02-04 복음, 매일 하나님께로 방향을 돌리게 하다〉, 〈03-02 하나님을 믿는 믿음 안에서 쉬라〉</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="evidence" class="evidence-panel">
+          <h2 class="section-title">5. 증거와 논증 구조</h2>
+          <p>
+            이 종합 정리는 세 가지 층위의 근거를 사용한다. 첫째, 창조와 타락의 성경적 세계관은 인간의 실망감과 결핍을 설명하는 기초가 된다. 둘째, 책의 요약 자료에 등장하는 사례들은 자기계발, 타인 집착, 쾌락, 종교적 위선이 실제 삶에서 어떻게 실패하는지를 보여준다. 셋째, 로마서 5장과 8장을 중심으로 한 복음의 선언은 인간의 연약함 속으로 찾아오는 은혜와 자녀 됨의 정체성을 제시한다.
+          </p>
+
+          <div class="table-wrap" role="region" aria-label="증거 구조 표" tabindex="0">
+            <table>
+              <thead>
+                <tr>
+                  <th>증거 층위</th>
+                  <th>내용</th>
+                  <th>보고서에서의 기능</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>세계관</td>
+                  <td>창조의 샬롬, 타락 이후의 결핍과 실망감</td>
+                  <td>가짜 신앙이 생기는 배경 설명</td>
+                </tr>
+                <tr>
+                  <td>경험 사례</td>
+                  <td>관계 파탄, 중독, 종교적 위선, 자기계발의 실패</td>
+                  <td>자력 구원의 무능력 입증</td>
+                </tr>
+                <tr>
+                  <td>복음 교리</td>
+                  <td>항복, 칭의, 입양, 회개, 성화</td>
+                  <td>가짜 신앙을 대체하는 해법 제시</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="implications" class="implications">
+          <h2 class="section-title">6. 오늘의 적용과 함의</h2>
+          <p>
+            이 분석은 개인 경건뿐 아니라 공동체 문화에도 직접적인 함의를 갖는다. 가짜 신앙이 개인의 내면에서만 작동하는 것이 아니라, 성과 중심의 교회 문화, 고백을 어렵게 만드는 분위기, 봉사를 거래로 오해하는 언어 속에서도 강화될 수 있기 때문이다.
+          </p>
+          <ol>
+            <li>신앙 점검은 “얼마나 열심인가”보다 “무엇을 근거로 안식하는가”를 물어야 한다.</li>
+            <li>공동체는 완벽한 사람들의 전시장이 아니라, 은혜가 필요한 사람들이 진실하게 나아오는 장소가 되어야 한다.</li>
+            <li>회개는 자존감의 파괴가 아니라, 거짓 정체성이 무너지고 참된 정체성이 회복되는 길이다.</li>
+            <li>성화는 자기혐오가 아니라, 이미 받아들여진 자녀가 아버지의 집에 어울리는 삶을 배워가는 과정이다.</li>
+          </ol>
+        </section>
+
+        <section id="ending" class="ending">
+          <h2 class="section-title">결론: 감사함으로 부르는 노래</h2>
+          <p>
+            참된 복음은 티켓을 사기 위해 애쓰는 율법이 아니다. 이미 자녀로 입양되어 받은 티켓에 감사해서 살아가는 은혜다. 이 차이는 작아 보이지만 삶 전체를 바꾼다. 전자는 늘 불안하고, 후자는 안식에서 순종한다. 전자는 실패하면 숨고, 후자는 실패해도 아버지께 돌아간다.
+          </p>
+          <p>
+            그러므로 가짜 신앙을 벗어나는 길은 더 세게 이를 악무는 데 있지 않다. 매일 아침 자신의 연약함을 인정하고, 상황의 통제권을 하늘 아버지께 이양하며, 이미 주어진 은혜를 다시 듣는 데 있다. 그때 신앙은 다시 노동요가 아니라 복음의 노래가 된다.
+          </p>
+        </section>
+
+        <section id="sources" class="source-notes">
+          <h2>Source Notes</h2>
+          <ul>
+            <li>기초 노트: 〈가짜 신앙 진단〉</li>
+            <li>프롤로그 분석: 〈00 프롤로그 - 가짜 신앙〉</li>
+            <li>1부 분석: 〈01-01 실망감의 바다에서 표류하다〉, 〈01-02 벗어나려 할수록 항구는 멀어졌다〉</li>
+            <li>2부 분석: 〈02-01 복음, 내 방식을 내려놓게 하다〉, 〈02-03 복음, 진짜 나를 보게 하다〉</li>
+            <li>추가 연결 노트: 〈02-02 복음, 죄를 슬퍼하게 하다〉, 〈02-04 복음, 매일 하나님께로 방향을 돌리게 하다〉, 〈03-01 내면의 폭풍을 잠재우라〉, 〈03-02 하나님을 믿는 믿음 안에서 쉬라〉</li>
+          </ul>
+        </section>
+      </article>
+
+      <nav class="toc" aria-label="문서 목차">
+        <h2>Contents</h2>
+        <ol>
+          <li><a href="#abstract">초록</a></li>
+          <li><a href="#findings">핵심 발견</a></li>
+          <li><a href="#opening">복음의 노래</a></li>
+          <li><a href="#types">5대 가짜 신앙</a></li>
+          <li><a href="#cause">근본 원인</a></li>
+          <li><a href="#solutions">복음적 해법</a></li>
+          <li><a href="#evidence">증거 구조</a></li>
+          <li><a href="#implications">함의</a></li>
+          <li><a href="#ending">결론</a></li>
+          <li><a href="#sources">출처 노트</a></li>
+        </ol>
+      </nav>
+    </main>
+  </div>
+
+  <footer>
+    <div class="page">
+      <p>Standalone HTML research report · Sanitized static edition · No JavaScript, external CSS, iframes, scripts, or remote assets.</p>
+    </div>
+  </footer>
+</body>
+</html>
