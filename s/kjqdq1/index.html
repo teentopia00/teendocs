@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  
+  
+  <title>기드온의 MBTI와 영성적 특징</title>
+  <style>
+    :root {
+      --bg: #f6f3ee;
+      --paper: #fffdf8;
+      --ink: #24211d;
+      --muted: #6f675d;
+      --line: #e4ddd3;
+      --accent: #6d4c2f;
+      --accent-2: #9f6b3e;
+      --soft: #efe7dc;
+      --mark: #fff88f;
+      --code-bg: #28231e;
+      --code-ink: #f8f1e7;
+      --shadow: 0 18px 48px rgba(52, 38, 24, 0.12);
+      --radius: 8px;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(159, 107, 62, 0.12), transparent 34rem),
+        linear-gradient(180deg, #fbf8f2 0%, var(--bg) 44%, #efe9df 100%);
+      font-family: "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+      line-height: 1.72;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      padding: 48px 0 72px;
+    }
+
+    .hero {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: clamp(28px, 5vw, 56px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 8px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2), #c69a5f);
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--accent);
+      font-size: 0.92rem;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: "Noto Serif KR", "Nanum Myeongjo", Georgia, serif;
+      font-size: clamp(2.1rem, 5vw, 4.3rem);
+      line-height: 1.14;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      max-width: 760px;
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.02rem, 2vw, 1.18rem);
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .meta-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fbf7ef;
+      padding: 14px 16px;
+    }
+
+    .meta-card strong {
+      display: block;
+      color: var(--accent);
+      font-size: 0.82rem;
+      margin-bottom: 4px;
+    }
+
+    .meta-card span {
+      display: block;
+      color: var(--ink);
+      font-size: 0.95rem;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 28px;
+      margin-top: 28px;
+      align-items: start;
+    }
+
+    nav {
+      position: sticky;
+      top: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 253, 248, 0.92);
+      padding: 18px;
+      box-shadow: 0 10px 30px rgba(52, 38, 24, 0.08);
+    }
+
+    nav h2 {
+      margin: 0 0 12px;
+      font-size: 0.96rem;
+      color: var(--accent);
+    }
+
+    nav ol {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+
+    nav li {
+      margin: 8px 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.45;
+    }
+
+    main {
+      min-width: 0;
+    }
+
+    .content-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: clamp(24px, 4vw, 48px);
+    }
+
+    section {
+      padding-top: 8px;
+      margin-top: 42px;
+    }
+
+    section:first-child {
+      margin-top: 0;
+    }
+
+    h2, h3 {
+      font-family: "Noto Serif KR", "Nanum Myeongjo", Georgia, serif;
+      letter-spacing: 0;
+      line-height: 1.3;
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--soft);
+      font-size: clamp(1.55rem, 3vw, 2.2rem);
+    }
+
+    h3 {
+      margin: 30px 0 12px;
+      color: var(--accent);
+      font-size: clamp(1.18rem, 2vw, 1.45rem);
+    }
+
+    p {
+      margin: 0 0 18px;
+    }
+
+    .lead {
+      font-size: 1.08rem;
+      color: #37312b;
+    }
+
+    figure {
+      margin: 28px 0 34px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: #f1ebe2;
+    }
+
+    figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .callout {
+      margin: 28px 0;
+      padding: 18px 20px;
+      border-left: 5px solid var(--accent-2);
+      background: #f8efe2;
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    ul {
+      margin: 12px 0 22px;
+      padding-left: 1.35rem;
+    }
+
+    li {
+      margin: 10px 0;
+      padding-left: 0.15rem;
+    }
+
+    li::marker {
+      color: var(--accent-2);
+    }
+
+    strong {
+      font-weight: 800;
+    }
+
+    em {
+      font-style: italic;
+    }
+
+    mark {
+      background: var(--mark);
+      color: inherit;
+      padding: 0.05em 0.2em;
+      border-radius: 3px;
+    }
+
+    .type-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 22px 0 30px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      display: table;
+      background: #fffaf1;
+    }
+
+    .type-table th,
+    .type-table td {
+      border-bottom: 1px solid var(--line);
+      padding: 13px 15px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .type-table th {
+      width: 24%;
+      color: var(--accent);
+      background: #f2e7d7;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .type-table tr:last-child th,
+    .type-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    pre {
+      margin: 24px 0;
+      padding: 20px;
+      color: var(--code-ink);
+      background: var(--code-bg);
+      border-radius: var(--radius);
+      overflow-x: auto;
+      font-family: "Cascadia Mono", "Consolas", monospace;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      white-space: pre;
+    }
+
+    .step-list {
+      counter-reset: step;
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 0;
+    }
+
+    .step-list > li {
+      counter-increment: step;
+      position: relative;
+      margin: 18px 0;
+      padding: 18px 18px 18px 58px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fffaf2;
+    }
+
+    .step-list > li::before {
+      content: counter(step);
+      position: absolute;
+      left: 18px;
+      top: 19px;
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--accent);
+      color: white;
+      font-weight: 800;
+      font-size: 0.92rem;
+    }
+
+    .step-list ul {
+      margin-bottom: 0;
+    }
+
+    .final-question {
+      margin-top: 38px;
+      padding: 24px;
+      border: 1px solid #d9c7b1;
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, #fbf3e8, #fffaf2);
+      font-size: 1.08rem;
+      font-weight: 700;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 4px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fffaf1;
+      color: var(--accent);
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+
+    @media (max-width: 880px) {
+      .page {
+        width: min(100% - 22px, var(--max));
+        padding-top: 18px;
+      }
+
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        position: static;
+      }
+
+      .meta-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .content-card {
+        padding: 22px 18px;
+      }
+
+      .type-table,
+      .type-table tbody,
+      .type-table tr,
+      .type-table th,
+      .type-table td {
+        display: block;
+        width: 100%;
+      }
+
+      .type-table th {
+        border-bottom: 0;
+      }
+
+      .type-table td {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .step-list > li {
+        padding-left: 18px;
+        padding-top: 56px;
+      }
+
+      .step-list > li::before {
+        top: 18px;
+      }
+    }
+  </style>
+<meta property="og:type" content="article">
+<meta property="og:title" content="기드온의 MBTI와 영성적 특징">
+<meta property="og:description" content="사사기 68장에 나타난 기드온의 행적은 MBTI 유형과 영성 형성의 관계를 보여주는 매우 흥미롭고 전형적인 예시입니다. 샌드라 크렙스 허쉬와 제인 가이즈의 저서 《SoulTypes》의 프레임워크를 바탕으로, 기드온의 MBTI 유형을 추정하고 그의 영성적 성향과 부르심의 과정을 분석해 보겠습니다. 1. 기드온의 MBTI 유">
+<meta property="og:url" content="https://teentopia00.github.io/teendocs/s/kjqdq1/">
+<meta property="og:image" content="https://teentopia00.github.io/teendocs/s/kjqdq1/assets/pasted-image-20260602152701.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="기드온의 MBTI와 영성적 특징">
+<meta name="twitter:description" content="사사기 68장에 나타난 기드온의 행적은 MBTI 유형과 영성 형성의 관계를 보여주는 매우 흥미롭고 전형적인 예시입니다. 샌드라 크렙스 허쉬와 제인 가이즈의 저서 《SoulTypes》의 프레임워크를 바탕으로, 기드온의 MBTI 유형을 추정하고 그의 영성적 성향과 부르심의 과정을 분석해 보겠습니다. 1. 기드온의 MBTI 유">
+<meta name="twitter:image" content="https://teentopia00.github.io/teendocs/s/kjqdq1/assets/pasted-image-20260602152701.png">
+<link rel="canonical" href="https://teentopia00.github.io/teendocs/s/kjqdq1/">
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <p class="eyebrow">Faithful Note · Editorial Reading Artifact</p>
+      <h1>기드온의 MBTI와 영성적 특징</h1>
+      <p class="subtitle">
+        사사기 6~8장에 나타난 기드온의 행적을 MBTI 유형과 영성 형성의 관점에서 읽는 분석 노트입니다.
+      </p>
+
+      <div class="meta-grid" aria-label="문서 메타데이터">
+        <div class="meta-card">
+          <strong>도서</strong>
+          <span>SoulTypes: Matching Your Personality and Spiritual Path</span>
+        </div>
+        <div class="meta-card">
+          <strong>저자</strong>
+          <span>Sandra Krebs Hirsh · Jane A. G. Kise</span>
+        </div>
+        <div class="meta-card">
+          <strong>추정 유형</strong>
+          <span>ISTJ · ISFJ</span>
+        </div>
+        <div class="meta-card">
+          <strong>상태</strong>
+          <span>초안</span>
+        </div>
+      </div>
+
+      <div class="tags" aria-label="태그">
+        <span class="tag">mbti/thinking</span>
+        <span class="tag">mbti/spirituality</span>
+        <span class="tag">mbti</span>
+        <span class="tag">성격</span>
+      </div>
+    </header>
+
+    <div class="layout">
+      <nav aria-label="문서 목차">
+        <h2>목차</h2>
+        <ol>
+          <li><a href="#intro">개요</a></li>
+          <li><a href="#type">1. 기드온의 MBTI 유형 추정</a></li>
+          <li><a href="#spirituality">2. 기드온의 영성적 성향 분석</a></li>
+          <li><a href="#calling">3. 부르심의 과정에서 드러난 성향</a></li>
+          <li><a href="#closing">마무리 질문</a></li>
+        </ol>
+      </nav>
+
+      <main class="content-card">
+        <section id="intro" aria-labelledby="intro-title">
+          <h2 id="intro-title">개요</h2>
+          <p class="lead">
+            사사기 6~8장에 나타난 기드온의 행적은 MBTI 유형과 영성 형성의 관계를 보여주는 매우 흥미롭고 전형적인 예시입니다. 샌드라 크렙스 허쉬와 제인 가이즈의 저서 《SoulTypes》의 프레임워크를 바탕으로, 기드온의 MBTI 유형을 추정하고 그의 영성적 성향과 부르심의 과정을 분석해 보겠습니다.
+          </p>
+
+          <figure>
+            <img src="assets/pasted-image-20260602152701.png" alt="기드온의 MBTI와 영성적 특징 관련 이미지">
+          </figure>
+        </section>
+
+        <section id="type" aria-labelledby="type-title">
+          <h2 id="type-title">1. 기드온의 MBTI 유형 추정: ISTJ (또는 ISFJ)</h2>
+          <p>
+            기드온은 흔히 '용사'로 기억되지만, 성경 본문이 묘사하는 그의 본성은 매우 신중하고, 현실적이며, 돌다리도 두드려보고 건너는 <strong>내향 감각(Si) 중심의 유형</strong>입니다. 여기서는 그의 분석적이고 회의적인 면모를 고려해 ISTJ(소금형/검사관형)에 초점을 맞추어 분석하겠습니다.
+          </p>
+
+          <table class="type-table">
+            <tbody>
+              <tr>
+                <th>I<br>내향형</th>
+                <td>
+                  미디안 사람들을 두려워하여 포도주 틀에 숨어서 밀을 타작합니다(사사기 6:11). 대중 앞에 나서기보다 조용히 자신의 일을 수행하며, 에브라임 지파가 시비를 걸어올 때도 정치적 야망보다는 유연하고 조용하게 갈등을 무마하려는 내향적 태도를 보입니다(8:1~3).
+                </td>
+              </tr>
+              <tr>
+                <th>S<br>감각형</th>
+                <td>
+                  눈에 보이고, 손으로 만질 수 있는 '구체적인 증거'를 요구합니다. 양털 시험(6:36~40)이 대표적입니다. 그는 추상적인 비전이나 직관적인 확신에 의존하지 않고, 오감을 통해 검증 가능한 현실을 신뢰합니다.
+                </td>
+              </tr>
+              <tr>
+                <th>T<br>사고형</th>
+                <td>
+                  하나님의 사자가 나타나 "큰 용사여, 여호와께서 너와 함께 계시도다"라고 할 때, 기드온은 감정적으로 감격하기보다 상황을 논리적으로 따집니다. <em>"하나님이 우리와 함께 계시면 왜 이 모든 일이 일어났습니까? 과거의 이적은 다 어디 있습니까?"</em>(6:13)라며 철저한 인과관계와 사실에 기반해 질문합니다.
+                </td>
+              </tr>
+              <tr>
+                <th>J<br>판단형</th>
+                <td>
+                  모호한 상태를 견디지 못하며, 구조와 확실한 계획, 그리고 마무리를 원합니다. 하나님이 주시는 매 단계의 지침(군대를 줄이는 과정 등)을 철저하게 따르고 순종하는 체계적인 모습을 보입니다.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="spirituality" aria-labelledby="spirituality-title">
+          <h2 id="spirituality-title">2. 기드온의 영성적 성향 분석 (<em>SoulTypes</em> 기준)</h2>
+          <p>
+            《SoulTypes》에 따르면, ISTJ는 '내향 감각의 영성(Introverted Sensing: The Time-Honored Spiritual Path)'과 '사고형의 영성(Thinking Soulwork)'을 공유합니다.
+          </p>
+
+          <h3>1) 만질 수 있는 증거를 구하는 영성 (Sensing Spirituality)</h3>
+          <ul>
+            <li>감각(S) 유형의 영성은 눈에 보이는 명백한 증거와 구체적인 과업이 주어질 때 깊은 안정감을 느낍니다.</li>
+            <li>기드온은 믿음이 없어서 의심한 것이 아니라, <mark><strong>감각 유형 특유의 '구체성에 대한 선호'</strong> 때문에 확실한 표징을 구한 것입니다</mark>. 그는 보이지 않는 영적인 세계를 '물리적 증거(양털의 이슬, 불로 타오르는 제물)'로 번역해 주실 때 비로소 안심하고 헌신하는 성향을 가졌습니다.</li>
+          </ul>
+
+          <h3>2) 회의(의심)가 확신보다 앞서는 영성 (Thinking Soulwork)</h3>
+          <ul>
+            <li>《SoulTypes》에서는 사고(T)형의 영성 환경을 설명할 때 "그들의 회의주의는 종종 확신보다 앞선다(Their skepticism often precedes conviction)"라고 설명합니다.</li>
+            <li>기드온에게 의심과 질문은 불신앙의 증거가 아니라, 오히려 <strong>지적 정직함의 발현</strong>이었습니다. 상황을 냉정하게 분석하고 의문이 완전히 해결되어야만 100%의 확신을 전제로 움직이는 영성적 성향을 보입니다.</li>
+          </ul>
+
+          <h3>3) 열등 기능의 위기: 직관(N)의 부재</h3>
+          <ul>
+            <li>ISTJ의 열등 기능은 <mark>외향 직관($Ne$)입니</mark>다. 이는 '눈앞의 암담한 현실 너머의 위대한 가능성이나 미래를 바라보는 능력'이 취약함을 뜻합니다.</li>
+            <li>미디안의 대군(현실)을 보며 낙심하는 기드온에게, 하나님은 그의 열등 기능인 '직관(미래의 승리에 대한 비전)'을 보완해 주시기 위해 끊임없이 초자연적인 확신을 주셔야 했습니다.</li>
+          </ul>
+        </section>
+
+        <section id="calling" aria-labelledby="calling-title">
+          <h2 id="calling-title">3. 부르심의 과정(사사기 6~8장)에서 드러난 성향</h2>
+          <p>
+            기드온이 사사로 부름받고 전쟁에 나가는 모든 과정은 그의 <strong>ISTJ적 기질이 하나님의 다루심을 받는 과정</strong> 그 자체였습니다.
+          </p>
+
+          <pre>[포도주 틀의 현실주의자] ➔ [논리적 의문 제기] ➔ [구체적 표징 검증] ➔ [철저한 지침 순종]</pre>
+
+          <ol class="step-list">
+            <li>
+              <strong>첫 번째 단계: 현실적 안전주의와 부르심 (6:11~16)</strong>
+              <ul>
+                <li>기드온은 포도주 틀에서 밀을 타작하며 철저히 현실의 생존에 집중하고 있었습니다. 하나님이 그를 "큰 용사"라고 부르셨을 때, 그는 자신의 지파(문화세 중 가장 약함)와 가문에서의 위치(가장 작은 자)라는 <strong>객관적인 조건</strong>을 들어 부르심을 거절하려 합니다(6:15). 이는 자신의 한계를 사실에 근거해 판단하는 S형의 전형적 모습입니다.</li>
+              </ul>
+            </li>
+
+            <li>
+              <strong>두 번째 단계: 인과관계를 따지는 질문과 첫 표징 (6:17~24)</strong>
+              <ul>
+                <li>그는 하나님의 사자에게 고기와 무교병을 바위 위에 두게 한 후, 지팡이 끝에서 불이 나와 그것을 사르는 <strong>시각적·물리적 이적</strong>을 보고서야 비로소 상대가 하나님임을 확증(J의 종결 욕구)합니다.</li>
+              </ul>
+            </li>
+
+            <li>
+              <strong>세 번째 단계: 신중한 개혁, 밤에 행한 바알 제단 파괴 (6:25~32)</strong>
+              <ul>
+                <li>하나님이 바알의 제단을 헐라고 명하셨을 때, 기드온은 불순종하지 않았습니다. 다만, 철저하고 신중하게 계획하여 낮이 아닌 <strong>밤</strong>에, 그것도 종 열 명을 대동해 완벽하게 임무를 완수합니다. 무모한 영웅주의(E/N형) 대신, 리스크를 최소화하려는 신중한 관리자(I/J형)의 면모가 돋보입니다.</li>
+              </ul>
+            </li>
+
+            <li>
+              <strong>네 번째 단계: 양털 시험과 적진 탐지 (6:36~40, 7:9~15)</strong>
+              <ul>
+                <li>전쟁을 앞두고 기드온은 다시 한번 양털로 시험을 합니다. 하나님은 기드온의 기질을 꾸짖지 않으시고, 그가 요구하는 오감의 데이터(축축함과 마름)를 그대로 채워주십니다. 심지어 미디안 적진에 몰래 들어가 적군이 꾸었던 '보리떡 꿈' 이야기를 귀로 직접 듣게 하심으로써(7:11), 그의 감각적 영성에 마지막 확신의 방점을 찍어주십니다.</li>
+              </ul>
+            </li>
+
+            <li>
+              <strong>다섯 번째 단계: 300명의 정예화와 철저한 통제력 (7:1~8, 16~22)</strong>
+              <ul>
+                <li>하나님이 군대의 수를 300명으로 줄이실 때도, '물 마시는 자세'라는 매우 <strong>구체적이고 관찰 가능한 행동 패턴</strong>을 기준으로 삼으십니다. 기드온은 이 비현실적인 전략 속에서도 횃불, 항아리, 나팔이라는 구체적인 도구를 활용해 완벽하게 통제된 야간 기습 작전을 기획하고 성공시킵니다.</li>
+              </ul>
+            </li>
+          </ol>
+
+          <div class="callout">
+            기드온은 대책 없는 믿음으로 돌진하는 영웅이 아니었습니다. 그는 의심 많고 신중한 현실주의자(ISTJ)였지만, 하나님은 그의 기질을 무시하지 않고 <strong>그가 이해할 수 있는 언어(구체적인 표징과 명확한 지침)로 다가오셔서</strong> 그를 위대한 사사로 빚어가셨습니다.
+          </div>
+        </section>
+
+        <section id="closing" aria-labelledby="closing-title">
+          <h2 id="closing-title">마무리 질문</h2>
+          <p class="final-question">
+            기드온의 신중하고 검증을 요구하는 성향이 오늘날 현대인들의 신앙 여정이나, 질문이 많은 리더십 환경에 어떤 긍정적인 통찰을 줄 수 있다고 생각하시나요?
+          </p>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
