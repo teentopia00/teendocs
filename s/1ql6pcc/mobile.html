@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>16가지 성격 유형이 하나님을 찾는 8개의 길 - 모바일</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #1f2933;
+      --muted: #667085;
+      --line: #d8e2dc;
+      --paper: #fbfaf6;
+      --panel: #ffffff;
+      --accent: #2f6f5e;
+      --accent-soft: #e5f1ec;
+      --gold: #b7791f;
+      --rose: #9f5d64;
+      --blue: #44637a;
+      --shadow: 0 14px 34px rgba(31, 41, 51, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", system-ui, sans-serif;
+      line-height: 1.72;
+      word-break: keep-all;
+      overflow-wrap: anywhere;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .hero {
+      min-height: 92vh;
+      display: flex;
+      align-items: end;
+      padding: 24px 18px 32px;
+      color: #fff;
+      background:
+        linear-gradient(180deg, rgba(15, 23, 42, 0.22) 0%, rgba(15, 23, 42, 0.58) 54%, rgba(15, 23, 42, 0.86) 100%),
+        url("https://teentopia00.github.io/teendocs/s/1ql6pcc/assets/chatgpt-image-2026%EB%85%84-6%EC%9B%94-2%EC%9D%BC-%EC%98%A4%ED%9B%84-02-54-53.png") center / cover;
+    }
+
+    .hero-inner {
+      width: min(100%, 720px);
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      margin: 0 0 14px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.88;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.45rem, 14vw, 4.6rem);
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      margin: 18px 0 0;
+      max-width: 34rem;
+      font-size: 1.03rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 22px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .meta li {
+      padding: 8px 10px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      font-size: 0.8rem;
+      line-height: 1.2;
+      backdrop-filter: blur(10px);
+    }
+
+    .quick-nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      gap: 8px;
+      padding: 10px 14px;
+      overflow-x: auto;
+      background: rgba(251, 250, 246, 0.94);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(14px);
+      scrollbar-width: none;
+    }
+
+    .quick-nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .quick-nav a {
+      flex: 0 0 auto;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    main {
+      width: min(100%, 760px);
+      margin: 0 auto;
+      padding: 22px 16px 56px;
+    }
+
+    section {
+      padding: 30px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    section:last-child {
+      border-bottom: 0;
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      font-size: 1.48rem;
+      line-height: 1.24;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 22px 0 10px;
+      font-size: 1.05rem;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .quote {
+      margin: 0;
+      padding: 18px;
+      border-left: 5px solid var(--accent);
+      border-radius: 8px;
+      background: var(--accent-soft);
+      font-size: 1.03rem;
+      font-weight: 750;
+    }
+
+    .grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .finding,
+    .path-card,
+    .type-card,
+    .note-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .finding,
+    .path-card,
+    .note-card {
+      padding: 16px;
+    }
+
+    .finding strong,
+    .path-card strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--accent);
+      font-size: 0.95rem;
+    }
+
+    .path-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .type-card {
+      overflow: hidden;
+    }
+
+    .type-head {
+      padding: 15px 16px;
+      background: #f4f8f6;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .type-code {
+      display: inline-flex;
+      margin-bottom: 7px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 850;
+      line-height: 1.1;
+    }
+
+    .type-head h3 {
+      margin: 0;
+      font-size: 1.16rem;
+    }
+
+    .type-body {
+      padding: 16px;
+    }
+
+    .type-body dl {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+    }
+
+    .type-body dt {
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 850;
+    }
+
+    .type-body dd {
+      margin: 3px 0 0;
+    }
+
+    .takeaways {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: takeaway;
+    }
+
+    .takeaways li {
+      position: relative;
+      margin: 0 0 12px;
+      padding: 16px 16px 16px 52px;
+      border-radius: 8px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+    }
+
+    .takeaways li::before {
+      counter-increment: takeaway;
+      content: counter(takeaway);
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      display: grid;
+      place-items: center;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 850;
+    }
+
+    .tagline {
+      margin-top: 18px;
+      color: var(--rose);
+      font-weight: 800;
+    }
+
+    .footer {
+      padding: 28px 0 8px;
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    @media (min-width: 640px) {
+      .hero {
+        padding-inline: 34px;
+      }
+
+      main {
+        padding-inline: 24px;
+      }
+
+      .grid.two {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Research Report · Editorial</p>
+      <h1>16가지 성격 유형이 하나님을 찾는 8개의 길</h1>
+      <p class="lead">MBTI 유형은 단순한 성격 분류가 아니라, 각 사람이 신앙을 받아들이고 표현하고 성숙해 가는 고유한 언어를 보여준다.</p>
+      <ul class="meta" aria-label="문서 정보">
+        <li>성격과 영성</li>
+        <li>공개용 에디토리얼 리포트</li>
+        <li>MBTI · 신앙 · 전일성</li>
+      </ul>
+    </div>
+  </header>
+
+  <nav class="quick-nav" aria-label="읽는 순서">
+    <a href="#summary">초록</a>
+    <a href="#findings">핵심</a>
+    <a href="#paths">8개 경로</a>
+    <a href="#types">16유형</a>
+    <a href="#evidence">해석</a>
+    <a href="#takeaways">정리</a>
+    <a href="#community">공동체</a>
+    <a href="#ending">맺음말</a>
+  </nav>
+
+  <main>
+    <section>
+      <h2>공유용 한 문장</h2>
+      <p class="quote">같은 교회 안에서도 누군가에게 봉사는 기도이고, 누군가에게 사유는 기도이며, 누군가에게 조용한 돌봄은 가장 진실한 예배다.</p>
+    </section>
+
+    <section id="summary">
+      <h2>초록</h2>
+      <p>제공된 원문 데이터는 16가지 성격 유형을 개별 성향으로만 보지 않고, 각 유형의 주기능을 기준으로 8개의 영적 경로로 재구성한다.</p>
+      <p>이 관점은 신앙생활에서 자주 발생하는 오해를 줄인다. 어떤 사람에게는 질서 있는 예전과 전통이 안정감을 주지만, 다른 사람에게는 모험과 실천, 또 다른 사람에게는 지적 탐구나 깊은 내면 성찰이 신앙의 핵심 통로가 된다.</p>
+      <p>핵심 결론은 단순하다. 영성에는 하나의 표준 언어만 존재하지 않는다. 그러나 동시에 각자가 편한 방식에만 머무르는 것도 성숙은 아니다.</p>
+    </section>
+
+    <section id="findings">
+      <h2>핵심 발견</h2>
+      <div class="grid">
+        <article class="finding">
+          <strong>1. 영성은 성격의 언어를 탄다</strong>
+          <p>기도, 예배, 봉사, 침묵, 연구, 공동체성은 유형마다 전혀 다른 방식으로 체감된다.</p>
+        </article>
+        <article class="finding">
+          <strong>2. 소외감은 믿음 부족이 아닐 수 있다</strong>
+          <p>전통적 신앙 관습이 맞지 않는 경험은 불신앙이 아니라 선호 기능의 차이일 수 있다.</p>
+        </article>
+        <article class="finding">
+          <strong>3. 성숙은 반대편으로의 확장이다</strong>
+          <p>자신에게 편한 길만 강화하면 정체가 오며, 낯선 기능을 통합할 때 전일성에 가까워진다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="paths">
+      <h2>분석 틀: 8개의 영적 경로</h2>
+      <p>이 리포트는 MBTI의 네 쌍 선호보다 더 깊은 층위인 인지 기능에 주목한다. 특히 각 유형이 가장 자연스럽게 사용하는 주기능을 기준으로, 영성의 방향을 8개 경로로 묶는다.</p>
+      <div class="grid two">
+        <article class="path-card"><strong>외향적 감각</strong><span>활동적인 영성: 현재, 몸, 사건, 즉각적 실천</span></article>
+        <article class="path-card"><strong>내향적 감각</strong><span>유서 깊은 영성: 전통, 기억, 질서, 검증된 반복</span></article>
+        <article class="path-card"><strong>외향적 직관</strong><span>촉매 영성: 가능성, 혁신, 질문, 변화 촉발</span></article>
+        <article class="path-card"><strong>내향적 직관</strong><span>깨달음의 영성: 통찰, 상징, 비전, 깊은 의미</span></article>
+        <article class="path-card"><strong>외향적 사고</strong><span>분석적인 영성: 원칙, 실행, 정의, 구조 개선</span></article>
+        <article class="path-card"><strong>내향적 사고</strong><span>개념적인 영성: 논리, 질문, 일관성, 지적 정직</span></article>
+        <article class="path-card"><strong>외향적 감정</strong><span>공동체 영성: 환대, 조화, 돌봄, 관계의 헌신</span></article>
+        <article class="path-card"><strong>내향적 감정</strong><span>개인적인 영성: 진정성, 양심, 내면 의미, 조용한 실천</span></article>
+      </div>
+      <p class="tagline">하나의 예배 방식이 모든 사람에게 같은 깊이로 다가오지 않는다.</p>
+    </section>
+
+    <section id="types">
+      <h2>16가지 유형별 영성 추구 방향</h2>
+      <div class="grid">
+        <article class="type-card">
+          <div class="type-head"><span class="type-code">ESTP</span><h3>외향적 감각 · 활동적인 영성</h3></div>
+          <div class="type-body"><dl><div><dt>핵심 영역</dt><dd>사건과 모험의 외부 세계</dd></div><div><dt>공동체 내 역할</dt><dd>현실을 객관적으로 파악하며 공동체의 실제적 필요를 빠르고 효율적으로 해결한다.</dd></div><div><dt>추구 방향</dt><dd>현재의 순간, 야외 활동, 운동, 위기 상황에서의 즉각적 행동과 구호 봉사를 기도로 삼는다.</dd></div></dl></div>
+        </article>
+        <article class="type-card">
+          <div class="type-head"><span class="type-code">ESFP</span><h3>외향적 감각 · 활동적인 영성</h3></div>
+          <div class="type-body"><dl><div><dt>핵심 영역</dt><dd>사건과 사람의 외부 세계</dd></div><div><dt>공동체 내 역할</dt><dd>열정적이고 수용적이며 신앙 활동에 따뜻함과 편안함을 부여한다.</dd></div><div><dt>추구 방향</dt><dd>오감을 자극하는 축제 같은 예배, 즐거운 교제, 일상 속 구체적 나눔을 추구한다.</dd></div></dl></div>
+        </article>
+        <article class="type-card">
+          <div class="type-head"><span class="type-code">ISTJ</span><h3>내향적 감각 · 유서 깊은 영성</h3></div>
+          <div class="type-body"><dl><div><dt>핵심 영역</dt><dd>경험과 조직화 원칙의 내면 세계</dd></div><div><dt>공동체 내 역할</dt><dd>전통의 가치를 수호하고 질서를 세우며 책임감 있게 안정감을 제공한다.</dd></div><div><dt>추구 방향</dt><dd>체계적 묵상, 검증된 전통과 예전, 목표가 분명한 성경 공부, 성실한 일상을 영성으로 여긴다.</dd></div></dl></div>
+        </article>
+        <article class="type-card">
+          <div class="type-head"><span class="type-code">ISFJ</span><h3>내향적 감각 · 유서 깊은 영성</h3></div>
+          <div class="type-body"><dl><div><dt>핵심 영역</dt><dd>경험과 통합적 가치의 내면 세계</dd></div><div><dt>공동체 내 역할</dt><dd>보이지 않는 헌신으로 개인의 필요를 채우고 조화로운 환경을 만든다.</dd></div><div><dt>추구 방향</dt><dd>예측 가능한 전통 예배, 구체적 돌봄, 소그룹의 상호 지지와 협력을 통해 하나님을 경험한다.</dd></div></dl></div>
+        </article>
+        <article class="type-card">
+          <div class="type-head"><span class="type-code">ENTP</span><h3>외향적 직관 · 촉매 영성</h3></div>
+          <div class="type-body"><dl><div><dt>핵심 영역</dt><dd>도전과 가능성의 외부 세계</dd></div><div><dt>공동체 내 역할</dt><dd>규범에 질문을 던지고 복잡한 딜레마를 극복할 미래 지향적 전략을 세운다.</dd></div><div><dt>추구 방향</dt><dd>고정된 교리를 넘어선 지적 탐구, 철학적 논쟁, 낡은 시스템을 해체하는 개혁을 추구한다.</dd></div></dl></div>
+        </article>
+        <article class="type-card">
+          <div class="type-head"><span class="type-code">ENFP</span><h3>외향적 직관 · 촉매 영성</h3></div>
+          <div class="type-body"><dl><div><dt>핵심 영역</dt><dd>활동과 사람을 위한 가능성의 외부 세계</dd></div><div><dt>공동체 내 역할</dt><dd>사람들에게 영감을 주고 잠재력을 이끌어내며 관대한 공동체를 세운다.</dd></div><div><dt>추구 방향</dt><dd>자발적이고 열정적인 예배, 다양한 신앙 관습의 수용, 변화를 촉진하는 관계적 헌신을 추구한다.</dd></div></dl></div>
+        </article>
+        <article class="type-card">
+          <div class="type-head"><span class="type-code">INTJ</span><h3>내향적 직관 · 깨달음의 영성</h3></div>
+          <div class="type-body"><dl><div><dt>핵심 영역</dt><dd>아이디어와 통찰의 내면 세계</dd></div><div><dt>공동체 내 역할</dt><dd>이성과 객관성을 바탕으로 개념적 구조를 설계하고 기존 상태에 질문한다.</dd></div><div><dt>추구 방향</dt><dd>우주와 삶의 신비, 거시적 진리, 깊은 연구, 독립적인 영적 패러다임을 구축한다.</dd></div></dl></div>
+        </article>
+        <article class="type-card">
+          <div class="type-head"><span class="type-code">INFJ</span><h3>내향적 직관 · 깨달음의 영성</h3></div>
+          <div class="type-body"><dl><div><dt>핵심 영역</dt><dd>아이디어와 가능성의 내면 세계</dd></div><div><dt>공동체 내 역할</dt><dd>동기와 감정을 깊이 이해하고 관계를 온전함으로 이끄는 창의적 비전을 제시한다.</dd></div><div><dt>추구 방향</dt><dd>상징적 예배, 침묵 속 성찰, 일대일 혹은 소그룹의 깊은 영적 대화와 영감 나눔을 추구한다.</dd></div></dl></div>
+        </article>
+        <article class="type-card">
+          <div class="type-head"><span class="type-code">ESTJ</span><h3>외향적 사고 · 분석적인 영성</h3></div>
+          <div class="type-body"><dl><div><dt>핵심 영역</dt><dd>원칙과 행동의 외부 세계</dd></div><div><dt>공동체 내 역할</dt><dd>객관적 분석으로 진리와 정의를 수호하고 조직을 결단력 있게 이끈다.</dd></div><div><dt>추구 방향</dt><dd>이성적 기도, 비효율을 고치는 행정적 리더십, 도덕적 원칙 확립을 중시한다.</dd></div></dl></div>
+        </article>
+        <article class="type-card">
+          <div class="type-head"><span class="type-code">ENTJ</span><h3>외향적 사고 · 분석적인 영성</h3></div>
+          <div class="type-body"><dl><div><dt>핵심 영역</dt><dd>객관성과 가능성의 외부 세계</dd></div><div><dt>공동체 내 역할</dt><dd>혼돈 속에서 질서를 만들고 장기 계획과 거시적 비전으로 그룹을 결집시킨다.</dd></div><div><dt>추구 방향</dt><dd>맹목적 신앙을 경계하고, 종교 구조의 개선과 미래 지향적 리더십, 정의 실현을 추구한다.</dd></div></dl></div>
+        </article>
+        <article class="type-card">
+          <div class="type-head"><span class="type-code">ISTP</span><h3>내향적 사고 · 개념적인 영성</h3></div>
+          <div class="type-body"><dl><div><dt>핵심 영역</dt><dd>질문과 경험의 내면 세계</dd></div><div><dt>공동체 내 역할</dt><dd>조용한 관찰자로 사실과 세부사항을 분석하고 불필요한 절차를 줄인다.</dd></div><div><dt>추구 방향</dt><dd>사적인 사색, 감정주의에 대한 거리두기, 모순과 위선의 분석, 보이지 않는 문제 해결을 추구한다.</dd></div></dl></div>
+        </article>
+        <article class="type-card">
+          <div class="type-head"><span class="type-code">INTP</span><h3>내향적 사고 · 개념적인 영성</h3></div>
+          <div class="type-body"><dl><div><dt>핵심 영역</dt><dd>지성과 아이디어의 내면 세계</dd></div><div><dt>공동체 내 역할</dt><dd>순수한 사상을 탐구하고 교리의 불일치를 파헤치며 논리적 청사진을 제공한다.</dd></div><div><dt>추구 방향</dt><dd>하나님과의 지적 대결, 비교 종교와 철학 연구, 장식을 걷어낸 일관된 진리를 추구한다.</dd></div></dl></div>
+        </article>
+        <article class="type-card">
+          <div class="type-head"><span class="type-code">ESFJ</span><h3>외향적 감정 · 공동체 영성</h3></div>
+          <div class="type-body"><dl><div><dt>핵심 영역</dt><dd>사람과 경험의 외부 세계</dd></div><div><dt>공동체 내 역할</dt><dd>환대와 협력, 관용을 이끌어내며 사람들의 실제 필요를 알아차린다.</dd></div><div><dt>추구 방향</dt><dd>교리보다 따뜻한 관계, 병자 방문과 위로, 소속감을 주는 행사와 헌신적 봉사를 중시한다.</dd></div></dl></div>
+        </article>
+        <article class="type-card">
+          <div class="type-head"><span class="type-code">ENFJ</span><h3>외향적 감정 · 공동체 영성</h3></div>
+          <div class="type-body"><dl><div><dt>핵심 영역</dt><dd>사람을 위한 가능성의 외부 세계</dd></div><div><dt>공동체 내 역할</dt><dd>사람과 조직이 서로 헌신하도록 동기를 부여하고 공동체의 성장을 돕는다.</dd></div><div><dt>추구 방향</dt><dd>양육과 돌봄 자체를 영성으로 여기며 갈등 중재, 조화, 수용의 리더십을 추구한다.</dd></div></dl></div>
+        </article>
+        <article class="type-card">
+          <div class="type-head"><span class="type-code">ISFP</span><h3>내향적 감정 · 개인적인 영성</h3></div>
+          <div class="type-body"><dl><div><dt>핵심 영역</dt><dd>개인적 의미와 적용의 내면 세계</dd></div><div><dt>공동체 내 역할</dt><dd>겸손하게 이타적 자선을 베풀고 적절한 순간에 적절한 행동을 한다.</dd></div><div><dt>추구 방향</dt><dd>자연과 오감을 통한 평안, 강요받지 않는 자유로운 예배, 소외된 이를 위한 묵묵한 실천을 추구한다.</dd></div></dl></div>
+        </article>
+        <article class="type-card">
+          <div class="type-head"><span class="type-code">INFP</span><h3>내향적 감정 · 개인적인 영성</h3></div>
+          <div class="type-body"><dl><div><dt>핵심 영역</dt><dd>마음과 상상력의 내면 세계</dd></div><div><dt>공동체 내 역할</dt><dd>이상을 식별하고 헌신하며 인간의 조건에 깊은 관심을 갖고 관점을 변화시킨다.</dd></div><div><dt>추구 방향</dt><dd>가식과 획일성을 거부하는 사적 묵상, 고유한 가치관 수호, 글쓰기와 예술을 통한 진정성 있는 표현을 추구한다.</dd></div></dl></div>
+        </article>
+      </div>
+      <div class="note-card" style="margin-top:12px;">
+        원문 표의 마지막 행은 “INTP”로 기재되어 있었으나, 내향적 감정 경로와 설명 내용상 일반적인 MBTI 기능 배열에서는 “INFP”가 더 타당하다. 본문 표는 연구 리포트의 일관성을 위해 INFP로 정리했다.
+      </div>
+    </section>
+
+    <section id="evidence">
+      <h2>증거와 해석</h2>
+      <h3>1. 동일한 종교, 16개의 다른 언어</h3>
+      <p>하나님을 만나는 완벽한 하나의 방식은 없다. ESTP와 ESFP에게는 땀 흘리는 구제 봉사와 사람들 속에서의 생동감이 기도가 될 수 있다. INTJ와 INTP에게는 교리의 모순을 파고드는 치열한 지적 탐구가 신앙의 중심이 될 수 있다.</p>
+      <h3>2. 영적 소외의 재해석</h3>
+      <p>전통적 신앙 관습에 쉽게 적응하지 못한 사람이 스스로를 “믿음이 없다”고 판단하는 경우가 있다. 그러나 긴 침묵이 어렵거나 맹목적 믿음의 언어가 불편한 것은 영성의 결핍이라기보다 자연스러운 성격 선호도의 차이일 수 있다.</p>
+      <h3>3. 전일성은 익숙함의 반대편에서 시작된다</h3>
+      <p>자신에게 편한 방식에만 머무르면 영성은 정체된다. 실천형은 침묵을 배우고, 사유형은 몸의 봉사를 배우며, 공동체형은 고독의 깊이를 배우고, 개인형은 공동체적 책임을 배운다.</p>
+    </section>
+
+    <section id="takeaways">
+      <h2>독자를 위한 명확한 정리</h2>
+      <ol class="takeaways">
+        <li>나의 신앙 언어를 발견하라. 어떤 예배, 기도, 봉사, 공부 방식에서 하나님을 더 생생하게 느끼는지 관찰하는 것이 출발점이다.</li>
+        <li>타인의 방식에 너무 빨리 판정하지 말라. 조용한 사람은 차갑지 않을 수 있고, 질문이 많은 사람은 불순종적이지 않을 수 있으며, 활동적인 사람은 가볍지 않을 수 있다.</li>
+        <li>편한 길을 뿌리로 삼되, 낯선 길을 훈련으로 삼으라. 성숙은 자기 유형을 강화하는 데서 끝나지 않고, 반대편의 은총을 받아들이는 데서 깊어진다.</li>
+      </ol>
+    </section>
+
+    <section id="community">
+      <h2>공동체에 주는 함의</h2>
+      <div class="grid">
+        <article class="note-card"><h3>예배 설계</h3><p>침묵, 말씀, 상징, 움직임, 공동기도, 실천의 요소를 균형 있게 배치할 필요가 있다.</p></article>
+        <article class="note-card"><h3>양육과 상담</h3><p>영성 훈련은 획일적 숙제가 아니라 유형별 접근이 필요하다.</p></article>
+        <article class="note-card"><h3>리더십 배치</h3><p>공동체에는 돌보는 사람, 구조를 세우는 사람, 질문하는 사람, 실천하는 사람이 모두 필요하다.</p></article>
+        <article class="note-card"><h3>영적 성장</h3><p>내 유형의 장점을 공동체에 내어놓고, 동시에 내 약점의 영역을 훈련하는 것이다.</p></article>
+      </div>
+    </section>
+
+    <section>
+      <h2>출처와 방법 노트</h2>
+      <p>이 글은 제공된 두 권의 원문 데이터 요약, 특히 새롭게 추가된 9장과 10장의 내용을 바탕으로 작성되었다. 원문은 16가지 MBTI 유형을 주기능 중심의 8개 영적 경로로 묶어 설명하며, 본 리포트는 그 내용을 공개용 에디토리얼 문체와 연구 보고서 구조에 맞게 재구성했다.</p>
+      <p>표의 항목은 원문의 핵심 표현을 보존하되, 독해 흐름을 위해 일부 문장을 압축하고 공백 및 용어를 정리했다.</p>
+    </section>
+
+    <section id="ending">
+      <h2>맺음말: 서로 다른 길이 서로를 완성한다</h2>
+      <p>성격 유형은 사람을 가두기 위한 상자가 아니다. 오히려 내가 왜 특정한 신앙 방식에서 숨을 쉬고, 왜 어떤 방식에서는 쉽게 지치는지를 이해하게 해 주는 지도에 가깝다.</p>
+      <p>가장 건강한 공동체는 한 가지 영성만 높이지 않는다. 몸으로 섬기는 사람, 질서를 지키는 사람, 질문을 던지는 사람, 통찰을 나누는 사람, 정의를 세우는 사람, 논리를 다듬는 사람, 관계를 품는 사람, 조용히 진정성을 지키는 사람이 함께 있을 때 공동체는 더 온전해진다.</p>
+      <p class="quote">나의 길은 유일한 길이 아니라 하나의 은사다. 그리고 내가 이해하지 못했던 타인의 길 역시 공동체를 살리는 또 하나의 은사일 수 있다.</p>
+    </section>
+
+    <footer class="footer">
+      원문: https://teentopia00.github.io/teendocs/s/1ql6pcc/ · 태그: 성격 · MBTI · 영성 · 공동체 · 전일성
+    </footer>
+  </main>
+</body>
+</html>
