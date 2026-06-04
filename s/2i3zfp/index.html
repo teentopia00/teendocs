@@ -1,0 +1,1305 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  
+  
+  <title>성장심리학 통합본</title>
+  <style>
+    :root {
+      --bg: #f7f3ec;
+      --paper: #fffdf8;
+      --ink: #26231f;
+      --muted: #70685f;
+      --line: #ded5c8;
+      --accent: #8a4b2f;
+      --accent-2: #315f72;
+      --soft: #f0e7da;
+      --quote: #fff7e8;
+      --shadow: 0 18px 45px rgba(74, 55, 35, .10);
+      --radius: 8px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top left, rgba(138, 75, 47, .10), transparent 32rem),
+        linear-gradient(180deg, #fbf8f2 0%, var(--bg) 48%, #f3eadc 100%);
+      color: var(--ink);
+      font-family: "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+      line-height: 1.78;
+      word-break: keep-all;
+    }
+
+    a { color: var(--accent-2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(240px, 300px) minmax(0, 1fr);
+      gap: 32px;
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 28px;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 24px;
+      align-self: start;
+      max-height: calc(100vh - 48px);
+      overflow: auto;
+      padding: 22px;
+      background: rgba(255, 253, 248, .88);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .sidebar h2 {
+      margin: 0 0 12px;
+      font-size: 1rem;
+      color: var(--accent);
+      letter-spacing: .02em;
+    }
+
+    .sidebar ol {
+      margin: 0;
+      padding-left: 1.25rem;
+      font-size: .94rem;
+    }
+
+    .sidebar li { margin: 7px 0; }
+
+    main {
+      min-width: 0;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero {
+      padding: 56px clamp(24px, 5vw, 72px);
+      background:
+        linear-gradient(135deg, rgba(138, 75, 47, .16), rgba(49, 95, 114, .10)),
+        var(--paper);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: .9rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.2rem, 5vw, 4.2rem);
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      max-width: 860px;
+      margin: 20px 0 0;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .meta {
+      padding: 14px 16px;
+      background: rgba(255, 255, 255, .58);
+      border: 1px solid rgba(222, 213, 200, .8);
+      border-radius: var(--radius);
+    }
+
+    .meta b {
+      display: block;
+      color: var(--accent);
+      font-size: .82rem;
+      margin-bottom: 3px;
+    }
+
+    .content {
+      padding: clamp(24px, 5vw, 72px);
+    }
+
+    section.chapter, section.front-section {
+      padding: 34px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    section.front-section:first-child { border-top: 0; padding-top: 0; }
+
+    h2 {
+      margin: 0 0 18px;
+      font-size: clamp(1.65rem, 3vw, 2.35rem);
+      line-height: 1.25;
+      color: #2c2924;
+    }
+
+    h3 {
+      margin: 30px 0 12px;
+      font-size: 1.22rem;
+      color: var(--accent);
+    }
+
+    h4 {
+      margin: 24px 0 8px;
+      font-size: 1.05rem;
+      color: var(--accent-2);
+    }
+
+    p { margin: 0 0 14px; }
+    ul, ol { padding-left: 1.4rem; margin: 10px 0 18px; }
+    li { margin: 6px 0; }
+    strong { color: #171512; }
+
+    .note-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0 18px;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 6px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--accent-2);
+      font-size: .88rem;
+      font-weight: 700;
+    }
+
+    .callout {
+      margin: 18px 0;
+      padding: 18px 20px;
+      border-left: 4px solid var(--accent);
+      background: var(--quote);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    blockquote {
+      margin: 18px 0;
+      padding: 18px 20px;
+      border-left: 4px solid var(--accent-2);
+      background: #f4f8f8;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      color: #27343a;
+    }
+
+    .quote-note {
+      margin-top: -8px;
+      color: var(--muted);
+      font-size: .94rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 18px 0 26px;
+      font-size: .96rem;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      background: #eee3d3;
+      color: #3f3024;
+      font-weight: 800;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    .chapter-title {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .chapter-title .num {
+      color: var(--accent);
+      font-weight: 900;
+      font-size: .95rem;
+      letter-spacing: .06em;
+    }
+
+    .mini-index {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+      margin: 20px 0 8px;
+    }
+
+    .mini-index a {
+      display: block;
+      padding: 12px 14px;
+      background: #fbf4e8;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .section-card {
+      margin: 18px 0;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fffaf1;
+    }
+
+    .compact-list li { margin: 3px 0; }
+
+    .one-line {
+      font-size: 1.18rem;
+      font-weight: 800;
+      color: var(--accent);
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff7e8;
+    }
+
+    @media (max-width: 920px) {
+      .layout { display: block; padding: 14px; }
+      .sidebar { position: relative; top: 0; max-height: none; margin-bottom: 14px; }
+      .hero { padding: 34px 22px; }
+      .content { padding: 22px; }
+      table { display: block; overflow-x: auto; }
+    }
+
+    @media print {
+      body { background: white; }
+      .layout { display: block; max-width: none; padding: 0; }
+      .sidebar { display: none; }
+      main { box-shadow: none; border: 0; }
+      a { color: inherit; text-decoration: none; }
+      section.chapter { break-inside: avoid; }
+    }
+  </style>
+<meta property="og:type" content="article">
+<meta property="og:title" content="성장심리학 통합본">
+<meta property="og:description" content="제공해주신 자료에 수록된 『성장심리학』의 목차는 다음과 같습니다. 이 책은 신경증이나 정신 질환과 같은 병적인 측면 대신 인간의 잠재력을 키우고 실현하는 건강한 성격의 모형을 탐구하며, 이를 위해 7명의 저명한 심리학자(올포트, 로저스, 프롬, 머슬로우, 융, 프랭클, 펄스)의 이론을 각 장에 걸쳐 소개하고 있습니다. 차">
+<meta property="og:url" content="https://teentopia00.github.io/teendocs/s/2i3zfp/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="성장심리학 통합본">
+<meta name="twitter:description" content="제공해주신 자료에 수록된 『성장심리학』의 목차는 다음과 같습니다. 이 책은 신경증이나 정신 질환과 같은 병적인 측면 대신 인간의 잠재력을 키우고 실현하는 건강한 성격의 모형을 탐구하며, 이를 위해 7명의 저명한 심리학자(올포트, 로저스, 프롬, 머슬로우, 융, 프랭클, 펄스)의 이론을 각 장에 걸쳐 소개하고 있습니다. 차">
+<link rel="canonical" href="https://teentopia00.github.io/teendocs/s/2i3zfp/">
+</head>
+<body>
+  <div class="layout">
+    <nav class="sidebar" aria-label="문서 내비게이션">
+      <h2>문서 탐색</h2>
+      <ol>
+        <li><a href="#toc">성장심리학의 목차</a></li>
+        <li><a href="#overview">통합 개요</a></li>
+        <li><a href="#chapter-1">1장 건강한 성격</a></li>
+        <li><a href="#chapter-2">2장 성숙한 사람</a></li>
+        <li><a href="#chapter-3">3장 충분히 기능을 발휘하는 사람</a></li>
+        <li><a href="#chapter-4">4장 생산적인 사람</a></li>
+        <li><a href="#chapter-5">5장 자아실현의 사람</a></li>
+        <li><a href="#chapter-6">6장 존재의 개별화를 이룬 사람</a></li>
+        <li><a href="#chapter-7">7장 자아초월의 사람</a></li>
+        <li><a href="#chapter-8">8장 여기 그리고 지금의 사람</a></li>
+        <li><a href="#chapter-9">9장 심리적 건강의 본질</a></li>
+        <li><a href="#five-traits">건강한 성격 5가지</a></li>
+        <li><a href="#one-page">핵심 요약</a></li>
+      </ol>
+    </nav>
+
+    <main>
+      <header class="hero">
+        <p class="eyebrow">Book Note Collection · 심리학</p>
+        <h1>성장심리학 통합본</h1>
+        <p class="subtitle">듀에인 슐츠의 『성장심리학: 건강한 성격의 모형』을 중심으로, 건강한 성격과 성장심리학의 주요 논증, 장별 모형, 핵심 개념, 적용 질문을 통합 정리한 독서 노트입니다.</p>
+        <div class="meta-grid">
+          <div class="meta"><b>책제목</b>성장심리학: 건강한 성격의 모형</div>
+          <div class="meta"><b>저자</b>듀에인 슐츠</div>
+          <div class="meta"><b>원저자</b>Duane P. Schultz</div>
+          <div class="meta"><b>역자</b>이혜성</div>
+          <div class="meta"><b>출판사</b>이화여자대학교출판문화원</div>
+          <div class="meta"><b>태그</b>심리학 · 성장심리학 · 인본주의심리학 · 통합본</div>
+        </div>
+      </header>
+
+      <div class="content">
+        <section id="toc" class="front-section">
+          <h2>성장심리학의 목차</h2>
+          <p>제공해주신 자료에 수록된 『성장심리학』의 목차는 다음과 같습니다.</p>
+          <p>이 책은 신경증이나 정신 질환과 같은 병적인 측면 대신 인간의 잠재력을 키우고 실현하는 <strong>건강한 성격의 모형</strong>을 탐구하며, 이를 위해 7명의 저명한 심리학자(올포트, 로저스, 프롬, 머슬로우, 융, 프랭클, 펄스)의 이론을 각 장에 걸쳐 소개하고 있습니다.</p>
+
+          <div class="mini-index">
+            <a href="#chapter-1">1. 건강한 성격 · 11</a>
+            <a href="#chapter-2">2. 성숙한 사람: 올포트의 모형 · 18</a>
+            <a href="#chapter-3">3. 충분히 기능을 발휘하는 사람: 로저스의 모형 · 44</a>
+            <a href="#chapter-4">4. 생산적인 사람: 프롬의 모형 · 66</a>
+            <a href="#chapter-5">5. 자아실현의 사람: 머슬로우의 모형 · 93</a>
+            <a href="#chapter-6">6. 존재의 개별화를 이룬 사람: 융의 모형 · 132</a>
+            <a href="#chapter-7">7. 자아초월의 사람: 프랭클의 모형 · 162</a>
+            <a href="#chapter-8">8. “여기 그리고 지금”의 사람: 펄스의 모형 · 185</a>
+            <a href="#chapter-9">9. 심리적 건강의 본질 · 218</a>
+          </div>
+
+          <h3>관련 링크</h3>
+          <div class="note-links">
+            <span class="pill">전체 요약: 0장 성장심리학 요약</span>
+          </div>
+        </section>
+
+        <section id="overview" class="front-section">
+          <h2>성장심리학: 건강한 성격의 모형</h2>
+          <div class="note-links">
+            <span class="pill">목차: 성장심리학의 목차</span>
+          </div>
+          <p>이 보고서는 듀에인 슐츠(Duane Schultz)의 저서 『성장심리학(Growth Psychology: Models of the Healthy Personality)』의 주요 내용과 철학적 기반, 그리고 핵심적인 심리학적 모형들을 분석한 문서입니다.</p>
+
+          <h3>1. 배경 및 맥락</h3>
+          <ul>
+            <li><strong>저자의 의도:</strong> 심리학의 초점을 ‘정신 질환’과 ‘신경증’에서 ‘심리적 건강’과 ‘성장’으로 전환하고자 했습니다.</li>
+            <li><strong>시대적/지적 배경:</strong> 행동주의와 정신분석학이 주류를 이루던 심리학계에 대한 비판적 대안으로 등장했습니다.</li>
+            <li><strong>타겟 독자:</strong> 성격심리와 상담심리를 공부하는 학부생 및 대학원생, 그리고 더 나은 자아로 성장하고자 하는 일반인입니다.</li>
+          </ul>
+
+          <h3>2. 전체 개요 &amp; 문제 의식</h3>
+          <ol>
+            <li>건강한 성격은 단순히 정서적 질병이 없는 상태가 아니라, 잠재력을 최대한 발휘하는 능동적인 과정이다.</li>
+            <li>인간은 과거의 경험이나 무의식적 충동에 지배받는 존재가 아니라, 스스로 선택한 미래의 목표를 향해 나아가는 존재이다.</li>
+            <li>성장은 고정된 결과물이 아니라 끊임없이 변화하고 확장되는 ‘되어감(Becoming)’의 과정이다.</li>
+          </ol>
+          <p><strong>문제 제기:</strong> 기존 심리학은 인간 본성의 최악, 즉 병리만을 연구해 왔으며 최선, 즉 성장에 대해서는 무지했습니다. 저자는 단순한 정상성에 머무르는 것이 오히려 인생의 무의미함과 고통을 초래할 수 있음을 지적합니다.</p>
+
+          <h3>3. 책 전체 구조 맵</h3>
+          <ul>
+            <li><strong>현상 진단:</strong> 기존 심리학의 한계 지적</li>
+            <li><strong>개념 재정의:</strong> ‘건강한 성격’이란 무엇인가에 대한 본질적 질문</li>
+            <li><strong>다각적 모형 제시:</strong> 올포트, 로저스, 프롬, 머슬로, 융, 프랭클, 펄스의 이론 분석</li>
+            <li><strong>심화 분석:</strong> 각 이론가의 개인적 배경이 이론에 미친 영향 고찰</li>
+            <li><strong>종합 및 결론:</strong> 심리적 건강의 본질과 미래 전망</li>
+          </ul>
+
+          <h3>4. 장별 핵심 요약</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>장</th>
+                <th>핵심 내용 요약</th>
+                <th>논리적 연결 고리</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1장</strong></td>
+                <td>건강한 성격은 과거의 상처 치유보다 미래의 성숙한 방향에 초점을 맞춘다.</td>
+                <td>이론적 토대를 세운 후 구체적인 첫 번째 모델인 올포트로 연결된다.</td>
+              </tr>
+              <tr>
+                <td><strong>2장</strong></td>
+                <td>올포트는 성숙한 사람의 특징으로 기능적 자율성과 미래 지향성을 강조한다.</td>
+                <td>성숙의 기준을 제시한 뒤 이를 과정으로서의 자아실현으로 확장한다.</td>
+              </tr>
+              <tr>
+                <td><strong>3장</strong></td>
+                <td>로저스는 자신에 대한 무조건적 긍정적 관심을 통해 충분히 기능하는 인간이 됨을 역설한다.</td>
+                <td>개인의 경험을 중시하는 관점은 사회적 존재로서의 인간관으로 이어진다.</td>
+              </tr>
+              <tr>
+                <td><strong>4장~8장</strong></td>
+                <td>생산적 사랑, 자아실현, 개별화, 의미 추구, 현재의 자각을 다룬다.</td>
+                <td>다양한 각도의 모델을 통해 건강의 입체적 지도를 완성한다.</td>
+              </tr>
+              <tr>
+                <td><strong>9장</strong></td>
+                <td>심리적 건강의 본질은 자신의 잠재력을 의식적으로 통제하고 확장하는 데 있다.</td>
+                <td>개별 이론들을 하나의 통합된 원리로 수렴시키며 마무리한다.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>5. 핵심 개념 및 관계망</h3>
+          <ul>
+            <li><strong>건강한 성격:</strong> 심리적 병리가 없고 잠재력이 실현된 상태.</li>
+            <li><strong>프로프리움:</strong> 올포트가 정의한 ‘인지된 나(Self)’, 자아의 핵심.</li>
+            <li><strong>기능적 자율성:</strong> 성인의 동기가 과거의 유아기적 욕구에서 독립되는 현상.</li>
+            <li><strong>자아실현:</strong> 타고난 잠재력을 개발하여 자기 자신이 되는 과정.</li>
+            <li><strong>무조건적 긍정적 관심:</strong> 조건 없이 수용받는 경험, 로저스 이론의 핵심.</li>
+            <li><strong>초월성:</strong> 단순한 정상 범위를 넘어선 고도의 심리적 건강 상태.</li>
+          </ul>
+
+          <h3>6. 저자의 핵심 주장 Top 5 &amp; 논거</h3>
+          <ol>
+            <li><strong>과거는 현재의 성격을 결정하지 않는다.</strong> 올포트의 기능적 자율성 개념이 이를 뒷받침한다.</li>
+            <li><strong>심리적 건강은 긴장의 감소가 아니라 긴장의 증가에서 온다.</strong> 건강한 사람은 도전과 모험을 통해 성장한다.</li>
+            <li><strong>자아실현은 정지된 상태가 아닌 역동적인 과정이다.</strong> 로저스는 이를 ‘되어가는 과정’으로 보았다.</li>
+            <li><strong>자아에 대한 객관적인 통찰과 유머 감각이 성숙의 척도다.</strong></li>
+            <li><strong>인간은 자신의 삶을 의식적으로 통제할 수 있는 자유 의지가 있다.</strong></li>
+          </ol>
+
+          <h3>7. 원문 핵심 인용</h3>
+          <blockquote>“정서적인 질환이 없다는 사실은 다만 성장과 충족을 향한 첫 걸음이 된다는 것 이외에는 아무 것도 아니다.”</blockquote>
+          <blockquote>“성인의 동기는 어린 시절의 동기가 연장된 것이 아니라, 근원적인 것으로부터 완전히 독립된 것이다.”</blockquote>
+          <blockquote>“건강한 사람은 미래를 향해 나아가는 비전으로 앞으로 나아가고, 그 비전은 그 사람을 고조된 긴장 수준에 이르게 한다.”</blockquote>
+          <blockquote>“나는 나 자신의 사고방식대로 생각할 수 있고, 나 자신의 결론에 도달할 수 있으며, 나 자신이 믿는 바에 따라 행동할 수 있다.”</blockquote>
+          <blockquote>“인간은 성숙되어가는 과정(Process)에 있으며, 여기에는 존재의 용기가 수반된다.”</blockquote>
+
+          <h3>8. 사고 프레임 &amp; 논증 방식 분석</h3>
+          <ul>
+            <li><strong>사고의 틀:</strong> 인본주의적 관점과 미래 지향적 목적론.</li>
+            <li><strong>대조법:</strong> 프로이드의 정신분석학이나 스키너의 행동주의와 비교한다.</li>
+            <li><strong>사례 연구:</strong> 톨스토이의 내적 갈등, 아문젠의 남극 탐험 등 역사적 사례를 사용한다.</li>
+            <li><strong>비판적 논평:</strong> 각 장 끝에 개인적 논평을 두어 이론의 강점과 약점을 평가한다.</li>
+          </ul>
+
+          <h3>9. 비판적 검토 및 방어 기제</h3>
+          <ul>
+            <li>어린 시절의 심각한 상처를 입은 사람이 어떻게 성숙한 성인으로 도약할 수 있는지에 대한 전이 과정 설명은 다소 부족하다.</li>
+            <li>건강함의 기준이 서구적 개인주의 가치관에 치우쳐 있다는 비판이 가능하다.</li>
+            <li>저자는 이 책이 이론의 주입이 아니라 비판적 사고를 위한 것임을 명시한다.</li>
+          </ul>
+
+          <h3>10. 확장적 적용</h3>
+          <ul>
+            <li><strong>개인적 차원:</strong> 과거의 트라우마에 매몰되기보다 미래의 목표를 설정하고 현재의 경험을 긍정적으로 수용하는 자기 주도적 태도를 가질 수 있다.</li>
+            <li><strong>사회적/조직적 차원:</strong> 조건부 보상이 아닌 무조건적 존중의 환경을 제공할 때 창의적인 성장이 가능하다.</li>
+          </ul>
+
+          <h3>11. 최종 요약</h3>
+          <p class="one-line">“인간은 과거의 산물이 아니라, 미래의 목표를 향해 끊임없이 스스로를 창조하고 확장해 나가는 위대한 잠재력의 주체이다.”</p>
+        </section>
+
+        <section id="chapter-1" class="chapter">
+          <div class="chapter-title"><span class="num">CHAPTER 1</span><h2>1장 건강한 성격</h2></div>
+          <div class="note-links"><span class="pill">목차: 성장심리학의 목차</span><span class="pill">전체 요약: 0장 성장심리학 요약</span></div>
+          <p>제공해주신 『성장심리학』의 <strong>제1장: 건강한 성격</strong>에 대한 정밀 분석 요약을 시작합니다. 이후 “다음”이라고 말씀해주시면 제2장(올포트의 모형)에 대한 분석을 동일한 구조로 이어서 진행하겠습니다.</p>
+
+          <h3>1. 장 개요</h3>
+          <ul>
+            <li><strong>핵심 주제 및 저자 의도:</strong> 병리적 증상의 부재가 곧 건강함을 의미하지 않음을 지적하며, 인간의 잠재력 실현과 초월성을 추구하는 성장심리학의 필요성을 역설한다.</li>
+            <li><strong>책 전체에서의 역할:</strong> 이 책이 왜 쓰였는지, 그리고 왜 기존 정신분석학이나 행동주의가 아닌 7명의 인본주의 심리학자들을 다루어야 하는지 제시하는 서론이다.</li>
+          </ul>
+
+          <h3>2. 논증 구조</h3>
+          <div class="section-card">
+            <p><strong>핵심 주장:</strong> 건강한 성격이란 단순히 정신적 질환이 없는 상태가 아니라, 인간에게 부여된 잠재능력을 최대한으로 발휘하는 초월성에 이른 상태이다.</p>
+            <p><strong>근거:</strong> 감수성 훈련, T그룹 등 내적 자아를 탐색하려는 대중적 움직임의 증가와, 정상적이고 이상적인 조건 속에서도 허무와 자살 충동에 시달렸던 레오 톨스토이의 고백.</p>
+            <p><strong>전개 방식:</strong> 현상 관찰 → 기존 이론 비판 → 정상성을 넘어선 초월성의 도입 → 톨스토이 사례 → 건강한 성격 모형 탐구.</p>
+            <p><strong>결론:</strong> 인간은 자신의 가능성을 최대한으로 이룩하기 위해 노력해야 하며, 건강한 성격의 본질을 명확히 규명한 심리학자들의 모형을 탐구해야 한다.</p>
+          </div>
+
+          <h3>3. 핵심 논점 &amp; 전개</h3>
+          <ol>
+            <li><strong>인간 잠재력 개발을 향한 갈망과 심리학의 방향 전환:</strong> 감수성 훈련, 참 만남 치료 등을 통해 내적 자아를 탐색하려는 움직임은 성장심리학의 대두를 필연적으로 만든다.</li>
+            <li><strong>전통 심리학에 대한 비판:</strong> 행동주의는 인간을 자극에 반응하는 존재로, 정신분석학은 과거 갈등의 희생물로 묘사한다. 성장심리학은 이러한 비관적 인간관을 거부한다.</li>
+            <li><strong>정상성의 한계와 초월성의 필요성:</strong> 신경증이 없다는 것은 성장의 첫걸음일 뿐이다. 톨스토이의 사례는 조건이 완비된 정상적 삶도 의미가 없으면 비참해질 수 있음을 보여준다.</li>
+          </ol>
+
+          <h3>4. 원문 핵심 인용</h3>
+          <blockquote>“행동주의나 정신분석학의 그 어느 것도 인간의 성장을 향한 잠재능력이나 현재의 우리보다 좀 더 나아지고자 하는 우리의 욕망을 연구하지 않았다.”</blockquote>
+          <p class="quote-note"><strong>핵심 의미:</strong> 기존 심리학 주류의 치명적인 맹점과 한계를 지적한다.</p>
+          <blockquote>“신경증이나 정신병적인 행동이 없다는 것만으로는 건강한 성격의 내용을 충분히 갖추었다고 할 수는 없다. 정서적인 질환이 없다는 사실은 다만 성장과 충족을 향한 첫 걸음이 된다는 것 이외에는 아무 것도 아니다.”</blockquote>
+          <blockquote>“요즈음에는, 인간이 그저 정상에 머물러 있는 것은 충분한 것이 아닐 뿐만 아니라, 오히려 인간이 성장할 수 있는 더 높은 경지, 즉 ‘초월성’을 상실하고 있는 것이라고 생각하는 것이다.”</blockquote>
+
+          <h3>5. 핵심 개념 &amp; 키워드</h3>
+          <ul>
+            <li><strong>성장 심리학 / 인본주의 심리학:</strong> 과거의 상처 치료보다 현재에서 미래로의 성숙과 잠재능력 실현에 초점을 두는 학파.</li>
+            <li><strong>초월성:</strong> 병이 없고 사회에 적응한 상태를 넘어 풍요롭고 의미 있는 삶을 영위하는 성장의 경지.</li>
+            <li><strong>환원주의적 비판:</strong> 인간을 기계나 어린 시절 갈등의 희생물로 격하하는 학문에 대한 반발.</li>
+          </ul>
+
+          <h3>6. 구조적 특징 분석</h3>
+          <ul>
+            <li><strong>강렬한 대조:</strong> 기계/본능의 희생물과 자발성/창의성, 정신 질환의 부재와 충만함/초월성을 대비한다.</li>
+            <li><strong>드라마틱한 사례:</strong> 톨스토이의 고백은 조건이 다 갖춰진 정상적 삶도 지옥일 수 있음을 체감하게 한다.</li>
+          </ul>
+
+          <h3>7. 전체 흐름과의 연결</h3>
+          <p>1장은 “초월성이란 무엇이고 어떻게 도달하는가?”라는 질문을 세팅한다. 2장부터는 각 학자들의 목소리를 통해 이 질문에 답한다.</p>
+
+          <h3>8. 비판적 검토</h3>
+          <ul>
+            <li>감수성 훈련 참여 증가만으로 인간의 긍정적 잠재력이 무한하다는 명제를 도출하는 것은 낙관적 비약일 수 있다.</li>
+            <li>모든 인간에게 더 나아지고자 하는 선한 의지와 동력이 내재한다는 전제를 입증 없이 둔다.</li>
+          </ul>
+
+          <h3>9. 독자 적용 포인트</h3>
+          <ol>
+            <li><strong>사역/상담 적용:</strong> “우울증이 없는가?”를 넘어 “삶의 의미와 은사, 잠재력을 누리고 있는가?”로 질문의 차원을 높인다.</li>
+            <li><strong>개인 삶 적용:</strong> 문제가 없는데도 무기력하다면 정상성에 안주하여 더 높은 부르심을 잃어버린 것은 아닌지 점검한다.</li>
+          </ol>
+
+          <h3>10. 누락 검토 및 보완</h3>
+          <blockquote>“만약 여러분이 의식적으로 여러분 자신이 이룩할 수 있는 가능성보다도 적게 노력한다면, 여러분은 남은 여생을 불행하게 보낼 수밖에 없을 것이라고 경고합니다.”</blockquote>
+          <p>초월성을 추구하는 것은 선택 사항이 아니라 실존적 불행을 막기 위한 필수 조건임을 강조한다.</p>
+
+          <h3>설교용 확장</h3>
+          <ul>
+            <li>정상성이라는 착각: 문제가 없다고 건강한 것은 아니다.</li>
+            <li>톨스토이의 역설: 모든 것을 가지고도 죽음을 소망한 이유.</li>
+            <li>초월성을 향한 부르심: 그리스도의 장성한 분량까지 자라나는 삶.</li>
+          </ul>
+
+          <h3>하브루타용 질문</h3>
+          <ol>
+            <li>과거의 환경과 상처가 내 인생을 결정한다는 말과, 나는 그것을 뛰어넘을 수 있다는 말 중 나의 삶은 어느 쪽을 더 믿는가?</li>
+            <li>톨스토이가 완벽한 환경 속에서 느낀 근본적인 결핍은 무엇이었을까?</li>
+            <li>그저 정상적인 상태를 유지하기 위해 급급한 영역은 어디인가?</li>
+            <li>행동주의나 정신분석학적 태도가 우리 사회나 직장 문화 속에 어떻게 남아 있는가?</li>
+            <li>자신의 가능성보다 적게 노력하면 불행해진다는 경고에 비추어 내가 타협하고 있는 잠재력은 무엇인가?</li>
+          </ol>
+
+          <h3>신학 연결</h3>
+          <p><strong>하나님의 형상:</strong> 성장 심리학이 말하는 잠재능력은 신학적으로 하나님이 인간에게 부여하신 창조 본연의 역량으로 연결할 수 있다. 죄악의 부재만 추구하는 소극적 성화가 아니라 하나님의 형상을 회복하여 발휘하는 적극적 성화와 맞닿아 있다.</p>
+        </section>
+
+        <section id="chapter-2" class="chapter">
+          <div class="chapter-title"><span class="num">CHAPTER 2</span><h2>2장 성숙한 사람 - 올포트의 모형</h2></div>
+          <div class="note-links"><span class="pill">목차: 성장심리학의 목차</span><span class="pill">전체 요약: 0장 성장심리학 요약</span></div>
+          <p>제출해주신 지침에 따라 『성장심리학』의 <strong>제2장: 성숙한 사람 (올포트의 모형)</strong>에 대한 정밀 분석 요약을 제공합니다.</p>
+
+          <h3>1. 장 개요</h3>
+          <ul>
+            <li><strong>핵심 주제와 저자의 의도:</strong> 고든 올포트의 이론을 통해 건강한 성격이 과거 무의식의 노예가 아니라 현재와 미래의 의식적 목표에 의해 주도되는 상태임을 규명한다.</li>
+            <li><strong>책 전체에서의 역할:</strong> 1장에서 제기된 정상성을 넘어선 초월성의 첫 번째 구체적 해답을 제시한다.</li>
+          </ul>
+
+          <h3>2. 논증 구조</h3>
+          <div class="section-card">
+            <p><strong>핵심 주장:</strong> 성숙하고 건강한 사람은 과거의 무의식적 갈등에 지배받지 않으며, 기능적으로 자율화된 동기와 일관된 생의 철학을 가지고 미래를 향해 나아간다.</p>
+            <p><strong>근거:</strong> 프로이드와의 만남에서 느낀 정신분석학의 한계, 그리고 아문젠의 남극 탐험 사례.</p>
+            <p><strong>전개:</strong> 프로이드와의 에피소드 → 건강한 사람과 신경증 환자의 단절성 → 기능적 자율화 → 프로프리움 발달 → 성숙한 성격의 기준.</p>
+          </div>
+
+          <h3>3. 핵심 논점 &amp; 전개</h3>
+          <ol>
+            <li><strong>과거 무의식으로부터의 단절:</strong> 신경증 환자와 건강한 성인은 정도의 차이가 아니라 완전히 다른 체계로 움직인다.</li>
+            <li><strong>동기의 기능적 자율화:</strong> 성인의 동기는 어린 시절의 근원적 경험이나 결핍에서 독립되어 스스로 기능한다.</li>
+            <li><strong>긴장 감소가 아닌 긴장 증가:</strong> 건강한 인간은 편안함에 머무르지 않고 새로운 위험과 모험을 찾아 긴장 수준을 높인다.</li>
+            <li><strong>성숙한 성격의 7가지 기준:</strong> 자아감의 확장, 우호적 관계, 정서적 안정감, 현실적 지각, 일에 대한 몰두, 자아객관화와 유머, 일관성 있는 생의 철학.</li>
+          </ol>
+
+          <h3>4. 원문 핵심 인용</h3>
+          <blockquote>“성인의 동기는 어린 시절의 근원적인 것으로부터는 완전히 독립된 것이다. 마치 다 자란 도토리 나무가 애초에 그 근원이며 영양이었던 도토리 열매 그 자체로부터는 완전히 독립된 것과 같다.”</blockquote>
+          <blockquote>“올포트는 건강한 사람은 생활해 가면서 긴장 감소보다는 오히려 더 많은 긴장을 원한다고 지적하고 있다.”</blockquote>
+          <blockquote>“프로프리움은 개인에게 중요한 문제나 과정들 또는 독특성으로 한 사람을 이룩하는 양상들로 이루어진다. 올포트는 이것을 ‘느끼고 인지된 나’로 불렀다.”</blockquote>
+          <blockquote>“우리가 되고자 바라는 것에 대한 강조는 이 책에 나온 다른 이론가들에 의해서도 부연되고 있으며 나는 이 개념에 대해서 전심전력으로 동의한다.”</blockquote>
+
+          <h3>5. 핵심 개념 &amp; 키워드</h3>
+          <ul>
+            <li><strong>기능적 자율화:</strong> 성숙한 성인의 동기가 초기 아동기의 욕구와 단절되어 독자적 에너지를 갖는 현상.</li>
+            <li><strong>프로프리움:</strong> 한 인간을 독특하게 만드는, 스스로 느끼고 인지된 나.</li>
+            <li><strong>자아객관화와 유머:</strong> 자신을 한 발 떨어져 보고 스스로의 부조화를 웃을 수 있는 성숙의 지표.</li>
+            <li><strong>방향모색 / 생의 철학:</strong> 인생의 국면을 하나의 목표나 가치로 통합하는 의무감.</li>
+          </ul>
+
+          <h3>6. 구조적 특징 분석</h3>
+          <ul>
+            <li><strong>극단적 이분법:</strong> 신경증 환자와 건강한 사람, 과거와 미래, 무의식과 의식, 긴장 감소와 긴장 증가를 선명하게 대비한다.</li>
+            <li><strong>철학적/종교적 색채:</strong> 양심, 생의 철학, 종교적 가치 등 형이상학적 요소를 성숙의 조건으로 끌어들인다.</li>
+          </ul>
+
+          <h3>7. 이전 장 및 전체 흐름과의 연결</h3>
+          <p>1장이 치료에서 가능성 발현으로 초점을 옮겼다면, 2장은 그 가능성의 조건이 과거로부터의 자유에 있음을 제시한다. 이 키워드는 로저스의 충분히 기능하는 사람으로 이어진다.</p>
+
+          <h3>8. 비판적 검토</h3>
+          <ul>
+            <li>건강한 사람과 신경증 환자 사이에 아무런 연속성이 없다고 단정하는 것은 지나치게 이분법적이다.</li>
+            <li>모든 인간이 이성적으로 자신의 동기를 파악하고 통제할 수 있다는 낙관론이 깔려 있다.</li>
+          </ul>
+
+          <h3>9. 독자 적용 포인트</h3>
+          <ol>
+            <li><strong>사역 및 상담:</strong> 과거 상처에만 매몰된 내담자에게 지금 무엇을 향해 갈 것인지 상담의 축을 옮긴다.</li>
+            <li><strong>조직/리더십:</strong> 복지와 보상뿐 아니라 유의미한 긴장과 더 높은 목표가 성장과 헌신을 만든다.</li>
+          </ol>
+
+          <h3>10. 누락 검토 및 보완</h3>
+          <p>올포트는 성인의 자율성을 강조했지만, 유아기 부모의 무조건적 사랑과 안전이 결핍되면 기능적 자율화 단계로 넘어가지 못한다고 보았다. 초기 애착의 중요성을 부정하지 않았음을 함께 보아야 한다.</p>
+
+          <h3>설교용 확장</h3>
+          <ul>
+            <li>은혜 안의 기능적 자율성: 우리는 과거의 죄와 상처에서 끊어진 새로운 피조물이다.</li>
+            <li>거룩한 긴장을 사모하라: 영적 성숙은 푯대를 향해 나아가는 모험이다.</li>
+            <li>일관성 있는 생의 철학: 성숙한 신앙인은 변함없는 방향성을 지닌다.</li>
+          </ul>
+
+          <h3>하브루타용 질문</h3>
+          <ol>
+            <li>과거의 상처를 완전히 넘어선 경험이 있는가?</li>
+            <li>안정보다 모험과 목표를 원한다는 주장에 동의하는가?</li>
+            <li>스스로의 어리석음을 비웃을 수 있는 유머가 왜 성숙의 지표인가?</li>
+            <li>나의 인생을 단일화하고 방향 잡아주는 생의 철학은 무엇인가?</li>
+            <li>건강한 사람과 신경증 환자를 질적으로 다르다고 보는 관점의 유익과 위험은 무엇인가?</li>
+          </ol>
+
+          <h3>신학 연결</h3>
+          <p><strong>기독교적 성숙과 목적론:</strong> 올포트의 이론은 인간이 과거가 아니라 앞에서 이끄는 목적에 의해 살아갈 때 온전해진다는 목적론적 인간관과 맞닿아 있다.</p>
+        </section>
+
+        <section id="chapter-3" class="chapter">
+          <div class="chapter-title"><span class="num">CHAPTER 3</span><h2>3장 충분히 기능을 발휘하는 사람 - 로저스의 모형</h2></div>
+          <p>제출해주신 지침에 따라 『성장심리학』의 <strong>제3장: 충분히 기능을 발휘하는 사람 (로저스의 모형)</strong>에 대한 정밀 분석 요약을 제공합니다.</p>
+
+          <h3>1. 장 개요</h3>
+          <ul>
+            <li><strong>핵심 주제와 저자의 의도:</strong> 칼 로저스의 내담자 중심 치료를 기반으로, 인간이 조건부 가치에서 벗어나 자신의 내면 경험을 수용하고 신뢰할 때 충분히 기능하는 사람으로 성장함을 밝힌다.</li>
+            <li><strong>책 전체에서의 역할:</strong> 자아실현이라는 인본주의 심리학의 핵심 동기를 본격적으로 도입한다.</li>
+          </ul>
+
+          <h3>2. 논증 구조</h3>
+          <div class="section-card">
+            <p><strong>핵심 주장:</strong> 건강한 사람은 무조건적 긍정적 관심을 통해 방어기제를 허물고 모든 경험에 개방되며, 자신의 유기체적 감각을 신뢰하며 자아실현의 과정을 살아간다.</p>
+            <p><strong>근거:</strong> 로저스의 개인적 자유 경험과 내담자 중심 치료의 임상 결과.</p>
+            <p><strong>전개:</strong> 개인적 억압과 자유 → 자아실현 동기 → 조건부 긍정적 관심과 가치의 조건 → 무조건적 긍정적 관심 → 충분히 기능하는 사람의 특성.</p>
+          </div>
+
+          <h3>3. 핵심 논점 &amp; 전개</h3>
+          <ol>
+            <li><strong>유일한 동기: 자아실현:</strong> 인간의 모든 행동은 잠재력을 유지하고 확장하려는 근본 동기에서 나온다.</li>
+            <li><strong>병리의 기원:</strong> 조건부 긍정적 관심은 가치의 조건을 만들고, 실재 자아와 바람직한 자아 사이의 부조화를 초래한다.</li>
+            <li><strong>치유와 성장:</strong> 무조건적 긍정적 관심은 가치의 조건에서 벗어나 자아의 모든 국면을 개방적으로 발달시킨다.</li>
+            <li><strong>5가지 특성:</strong> 경험에의 개방성, 실존적 삶, 유기체에 대한 신념, 자유감, 창조성.</li>
+          </ol>
+
+          <h3>4. 원문 핵심 인용</h3>
+          <blockquote>“개인의 실지 경험이 가장 중요하다는 이 신념과 확신이 로저스의 성격심리 연구 방법의 주춧돌이 되었다.”</blockquote>
+          <blockquote>“로저스는 자아실현하고자 하는 동기를 유발시키는 힘이 고통이나 노력보다, 또는 발달을 저해시키는 어떠한 본능보다 더욱 강력하기 때문이라고 믿는다.”</blockquote>
+          <blockquote>“건강한 성격에 대한 로저스의 의견에 대해 첫번째로 주목해야 할 점은, 그것이 하나의 상태가 아닌 과정, 즉 ‘숙명이 아닌 하나의 방향’으로 보았다는 점이다.”</blockquote>
+          <blockquote>“조건부적 가치관을 가진 사람들은 무가치한 행동과 사고를 의식하는 것조차도 마치 그들의 유용한 경험의 일부를 차단한다.”</blockquote>
+
+          <h3>5. 핵심 개념 &amp; 키워드</h3>
+          <ul>
+            <li><strong>자아실현:</strong> 유기체의 잠재력을 최고조로 발달시키고 유지하려는 경향.</li>
+            <li><strong>가치의 조건:</strong> 특정 기준에 부합할 때만 스스로를 가치 있다고 여기는 상태.</li>
+            <li><strong>무조건적 긍정적 관심:</strong> 존재 자체를 조건 없이 수용하는 경험.</li>
+            <li><strong>유기체에 대한 신념:</strong> 외부 규범보다 내면의 총체적 감각을 행동의 지침으로 삼는 태도.</li>
+          </ul>
+
+          <h3>6. 구조적 특징 분석</h3>
+          <p>로저스의 이론은 부모의 태도 → 긍정적 관심의 질 → 자아의 방어 또는 개방성 → 신경증적 환자 또는 충분히 기능하는 사람이라는 직선적 인과 구조를 갖는다. 또한 로저스의 자전적 경험을 객관화해 이론의 생생한 배경으로 제시한다.</p>
+
+          <h3>7. 전체 흐름과의 연결</h3>
+          <p>올포트가 미래의 이성적 목표를 강조했다면, 로저스는 현재의 유기체적 감각과 감정에 충실할 것을 요구한다. 이 장에서 정의된 자아실현은 머슬로우의 욕구 위계 이론으로 확장된다.</p>
+
+          <h3>8. 비판적 검토</h3>
+          <ul>
+            <li><strong>반지성적 편견:</strong> 이성과 논리를 불신하고 주관적 느낌을 지나치게 옹호한다.</li>
+            <li><strong>주관적 세계관의 오류:</strong> 객관적 사실과 보편적 진리를 약화시킬 위험이 있다.</li>
+            <li><strong>이기주의의 위험:</strong> 나의 자유와 감정에 집착해 자기몰두로 변질될 수 있다.</li>
+          </ul>
+
+          <h3>9. 독자 적용 포인트</h3>
+          <ol>
+            <li><strong>가정/양육:</strong> 자녀나 배우자에게 가치의 조건을 심어주고 있지 않은지 점검한다.</li>
+            <li><strong>조직/사역:</strong> 구성원들이 창조적이고 융통성 있게 대응할 수 있도록 자유와 개방성을 허용한다.</li>
+          </ol>
+
+          <h3>10. 누락 검토 및 보완</h3>
+          <p>로저스는 건강한 성격을 방어적인 사람과 대조했다. 방어적인 사람은 자유에 대한 두려움 때문에 과거의 지침에 따라 살아가고 낯선 상황을 통제하지 못하는 무력감을 겪는다.</p>
+
+          <h3>설교용 확장</h3>
+          <ul>
+            <li>가치의 조건에서 십자가의 은혜로.</li>
+            <li>성화는 상태가 아닌 과정이다.</li>
+            <li>성령을 신뢰하는 자유.</li>
+          </ul>
+
+          <h3>하브루타용 질문</h3>
+          <ol>
+            <li>안정감을 포기하고 고통을 감수하며 성장을 선택했던 경험이 있는가?</li>
+            <li>나를 억압하는 가치의 조건은 무엇인가?</li>
+            <li>중대한 선택에서 이성적 분석과 직관 중 무엇을 더 신뢰하는가?</li>
+            <li>건강한 자아실현과 이기적 나르시시즘의 경계는 어디인가?</li>
+            <li>잘못된 행동을 교정하면서 무조건적 긍정적 관심을 유지하려면 어떻게 해야 하는가?</li>
+          </ol>
+
+          <h3>신학 연결</h3>
+          <p>로저스의 무조건적 긍정적 관심은 하나님의 은혜와 깊이 연결될 수 있다. 그러나 인간 본성에 대한 극단적 낙관주의는 개혁주의 신학의 전적 타락 교리와 충돌하며, 인간 내면은 말씀과 성령의 객관적 진리에 의해 교정받아야 한다.</p>
+        </section>
+
+        <section id="chapter-4" class="chapter">
+          <div class="chapter-title"><span class="num">CHAPTER 4</span><h2>4장 생산적인 사람 - 프롬의 모형</h2></div>
+          <p>제출해주신 지침에 따라 『성장심리학』의 <strong>제4장: 생산적인 사람 (프롬의 모형)</strong>에 대한 정밀 분석 요약을 제공합니다.</p>
+
+          <h3>1. 장 개요</h3>
+          <ul>
+            <li><strong>핵심 주제와 저자의 의도:</strong> 건강한 성격은 개인의 내면 조화뿐 아니라 사회 속에서 타인과 맺는 관계의 질, 즉 생산적 정향에 달려 있음을 규명한다.</li>
+            <li><strong>책 전체에서의 역할:</strong> 인간을 사회적·역사적 존재로 확장하여 성장심리학의 논의를 사회학적 차원으로 넓힌다.</li>
+          </ul>
+
+          <h3>2. 논증 구조</h3>
+          <div class="section-card">
+            <p><strong>핵심 주장:</strong> 생산적인 사람은 고립감과 불안을 회피하기 위해 타인에게 복종하거나 지배하지 않고, 생산적 사랑과 사고를 통해 세계와 주체적으로 관계 맺는다.</p>
+            <p><strong>근거:</strong> 중세 붕괴 이후의 자유와 소외, 1차 세계대전 당시 독일 민족의 광신을 목격한 프롬의 경험.</p>
+            <p><strong>전개:</strong> 자유와 고독 → 인간 고유의 5가지 욕구 → 비생산적 정향 → 생산적 정향과 인본적 양심.</p>
+          </div>
+
+          <h3>3. 핵심 논점 &amp; 전개</h3>
+          <ol>
+            <li><strong>자유와 고독:</strong> 인간은 이성과 상상력을 얻어 본능적 구속에서 벗어났지만 고독감과 불안정감을 떠안았다.</li>
+            <li><strong>5가지 심리적 욕구:</strong> 관계성, 초월성, 정착성, 정체의식, 정향체제.</li>
+            <li><strong>생산적 정향 vs 비생산적 정향:</strong> 수용적, 착취적, 저축적, 시장적 정향을 넘어 잠재력을 능동적으로 발휘하는 태도.</li>
+            <li><strong>권위적 양심과 인본적 양심:</strong> 건강한 사람은 외부 규칙과 두려움이 아니라 스스로 판단하는 인본적 양심에 이끌린다.</li>
+          </ol>
+
+          <h3>4. 원문 핵심 인용</h3>
+          <blockquote>“역사를 분석한 결과 프롬은 인간 존재 상태의 정수는 고독감과 무의미성이라고 기술한다.”</blockquote>
+          <blockquote>“세계와 관계를 갖는 방식으로 건강한 것은 사랑을 통하여 관계를 맺는 것이다.”</blockquote>
+          <blockquote>“생산적이라는 것은 인간의 능력과 잠재력을 모두 발휘한다는 것을 의미한다. 이것은 능동적인 행동이라기보다는 내부적인 태도이다.”</blockquote>
+          <blockquote>“행복은 생산적 정향에 따라 살아간 결과로서 모든 생산적 활동에 수반된다.”</blockquote>
+
+          <h3>5. 핵심 개념 &amp; 키워드</h3>
+          <ul>
+            <li><strong>생산적 정향:</strong> 잠재력을 활용하여 자아를 실현하고 세계와 올바른 관계를 맺는 태도.</li>
+            <li><strong>공생적 관계성:</strong> 타인에게 의존하거나 타인을 지배해 자유와 독립을 잃는 관계 방식.</li>
+            <li><strong>시장적 정향:</strong> 자신의 가치를 상품성으로만 판단하는 자본주의적 병리.</li>
+            <li><strong>생산적 사랑:</strong> 보호, 책임, 존경, 지식을 포함하며 개별성과 독립성을 보존한 채 연합하는 능동적 활동.</li>
+          </ul>
+
+          <h3>6. 구조적 특징 분석</h3>
+          <p>프롬은 중세의 붕괴, 파시즘, 자본주의 구조 등 역사·사회적 틀로 개인의 심리 발달을 설명한다. 또한 5가지 욕구 각각을 건강한 양상과 병리적 양상으로 대조한다.</p>
+
+          <h3>7. 이전 장 및 전체 흐름과의 연결</h3>
+          <p>로저스가 내면의 느낌에 집중했다면, 프롬은 타인 및 세계와 관계를 맺지 않으면 인간은 건강해질 수 없다고 주장한다. 프롬의 심리적 욕구는 머슬로우의 욕구 위계 이론으로 이어진다.</p>
+
+          <h3>8. 비판적 검토</h3>
+          <ul>
+            <li>사회·경제적 요인을 지나치게 강조해 개인의 능동적 힘을 축소할 위험이 있다.</li>
+            <li>생산적 정향과 인본적 양심은 윤리적으로 훌륭하지만 과학적 검증이 어렵다.</li>
+          </ul>
+
+          <h3>9. 독자 적용 포인트</h3>
+          <ol>
+            <li>나의 사랑이 공생적 관계인지, 상대의 독립성을 보존하는 생산적 사랑인지 점검한다.</li>
+            <li>내가 시장적 정향으로 나를 포장하고 있는지, 생산적 정향으로 잠재력을 발휘하고 있는지 돌아본다.</li>
+          </ol>
+
+          <h3>10. 누락 검토 및 보완</h3>
+          <p>프롬은 비생산적 정향이 무조건 나쁜 것은 아니라고 보았다. 바탕에 생산적 정향이 있으면 수용성은 헌신으로, 저축성은 신중함으로 전환될 수 있다.</p>
+
+          <h3>설교용 확장</h3>
+          <ul>
+            <li>자유의 무게와 참된 소속.</li>
+            <li>시장적 가치와 하나님 형상.</li>
+            <li>생산적 사랑의 본질.</li>
+          </ul>
+
+          <h3>하브루타용 질문</h3>
+          <ol>
+            <li>자유를 얻었을 때 오히려 고독과 불안을 느끼는 현상을 발견한 적이 있는가?</li>
+            <li>나를 상품처럼 포장했던 경험은 무엇인가?</li>
+            <li>공생적 사랑과 생산적 사랑의 경계를 어떻게 구분할 수 있는가?</li>
+            <li>나의 행동을 통제하는 것은 타인의 시선인가, 나 스스로의 확신인가?</li>
+            <li>일터에서 생산성을 경험하려면 무엇이 필요한가?</li>
+          </ol>
+
+          <h3>신학 연결</h3>
+          <p>프롬의 자유와 고독, 소외의 진단은 창세기 3장의 타락과 연결된다. 그러나 기독교 신학은 인간 내부의 이성과 사랑만으로는 근원적 소외를 극복할 수 없으며, 그리스도의 화목을 통해 관계가 회복된다고 응답한다.</p>
+        </section>
+
+        <section id="chapter-5" class="chapter">
+          <div class="chapter-title"><span class="num">CHAPTER 5</span><h2>5장 자아실현의 사람 - 머슬로우의 모형</h2></div>
+          <p>제공해주신 지침에 따라 『성장심리학』의 <strong>제5장: 자아실현의 사람 (머슬로우의 모형)</strong>에 대한 정밀 분석 요약을 제공합니다.</p>
+
+          <h3>1. 장 개요</h3>
+          <ul>
+            <li><strong>핵심 주제와 저자의 의도:</strong> 병든 사람이 아니라 가장 성숙한 자아실현자를 연구해야 심리적 건강을 알 수 있다고 주장한다.</li>
+            <li><strong>책 전체에서의 역할:</strong> 자아실현이라는 동기를 욕구 위계 이론으로 구조화한다.</li>
+          </ul>
+
+          <h3>2. 논증 구조</h3>
+          <div class="section-card">
+            <p><strong>핵심 주장:</strong> 건강한 성격은 결핍 욕구가 충분히 충족된 후 초동기에 의해 이끌리는 자아실현의 상태이다.</p>
+            <p><strong>근거:</strong> 링컨, 아인슈타인, 스피노자 등 49명의 자료 분석과, 풍요 속에서도 허무를 겪는 현대인의 초병리 현상.</p>
+            <p><strong>전개:</strong> 병리 중심 심리학 비판 → 욕구 위계 → 결핍동기와 초동기 → 자아실현자의 특성.</p>
+          </div>
+
+          <h3>3. 핵심 논점 &amp; 전개</h3>
+          <ol>
+            <li><strong>건강한 표본 연구:</strong> 인간의 잠재력을 알려면 병자가 아니라 가장 훌륭한 인간을 연구해야 한다.</li>
+            <li><strong>욕구 위계:</strong> 생리적 욕구, 안전 욕구, 소속과 사랑, 자존감, 자아실현 순으로 나타난다.</li>
+            <li><strong>결핍동기와 초동기:</strong> 일반인은 결핍을 채우려 하지만 자아실현자는 B-가치를 추구한다.</li>
+            <li><strong>자아실현자의 특성:</strong> 효율적인 현실지각, 절정 경험, B-사랑 등.</li>
+          </ol>
+
+          <h3>4. 원문 핵심 인용</h3>
+          <blockquote>“만약 신체적인 결함이 있고 미성숙하며 병적이지 못한 사람들을 대상으로 연구한다면 단지 인간 본성의 불구적인 면을 보는 것이 아니라 추한 면을 본다는 말이다.”</blockquote>
+          <blockquote>“자아실현하는 사람들은 초동기와 보통 사람들의 동기와의 사이에 차이가 있음을 구별하지 않으면 안 되겠다.”</blockquote>
+          <blockquote>“머슬로우의 초병리 개념은 모든 것을 가진 사람들, 즉 안전, 사랑, 존중, 성공이 있는 사람들이 왜 비참한가를 합리적으로 설명하고 있다.”</blockquote>
+
+          <h3>5. 핵심 개념 &amp; 키워드</h3>
+          <ul>
+            <li><strong>욕구 위계:</strong> 생리적, 안전, 소속/사랑, 자존감, 자아실현의 5단계 구조.</li>
+            <li><strong>초동기 / 존재 동기:</strong> 진, 선, 미 등의 B-가치를 추구하는 성장 동기.</li>
+            <li><strong>결핍 동기:</strong> 결여된 것을 보충해 긴장을 감소시키려는 생존 동기.</li>
+            <li><strong>초병리:</strong> B-가치를 실현하지 못할 때 겪는 절망감과 무의미감.</li>
+            <li><strong>절정 경험:</strong> 강렬한 환희와 경외감, 몰입과 자기 상실의 순간.</li>
+          </ul>
+
+          <h3>6. 구조적 특징 분석</h3>
+          <p>머슬로우는 밑바닥에서 꼭대기로 올라가는 피라미드형 모델을 사용해 인간 성장의 과정을 직관적으로 구조화했다. 또한 자아실현자의 특성을 세밀하게 분류했다.</p>
+
+          <h3>7. 이전 장 및 전체 흐름과의 연결</h3>
+          <p>로저스의 자아실현을 받아들이되, 머슬로우는 이를 하위 욕구가 충족된 후 발현되는 최상위 욕구로 수정한다. 프롬이 지적한 자본주의 사회의 공허함은 초병리 개념으로 이어진다.</p>
+
+          <h3>8. 비판적 검토</h3>
+          <ul>
+            <li>선정된 자아실현자가 교육받은 서구권의 부유한 백인 남성에 편향되었다.</li>
+            <li>49명을 선정한 기준이 주관적이며 엄격한 과학적 검증이 부족하다.</li>
+          </ul>
+
+          <h3>9. 독자 적용 포인트</h3>
+          <ol>
+            <li>현재의 우울감이나 불만이 어느 위계에서 발생하는지 진단한다.</li>
+            <li>구성원에게 자아실현을 요구하기 전 안전과 소속의 욕구가 충족되어 있는지 확인한다.</li>
+          </ol>
+
+          <h3>10. 누락 검토 및 보완</h3>
+          <p>자아실현자는 완벽한 천사가 아니다. 그들도 무자비함, 냉담함, 짜증, 죄책감과 불안을 경험할 수 있다. 이 점은 이상적 인간상에 대한 우상화를 방지한다.</p>
+
+          <h3>설교용 확장</h3>
+          <ul>
+            <li>결핍의 사랑에서 존재의 사랑으로.</li>
+            <li>초병리와 부자 청년.</li>
+            <li>진정한 절정 경험.</li>
+          </ul>
+
+          <h3>하브루타용 질문</h3>
+          <ol>
+            <li>하위 욕구가 채워져야 상위 욕구로 갈 수 있다는 주장에 동의하는가?</li>
+            <li>현재 나의 행동 동기는 결핍 동기인가, 초동기인가?</li>
+            <li>세상의 규범과 타인의 기대에서 얼마나 자유로운가?</li>
+            <li>머슬로우의 이론은 엘리트주의인가?</li>
+            <li>나의 절정 경험은 언제였고 가치관을 어떻게 바꾸었는가?</li>
+          </ol>
+
+          <h3>신학 연결</h3>
+          <p>인간이 진, 선, 미를 추구하는 초동기를 가졌다는 주장은 하나님의 형상과 일반 은총을 보여준다. 그러나 성경은 최상위 욕구인 하나님과의 관계가 확립될 때 하위 욕구의 불안을 초월할 수 있다고 가르친다.</p>
+        </section>
+
+        <section id="chapter-6" class="chapter">
+          <div class="chapter-title"><span class="num">CHAPTER 6</span><h2>6장 존재의 개별화를 이룬 사람 - 융의 모형</h2></div>
+          <p>제출해주신 지침에 따라 『성장심리학』의 <strong>제6장: 존재의 개별화를 이룬 사람 (융의 모형)</strong>에 대한 정밀 분석 요약을 제공합니다.</p>
+
+          <h3>1. 장 개요</h3>
+          <ul>
+            <li><strong>핵심 주제와 저자의 의도:</strong> 건강한 성격은 의식과 무의식, 빛과 그림자, 남성성과 여성성 등 대립하는 양극단이 통합되어 완전한 자신을 이루는 개별화 과정이다.</li>
+            <li><strong>책 전체에서의 역할:</strong> 의식과 미래를 강조하던 앞선 이론을 보완하고, 무의식과 중년기의 중요성을 강조한다.</li>
+          </ul>
+
+          <h3>2. 논증 구조</h3>
+          <div class="section-card">
+            <p><strong>핵심 주장:</strong> 심리적으로 건강한 사람은 중년기를 기점으로 퍼소나에 대한 집착을 거두고, 그림자와 아니마/아니머스를 대면하고 수용해 개별화를 이룬다.</p>
+            <p><strong>근거:</strong> 융의 중년기 정신적 위기와 무의식과의 대결, 신화와 상징에 나타난 보편적 원형.</p>
+            <p><strong>전개:</strong> 융의 위기 → 성격 구조 → 중년기 재조명 → 개별화 과정 → 개별화된 사람의 특징.</p>
+          </div>
+
+          <h3>3. 핵심 논점 &amp; 전개</h3>
+          <ol>
+            <li><strong>무의식의 긍정적 재발견:</strong> 무의식은 병적 억압의 쓰레기통이 아니라 창조력과 생기의 근원이다.</li>
+            <li><strong>성격의 구조와 원형:</strong> 퍼소나, 아니마/아니머스, 그림자, 자신.</li>
+            <li><strong>중년기의 절대적 중요성:</strong> 인생 전반기가 외부 세계의 정복이라면 후반기는 내면 세계 탐구에 바쳐진다.</li>
+            <li><strong>개별화:</strong> 퍼소나의 해체, 그림자의 인식과 수용, 아니마/아니머스의 수용을 통해 자신에 도달한다.</li>
+          </ol>
+
+          <h3>4. 원문 핵심 인용</h3>
+          <blockquote>“이 의식의 세계와 무의식의 세계가 융화되어 양편이 모두 자유로이 발달되도록 허용되어야만 하는 것이다.”</blockquote>
+          <blockquote>“융은 인생의 전반기는 외부 세계에 관심을 기울인다고 기술했다. 인생의 후반기는 이제껏 게을리 해왔던 주관적 내면 세계에 헌신해야 한다.”</blockquote>
+          <blockquote>“그림자가 완전히 억압되어 있을 때는 성격이 단조롭고 무기력할 뿐만 아니라 자기 본성의 어두운 부분이 반란을 일으킬 가능성마저 있게 된다.”</blockquote>
+          <blockquote>“개별화에 첫 번째로 요구되는 것은, 인식하지 못하던 자신의 부분을 인식하는 것이다.”</blockquote>
+          <blockquote>“건강한 사람은 미지와 불가사의의 수용이 특징이다.”</blockquote>
+
+          <h3>5. 핵심 개념 &amp; 키워드</h3>
+          <ul>
+            <li><strong>집단 무의식:</strong> 인류 보편의 기억과 경험의 잠재적 저장소.</li>
+            <li><strong>원형:</strong> 집단 무의식에 존재하는 보편적 심상이나 틀.</li>
+            <li><strong>퍼소나:</strong> 사회가 요구하는 역할과 가면.</li>
+            <li><strong>그림자:</strong> 원초적 동물 본능이자 생명력과 창의성의 원천.</li>
+            <li><strong>개별화:</strong> 무의식의 내용물을 의식화해 진정한 자신을 찾아가는 통합 과정.</li>
+          </ul>
+
+          <h3>6. 구조적 특징 분석</h3>
+          <p>융의 이론은 대립물의 통합이라는 변증법적 구조를 갖는다. 외향성과 내향성, 사고와 감정, 퍼소나와 그림자, 의식과 무의식을 배척하지 않고 융합해 더 높은 차원의 자신으로 나아간다.</p>
+
+          <h3>7. 이전 장 및 전체 흐름과의 연결</h3>
+          <p>융은 의식과 미래를 강조한 올포트, 로저스, 머슬로우에 대한 거대한 안티테제다. 또한 성격 발달의 핵심 시기를 유아기나 청년기가 아니라 중년기로 확장했다.</p>
+
+          <h3>8. 비판적 검토</h3>
+          <ul>
+            <li>초자연주의, 종교, 연금술, 신화에 기대어 과학적 검증이 어렵다.</li>
+            <li>그럼에도 현대인에게 영적이고 직관적인 위안을 제공했다는 시대적 가치를 지닌다.</li>
+          </ul>
+
+          <h3>9. 독자 적용 포인트</h3>
+          <ol>
+            <li>중년기 위기를 실패나 질병이 아니라 내면 세계로 향하라는 초대장으로 해석한다.</li>
+            <li>타인을 향한 분노나 비판을 내 안의 그림자 투사로 보고 직면한다.</li>
+          </ol>
+
+          <h3>10. 누락 검토 및 보완</h3>
+          <p>융은 외향성과 내향성, 사고·감정·감각·직관의 심리적 기능을 구분했다. 이는 개별화 과정에서 자신이 덜 사용하는 기능을 개발해야 함을 시사한다.</p>
+
+          <h3>설교용 확장</h3>
+          <ul>
+            <li>퍼소나를 벗고 하나님 앞에 서라.</li>
+            <li>나의 그림자를 직면하라.</li>
+            <li>인생 후반전의 새로운 부르심.</li>
+          </ul>
+
+          <h3>하브루타용 질문</h3>
+          <ol>
+            <li>중년의 위기를 어떻게 긍정적으로 전환할 수 있을까?</li>
+            <li>나는 어떤 퍼소나를 주로 쓰고 있는가?</li>
+            <li>부정적 감정이 오히려 긍정적 힘을 준 경험이 있는가?</li>
+            <li>인간 정신 이해에는 과학적 객관성과 영적 직관 중 무엇이 더 중요한가?</li>
+            <li>내 안에서 더 수용해야 할 반대편 요소는 무엇인가?</li>
+          </ol>
+
+          <h3>신학 연결</h3>
+          <p>융의 그림자는 기독교의 죄성과 원죄 개념을 심리학적으로 방증한다. 그러나 신학은 그림자를 인간 스스로 통합하는 것을 넘어 그리스도의 빛과 은혜로 정화되어야 한다고 말한다.</p>
+        </section>
+
+        <section id="chapter-7" class="chapter">
+          <div class="chapter-title"><span class="num">CHAPTER 7</span><h2>7장 자아초월의 사람 - 프랭클의 모형</h2></div>
+          <p>제출해주신 지침에 따라 『성장심리학』의 <strong>제7장: 자아초월의 사람 (프랭클의 모형)</strong>에 대한 정밀 분석 요약을 제공합니다.</p>
+
+          <h3>1. 장 개요</h3>
+          <ul>
+            <li><strong>핵심 주제와 저자의 의도:</strong> 심리적 건강의 최고봉은 자신의 내면에 집중하는 자아실현이 아니라 자신을 넘어 외부의 의미와 타인을 향해 헌신하는 자아초월에 있다.</li>
+            <li><strong>책 전체에서의 역할:</strong> 자아실현은 목적이 아니라 자아초월의 부산물이라는 패러다임 전환을 이끈다.</li>
+          </ul>
+
+          <h3>2. 논증 구조</h3>
+          <div class="section-card">
+            <p><strong>핵심 주장:</strong> 건강한 성격은 쾌락이나 자아실현을 직접 추구하지 않고, 창조·경험·태도적 가치를 통해 삶의 의미를 발견하고 자신을 외부 목적에 내어준다.</p>
+            <p><strong>근거:</strong> 아우슈비츠 수용소 경험과 현대인의 실존적 진공 및 노에제닉 신경증 관찰.</p>
+            <p><strong>전개:</strong> 수용소 경험 → 의미에의 의지 → 실존적 진공 → 의미를 발견하는 세 가치 → 자아초월.</p>
+          </div>
+
+          <h3>3. 핵심 논점 &amp; 전개</h3>
+          <ol>
+            <li><strong>의미에의 의지:</strong> 인간을 움직이는 가장 강력한 힘은 삶의 의미와 목적을 찾으려는 욕구다.</li>
+            <li><strong>세 가지 가치:</strong> 창조적 가치, 경험적 가치, 태도적 가치.</li>
+            <li><strong>자아실현의 역설:</strong> 행복과 자아실현은 직접 겨냥하면 멀어지고, 의미와 타인을 향할 때 부산물로 주어진다.</li>
+          </ol>
+
+          <h3>4. 원문 핵심 인용</h3>
+          <blockquote>“소유물은 모두 잃고, 가치는 모두 파괴당하고, 기아와 추위와 잔학성에 시달리며 언제 죽게 될지 모르는 상황 속에서, 삶이 영위해야 할 가치가 있는 것이라는 것을 어떻게 그는 발견할 수 있었을까?”</blockquote>
+          <blockquote>“의미를 찾는 데에는 개인적 책임이 따른다.”</blockquote>
+          <blockquote>“삶의 의미를 발견한 사람은 건강한 사람이 도달하는 최���의 상태, 즉 자아초월의 상태에 도달한 것이다.”</blockquote>
+          <blockquote>“자아실현은 자아초월과 정반대적인 것으로 삶의 의미를 발견하고나서 생기는 이차적 효과이다.”</blockquote>
+          <blockquote>“미래를 보아야 살 수 있는 것이 인간의 특성이다.”</blockquote>
+
+          <h3>5. 핵심 개념 &amp; 키워드</h3>
+          <ul>
+            <li><strong>의미치료:</strong> 환자가 미래와 삶의 의미를 찾도록 돕는 치료법.</li>
+            <li><strong>실존적 진공:</strong> 궁극적 의미와 목표가 없기 때문에 느끼는 공허감과 지루함.</li>
+            <li><strong>노에제닉 신경증:</strong> 영적·실존적 의미 상실로 발생하는 신경증.</li>
+            <li><strong>태도적 가치:</strong> 피할 수 없는 고난 앞에서 선택하는 존엄한 태도.</li>
+            <li><strong>부메랑 효과:</strong> 행복과 자아실현은 직접 추구할 때가 아니라 의미에 헌신할 때 돌아온다.</li>
+          </ul>
+
+          <h3>6. 구조적 특징 분석</h3>
+          <p>프랭클은 홀로코스트라는 극한의 역사적 비극을 논거의 중심에 둔다. 또한 고통 속에서 의미를 찾고 자신을 잊을 때 자아가 실현된다는 역설적 사고를 사용한다.</p>
+
+          <h3>7. 이전 장 및 전체 흐름과의 연결</h3>
+          <p>머슬로우가 하위 욕구 충족 후 자아실현을 말한 반면, 프랭클은 극한 결핍 속에서도 태도적 가치와 의미가 가능함을 증명한다. 프롬과 같이 자유의 불안을 보지만 개인의 태도와 영적 자유를 더 강조한다.</p>
+
+          <h3>8. 비판적 검토</h3>
+          <ul>
+            <li>아우슈비츠 생존자의 도덕적 권위 때문에 이론을 비판하거나 검증하기 어렵다.</li>
+            <li>삶의 의미가 무엇인지 개인에게 맡기기 때문에 파괴적 대의를 어떻게 통제할지 기준이 모호하다.</li>
+          </ul>
+
+          <h3>9. 독자 적용 포인트</h3>
+          <ol>
+            <li>피할 수 없는 고통 앞에서 “왜 나에게?”가 아니라 “어떤 태도로 짊어질 것인가?”를 묻는다.</li>
+            <li>행복과 자아실현에 몰두하던 시선을 타인, 사랑, 사명으로 돌린다.</li>
+          </ol>
+
+          <h3>10. 누락 검토 및 보완</h3>
+          <p>프랭클의 인간관은 영혼성, 자유, 책임을 기둥으로 한다. 인간은 본능이나 유전의 지배를 받더라도 그에 대해 어떤 입장을 취할지 결정할 자유가 있으며, 그 자유에는 책임이 따른다.</p>
+
+          <h3>설교용 확장</h3>
+          <ul>
+            <li>실존적 진공과 전도서의 고백.</li>
+            <li>태도적 가치: 십자가를 지는 영광.</li>
+            <li>자아실현의 우상을 깨라.</li>
+          </ul>
+
+          <h3>하브루타용 질문</h3>
+          <ol>
+            <li>행복을 포기하고 무언가에 집중했을 때 오히려 행복이 온 경험이 있는가?</li>
+            <li>극한 상황에서도 존엄한 태도를 선택할 수 있다는 주장에 동의하는가?</li>
+            <li>현대 사회의 풍요 이면에 실존적 진공이 만연한 이유는 무엇인가?</li>
+            <li>창조적, 경험적, 태도적 가치 중 가장 부족한 영역은 무엇인가?</li>
+            <li>자아초월을 실천하기 위해 오늘 시작할 수 있는 작은 일은 무엇인가?</li>
+          </ol>
+
+          <h3>신학 연결</h3>
+          <p>프랭클의 자아초월은 자신을 비우고 타자를 위해 종의 형체를 취하신 그리스도의 케노시스와 대칭을 이룬다. 자기 중심성을 깨뜨리고 외부의 뜻을 찾는 과정은 성화와 깊이 공명한다.</p>
+        </section>
+
+        <section id="chapter-8" class="chapter">
+          <div class="chapter-title"><span class="num">CHAPTER 8</span><h2>8장 여기 그리고 지금의 사람 - 펄스의 모형</h2></div>
+          <p>새로 제공해주신 전체 원문 데이터를 바탕으로, <strong>제8장: “여기 그리고 지금”의 사람 (펄스의 모형)</strong>에 대한 정밀 분석 요약을 다시 명확하고 철저하게 제공합니다.</p>
+
+          <h3>1. 장 개요</h3>
+          <ul>
+            <li><strong>핵심 주제와 저자의 의도:</strong> 심리적으로 건강한 사람은 과거나 미래에 도피하지 않고 여기 그리고 지금에 머물며 자신의 실존에 전적인 책임을 진다.</li>
+            <li><strong>책 전체에서의 역할:</strong> 7명의 학자 중 가장 급진적인 현재 중심성과 타인으로부터의 독립을 보여준다.</li>
+          </ul>
+
+          <h3>2. 논증 구조</h3>
+          <div class="section-card">
+            <p><strong>핵심 주장:</strong> 건강한 성격은 과거나 미래라는 비무장지대를 걷어내고, 미완성 상태를 지금 여기에서 자각해 외부 조절 없이 자아조절하는 사람이다.</p>
+            <p><strong>근거:</strong> 펄스의 반항적 생애와 게쉬탈트 임상 원리.</p>
+            <p><strong>전개:</strong> 게쉬탈트 기도문 → 미완성 상황 → 현재성 → 승자와 패자의 자아고문 → 자아조절.</p>
+          </div>
+
+          <h3>3. 핵심 논점 &amp; 전개</h3>
+          <ol>
+            <li><strong>게쉬탈트와 미완성 상태:</strong> 긴박한 욕구가 억압되면 미완성 상황으로 남아 신경증과 자아 분열을 일으킨다.</li>
+            <li><strong>오직 여기 그리고 지금:</strong> 과거나 미래는 환상이며, 불안은 지금과 그때 사이의 긴장이다.</li>
+            <li><strong>승자와 패자:</strong> “해야 한다”고 강요하는 승자와 핑계를 대며 저항하는 패자의 자아고문 게임.</li>
+            <li><strong>자아경계와 좌절:</strong> 건강한 사람은 융통성 있는 자아경계를 가지며, 자아조절을 위해 곤경과 좌절을 통과한다.</li>
+          </ol>
+
+          <h3>4. 원문 핵심 인용</h3>
+          <blockquote>“나에게는 나의 일, 당신에게는 당신의 일. 내가 당신의 기대에 맞추어 이 세상을 살아가는 것이 아니고 당신이 나의 기대에 맞추어 이 세상을 살아가는 것도 아닌 것.”</blockquote>
+          <blockquote>“자아실현과 자아영상의 실현 사이에는 상당한 차이가 있다. 너무 많은 사람들이 자기가 지닌 심상만을 위해서 산다고 펄스는 믿었다.”</blockquote>
+          <blockquote>“지극히 건강한 사람은 자기 잠재력의 어느 부분도 거부하거나 버리지 않는다. 모든 것이 활용될 수 있는 것들이다.”</blockquote>
+          <blockquote>“아동이 스스로 하는 것을 보다 많이 배우게 될수록 환경의 보좌는 점차 감소된다. 펄스는 좌절은 자라나는 아동을 위해 바람직하다고 생각했다.”</blockquote>
+          <blockquote>“행복을 목표로 설정하는 것은 우리의 유일한 현실인, 현재로부터 정력과 주의를 돌리는 것이 된다.”</blockquote>
+
+          <h3>5. 핵심 개념 &amp; 키워드</h3>
+          <ul>
+            <li><strong>미완성 상태:</strong> 억압되거나 해결되지 않아 계속 의식의 전경으로 떠오르려는 욕구.</li>
+            <li><strong>DMZ / 간섭환상:</strong> 자아와 현실 세계 사이에 끼어 있는 편견, 속단, 투사된 두려움.</li>
+            <li><strong>승자와 패자:</strong> 당위로 몰아붙이는 도덕적 독재자와 핑계로 저항하는 자아.</li>
+            <li><strong>곤경:</strong> 환경에 의지할 수도, 자기 자신에게 완전히 의지할 수도 없는 성장의 고비.</li>
+          </ul>
+
+          <h3>6. 구조적 특징 분석</h3>
+          <p>펄스는 이성과 논리적 사고를 혐오하고 감각으로 현실에 접근해야 한다고 보았다. 치료에서도 위로보다 대결을 통해 내담자가 자신의 조작과 핑계를 직면하도록 압박했다.</p>
+
+          <h3>7. 이전 장 및 전체 흐름과의 연결</h3>
+          <p>올포트와 프랭클의 미래 지향성을 정면으로 거부한다. 로저스와는 유기체적 경험을 신뢰한다는 점에서 닮았지만, 로저스가 수용을 강조했다면 펄스는 좌절과 곤경을 강조한다.</p>
+
+          <h3>8. 비판적 검토</h3>
+          <ul>
+            <li>타인에 대한 책임을 몰인정하게 버리도록 해 이기주의를 조장할 위험이 있다.</li>
+            <li>이성을 폄하하는 태도는 장기적 헌신과 복잡한 윤리 판단에 치명적 결함을 낳는다.</li>
+          </ul>
+
+          <h3>9. 독자 적용 포인트</h3>
+          <ol>
+            <li>내면의 승자가 강요하는 완벽한 자아영상의 목소리를 알아차린다.</li>
+            <li>회고와 전망의 DMZ에 빠질 때 호흡과 감각으로 현재에 돌아온다.</li>
+            <li>아이와 후배가 곤경에 처했을 때 대신 해결하기보다 자아조절을 배울 좌절을 허용한다.</li>
+          </ol>
+
+          <h3>설교용 확장</h3>
+          <ul>
+            <li>자아영상이라는 우상과 바리새인의 외식.</li>
+            <li>오늘이라는 은혜의 시간.</li>
+            <li>율법주의에서 복음의 자유로.</li>
+          </ul>
+
+          <h3>하브루타용 질문</h3>
+          <ol>
+            <li>건강한 독립성과 무책임한 이기주의를 나누는 기준은 무엇인가?</li>
+            <li>내 안의 승자는 어떤 말을 하는가?</li>
+            <li>최근의 불안은 실제 지금의 일인가, 아직 오지 않은 환상인가?</li>
+            <li>적절한 좌절이 성장에 필수라는 주장에 동의하는가?</li>
+            <li>하루 중 언제 남의 시선에서 벗어나 진정한 자아로 호흡하는가?</li>
+          </ol>
+
+          <h3>신학 연결</h3>
+          <p>펄스의 극단적 개인주의는 서로의 짐을 지라는 언약적 책임과 충돌한다. 그러나 과거의 후회와 미래의 불안에 갇혀 현재의 생명력을 잃는 태도, 위선적 이미지 연기에 대한 통찰은 신학적으로도 유효하다.</p>
+        </section>
+
+        <section id="chapter-9" class="chapter">
+          <div class="chapter-title"><span class="num">CHAPTER 9</span><h2>9장 심리적 건강의 본질</h2></div>
+          <p>새로 제공해주신 원문 데이터를 바탕으로, 결론부인 <strong>제9장: 심리적 건강의 본질</strong>에 대한 정밀 분석 요약을 제공합니다.</p>
+
+          <h3>1. 장 개요</h3>
+          <ul>
+            <li><strong>핵심 주제와 저자의 의도:</strong> 건강한 성격에 대한 하나의 보편적 규정은 없지만, 7명의 이론가가 공유하는 공통 특성을 추출한다.</li>
+            <li><strong>책 전체에서의 역할:</strong> 2장부터 8장까지의 모형을 비교 도표로 총망라하는 결론 및 통합이다.</li>
+          </ul>
+
+          <h3>2. 논증 구조</h3>
+          <div class="section-card">
+            <p><strong>핵심 주장:</strong> 심리적으로 건강한 성격에 대한 완벽한 청사진은 없으며, 건강은 발달 단계에 따라 변화하는 끊임없는 성장과 실험의 과정이다.</p>
+            <p><strong>근거:</strong> 이론가들의 차이와 생애 주기 변화.</p>
+            <p><strong>전개:</strong> 질문 회귀 → 차이 인정 → 공통점 추출 → 비교 도표 → 특이성 강조 → 자유로운 실험.</p>
+          </div>
+
+          <h3>3. 핵심 논점 &amp; 전개</h3>
+          <ol>
+            <li><strong>공통된 일치점 5가지:</strong> 의식적 통제, 자아 수용, 현재에의 정착, 미래 지향성, 긴장의 증가.</li>
+            <li><strong>연령과 발달 단계에 따른 가변성:</strong> 20세의 건강 기준이 40세에는 부적합할 수 있다.</li>
+            <li><strong>심리적 만병통치약의 거부:</strong> 인간은 사본이 아니며 각자의 특이성이 중요하다.</li>
+            <li><strong>멈추지 않는 성장:</strong> 신경증은 정체이고 건강한 성격은 계속 새로운 경험을 향해 열린다.</li>
+          </ol>
+
+          <h3>4. 원문 핵심 인용</h3>
+          <blockquote>“모든 심리학자나 성격심리 이론가가 동의하는 통일된 심리적 건강의 규정이나 묘사는 하나도 없다는 것이다.”</blockquote>
+          <blockquote>“심리적으로 건강한 사람은 과거 속에 살지 않는다. 그들은 5세 이전에 일어났던 현실의, 혹은 상상된, 거부나 갈등의 계속적인 희생자가 아니다.”</blockquote>
+          <blockquote>“심리적으로 건강한 사람은 조용하고 안정된 것보다는 새로운 목표와 새로운 경험을 위한 인생의 도전과 흥분을 갈망한다.”</blockquote>
+          <blockquote>“인간의 본질에 대하여 불변으로 동의하는 점이 있다면 그것은 특이성, 즉 우리들 각자는 독특하다는 점이다.”</blockquote>
+          <blockquote>“이상적으로 우리의 성장은 멈추지 않는다.”</blockquote>
+
+          <h3>5. 핵심 개념 &amp; 키워드</h3>
+          <ul>
+            <li><strong>특이성:</strong> 모든 사람은 각기 다른 유전, 환경, 목표를 지니며 건강의 모습도 다르다.</li>
+            <li><strong>긴장의 증가:</strong> 편안함에 안주하지 않고 과제나 의미를 찾아 나서는 역동적 상태.</li>
+            <li><strong>정체 vs 개방:</strong> 신경증은 과거에 묶여 변화가 멈춘 상태, 건강은 새 경험에 열린 상태.</li>
+            <li><strong>자유로운 실험:</strong> 이론에 얽매이지 않고 자신의 삶에서 직접 검증하는 태도.</li>
+          </ul>
+
+          <h3>6. 구조적 특징 분석</h3>
+          <p>7명의 이론가를 세로축으로, 동기·의식의 초점·시간관·긴장·일의 역할·지각·타인에 대한 책임 등을 가로축으로 배치해 유사점과 차이를 한눈에 보여주는 비교 도표가 핵심 장치다. 결론은 강요가 아니라 “직접 실험해 보라”는 열린 결말이다.</p>
+
+          <h3>7. 전체 흐름과의 연결</h3>
+          <p>1장의 성장 비전을 2~8장의 렌즈로 분광시킨 뒤, 9장에서 다시 통합하여 자신만의 고유한 빛을 찾으라는 수미상관 구조를 이룬다.</p>
+
+          <h3>8. 비판적 검토</h3>
+          <ul>
+            <li>모두가 다르고 각자 방식이 있다는 결론은 상대주의로 흐를 위험이 있다.</li>
+            <li>저자는 자아수용과 타인에 대한 책임 등 최소 공통분모를 제시해 완전한 혼란을 방지한다.</li>
+          </ul>
+
+          <h3>9. 독자 적용 포인트</h3>
+          <ol>
+            <li>현재 나이와 발달 단계에 맞는 심리적 목표를 다시 세운다.</li>
+            <li>성공한 멘토나 롤모델의 방식을 복사하지 않고 내게 맞는 실험을 시작한다.</li>
+            <li>삶이 지루하거나 무기력하다면 건강한 긴장을 줄 목표를 설정한다.</li>
+          </ol>
+
+          <h3>설교용 확장</h3>
+          <ul>
+            <li>사본이 아닌 원본으로 살라.</li>
+            <li>거룩한 긴장을 사모하라.</li>
+            <li>성화는 멈추지 않는 과정이다.</li>
+          </ul>
+
+          <h3>하브루타용 질문</h3>
+          <ol>
+            <li>객관적 이성과 주관적 감정/직관 중 내 삶에는 어느 렌즈가 더 강한가?</li>
+            <li>20대의 건강 기준과 현재 또는 미래의 기준은 어떻게 다른가?</li>
+            <li>최근 나에게 건강한 긴장을 준 삶의 목표는 무엇인가?</li>
+            <li>누군가의 복사본으로 살아가려 했던 경험이 있는가?</li>
+            <li>7가지 모형 중 지금 가장 절실하게 도입해보고 싶은 실험은 무엇인가?</li>
+          </ol>
+
+          <h3>신학 연결</h3>
+          <p>성장은 멈추지 않는다는 선언은 점진적 성화와 조화된다. 또한 모든 사람에게 맞는 단 하나의 방법은 없다는 통찰은 성령께서 각 사람의 기질과 환경에 맞게 고유하게 역사하신다는 다양성과 연결된다.</p>
+        </section>
+
+        <section id="five-traits" class="chapter">
+          <h2>건강한 성격 5가지</h2>
+          <p>제9장 ‘심리적 건강의 본질’에 따르면, 7명의 성장 심리학자들은 각기 다른 모형을 제시했지만 다음의 <strong>5가지 특성</strong>에서 전반적인 일치점을 보입니다.</p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>특성</th>
+                <th>설명</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1. 의식적 통제</strong></td>
+                <td>심리적으로 건강한 사람은 그들의 인생을 의식적으로 통제합니다. 항상 이성적인 것은 아닐지라도 스스로 행동을 지시하고 자신의 운명에 책임을 질 수 있습니다.</td>
+              </tr>
+              <tr>
+                <td><strong>2. 자아 수용</strong></td>
+                <td>자신의 강점과 약점, 덕과 악을 있는 그대로 인식하고 관대하게 받아들입니다. 사회적 역할과 진정한 자아를 혼동하지 않습니다.</td>
+              </tr>
+              <tr>
+                <td><strong>3. 현재에의 정착</strong></td>
+                <td>과거 속에 살지 않으며, 특히 아동기의 상처나 갈등의 계속적인 희생자가 되지 않습니다.</td>
+              </tr>
+              <tr>
+                <td><strong>4. 미래 지향성</strong></td>
+                <td>펄스를 제외한 대부분의 이론가는 미래 전망을 건강한 성격의 중요한 요소로 보았습니다. 건강한 사람은 목표와 사명을 인식하며 살아갑니다.</td>
+              </tr>
+              <tr>
+                <td><strong>5. 긴장의 증가</strong></td>
+                <td>조용하고 안정된 상태에 머무르기보다 새로운 목표와 경험을 위한 도전과 흥분을 갈망합니다.</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="one-page" class="chapter">
+          <h2>『성장심리학』 핵심 요약</h2>
+
+          <h3>1. 저자의 문제제기</h3>
+          <ul>
+            <li><strong>전통 심리학의 한계:</strong> 행동주의와 정신분석학은 인간을 과거 갈등의 희생물이나 자극에 기계적으로 반응하는 존재로 취급하며 병든 면에만 초점을 맞추었다.</li>
+            <li><strong>정상성의 착각:</strong> 정신질환이나 신경증이 없다는 소극적 상태가 곧 심리적 건강을 의미하지는 않는다.</li>
+          </ul>
+
+          <h3>2. 저자의 해결 논리</h3>
+          <ul>
+            <li><strong>성장심리학의 도입:</strong> 인간의 성격 연구를 질병 치료가 아니라 잠재능력의 키움과 발휘로 전환해야 한다.</li>
+            <li><strong>건강한 성격 모형:</strong> 올포트, 로저스, 프롬, 머슬로우, 융, 프랭클, 펄스의 이론을 통합한다.</li>
+            <li><strong>미래 지향적 인간관:</strong> 인간은 과거를 뛰어넘어 성장할 자유와 가능성을 지닌 존재다.</li>
+          </ul>
+
+          <h3>3. 근거</h3>
+          <ul>
+            <li><strong>현상적 근거:</strong> 감수성 훈련과 참 만남 치료 등 내적 자아를 탐색하려는 현대인의 움직임.</li>
+            <li><strong>사례적 근거:</strong> 모든 조건을 갖추고도 생의 무의미로 고통받았던 톨스토이의 고백.</li>
+            <li><strong>임상 및 역사적 관찰:</strong> 프랭클의 수용소 경험, 머슬로우의 자아실현자 연구 등.</li>
+          </ul>
+
+          <h3>4. 대표 핵심 개념</h3>
+          <ul>
+            <li><strong>초월성:</strong> 병이 없는 정상성을 넘어 인간이 도달해야 할 더 높은 성장의 경지.</li>
+            <li><strong>기능적 자율성:</strong> 건강한 성인의 현재 동기는 과거 경험으로부터 독립되어 있다는 개념.</li>
+            <li><strong>자아실현:</strong> 잠재력과 능력을 유지하고 실현하며 확장하려는 동기.</li>
+            <li><strong>의미에의 의지:</strong> 삶의 목적과 의미를 찾으려는 근본 욕구.</li>
+            <li><strong>여기 그리고 지금:</strong> 과거와 미래의 환상이 아니라 현재 경험에 책임지는 태도.</li>
+          </ul>
+
+          <h3>5. 중요한 핵심 인용문</h3>
+          <blockquote>“행동주의나 정신분석학의 그 어느 것도 인간의 성장을 향한 잠재능력이나 현재의 우리보다 좀 더 나아지고자 하는 우리의 욕망을 연구하지 않았다.”</blockquote>
+          <blockquote>“신경증이나 정신병적인 행동이 없다는 것만으로는 건강한 성격의 내용을 충분히 갖추었다고 할 수는 없다.”</blockquote>
+          <blockquote>“성장심리학의 목표는 신경증이나 정신병 환자를 치료하는 데 있지 않고, 인간의 능력을 충족시키고 실현시킬 수 있는 무궁한 잠재능력을 키우고 발휘하도록 하는 데 있으며 인생의 심오한 의미를 탐색하는 데 있다.”</blockquote>
+          <blockquote>“요즈음에는, 인간이 그저 정상에 머물러 있는 것은 충분한 것이 아닐 뿐만 아니라, 오히려 인간이 성장할 수 있는 더 높은 경지, 즉 초월성을 상실하고 있는 것이라고 생각하는 것이다.”</blockquote>
+          <blockquote>“만약 여러분이 의식적으로 여러분 자신이 이룩할 수 있는 가능성보다도 적게 노력한다면, 여러분은 남은 여생을 불행하게 보낼 수밖에 없을 것이라고 경고합니다.”</blockquote>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
