@@ -1,0 +1,869 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  
+  
+  <title>도덕률에서 복음의 문턱까지: C.S. 루이스 『순전한 기독교』 1부 1-5장 연구 보고서</title>
+  
+  
+  
+  
+  <style>
+    :root {
+      --ink: #1f2428;
+      --muted: #5f6b72;
+      --paper: #fbfaf7;
+      --panel: #ffffff;
+      --line: #ddd7cc;
+      --accent: #8a3f2f;
+      --accent-2: #1f6f68;
+      --soft: #f3eee6;
+      --soft-2: #e8f1ef;
+      --gold: #b9852c;
+      --shadow: 0 22px 55px rgba(49, 41, 33, 0.12);
+      --radius: 8px;
+      --measure: 760px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(180deg, #f7f2ea 0%, var(--paper) 360px),
+        var(--paper);
+      font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", system-ui, sans-serif;
+      line-height: 1.78;
+      word-break: keep-all;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 72px 0 42px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 18px;
+      color: var(--accent);
+      font-size: 0.88rem;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      background: var(--accent);
+      display: inline-block;
+    }
+
+    h1 {
+      max-width: 920px;
+      margin: 0;
+      font-family: Georgia, "Times New Roman", "Noto Serif KR", serif;
+      font-size: clamp(2.35rem, 6vw, 5rem);
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      max-width: 780px;
+      margin: 24px 0 0;
+      color: #3f484d;
+      font-size: clamp(1.08rem, 2vw, 1.35rem);
+      line-height: 1.72;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      margin-top: 38px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .meta-grid div {
+      background: rgba(255, 255, 255, 0.72);
+      padding: 18px;
+      min-height: 104px;
+    }
+
+    .meta-grid b {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--accent);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+    }
+
+    .meta-grid span {
+      display: block;
+      color: var(--ink);
+      font-weight: 650;
+      line-height: 1.55;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 270px minmax(0, 1fr);
+      gap: 56px;
+      padding: 42px 0 84px;
+    }
+
+    aside {
+      position: sticky;
+      top: 22px;
+      align-self: start;
+      padding: 22px;
+      background: rgba(255, 255, 255, 0.68);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    aside h2 {
+      margin: 0 0 14px;
+      font-size: 0.9rem;
+      color: var(--accent);
+    }
+
+    aside ol {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 8px;
+      font-size: 0.93rem;
+      line-height: 1.45;
+    }
+
+    aside a {
+      display: block;
+      padding: 8px 0;
+      color: #39454a;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(221, 215, 204, 0.8);
+    }
+
+    aside a:hover {
+      color: var(--accent);
+    }
+
+    main {
+      min-width: 0;
+    }
+
+    section {
+      margin: 0 0 58px;
+    }
+
+    .article-card,
+    .callout,
+    .takeaways,
+    .source-box {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .article-card {
+      padding: clamp(24px, 5vw, 44px);
+    }
+
+    h2,
+    h3 {
+      letter-spacing: 0;
+    }
+
+    main h2 {
+      margin: 0 0 18px;
+      font-family: Georgia, "Times New Roman", "Noto Serif KR", serif;
+      font-size: clamp(1.75rem, 3vw, 2.45rem);
+      line-height: 1.25;
+    }
+
+    main h3 {
+      margin: 34px 0 12px;
+      font-size: 1.25rem;
+      line-height: 1.45;
+    }
+
+    p {
+      margin: 0 0 17px;
+    }
+
+    .lead {
+      color: #354247;
+      font-size: 1.14rem;
+      line-height: 1.85;
+    }
+
+    .abstract {
+      border-left: 5px solid var(--accent-2);
+      padding: 24px 28px;
+      background: var(--soft-2);
+      border-radius: var(--radius);
+    }
+
+    .abstract h2 {
+      font-family: inherit;
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+      color: var(--accent-2);
+    }
+
+    .takeaways {
+      padding: 28px;
+      background: #fff;
+    }
+
+    .takeaways ul,
+    .chapter-list,
+    .compact-list {
+      padding-left: 1.2rem;
+      margin: 0;
+    }
+
+    .takeaways li,
+    .chapter-list li,
+    .compact-list li {
+      margin: 9px 0;
+    }
+
+    .pullquote {
+      margin: 34px 0;
+      padding: 26px 30px;
+      border-top: 3px solid var(--accent);
+      border-bottom: 1px solid var(--line);
+      color: #2c3336;
+      font-family: Georgia, "Times New Roman", "Noto Serif KR", serif;
+      font-size: clamp(1.28rem, 2.5vw, 1.75rem);
+      line-height: 1.65;
+      background: linear-gradient(90deg, rgba(138, 63, 47, 0.08), transparent);
+    }
+
+    .callout {
+      padding: 24px 26px;
+      background: var(--soft);
+    }
+
+    .callout strong {
+      color: var(--accent);
+    }
+
+    .diagram {
+      margin: 34px 0;
+      padding: 28px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .flow div {
+      min-height: 132px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      background: #fbfaf7;
+      border-radius: var(--radius);
+      position: relative;
+    }
+
+    .flow b {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--accent);
+      font-size: 0.9rem;
+    }
+
+    .flow span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 22px 0 8px;
+      font-size: 0.95rem;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    th,
+    td {
+      padding: 15px 16px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      color: var(--accent);
+      background: #f4eee6;
+      font-weight: 800;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .chapter {
+      padding-top: 10px;
+      border-top: 1px solid var(--line);
+    }
+
+    .chapter-kicker {
+      color: var(--gold);
+      font-weight: 800;
+      font-size: 0.86rem;
+      margin-bottom: 8px;
+    }
+
+    .evidence-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .evidence-grid article {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+
+    .evidence-grid h3 {
+      margin-top: 0;
+      font-size: 1.08rem;
+      color: var(--accent-2);
+    }
+
+    .share {
+      display: grid;
+      gap: 12px;
+      padding: 22px;
+      border: 1px dashed var(--accent);
+      border-radius: var(--radius);
+      background: #fff9f4;
+      color: #3b302b;
+    }
+
+    .copyblock {
+      margin: 0;
+      padding: 16px;
+      overflow-wrap: anywhere;
+      background: #2b2f31;
+      color: #f7f2ea;
+      border-radius: var(--radius);
+      font-size: 0.94rem;
+      line-height: 1.65;
+      white-space: pre-wrap;
+    }
+
+    .source-box {
+      padding: 28px;
+      box-shadow: none;
+    }
+
+    .source-box h2 {
+      font-family: inherit;
+      font-size: 1.2rem;
+    }
+
+    footer {
+      margin-top: 42px;
+      padding: 32px 0 56px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .layout {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      aside {
+        position: static;
+      }
+
+      .meta-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .flow {
+        grid-template-columns: 1fr;
+      }
+
+      .evidence-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .page {
+        width: min(100% - 22px, 1120px);
+      }
+
+      .hero {
+        padding-top: 42px;
+      }
+
+      .meta-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .article-card,
+      .takeaways,
+      .source-box,
+      .diagram {
+        padding: 20px;
+      }
+
+      th,
+      td {
+        padding: 12px;
+      }
+    }
+  </style>
+<meta property="og:type" content="article">
+<meta property="og:title" content="1부 1-5장 통합">
+<meta property="og:description" content="[[순전한 기독교 목차]] [[순전한기독교 요약]] [!info] 구성 1부 15장 장별 노트를 순서대로 통합한 파일입니다. 각 장의 개별 frontmatter와 반복 상단 링크는 제거하고, 본문 분석은 원문 구조를 보존했습니다. 목차 1. [[1장 인간 본성의 법칙]] 2. [[2장 몇 가지 반론]] 3. [[3장 이 ">
+<meta property="og:url" content="https://teentopia00.github.io/teendocs/s/iqb80c/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="1부 1-5장 통합">
+<meta name="twitter:description" content="[[순전한 기독교 목차]] [[순전한기독교 요약]] [!info] 구성 1부 15장 장별 노트를 순서대로 통합한 파일입니다. 각 장의 개별 frontmatter와 반복 상단 링크는 제거하고, 본문 분석은 원문 구조를 보존했습니다. 목차 1. [[1장 인간 본성의 법칙]] 2. [[2장 몇 가지 반론]] 3. [[3장 이 ">
+<link rel="canonical" href="https://teentopia00.github.io/teendocs/s/iqb80c/">
+</head>
+<body>
+  <header class="hero">
+    <div class="page">
+      <div class="eyebrow">Research Report · Editorial Blog</div>
+      <h1>도덕률에서 복음의 문턱까지</h1>
+      <p class="subtitle">
+        C.S. 루이스 『순전한 기독교』 1부 1-5장은 기독교를 곧장 설명하지 않는다.
+        먼저 인간이 이미 알고 있는 “옳음”, 그 옳음을 어기는 자기 자신, 그리고 그 실패가 왜 불안의 이유가 되는지를 추적한다.
+      </p>
+
+      <div class="meta-grid" aria-label="문서 정보">
+        <div>
+          <b>Book</b>
+          <span>『순전한 기독교』</span>
+        </div>
+        <div>
+          <b>Author</b>
+          <span>C. S. 루이스</span>
+        </div>
+        <div>
+          <b>Scope</b>
+          <span>1부 1-5장</span>
+        </div>
+        <div>
+          <b>Theme</b>
+          <span>도덕률 · 자연법 · 변증 · 회개</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="page layout">
+    <aside>
+      <h2>Article Navigation</h2>
+      <ol>
+        <li><a href="#abstract">초록</a></li>
+        <li><a href="#findings">핵심 발견</a></li>
+        <li><a href="#map">논증 지도</a></li>
+        <li><a href="#evidence">증거 섹션</a></li>
+        <li><a href="#chapters">장별 분석</a></li>
+        <li><a href="#implications">의미와 적용</a></li>
+        <li><a href="#sources">Source Notes</a></li>
+        <li><a href="#ending">맺음</a></li>
+      </ol>
+    </aside>
+
+    <main>
+      <section id="abstract" class="article-card">
+        <div class="abstract">
+          <h2>Abstract</h2>
+          <p>
+            본 보고서는 『순전한 기독교』 1부 “옳고 그름, 우주의 의미를 푸는 실마리”의 1-5장을 하나의 변증 구조로 재구성한다.
+            루이스의 논지는 일상적 다툼에서 출발해 보편적 도덕률의 존재를 확인하고, 그 도덕률이 본능이나 관습으로 환원될 수 없음을 보인 뒤,
+            그것이 인간 외부에서 인간을 압박하는 실재임을 주장한다. 이어 그는 도덕률의 배후에 “정신”과 유사한 존재가 있다고 추론하며,
+            마지막으로 그 존재가 절대 선이라면 인간에게 위안이기 전에 먼저 공포와 회개의 이유가 된다고 결론짓는다.
+          </p>
+        </div>
+
+        <p class="lead">
+          루이스의 1부는 “하나님이 있는가?”라는 추상적 질문보다 “우리는 왜 스스로의 도덕적 실패를 변명하는가?”라는 더 가까운 질문으로 시작한다.
+          그의 힘은 논증의 출발점을 신학 교리나 종교 감정이 아니라 누구나 경험하는 다툼, 억울함, 변명, 양심의 압박에 둔 데 있다.
+        </p>
+
+        <div class="pullquote">
+          “우리는 일정한 방식으로 행동해야 한다고 느끼지만, 실제로는 그렇게 행동하지 못한다.”
+        </div>
+
+        <p>
+          이 한 문장이 1부 전체의 압축판이다. 인간은 도덕률을 모르는 존재가 아니라 알고도 어기는 존재다.
+          그러므로 루이스에게 기독교 변증은 “신앙이 왜 유익한가”가 아니라 “인간은 왜 구원을 필요로 하는가”를 밝히는 작업이다.
+        </p>
+      </section>
+
+      <section id="findings" class="takeaways">
+        <h2>핵심 발견</h2>
+        <ul>
+          <li><strong>도덕률은 일상 속에서 드러난다.</strong> 사람들은 다툴 때 단순한 취향이 아니라 상대도 인정해야 할 기준에 호소한다.</li>
+          <li><strong>도덕률은 본능이 아니다.</strong> 본능이 충돌할 때 어느 본능을 따를지 지휘하는 제3의 기준이 필요하다.</li>
+          <li><strong>도덕률은 관습으로 환원되지 않는다.</strong> 문화 간 차이는 있지만, 도덕적 진보와 비판을 말하려면 더 참된 기준이 전제되어야 한다.</li>
+          <li><strong>도덕률은 ‘사실’이 아니라 ‘당위’의 법칙이다.</strong> 인간이 실제로 하는 일을 묘사하지 않고, 해야 할 일을 요구한다.</li>
+          <li><strong>도덕률의 배후에는 정신적 존재가 암시된다.</strong> 물질은 명령하지 않지만, 인간 내면의 도덕률은 명령의 형태로 나타난다.</li>
+          <li><strong>복음은 불안의 진단 뒤에 의미를 얻는다.</strong> 자신이 병들었다는 사실을 모르는 사람에게 의사의 필요는 설득력을 갖지 못한다.</li>
+        </ul>
+      </section>
+
+      <section id="map" class="article-card">
+        <h2>논증 지도</h2>
+        <p>
+          1부 1-5장의 흐름은 “도덕률의 발견”에서 “복음의 필요”로 이동한다.
+          각 장은 독립된 논제가 아니라 다음 장의 질문을 발생시키는 계단처럼 배열되어 있다.
+        </p>
+
+        <div class="diagram" aria-label="루이스의 논증 흐름">
+          <strong>루이스 1부의 논리 흐름</strong>
+          <div class="flow">
+            <div>
+              <b>1장</b>
+              <span>인간은 다툼과 변명을 통해 보편적 옳고 그름을 전제한다.</span>
+            </div>
+            <div>
+              <b>2장</b>
+              <span>그 도덕률은 집단 본능이나 사회 관습만으로 설명되지 않는다.</span>
+            </div>
+            <div>
+              <b>3장</b>
+              <span>도덕률은 편의나 유익이 아니라 인간을 압박하는 실재다.</span>
+            </div>
+            <div>
+              <b>4장</b>
+              <span>그 실재의 배후에는 물질보다 정신에 가까운 존재가 있다.</span>
+            </div>
+            <div>
+              <b>5장</b>
+              <span>절대 선 앞에서 인간의 실패는 불안과 회개의 이유가 된다.</span>
+            </div>
+          </div>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>질문</th>
+              <th>루이스의 답</th>
+              <th>다음 단계</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>왜 사람은 억울함을 호소하는가?</td>
+              <td>상대도 알아야 할 보편적 기준을 전제하기 때문이다.</td>
+              <td>도덕률의 존재</td>
+            </tr>
+            <tr>
+              <td>그 기준은 본능인가?</td>
+              <td>아니다. 본능을 조율하는 별도의 기준이다.</td>
+              <td>환원주의 반박</td>
+            </tr>
+            <tr>
+              <td>그 기준은 사회적 약속인가?</td>
+              <td>아니다. 도덕적 진보와 비판은 참 도덕을 전제한다.</td>
+              <td>객관적 기준</td>
+            </tr>
+            <tr>
+              <td>도덕은 유익을 위한 도구인가?</td>
+              <td>아니다. 유익하지 않아도 옳은 것은 옳다.</td>
+              <td>실재로서의 도덕률</td>
+            </tr>
+            <tr>
+              <td>그 실재는 무엇을 가리키는가?</td>
+              <td>우리에게 명령하는 정신적 배후를 가리킨다.</td>
+              <td>신 존재 논증의 문턱</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="evidence" class="article-card">
+        <h2>Evidence Sections</h2>
+        <p>
+          루이스의 논증은 추상적 명제보다 일상적 관찰에 강하게 기대고 있다.
+          여기서 중요한 것은 “도덕률이 있다”는 결론보다, 독자가 이미 그 법칙을 사용하고 있다는 점을 드러내는 방식이다.
+        </p>
+
+        <div class="evidence-grid">
+          <article>
+            <h3>1. 다툼은 기준을 전제한다</h3>
+            <p>
+              “네가 나에게 이런 짓을 당하면 좋겠느냐”는 말은 단순한 감정 표현이 아니다.
+              그것은 상대방도 인정해야 할 행동 기준에 대한 호소다. 다툼은 보편적 규범의 흔적이다.
+            </p>
+          </article>
+          <article>
+            <h3>2. 변명은 실패를 인정한다</h3>
+            <p>
+              사람은 잘못한 뒤 “피곤해서”, “상황이 그래서”라고 말한다.
+              변명은 도덕률을 부정하는 행위가 아니라, 오히려 그 법의 권위를 인정하는 방어 반응이다.
+            </p>
+          </article>
+          <article>
+            <h3>3. 본능은 악보가 아니다</h3>
+            <p>
+              도움의 본능과 도피의 본능이 충돌할 때, 어느 쪽을 따라야 하는지 판단하는 기준은 본능 자체가 아니다.
+              본능은 건반이고 도덕률은 악보다.
+            </p>
+          </article>
+          <article>
+            <h3>4. 도덕적 비교는 참 도덕을 요구한다</h3>
+            <p>
+              어떤 문화나 이념을 다른 것보다 낫다고 판단하려면, 둘을 재는 기준이 있어야 한다.
+              도덕 상대주의는 이 판단 행위를 설명하기 어렵다.
+            </p>
+          </article>
+        </div>
+
+        <div class="callout">
+          <strong>핵심 테제:</strong>
+          루이스에게 도덕률은 인간이 만들어낸 규칙이 아니라, 인간이 피하고 싶어도 피하지 못하는 외부적 압박이다.
+          이 압박이야말로 우주 배후의 의미를 푸는 첫 실마리다.
+        </div>
+      </section>
+
+      <section id="chapters" class="article-card">
+        <h2>장별 분석</h2>
+
+        <article class="chapter">
+          <div class="chapter-kicker">Chapter 1</div>
+          <h3>인간 본성의 법칙: 다툼 속에 숨은 보편 규범</h3>
+          <p>
+            1장은 루이스 변증의 출발점이다. 그는 종교적 전제를 먼저 요구하지 않고, 사람들이 실제로 어떻게 다투는지 관찰한다.
+            사람들은 자신의 불쾌함만 말하지 않는다. 상대가 “마땅히 알았어야 하는” 기준을 들이댄다.
+          </p>
+          <p>
+            이 장의 결론은 두 가지다. 인간은 일정한 방식으로 행동해야 한다는 압박을 느낀다.
+            그러나 인간은 실제로 그렇게 행동하지 않는다. 이 이중 사실이 이후의 모든 논증을 떠받친다.
+          </p>
+        </article>
+
+        <article class="chapter">
+          <div class="chapter-kicker">Chapter 2</div>
+          <h3>몇 가지 반론: 본능과 관습만으로는 부족하다</h3>
+          <p>
+            2장은 예상 가능한 두 반론을 다룬다. 첫째, 도덕은 집단 본능이라는 주장이다.
+            루이스는 본능들이 충돌할 때 어느 본능을 따라야 할지 지휘하는 기준이 필요하다고 답한다.
+          </p>
+          <p>
+            둘째, 도덕은 사회적 관습이라는 주장이다. 루이스는 우리가 도덕적 진보나 타락을 말하는 순간,
+            이미 여러 도덕을 비교할 수 있는 더 참된 기준을 인정하고 있다고 본다.
+          </p>
+        </article>
+
+        <article class="chapter">
+          <div class="chapter-kicker">Chapter 3</div>
+          <h3>이 법칙의 실재성: 사실을 넘어 당위가 있다</h3>
+          <p>
+            3장은 도덕률이 단순한 행동 묘사가 아니라 “해야 한다”는 명령임을 분명히 한다.
+            돌은 중력 법칙을 어기지 않는다. 그러나 인간은 자신이 어떻게 해야 하는지 알면서도 그렇게 하지 않을 수 있다.
+          </p>
+          <p>
+            또한 도덕은 편의나 이익과 같지 않다. 나에게 불편을 주는 사람이 반드시 악한 것은 아니며,
+            나에게 이익을 주는 사람이 반드시 선한 것도 아니다. 도덕률은 유용성보다 깊은 차원에 있다.
+          </p>
+        </article>
+
+        <article class="chapter">
+          <div class="chapter-kicker">Chapter 4</div>
+          <h3>이 법칙의 배후에 있는 것: 인간은 우주의 내부 정보를 가진다</h3>
+          <p>
+            4장은 윤리에서 신학으로 이동하는 전환점이다.
+            과학은 사물이 어떻게 움직이는지 설명할 수 있지만, 우주가 왜 존재하는지 또는 배후에 무엇이 있는지는 과학의 관찰 방식만으로 답하기 어렵다.
+          </p>
+          <p>
+            루이스는 인간 자신을 “내부 정보”의 장소로 본다.
+            우리는 우주의 일부이면서 동시에 자신의 내면을 들여다볼 수 있다. 그 내면에서 발견되는 도덕적 명령은 물질보다 정신에 가까운 배후를 암시한다.
+          </p>
+        </article>
+
+        <article class="chapter">
+          <div class="chapter-kicker">Chapter 5</div>
+          <h3>우리의 불안에는 이유가 있다: 복음은 진단 뒤에 온다</h3>
+          <p>
+            5장은 1부의 긴장을 절정으로 끌어올린다. 우주 배후의 존재가 선하다면 그것은 곧장 위로가 아니다.
+            우리가 그 선의 법칙을 매일 어기고 있다면, 절대 선은 우리에게 가장 필요한 존재이면서 가장 두려운 존재가 된다.
+          </p>
+          <p>
+            루이스가 강조하는 기독교의 순서는 분명하다. 먼저 병을 알아야 의사의 말을 듣는다.
+            회개할 이유를 모르는 사람에게 용서는 값싼 종교적 위안으로만 들린다.
+          </p>
+        </article>
+      </section>
+
+      <section class="article-card">
+        <h2>비판적 검토</h2>
+        <p>
+          루이스의 논증은 일상 경험에서 출발한다는 점에서 설득력이 크지만, 현대 독자에게는 몇 가지 질문을 남긴다.
+        </p>
+        <ul class="compact-list">
+          <li><strong>진화심리학의 반론:</strong> 변명, 양심, 이타성도 집단 생존과 평판 관리의 산물로 설명될 수 있다는 반론이 가능하다.</li>
+          <li><strong>문화 차이의 문제:</strong> 루이스는 근본 도덕의 유사성을 강조하지만, 실제 역사에는 심각한 도덕 관행의 차이가 존재한다.</li>
+          <li><strong>과학과 신앙의 관계:</strong> 과학이 “왜”의 질문을 다루지 못한다는 주장은 유효하지만, 과학적 설명과 형이상학적 해석의 접점은 더 세밀히 논의될 필요가 있다.</li>
+          <li><strong>공포와 회개의 강조:</strong> 1부는 의도적으로 사랑과 은혜를 유보한다. 이는 복음의 필요를 선명히 하지만, 독자에 따라 율법주의적 인상으로 읽힐 수 있다.</li>
+        </ul>
+      </section>
+
+      <section id="implications" class="article-card">
+        <h2>Implications</h2>
+        <p>
+          이 5개 장의 실제 의미는 단지 “도덕률이 존재한다”는 철학적 명제에 있지 않다.
+          루이스는 독자를 자기 인식의 자리로 데려간다. 나는 도덕률을 주장하는 사람인가, 아니면 그 법 앞에서 실패한 사람인가?
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>영역</th>
+              <th>질문</th>
+              <th>실천적 함의</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>갈등</td>
+              <td>나는 취향을 주장하는가, 정의를 주장하는가?</td>
+              <td>분노의 근거를 점검하고, 보편적 기준과 개인적 불쾌감을 구분한다.</td>
+            </tr>
+            <tr>
+              <td>양심</td>
+              <td>내 변명은 무엇을 숨기고 있는가?</td>
+              <td>합리화의 언어를 통해 내가 실제로 인정하는 도덕 기준을 발견한다.</td>
+            </tr>
+            <tr>
+              <td>신앙</td>
+              <td>나는 위안을 찾는가, 진리를 찾는가?</td>
+              <td>복음을 심리적 안정 장치가 아니라 죄와 구원의 진리로 대면한다.</td>
+            </tr>
+            <tr>
+              <td>회개</td>
+              <td>잘못된 길에서 계속 전진하고 있지는 않은가?</td>
+              <td>되돌아가는 것을 퇴보가 아니라 참된 진보로 받아들인다.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="pullquote">
+          “방향을 잘못 잡았다면, 가장 먼저 되돌아가는 사람이 가장 진보적인 사람이다.”
+        </div>
+      </section>
+
+      <section class="article-card">
+        <h2>신학적 연결</h2>
+        <p>
+          루이스의 “인간 본성의 법칙”은 고전적 자연법 전통과 긴밀히 연결된다.
+          토마스 아퀴나스에게 자연법은 하나님의 영원법이 인간 이성에 반영된 형태다.
+          인간은 특별한 계시 없이도 “선을 추구하고 악을 피해야 한다”는 기본 명령을 어느 정도 인식할 수 있다.
+        </p>
+        <p>
+          이 관점에서 루이스의 논증은 자연법 사상을 현대 독자의 언어로 다시 말한 것이다.
+          다만 루이스는 자연법의 체계적 설명보다 더 실존적인 방향으로 나아간다.
+          그는 “우리는 법을 안다”에서 멈추지 않고 “우리는 그 법을 어겼다”로 논증을 밀어붙인다.
+        </p>
+
+        <ul class="compact-list">
+          <li><strong>로마서 2장 14-15절:</strong> 마음에 새겨진 율법과 양심의 증언이라는 바울의 논지와 연결된다.</li>
+          <li><strong>미가 6장 8절:</strong> 선한 것이 인간에게 이미 보였다는 성경적 관점과 맞닿아 있다.</li>
+          <li><strong>마가복음 2장 17절:</strong> 병든 자에게 의사가 필요하다는 예수의 선언은 5장의 핵심 비유와 직접 연결된다.</li>
+          <li><strong>아우구스티누스의 무질서한 사랑:</strong> 좋은 본능도 절대화되면 악이 될 수 있다는 루이스의 통찰과 상응한다.</li>
+          <li><strong>칼뱅의 하나님 지식과 인간 지식:</strong> 하나님의 거룩함을 직면할 때 인간은 자신의 비참함을 알게 된다는 구조와 유사하다.</li>
+        </ul>
+      </section>
+
+      <section class="article-card">
+        <h2>Share Framing</h2>
+        <p>
+          이 글을 공유한다면 핵심 메시지는 다음 한 문장으로 요약할 수 있다.
+        </p>
+        <pre class="copyblock">우리는 옳고 그름을 모르는 것이 아니라, 알고도 어기는 존재다. 루이스의 『순전한 기독교』 1부는 바로 그 불편한 진실에서 복음의 필요를 시작한다.</pre>
+      </section>
+
+      <section id="sources" class="source-box">
+        <h2>Source Notes</h2>
+        <p>
+          본 HTML 연구 보고서는 제공된 Obsidian Markdown 노트
+          <strong>「1부 1-5장 통합」</strong>을 바탕으로 편집·재구성했다.
+          추가 문맥으로 제공된 『순전한 기독교』 목차 및 1-4장 개별 요약 노트는 장 흐름과 용어 정합성을 확인하는 데만 사용했다.
+        </p>
+        <ul class="chapter-list">
+          <li>1장 인간 본성의 법칙</li>
+          <li>2장 몇 가지 반론</li>
+          <li>3장 이 법칙의 실재성</li>
+          <li>4장 이 법칙의 배후에 있는 것</li>
+          <li>5장 우리의 불안에는 이유가 있다</li>
+        </ul>
+      </section>
+
+      <section id="ending" class="article-card">
+        <h2>맺음: 불안은 논증의 실패가 아니라 시작점이다</h2>
+        <p>
+          루이스는 독자를 편안하게 만들기 위해 1부를 쓰지 않았다.
+          그는 오히려 우리가 이미 알고 있던 도덕의 언어를 끝까지 밀어붙여,
+          그 언어가 결국 우리 자신을 향해 돌아오게 만든다.
+        </p>
+        <p>
+          그래서 1부의 결론은 냉정하다. 우주 배후에 선한 정신이 있다면, 그것은 단순한 위안이 아니다.
+          그 선 앞에서 우리는 변명하는 존재이고, 실패한 존재이며, 스스로 병들었음을 인정해야 하는 존재다.
+        </p>
+        <p>
+          그러나 바로 그 지점에서 기독교의 문이 열린다.
+          복음은 문제가 없다는 위로가 아니라, 문제가 실제로 있으며 그 문제를 인간 혼자 해결할 수 없다는 진단 위에서 의미를 얻는다.
+          루이스의 1부가 오래 남는 이유는 여기에 있다. 그는 하나님을 말하기 전에, 먼저 우리가 왜 하나님을 필요로 하는지 묻는다.
+        </p>
+      </section>
+
+      <footer>
+        <p>
+          Research report · Editorial blog format · Sanitized standalone HTML without JavaScript, external CSS, iframes, or remote assets.
+        </p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
