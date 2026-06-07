@@ -1,24 +1,32 @@
 <!doctype html>
 <html lang="ko">
 <head>
-  
-  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>1부 옳고 그름, 우주의 의미를 푸는 실마리 요약</title>
+  <meta name="description" content="C. S. 루이스의 『순전한 기독교』 1부 “옳고 그름, 우주의 의미를 푸는 실마리” 모바일 요약 노트입니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="1부 옳고 그름, 우주의 의미를 푸는 실마리 요약">
+  <meta property="og:description" content="객관적 도덕률, 인간의 실패, 구원의 필요를 중심으로 정리한 『순전한 기독교』 1부 모바일 요약입니다.">
+  <meta property="og:url" content="https://teentopia00.github.io/teendocs/s/1h8b0od/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="1부 옳고 그름, 우주의 의미를 푸는 실마리 요약">
+  <meta name="twitter:description" content="객관적 도덕률, 인간의 실패, 구원의 필요를 중심으로 정리한 『순전한 기독교』 1부 모바일 요약입니다.">
+  <link rel="canonical" href="https://teentopia00.github.io/teendocs/s/1h8b0od/">
   <style>
     :root {
-      --bg: #f7f4ef;
-      --paper: #fffdf9;
-      --ink: #24211d;
-      --muted: #6f675d;
-      --soft: #e8dfd2;
-      --line: #d8ccbc;
-      --accent: #7b3f2a;
-      --accent-2: #1f5f66;
-      --accent-soft: #f1e3d7;
-      --green-soft: #e6efeb;
-      --shadow: 0 18px 50px rgba(57, 42, 28, 0.10);
+      --bg: #f8f5ee;
+      --paper: #fffdf8;
+      --ink: #211d18;
+      --muted: #70675d;
+      --line: #ded2c2;
+      --soft: #f1e8dc;
+      --accent: #8b3f2d;
+      --accent-dark: #5e2b21;
+      --green: #1d6265;
+      --green-soft: #e7f0ed;
       --radius: 8px;
-      --max: 1120px;
+      --shadow: 0 14px 34px rgba(58, 42, 27, .09);
     }
 
     * {
@@ -27,18 +35,17 @@
 
     html {
       scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
     }
 
     body {
       margin: 0;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.65), rgba(255,255,255,0) 260px),
-        var(--bg);
+      background: var(--bg);
       color: var(--ink);
       font-family: "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
       line-height: 1.72;
       word-break: keep-all;
-      overflow-wrap: break-word;
+      overflow-wrap: anywhere;
     }
 
     a {
@@ -46,220 +53,211 @@
       text-decoration: none;
     }
 
-    a:hover {
-      color: var(--accent);
-    }
-
     .page {
-      width: min(var(--max), calc(100% - 32px));
+      width: min(100%, 760px);
       margin: 0 auto;
-      padding: 40px 0 72px;
+      padding: 0 14px 72px;
     }
 
     .hero {
-      position: relative;
-      overflow: hidden;
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: clamp(28px, 5vw, 56px);
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0 0 auto;
-      height: 8px;
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      margin: 0 -14px;
+      padding: max(22px, env(safe-area-inset-top)) 18px 24px;
+      background:
+        linear-gradient(135deg, rgba(139, 63, 45, .12), rgba(29, 98, 101, .10)),
+        var(--paper);
+      border-bottom: 1px solid var(--line);
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      margin: 0 0 18px;
-      color: var(--accent);
-      font-size: 0.88rem;
+      margin: 0 0 14px;
+      color: var(--accent-dark);
+      font-size: .78rem;
       font-weight: 800;
-      letter-spacing: 0;
     }
 
     .eyebrow::before {
       content: "";
-      width: 22px;
+      width: 20px;
       height: 2px;
       background: currentColor;
       border-radius: 99px;
     }
 
     h1 {
-      max-width: 860px;
       margin: 0;
+      max-width: 12em;
       font-family: Georgia, "Noto Serif KR", serif;
-      font-size: clamp(2rem, 5vw, 4rem);
-      line-height: 1.16;
+      font-size: clamp(2rem, 10vw, 3.15rem);
+      line-height: 1.13;
       letter-spacing: 0;
-      color: #1e1a16;
     }
 
     .subtitle {
-      max-width: 760px;
-      margin: 22px 0 0;
+      margin: 16px 0 0;
       color: var(--muted);
-      font-size: clamp(1rem, 1.8vw, 1.18rem);
+      font-size: 1rem;
     }
 
     .meta-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 32px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 9px;
+      margin-top: 20px;
     }
 
     .meta-card {
-      min-height: 88px;
-      padding: 14px 16px;
-      background: #fbf6ef;
-      border: 1px solid var(--soft);
+      min-height: 78px;
+      padding: 12px;
+      background: rgba(255, 253, 248, .84);
+      border: 1px solid var(--line);
       border-radius: var(--radius);
     }
 
     .meta-card span {
       display: block;
       color: var(--muted);
-      font-size: 0.78rem;
-      font-weight: 700;
+      font-size: .73rem;
+      font-weight: 800;
     }
 
     .meta-card strong {
       display: block;
-      margin-top: 6px;
-      color: var(--ink);
-      font-size: 0.98rem;
-      line-height: 1.45;
+      margin-top: 5px;
+      font-size: .94rem;
+      line-height: 1.42;
     }
 
     .tags {
       display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 20px;
+      gap: 7px;
+      margin: 16px -18px 0;
+      padding: 0 18px 2px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .tags::-webkit-scrollbar {
+      display: none;
     }
 
     .tag {
+      flex: 0 0 auto;
       display: inline-flex;
       align-items: center;
       min-height: 30px;
       padding: 4px 10px;
       border: 1px solid var(--line);
       border-radius: 999px;
-      background: #fffaf4;
+      background: #fffaf3;
       color: var(--muted);
-      font-size: 0.82rem;
-      font-weight: 650;
-    }
-
-    .layout {
-      display: grid;
-      grid-template-columns: 280px minmax(0, 1fr);
-      gap: 28px;
-      align-items: start;
-      margin-top: 28px;
+      font-size: .78rem;
+      font-weight: 700;
     }
 
     .toc {
       position: sticky;
-      top: 18px;
-      background: rgba(255, 253, 249, 0.92);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: 0 10px 30px rgba(57, 42, 28, 0.07);
-      padding: 18px;
+      top: 0;
+      z-index: 5;
+      margin: 0 -14px 14px;
+      padding: 10px 14px;
+      background: rgba(248, 245, 238, .94);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(14px);
     }
 
     .toc h2 {
-      margin: 0 0 12px;
-      color: var(--accent);
-      font-size: 0.94rem;
-      line-height: 1.3;
+      width: 1px;
+      height: 1px;
+      position: absolute;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
     }
 
     .toc ol {
-      display: grid;
-      gap: 7px;
+      display: flex;
+      gap: 8px;
       margin: 0;
-      padding-left: 20px;
-      color: var(--muted);
-      font-size: 0.92rem;
-      line-height: 1.5;
+      padding: 0;
+      list-style: none;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .toc ol::-webkit-scrollbar {
+      display: none;
     }
 
     .toc a {
-      border-bottom: 1px solid transparent;
-    }
-
-    .toc a:hover {
-      border-bottom-color: currentColor;
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 5px 11px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--accent-dark);
+      font-size: .82rem;
+      font-weight: 800;
+      box-shadow: 0 6px 16px rgba(58, 42, 27, .05);
     }
 
     main {
-      min-width: 0;
+      display: grid;
+      gap: 14px;
     }
 
     section {
-      margin-bottom: 24px;
+      padding: 22px 16px;
       background: var(--paper);
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      box-shadow: 0 10px 34px rgba(57, 42, 28, 0.07);
-      padding: clamp(22px, 4vw, 36px);
-      scroll-margin-top: 24px;
+      box-shadow: var(--shadow);
+      scroll-margin-top: 68px;
     }
 
-    section > h2 {
-      margin: 0 0 22px;
-      padding-bottom: 14px;
+    h2 {
+      margin: 0 0 18px;
+      padding-bottom: 12px;
       border-bottom: 2px solid var(--soft);
       font-family: Georgia, "Noto Serif KR", serif;
-      font-size: clamp(1.45rem, 2.4vw, 2rem);
-      line-height: 1.28;
+      font-size: 1.45rem;
+      line-height: 1.32;
       letter-spacing: 0;
     }
 
     h3 {
-      margin: 30px 0 12px;
-      color: #2c2924;
-      font-size: clamp(1.08rem, 1.8vw, 1.28rem);
-      line-height: 1.42;
-    }
-
-    h3:first-child {
-      margin-top: 0;
+      margin: 20px 0 10px;
+      font-size: 1.08rem;
+      line-height: 1.45;
     }
 
     p {
       margin: 0 0 14px;
     }
 
-    ul, ol {
-      margin: 0 0 18px;
-      padding-left: 1.35rem;
+    ul,
+    ol {
+      margin: 0 0 16px;
+      padding-left: 1.25rem;
     }
 
     li {
-      margin: 0.38rem 0;
-      padding-left: 0.12rem;
+      margin: .42rem 0;
+      padding-left: .08rem;
     }
 
     strong {
-      color: #171410;
+      color: #17130f;
       font-weight: 800;
     }
 
     .argument-list {
       display: grid;
-      gap: 12px;
+      gap: 10px;
       margin: 0;
       padding: 0;
       list-style: none;
@@ -269,8 +267,8 @@
     .argument-list li {
       position: relative;
       margin: 0;
-      padding: 16px 18px 16px 58px;
-      background: #fbf6ef;
+      padding: 50px 14px 14px;
+      background: #fbf6ee;
       border: 1px solid var(--soft);
       border-radius: var(--radius);
     }
@@ -279,32 +277,51 @@
       counter-increment: claim;
       content: counter(claim);
       position: absolute;
-      left: 18px;
-      top: 17px;
+      left: 14px;
+      top: 14px;
       display: grid;
       place-items: center;
-      width: 26px;
-      height: 26px;
+      width: 27px;
+      height: 27px;
       border-radius: 999px;
       background: var(--accent);
       color: white;
+      font-size: .86rem;
       font-weight: 800;
-      font-size: 0.86rem;
       line-height: 1;
     }
 
     .note {
       display: block;
-      margin-top: 6px;
+      margin-top: 7px;
       color: var(--muted);
-      font-size: 0.95rem;
+      font-size: .92rem;
+    }
+
+    article + article {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      min-height: 27px;
+      margin-bottom: 5px;
+      padding: 3px 9px;
+      background: #f4e2d5;
+      border-radius: 999px;
+      color: var(--accent-dark);
+      font-size: .76rem;
+      font-weight: 900;
     }
 
     .flow-block {
-      margin: 18px 0 26px;
-      padding: 18px 20px;
-      border-left: 4px solid var(--accent-2);
+      margin: 16px 0 0;
+      padding: 15px;
       background: var(--green-soft);
+      border-left: 4px solid var(--green);
       border-radius: 0 var(--radius) var(--radius) 0;
     }
 
@@ -312,124 +329,77 @@
       margin-bottom: 0;
     }
 
-    .qa-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 18px;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      font-size: 0.96rem;
-    }
-
-    .qa-table caption {
-      text-align: left;
-      margin-bottom: 10px;
-      color: var(--muted);
-      font-weight: 700;
-    }
-
-    .qa-table th,
-    .qa-table td {
-      vertical-align: top;
-      padding: 16px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .qa-table th {
-      width: 34%;
-      background: #f5eadf;
-      color: #2b241e;
-      text-align: left;
-      font-weight: 800;
-    }
-
-    .qa-table tr:last-child th,
-    .qa-table tr:last-child td {
-      border-bottom: 0;
-    }
-
-    .summary-grid {
+    .qa-list {
       display: grid;
-      gap: 14px;
+      gap: 11px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
     }
 
-    .summary-item {
-      padding: 18px 20px;
-      background: var(--accent-soft);
-      border: 1px solid #e0cbbb;
-      border-radius: var(--radius);
-    }
-
-    .summary-item strong {
-      display: inline-block;
-      margin-right: 6px;
-      color: var(--accent);
-    }
-
-    .callout {
-      margin-top: 18px;
-      padding: 18px 20px;
-      background: #fbf6ef;
+    .qa-card {
+      margin: 0;
+      padding: 15px;
+      background: #fbf6ee;
       border: 1px solid var(--soft);
       border-radius: var(--radius);
     }
 
-    .section-label {
-      display: inline-flex;
-      align-items: center;
-      min-height: 28px;
-      margin-bottom: 6px;
-      padding: 3px 9px;
-      background: var(--accent-soft);
-      border-radius: 999px;
-      color: var(--accent);
-      font-size: 0.78rem;
-      font-weight: 800;
+    .qa-card h3 {
+      margin: 0 0 10px;
+      color: var(--accent-dark);
+      font-size: 1rem;
     }
 
-    .divider {
-      height: 1px;
-      margin: 22px 0;
-      background: var(--line);
+    .qa-card p {
+      margin: 0;
+      color: #312b25;
     }
 
-    @media (max-width: 900px) {
+    .summary-grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .summary-item {
+      padding: 15px;
+      background: #f4e2d5;
+      border: 1px solid #e5cdbd;
+      border-radius: var(--radius);
+    }
+
+    .summary-item strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--accent-dark);
+    }
+
+    @media (min-width: 720px) {
       .page {
-        width: min(100% - 22px, var(--max));
-        padding-top: 18px;
+        padding-left: 22px;
+        padding-right: 22px;
       }
 
-      .meta-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .layout {
-        grid-template-columns: 1fr;
+      .hero {
+        margin: 18px 0 0;
+        padding: 42px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
       }
 
       .toc {
-        position: static;
-      }
-    }
-
-    @media (max-width: 620px) {
-      body {
-        line-height: 1.68;
+        margin: 18px 0;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
       }
 
-      .hero,
       section {
-        border-radius: 0;
-      }
-
-      .meta-grid {
-        grid-template-columns: 1fr;
+        padding: 32px;
       }
 
       .argument-list li {
-        padding-left: 18px;
-        padding-top: 54px;
+        padding: 16px 18px 16px 58px;
       }
 
       .argument-list li::before {
@@ -437,69 +407,41 @@
         top: 18px;
       }
 
-      .qa-table,
-      .qa-table tbody,
-      .qa-table tr,
-      .qa-table th,
-      .qa-table td {
-        display: block;
-        width: 100%;
-      }
-
-      .qa-table th {
-        border-bottom: 0;
-      }
-
-      .qa-table td {
-        border-bottom: 1px solid var(--line);
+      .meta-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
       }
     }
 
     @media print {
       body {
-        background: #fff;
+        background: white;
       }
 
-      .page {
-        width: 100%;
-        padding: 0;
-      }
-
+      .page,
       .hero,
-      section,
       .toc {
-        box-shadow: none;
-      }
-
-      .layout {
-        display: block;
+        margin: 0;
+        width: 100%;
       }
 
       .toc {
         position: static;
-        margin: 20px 0;
       }
 
-      a {
-        color: inherit;
+      .hero,
+      .toc,
+      section {
+        box-shadow: none;
       }
     }
   </style>
-<meta property="og:type" content="article">
-<meta property="og:title" content="1부 옳고 그름, 우주의 의미를 푸는 실마리 요약">
-<meta property="og:description" content="저자의 핵심 주장(결론) 1. 인간 위에 서 있는 ‘객관적 도덕률(인간 본성의 법칙)’이 실재한다. 2. 인간은 그 도덕률을 알고도 일관되게 지키지 못한다. 3. 따라서 인간은 ‘위로’보다 먼저 자기 실패(죄/책임)와 ‘구원의 필요’를 직면해야 한다. 4. 이 도덕률은 우주의 배후가 단순한 물질/기계가 아니라 ‘도덕적 성">
-<meta property="og:url" content="https://teentopia00.github.io/teendocs/s/1h8b0od/">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="1부 옳고 그름, 우주의 의미를 푸는 실마리 요약">
-<meta name="twitter:description" content="저자의 핵심 주장(결론) 1. 인간 위에 서 있는 ‘객관적 도덕률(인간 본성의 법칙)’이 실재한다. 2. 인간은 그 도덕률을 알고도 일관되게 지키지 못한다. 3. 따라서 인간은 ‘위로’보다 먼저 자기 실패(죄/책임)와 ‘구원의 필요’를 직면해야 한다. 4. 이 도덕률은 우주의 배후가 단순한 물질/기계가 아니라 ‘도덕적 성">
-<link rel="canonical" href="https://teentopia00.github.io/teendocs/s/1h8b0od/">
 </head>
 <body>
   <div class="page">
     <header class="hero">
-      <p class="eyebrow">book-note · part-summary</p>
+      <p class="eyebrow">book-note · mobile summary</p>
       <h1>1부 옳고 그름, 우주의 의미를 푸는 실마리 요약</h1>
-      <p class="subtitle">C. S. 루이스의 『순전한 기독교』 1부 “옳고 그름, 우주의 의미를 푸는 실마리”에 대한 부별 요약 노트입니다.</p>
+      <p class="subtitle">C. S. 루이스의 『순전한 기독교』 1부를 모바일에서 읽기 쉽도록 핵심 주장, 논리 구조, 예상 반박으로 정리했습니다.</p>
 
       <div class="meta-grid" aria-label="문서 메타데이터">
         <div class="meta-card">
@@ -532,134 +474,131 @@
       </div>
     </header>
 
-    <div class="layout">
-      <nav class="toc" aria-label="목차">
-        <h2>목차</h2>
-        <ol>
-          <li><a href="#core-claim">저자의 핵심 주장</a></li>
-          <li><a href="#logic">논리적 근거</a></li>
-          <li><a href="#questions">반박 질문과 답변</a></li>
-          <li><a href="#one-line">한 줄 요약</a></li>
+    <nav class="toc" aria-label="목차">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#core-claim">핵심 주장</a></li>
+        <li><a href="#logic">논리 구조</a></li>
+        <li><a href="#questions">반박 답변</a></li>
+        <li><a href="#one-line">한 줄 요약</a></li>
+      </ol>
+    </nav>
+
+    <main>
+      <section id="core-claim">
+        <h2>저자의 핵심 주장</h2>
+        <ol class="argument-list">
+          <li><strong>인간 위에 서 있는 ‘객관적 도덕률(인간 본성의 법칙)’이 실재한다.</strong></li>
+          <li><strong>인간은 그 도덕률을 알고도 일관되게 지키지 못한다.</strong></li>
+          <li><strong>따라서 인간은 ‘위로’보다 먼저 자기 실패(죄/책임)와 ‘구원의 필요’를 직면해야 한다.</strong></li>
+          <li>
+            <strong>이 도덕률은 우주의 배후가 단순한 물질/기계가 아니라 ‘도덕적 성격(목적·의지)’을 가진 근원이 있을 가능성을 시사한다.</strong>
+            <span class="note">단, 1부만으로 기독교 모든 교리를 증명하려는 것은 아닙니다.</span>
+          </li>
         </ol>
-      </nav>
+      </section>
 
-      <main>
-        <section id="core-claim">
-          <h2>저자의 핵심 주장(결론)</h2>
-          <ol class="argument-list">
-            <li><strong>인간 위에 서 있는 ‘객관적 도덕률(인간 본성의 법칙)’이 실재한다.</strong></li>
-            <li><strong>인간은 그 도덕률을 알고도 일관되게 지키지 못한다.</strong></li>
-            <li><strong>따라서 인간은 ‘위로’보다 먼저 자기 실패(죄/책임)와 ‘구원의 필요’를 직면해야 한다.</strong></li>
-            <li>
-              <strong>이 도덕률은 우주의 배후가 단순한 물질/기계가 아니라 ‘도덕적 성격(목적·의지)’을 가진 근원이 있을 가능성을 시사한다.</strong>
-              <span class="note">(단, 1부만으로 기독교 모든 교리를 ‘증명’하려는 것은 아님)</span>
-            </li>
-          </ol>
-        </section>
+      <section id="logic">
+        <h2>논리적 근거</h2>
 
-        <section id="logic">
-          <h2>논리적 근거(전개 구조)</h2>
-
-          <article id="logic-a">
-            <span class="section-label">A</span>
-            <h3>출발: 일상 경험(다툼·비난·변명)</h3>
+        <article id="logic-a">
+          <span class="section-label">A</span>
+          <h3>출발: 일상 경험(다툼·비난·변명)</h3>
+          <ul>
+            <li><strong>관찰 1:</strong> 사람은 다툴 때 “난 싫어”가 아니라 “그건 <strong>불공평/부당/약속 위반</strong>”이라고 말하며 <strong>공통 기준</strong>에 호소한다.</li>
+            <li><strong>관찰 2:</strong> 사람은 그 기준을 어길 때 “내가 틀렸다”를 끝까지 인정하기보다 <strong>예외·사정(변명)</strong>을 댄다.</li>
+          </ul>
+          <div class="flow-block">
+            <strong>귀결</strong>
             <ul>
-              <li><strong>관찰 1:</strong> 사람은 다툴 때 “난 싫어”가 아니라 “그건 <strong>불공평/부당/약속 위반</strong>”이라고 말하며 <strong>공통 기준</strong>에 호소한다.</li>
-              <li><strong>관찰 2:</strong> 사람은 그 기준을 어길 때 “내가 틀렸다”를 끝까지 인정하기보다 <strong>예외·사정(변명)</strong>을 댄다.</li>
+              <li>우리는 <strong>도덕 기준을 안다</strong>. 비난과 항의가 그 증거다.</li>
+              <li>우리는 그 기준을 <strong>지키지 못함을 안다</strong>. 변명이 그 증거다.</li>
             </ul>
-            <div class="flow-block">
-              <strong>귀결:</strong>
-              <ul>
-                <li>우리는 <strong>도덕 기준을 안다</strong>(비난/항의가 그 증거).</li>
-                <li>우리는 그 기준을 <strong>지키지 못함을 안다</strong>(변명이 그 증거).</li>
-              </ul>
-            </div>
-          </article>
-
-          <article id="logic-b">
-            <span class="section-label">B</span>
-            <h3>도덕률의 성격: 본능·관습과 구별됨</h3>
-            <ul>
-              <li>본능은 서로 충돌할 수 있고, 도덕률은 그 충돌 속에서 “어느 본능을 따라야 하는가”를 <strong>판단/명령</strong>한다.</li>
-              <li>교육/문화로 배운 것이라 해도, “배웠다”는 사실이 곧 “임의적 관습”을 뜻하진 않는다(수학/추론 규칙처럼).</li>
-            </ul>
-          </article>
-
-          <article id="logic-c">
-            <span class="section-label">C</span>
-            <h3>도덕률의 실재성: ‘있는 것’이 아니라 ‘마땅한 것(ought)’</h3>
-            <ul>
-              <li>물리 법칙: <strong>사실 기술(사물이 실제로 어떻게 움직이는가)</strong></li>
-              <li>도덕률: <strong>규범 명령(사람이 어떻게 해야 하는가)</strong></li>
-              <li>우리는 손해가 없어도 배신·비겁함·불공정을 “그 자체로” 잘못이라 판단한다 → 도덕률은 단순 감정/불쾌감 환원이 어렵다.</li>
-            </ul>
-          </article>
-
-          <article id="logic-d">
-            <span class="section-label">D</span>
-            <h3>우주에 대한 함의</h3>
-            <ul>
-              <li>외부 관찰(과학)은 ‘사실’은 말해도 ‘의무’의 근원은 말하지 못한다.</li>
-              <li>인간 내부에서 경험되는 도덕 명령은 우주의 배후에 <strong>도덕적 성격을 띤 근원(목적/의지)</strong> 가능성을 시사.</li>
-            </ul>
-          </article>
-
-          <article id="logic-e">
-            <span class="section-label">E</span>
-            <h3>실존적 결론: 좋은 소식 이전에 불안</h3>
-            <ul>
-              <li>그 근원이 ‘선’을 요구한다면, 이미 그 선을 어긴 인간에게 그것은 먼저 <strong>위로가 아니라 불안/심판의 문제</strong>가 된다.</li>
-              <li>그래서 기독교의 구원 이야기는 “편안한 종교”가 아니라 “필요한 해결”로 들리기 위한 <strong>진단(인간의 실패)</strong>이 선행되어야 한다.</li>
-            </ul>
-          </article>
-        </section>
-
-        <section id="questions">
-          <h2>반박 질문(예상)과 답변(요지)</h2>
-
-          <table class="qa-table">
-            <caption>예상 반박과 루이스 논지의 요지</caption>
-            <tbody>
-              <tr>
-                <th scope="row">1) “도덕은 본능 아닌가?”</th>
-                <td><strong>답:</strong> 본능은 서로 충돌하며, 도덕률은 그 본능들을 <strong>평가</strong>하고 때로 약한 본능을 따라야 한다고 <strong>명령</strong>한다.<br>→ 도덕률 = 본능 그 자체가 아니라 <strong>본능 위의 기준</strong>.</td>
-              </tr>
-              <tr>
-                <th scope="row">2) “도덕은 사회가 만든 규칙(교육) 아닌가?”</th>
-                <td><strong>답:</strong> 배워서 알게 된다고 해서 임의적 관습이 되진 않는다. 수학/논리도 배우지만 객관적 타당성을 가진다.<br>→ 도덕률은 단순 사회 편의로 환원되기 어렵다.</td>
-              </tr>
-              <tr>
-                <th scope="row">3) “문화마다 도덕이 다른데 객관적 도덕이 있나?”</th>
-                <td><strong>답:</strong> 문화 차이를 ‘더 낫다/더 나쁘다’고 평가하려면 이미 비교할 <strong>기준</strong>이 필요하다.<br>→ 차이는 ‘부재’가 아니라 ‘적용/구체화의 차이’일 수 있다.</td>
-              </tr>
-              <tr>
-                <th scope="row">4) “도덕은 진화·사회심리로 설명 가능하지 않나?”</th>
-                <td><strong>답:</strong> 그런 설명은 도덕 감정이 <strong>어떻게 생겼는지(기원)</strong>는 말할 수 있지만, 왜 그것이 <strong>의무로서 옳은지(정당성)</strong>, 그리고 우리가 어떤 본능을 <strong>비판</strong>할 수 있는 기준이 무엇인지는 남는다.<br>→ 루이스의 핵심 질문은 정당성/규범성.</td>
-              </tr>
-              <tr>
-                <th scope="row">5) “객관적 도덕이 곧 ‘인격적 하나님’으로 이어지나?”</th>
-                <td><strong>답:</strong> 1부는 곧바로 기독교 교리를 증명하지 않는다. 다만 도덕률이 실재한다면 우주의 배후가 <strong>도덕적 성격의 근원</strong>일 가능성을 제시하고, 다음 단계(2부 이후)로 질문을 넘긴다.</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-
-        <section id="one-line">
-          <h2>한 줄 요약(요구한 형식으로 재정리)</h2>
-          <div class="summary-grid">
-            <div class="summary-item">
-              <strong>주장:</strong> 객관적 도덕률은 실재하며 우리는 그것을 어긴다 → 우주의 배후에 도덕적 근원이 있을 가능성, 그리고 인간은 구원이 필요하다.
-            </div>
-            <div class="summary-item">
-              <strong>근거:</strong> 다툼(기준을 앎) + 변명(어김을 앎) + 도덕률의 규범성(ought) + 본능/관습으로의 환원 실패.
-            </div>
-            <div class="summary-item">
-              <strong>반박/답:</strong> 본능·교육·문화차·진화설명·신 존재로의 도약 문제를 각각 “도덕률의 판단 기준성/정당성”으로 방어하고, 하나님 결론은 1부에서 ‘완결’이 아니라 ‘다음 질문’으로 둔다.
-            </div>
           </div>
-        </section>
-      </main>
-    </div>
+        </article>
+
+        <article id="logic-b">
+          <span class="section-label">B</span>
+          <h3>도덕률의 성격: 본능·관습과 구별됨</h3>
+          <ul>
+            <li>본능은 서로 충돌할 수 있고, 도덕률은 그 충돌 속에서 “어느 본능을 따라야 하는가”를 <strong>판단/명령</strong>한다.</li>
+            <li>교육과 문화로 배운 것이라 해도 “배웠다”는 사실이 곧 “임의적 관습”을 뜻하진 않는다. 수학과 추론 규칙처럼 배워도 객관성을 가질 수 있다.</li>
+          </ul>
+        </article>
+
+        <article id="logic-c">
+          <span class="section-label">C</span>
+          <h3>도덕률의 실재성: ‘있는 것’이 아니라 ‘마땅한 것’</h3>
+          <ul>
+            <li>물리 법칙은 <strong>사물이 실제로 어떻게 움직이는가</strong>를 말한다.</li>
+            <li>도덕률은 <strong>사람이 어떻게 해야 하는가</strong>를 말한다.</li>
+            <li>우리는 손해가 없어도 배신·비겁함·불공정을 “그 자체로” 잘못이라 판단한다. 그래서 도덕률은 단순 감정이나 불쾌감으로 환원되기 어렵다.</li>
+          </ul>
+        </article>
+
+        <article id="logic-d">
+          <span class="section-label">D</span>
+          <h3>우주에 대한 함의</h3>
+          <ul>
+            <li>외부 관찰, 곧 과학은 ‘사실’은 말해도 ‘의무’의 근원은 말하지 못한다.</li>
+            <li>인간 내부에서 경험되는 도덕 명령은 우주의 배후에 <strong>도덕적 성격을 띤 근원(목적/의지)</strong>이 있을 가능성을 시사한다.</li>
+          </ul>
+        </article>
+
+        <article id="logic-e">
+          <span class="section-label">E</span>
+          <h3>실존적 결론: 좋은 소식 이전에 불안</h3>
+          <ul>
+            <li>그 근원이 ‘선’을 요구한다면, 이미 그 선을 어긴 인간에게 그것은 먼저 <strong>위로가 아니라 불안/심판의 문제</strong>가 된다.</li>
+            <li>그래서 기독교의 구원 이야기는 “편안한 종교”가 아니라 “필요한 해결”로 들리기 위해 <strong>인간의 실패라는 진단</strong>이 먼저 제시되어야 한다.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="questions">
+        <h2>반박 질문과 답변</h2>
+        <ol class="qa-list">
+          <li class="qa-card">
+            <h3>“도덕은 본능 아닌가?”</h3>
+            <p><strong>답:</strong> 본능은 서로 충돌하며, 도덕률은 그 본능들을 <strong>평가</strong>하고 때로 약한 본능을 따라야 한다고 <strong>명령</strong>한다. 도덕률은 본능 그 자체가 아니라 <strong>본능 위의 기준</strong>이다.</p>
+          </li>
+          <li class="qa-card">
+            <h3>“도덕은 사회가 만든 규칙 아닌가?”</h3>
+            <p><strong>답:</strong> 배워서 알게 된다고 해서 임의적 관습이 되지는 않는다. 수학과 논리도 배우지만 객관적 타당성을 가진다. 도덕률은 단순 사회 편의로 환원되기 어렵다.</p>
+          </li>
+          <li class="qa-card">
+            <h3>“문화마다 도덕이 다른데 객관적 도덕이 있나?”</h3>
+            <p><strong>답:</strong> 문화 차이를 ‘더 낫다/더 나쁘다’고 평가하려면 이미 비교할 <strong>기준</strong>이 필요하다. 차이는 ‘도덕률의 부재’가 아니라 ‘적용과 구체화의 차이’일 수 있다.</p>
+          </li>
+          <li class="qa-card">
+            <h3>“도덕은 진화·사회심리로 설명 가능하지 않나?”</h3>
+            <p><strong>답:</strong> 그런 설명은 도덕 감정이 <strong>어떻게 생겼는지</strong>는 말할 수 있지만, 왜 그것이 <strong>의무로서 옳은지</strong>, 그리고 어떤 본능을 <strong>비판</strong>할 수 있는 기준이 무엇인지는 남는다.</p>
+          </li>
+          <li class="qa-card">
+            <h3>“객관적 도덕이 곧 ‘인격적 하나님’으로 이어지나?”</h3>
+            <p><strong>답:</strong> 1부는 곧바로 기독교 교리를 증명하지 않는다. 다만 도덕률이 실재한다면 우주의 배후가 <strong>도덕적 성격의 근원</strong>일 가능성을 제시하고, 다음 단계로 질문을 넘긴다.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section id="one-line">
+        <h2>한 줄 요약</h2>
+        <div class="summary-grid">
+          <div class="summary-item">
+            <strong>주장</strong>
+            객관적 도덕률은 실재하며 우리는 그것을 어긴다. 그래서 우주의 배후에 도덕적 근원이 있을 가능성과 인간에게 구원이 필요하다는 문제가 드러난다.
+          </div>
+          <div class="summary-item">
+            <strong>근거</strong>
+            다툼은 기준을 안다는 증거이고, 변명은 기준을 어겼음을 안다는 증거다. 여기에 도덕률의 규범성과 본능/관습 환원의 한계가 더해진다.
+          </div>
+          <div class="summary-item">
+            <strong>반박/답</strong>
+            본능·교육·문화차·진화설명·신 존재로의 도약 문제를 “도덕률의 판단 기준성/정당성”으로 방어하고, 하나님 결론은 1부에서 완결이 아니라 다음 질문으로 둔다.
+          </div>
+        </div>
+      </section>
+    </main>
   </div>
 </body>
 </html>
