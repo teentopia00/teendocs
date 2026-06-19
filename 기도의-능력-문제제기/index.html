@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  
+  
+  <title>E. M. 바운즈 『기도의 능력』 핵심 문제와 전체 논리 구조</title>
+  <style>
+    :root {
+      --bg: #f6f3ee;
+      --paper: #fffdf9;
+      --ink: #26211b;
+      --muted: #6d6257;
+      --soft: #ece4da;
+      --line: #ded2c4;
+      --accent: #8b3f2f;
+      --accent-2: #2f6657;
+      --accent-soft: #f3dfd8;
+      --nav-bg: #fff8ef;
+      --shadow: 0 18px 50px rgba(65, 45, 25, 0.10);
+      --radius: 8px;
+      --content: 760px;
+      --side: 260px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top left, rgba(139, 63, 47, 0.08), transparent 34rem),
+        linear-gradient(180deg, #faf7f1 0%, var(--bg) 100%);
+      color: var(--ink);
+      font-family: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+      line-height: 1.78;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 40px 0 64px;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: var(--side) minmax(0, var(--content));
+      gap: 36px;
+      align-items: start;
+    }
+
+    header {
+      grid-column: 1 / -1;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: clamp(28px, 5vw, 56px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 6px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--accent);
+      font-size: 0.86rem;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 900px;
+      color: #211a14;
+      font-family: Georgia, "Noto Serif KR", "Nanum Myeongjo", serif;
+      font-size: clamp(2rem, 5vw, 4rem);
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      margin: 24px 0 0;
+      max-width: 850px;
+      color: var(--muted);
+      font-size: clamp(1.04rem, 2vw, 1.18rem);
+      line-height: 1.9;
+    }
+
+    .lead strong {
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    nav {
+      position: sticky;
+      top: 24px;
+      background: var(--nav-bg);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: 0 12px 36px rgba(65, 45, 25, 0.07);
+    }
+
+    nav h2 {
+      margin: 0 0 12px;
+      font-size: 0.9rem;
+      color: var(--accent);
+      letter-spacing: 0;
+    }
+
+    nav ol {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 8px;
+    }
+
+    nav a {
+      display: block;
+      text-decoration: none;
+      color: #3c332b;
+      border-left: 3px solid transparent;
+      padding: 7px 8px 7px 11px;
+      font-size: 0.94rem;
+      line-height: 1.45;
+      border-radius: 4px;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      background: #f2e7dc;
+      border-left-color: var(--accent);
+      outline: none;
+    }
+
+    main {
+      display: grid;
+      gap: 22px;
+    }
+
+    section {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: clamp(22px, 4vw, 34px);
+      box-shadow: 0 14px 36px rgba(65, 45, 25, 0.07);
+      scroll-margin-top: 28px;
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      color: #211a14;
+      font-family: Georgia, "Noto Serif KR", "Nanum Myeongjo", serif;
+      font-size: clamp(1.38rem, 2.4vw, 2rem);
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 0 0 14px;
+      color: var(--accent);
+      font-size: clamp(1.08rem, 2vw, 1.28rem);
+      line-height: 1.45;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    p + p {
+      margin-top: 16px;
+    }
+
+    strong {
+      color: #211a14;
+      font-weight: 800;
+    }
+
+    .intro {
+      border-left: 5px solid var(--accent);
+      background: linear-gradient(90deg, var(--accent-soft), var(--paper) 52%);
+    }
+
+    .axis {
+      display: grid;
+      gap: 18px;
+    }
+
+    .number {
+      display: inline-grid;
+      place-items: center;
+      width: 2rem;
+      height: 2rem;
+      margin-right: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: white;
+      font-size: 0.95rem;
+      font-weight: 800;
+      vertical-align: 2px;
+    }
+
+    .architecture {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 6px;
+      min-width: 620px;
+      font-size: 0.96rem;
+      background: #fffaf3;
+      border: 1px solid var(--line);
+    }
+
+    th,
+    td {
+      padding: 16px 18px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+    }
+
+    th {
+      width: 26%;
+      color: var(--accent);
+      background: #f4e9dc;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    tr:last-child th,
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .conclusion {
+      background:
+        linear-gradient(135deg, rgba(47, 102, 87, 0.10), transparent 55%),
+        var(--paper);
+      border-color: #c7d4cc;
+    }
+
+    .conclusion h2 {
+      color: var(--accent-2);
+    }
+
+    .copy-block {
+      margin-top: 18px;
+      padding: 18px 20px;
+      border: 1px solid #c7d4cc;
+      border-left: 5px solid var(--accent-2);
+      border-radius: var(--radius);
+      background: #f5faf7;
+      color: #233f38;
+      font-weight: 700;
+    }
+
+    footer {
+      grid-column: 2;
+      color: var(--muted);
+      font-size: 0.88rem;
+      padding: 8px 2px 0;
+    }
+
+    @media (max-width: 900px) {
+      .page {
+        width: min(100% - 24px, 760px);
+        padding-top: 20px;
+      }
+
+      .layout {
+        display: block;
+      }
+
+      header {
+        margin-bottom: 18px;
+      }
+
+      nav {
+        position: static;
+        margin-bottom: 18px;
+      }
+
+      nav ol {
+        grid-template-columns: 1fr;
+      }
+
+      main {
+        gap: 18px;
+      }
+
+      footer {
+        padding-top: 18px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      body {
+        line-height: 1.72;
+      }
+
+      .page {
+        width: calc(100% - 18px);
+      }
+
+      header,
+      section,
+      nav {
+        border-radius: 7px;
+      }
+
+      header {
+        padding: 26px 20px;
+      }
+
+      section {
+        padding: 22px 18px;
+      }
+
+      table {
+        font-size: 0.9rem;
+      }
+
+      th,
+      td {
+        padding: 13px 14px;
+      }
+    }
+  </style>
+<meta property="og:type" content="article">
+<meta property="og:title" content="기도의-능력-문제제기">
+<meta property="og:description" content="E. M. 바운즈의 『기도의 능력』 전체 논리 구조에서 저자가 가장 먼저, 그리고 가장 강력하게 진단하는 &#39;핵심 문제(The Problem)&#39;는 &quot;영적 능력의 자리를 인간적인 방법론과 지성이 대체해 버린 현대 교회의 비극&quot;으로 요약할 수 있습니다. 저자는 이 책 전체를 통해 &#39;생명을 살리는 참된 사역(결과)&#39;을 이끌어내기">
+<meta property="og:url" content="https://teentopia00.github.io/teendocs/s/p3wf6v/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="기도의-능력-문제제기">
+<meta name="twitter:description" content="E. M. 바운즈의 『기도의 능력』 전체 논리 구조에서 저자가 가장 먼저, 그리고 가장 강력하게 진단하는 &#39;핵심 문제(The Problem)&#39;는 &quot;영적 능력의 자리를 인간적인 방법론과 지성이 대체해 버린 현대 교회의 비극&quot;으로 요약할 수 있습니다. 저자는 이 책 전체를 통해 &#39;생명을 살리는 참된 사역(결과)&#39;을 이끌어내기">
+<link rel="canonical" href="https://teentopia00.github.io/teendocs/s/p3wf6v/">
+</head>
+<body>
+  <div class="page">
+    <div class="layout">
+      <header>
+        <p class="eyebrow">Faithful Note · Editorial Reading Page</p>
+        <h1>E. M. 바운즈의 『기도의 능력』 전체 논리 구조에서 보는 핵심 문제</h1>
+        <p class="lead">
+          저자가 가장 먼저, 그리고 가장 강력하게 진단하는 <strong>'핵심 문제(The Problem)'</strong>는
+          <strong>"영적 능력의 자리를 인간적인 방법론과 지성이 대체해 버린 현대 교회의 비극"</strong>으로 요약할 수 있습니다.
+        </p>
+      </header>
+
+      <nav aria-labelledby="toc-title">
+        <h2 id="toc-title">문서 탐색</h2>
+        <ol>
+          <li><a href="#overview">핵심 문제 개요</a></li>
+          <li><a href="#axis-1">1. 기계적 방법론</a></li>
+          <li><a href="#axis-2">2. 문자의 설교와 자아</a></li>
+          <li><a href="#axis-3">3. 지적 교만과 기도의 부재</a></li>
+          <li><a href="#architecture">전체 논리 구조</a></li>
+          <li><a href="#conclusion">최종 문제 진단</a></li>
+        </ol>
+      </nav>
+
+      <main>
+        <section id="overview" class="intro">
+          <h2>핵심 문제 개요</h2>
+          <p>
+            저자는 이 책 전체를 통해 '생명을 살리는 참된 사역(결과)'을 이끌어내기 위해
+            '기도하는 사람(원인)'이 필요하다는 논리를 전개하는데, 이 구조의 출발점이 되는 문제의식은
+            다음과 같은 세 가지 축으로 제시됩니다.
+          </p>
+        </section>
+
+        <section id="axis-1" class="axis">
+          <h2><span class="number">1</span>사람과 성령을 대체해 버린 '기계적 방법론'</h2>
+          <p>
+            바운즈가 지적하는 첫 번째 핵심 문제는 교회가 본질을 잃어버리고 시스템에 집착하고 있다는 점입니다.
+            우리는 효과적인 복음 전도와 교회 성장을 위해 끊임없이 '새로운 방법, 새로운 계획, 새로운 조직'을
+            궁리하는 데 몰두합니다.
+          </p>
+          <p>
+            그러나 기계 문명의 시대가 잊어버리기 쉬운 가장 치명적인 진리는, 하나님은 기계나 기발한 방법론이
+            아니라 '성령이 쓰실 수 있는 사람'을 필요로 하신다는 사실입니다. 교회가 하나님의 방법인
+            '사람(기도의 사람)'을 간과하고 인간적인 시스템에 의존하는 현상을 저자는 모든 영적 침체의
+            근본 원인으로 봅니다.
+          </p>
+        </section>
+
+        <section id="axis-2" class="axis">
+          <h2><span class="number">2</span>생명이 없는 '문자의 설교'와 깨어지지 않은 '자아'</h2>
+          <p>
+            논리 구조의 두 번째 문제의식은 강단에서 선포되는 메시지의 타락입니다. 저자는 아무리 교리적으로
+            흠 잡을 데 없이 정통적이고 논리정연하며 수사학적으로 훌륭하다 할지라도, 성령의 기름부음이 없는
+            설교는 영혼을 살리지 못하고 오히려 '죽이는 설교(의문의 설교)'가 된다고 강하게 비판합니다.
+          </p>
+          <p>
+            이러한 죽은 설교가 나오는 원인은 설교자 내면의 '자아'가 십자가에 못 박히지 않고 지성소에서
+            왕 노릇 하고 있기 때문입니다. 즉, 하나님 앞에 완전히 굴복하고 파산하지 않은 내적 교만과 자립심이
+            신령한 전류가 흐르지 못하게 막는 영적 부도체(不導體) 역할을 하고 있다는 것이 저자가 지적하는
+            치명적인 문제점입니다.
+          </p>
+        </section>
+
+        <section id="axis-3" class="axis">
+          <h2><span class="number">3</span>'마음'을 잃고 '머리'만 훈련하는 지적 교만과 기도의 부재</h2>
+          <p>
+            이러한 현상들의 바탕에는 목회자와 성도들의 심각한 '기도 부재'가 자리 잡고 있습니다. 저자는 오늘날
+            사역자들이 설교의 형식과 감각, 지적 산물 등 '머리를 준비하는 일'에는 힘을 쏟으면서, 정작 가장
+            중요한 '마음을 준비하는 일'은 잃어버렸다고 탄식합니다.
+          </p>
+          <p>
+            지식의 부족이 아니라 거룩의 부족이 진짜 결함임에도 불구하고, 많은 이들이 거의 기도하지 않거나
+            하루 일과 중 잠깐 해치우는 형태, 생명력 없이 길고 산만한 '직업적인 기도'만을 드리고 있습니다.
+            바운즈는 "거의 기도하지 않는 것"을 일종의 위선이자 미치광이의 짓이라고 부르며, 기도가 없는 시대는
+            결코 하나님의 능력의 모델을 가질 수 없다고 경고합니다.
+          </p>
+        </section>
+
+        <section id="architecture" class="architecture">
+          <h2>전체 논리 구조(Architecture) 속에서의 의미</h2>
+          <p>
+            이러한 핵심 문제 제기는 E. M. 바운즈의 논리 전개에 있어 결정적인 도약대가 됩니다.
+          </p>
+
+          <table aria-label="E. M. 바운즈의 기도의 능력 전체 논리 구조">
+            <tbody>
+              <tr>
+                <th scope="row">문제<br>(Problem)</th>
+                <td>인간적인 방법론, 지성에 의존한 죽은 설교, 기도의 부재로 인한 영적 파산.</td>
+              </tr>
+              <tr>
+                <th scope="row">해결<br>(Solution)</th>
+                <td>결국 위대한 인재나 학문이 아닌, 은밀한 골방에서 오랜 시간 하나님과 씨름하며 성령의 '기름부으심'을 받는 것만이 유일한 대안임.</td>
+              </tr>
+              <tr>
+                <th scope="row">결론<br>(Action)</th>
+                <td>그러므로 사역의 성공을 좌우하는 것은 '머리'나 '조직'이 아니라 철저히 깨어진 '마음'을 가진 '기도의 용사'가 되는 것.</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="conclusion" class="conclusion">
+          <h2>최종 문제 진단</h2>
+          <p>
+            결국 저자가 제기하는 핵심 문제는 단순한 '시간표상의 기도 부족'을 꼬집는 것이 아니라,
+            <strong>하나님의 능력을 철저히 의지하지 않고 인간의 힘으로 영적인 일을 해내려 하는 교만과 세속화</strong>를
+            직격하는 것입니다.
+          </p>
+          <div class="copy-block">
+            핵심 요지: 영적 능력의 자리를 인간적인 방법론과 지성이 대체해 버린 현대 교회의 비극.
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <p>Standalone HTML · sanitized static document · no scripts or external assets.</p>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
