@@ -1,0 +1,12 @@
+# 피드백-감정-방어기능-접근방법
+
+This folder is a static MarkTL HTML export bundle.
+
+- Source note: sync/Clippings/journal/피드백_감정_방어기능_접근방법.md
+- Artifact goal: read
+- Artifact type: faithful-note
+- Template: editorial
+- Preview security: sanitized
+
+Publish this folder with GitHub Pages, S3/R2, Netlify, Vercel, or any static host.
+Do not publish it if the source note contains private vault content.
