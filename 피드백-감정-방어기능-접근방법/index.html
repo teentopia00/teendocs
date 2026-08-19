@@ -1,0 +1,1135 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  
+  
+  
+  
+  
+  <title>피드백에서 감정의 방어적 기능과 감정 접근 방법</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --canvas: #f4f6f4;
+      --paper: #ffffff;
+      --paper-soft: #f8faf8;
+      --ink: #18231f;
+      --ink-soft: #53615b;
+      --muted: #74817b;
+      --line: #dce4df;
+      --line-strong: #c8d5ce;
+      --accent: #256b52;
+      --accent-dark: #174b3a;
+      --accent-soft: #e7f2ed;
+      --blue: #315d7e;
+      --blue-soft: #eaf2f7;
+      --amber: #8a5b18;
+      --amber-soft: #fff4dc;
+      --red: #984d48;
+      --red-soft: #fbedeb;
+      --shadow: 0 18px 50px rgba(29, 48, 40, 0.08);
+      --radius: 18px;
+      --content-width: 820px;
+      --sidebar-width: 250px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 2rem;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(37, 107, 82, 0.08), transparent 28rem),
+        var(--canvas);
+      color: var(--ink);
+      font-family:
+        Pretendard, "Noto Sans KR", "Apple SD Gothic Neo",
+        "Malgun Gothic", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      font-size: 17px;
+      line-height: 1.8;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-color: rgba(37, 107, 82, 0.35);
+      text-underline-offset: 0.18em;
+    }
+
+    a:hover,
+    a:focus-visible {
+      color: var(--accent-dark);
+      text-decoration-color: currentColor;
+    }
+
+    :focus-visible {
+      outline: 3px solid rgba(37, 107, 82, 0.28);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    .page-shell {
+      display: grid;
+      grid-template-columns: minmax(0, var(--sidebar-width)) minmax(0, var(--content-width));
+      justify-content: center;
+      align-items: start;
+      gap: 3rem;
+      padding: 3rem 2rem 5rem;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 2rem;
+      display: grid;
+      gap: 1.25rem;
+      max-height: calc(100vh - 4rem);
+      overflow: auto;
+      scrollbar-width: thin;
+    }
+
+    .sidebar-card {
+      padding: 1.25rem;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.84);
+      box-shadow: 0 8px 30px rgba(29, 48, 40, 0.05);
+      backdrop-filter: blur(12px);
+    }
+
+    .sidebar-title {
+      margin: 0 0 0.8rem;
+      color: var(--muted);
+      font-size: 0.73rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .toc {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .toc li + li {
+      margin-top: 0.35rem;
+    }
+
+    .toc a {
+      display: block;
+      padding: 0.38rem 0.5rem;
+      border-radius: 8px;
+      color: var(--ink-soft);
+      font-size: 0.86rem;
+      line-height: 1.45;
+      text-decoration: none;
+    }
+
+    .toc a:hover,
+    .toc a:focus-visible {
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+    }
+
+    .toc .toc-sub {
+      padding-left: 0.9rem;
+    }
+
+    .toc .toc-sub a {
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .document {
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      position: relative;
+      padding: 4.5rem 4.25rem 3rem;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(145deg, rgba(231, 242, 237, 0.96), rgba(255, 255, 255, 0.95) 62%),
+        var(--paper);
+    }
+
+    .hero::after {
+      position: absolute;
+      top: -5rem;
+      right: -5rem;
+      width: 18rem;
+      height: 18rem;
+      border: 2.5rem solid rgba(37, 107, 82, 0.06);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .eyebrow {
+      position: relative;
+      z-index: 1;
+      margin: 0 0 1rem;
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+    }
+
+    h1 {
+      position: relative;
+      z-index: 1;
+      max-width: 690px;
+      margin: 0;
+      color: #12382c;
+      font-size: clamp(2.1rem, 5vw, 3.65rem);
+      font-weight: 850;
+      letter-spacing: -0.045em;
+      line-height: 1.16;
+    }
+
+    .hero-summary {
+      position: relative;
+      z-index: 1;
+      max-width: 650px;
+      margin: 1.4rem 0 0;
+      color: var(--ink-soft);
+      font-size: 1.03rem;
+    }
+
+    .metadata {
+      display: flex;
+      position: relative;
+      z-index: 1;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin: 1.75rem 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .metadata li {
+      padding: 0.32rem 0.68rem;
+      border: 1px solid rgba(37, 107, 82, 0.16);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.66);
+      color: var(--ink-soft);
+      font-size: 0.75rem;
+      font-weight: 650;
+    }
+
+    .metadata .date {
+      color: var(--accent-dark);
+    }
+
+    .content {
+      padding: 1rem 4.25rem 4.5rem;
+    }
+
+    section {
+      padding-top: 3.5rem;
+    }
+
+    section + section {
+      margin-top: 1rem;
+      border-top: 1px solid var(--line);
+    }
+
+    h2,
+    h3 {
+      scroll-margin-top: 2rem;
+      color: var(--ink);
+      letter-spacing: -0.035em;
+    }
+
+    h2 {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin: 0 0 1.6rem;
+      font-size: clamp(1.55rem, 3vw, 2rem);
+      line-height: 1.35;
+    }
+
+    h2 .number {
+      display: inline-grid;
+      flex: 0 0 auto;
+      width: 2rem;
+      height: 2rem;
+      place-items: center;
+      border-radius: 8px;
+      background: var(--accent);
+      color: white;
+      font-size: 0.9rem;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 2.6rem 0 1rem;
+      font-size: 1.25rem;
+      line-height: 1.45;
+    }
+
+    p {
+      margin: 0.8rem 0;
+    }
+
+    strong {
+      color: #102e25;
+      font-weight: 800;
+    }
+
+    .callout {
+      margin: 1.5rem 0 2rem;
+      padding: 1.35rem 1.5rem;
+      border: 1px solid var(--line-strong);
+      border-left: 5px solid var(--accent);
+      border-radius: 4px 14px 14px 4px;
+      background: var(--paper-soft);
+    }
+
+    .callout p:first-child {
+      margin-top: 0;
+    }
+
+    .callout p:last-child {
+      margin-bottom: 0;
+    }
+
+    .callout.info {
+      border-color: #cbdde8;
+      border-left-color: var(--blue);
+      background: var(--blue-soft);
+    }
+
+    .callout-title {
+      display: block;
+      margin-bottom: 0.35rem;
+      color: var(--blue);
+      font-size: 0.83rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+
+    .key-insight {
+      border-left-color: var(--accent);
+      background: var(--accent-soft);
+      font-size: 1.03rem;
+    }
+
+    .table-wrap {
+      margin: 1.35rem 0 1.7rem;
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--paper);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    th,
+    td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      background: #edf4f0;
+      color: var(--accent-dark);
+      font-size: 0.79rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #fafcfb;
+    }
+
+    .emotion-defensive {
+      color: var(--red);
+    }
+
+    .emotion-learning {
+      color: var(--accent);
+    }
+
+    ul {
+      margin: 0.9rem 0 0;
+      padding-left: 1.25rem;
+    }
+
+    li {
+      padding-left: 0.25rem;
+    }
+
+    li + li {
+      margin-top: 0.45rem;
+    }
+
+    li::marker {
+      color: var(--accent);
+    }
+
+    .principles {
+      display: grid;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .principle {
+      padding: 1.45rem 1.5rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(145deg, #fff, #fafcfb);
+    }
+
+    .principle h3 {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.72rem;
+      margin: 0 0 0.75rem;
+      font-size: 1.08rem;
+    }
+
+    .principle-number {
+      display: inline-grid;
+      flex: 0 0 2rem;
+      height: 2rem;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0;
+    }
+
+    .principle p,
+    .principle ul {
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+    }
+
+    .principle p:last-child,
+    .principle ul:last-child {
+      margin-bottom: 0;
+    }
+
+    .example-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+      margin: 1rem 0;
+    }
+
+    .example {
+      padding: 0.85rem 1rem;
+      border-radius: 10px;
+      font-size: 0.88rem;
+    }
+
+    .example.bad {
+      background: var(--red-soft);
+      color: #713733;
+    }
+
+    .example.good {
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+    }
+
+    .example-label {
+      display: block;
+      margin-bottom: 0.2rem;
+      font-size: 0.7rem;
+      font-weight: 850;
+      letter-spacing: 0.08em;
+    }
+
+    .flow {
+      margin: 1.7rem 0;
+      padding: 1.5rem;
+      overflow-x: auto;
+      border: 1px solid #cadbd3;
+      border-radius: var(--radius);
+      background: #102d24;
+      color: #eaf5f0;
+    }
+
+    .flow ol {
+      display: flex;
+      min-width: 640px;
+      align-items: stretch;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .flow li {
+      display: flex;
+      position: relative;
+      flex: 1;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 112px;
+      padding: 0.85rem 1.2rem 0.85rem 0;
+    }
+
+    .flow li:not(:last-child)::after {
+      position: absolute;
+      top: 50%;
+      right: 0.42rem;
+      color: #78b99e;
+      font-size: 1.15rem;
+      content: "→";
+      transform: translateY(-50%);
+    }
+
+    .flow-name {
+      color: #ffffff;
+      font-size: 0.79rem;
+      font-weight: 850;
+      letter-spacing: 0.055em;
+    }
+
+    .flow-detail {
+      margin-top: 0.3rem;
+      color: #b9d5c9;
+      font-size: 0.7rem;
+      line-height: 1.45;
+    }
+
+    .flow-caption {
+      margin: 1rem 0 0;
+      color: #bdd5cb;
+      font-size: 0.78rem;
+    }
+
+    .summary-card {
+      margin-top: 1rem;
+      padding: 1.7rem 1.8rem;
+      border: 1px solid #c9ddd4;
+      border-radius: var(--radius);
+      background:
+        linear-gradient(135deg, rgba(231, 242, 237, 0.95), rgba(248, 250, 248, 0.95));
+      color: var(--accent-dark);
+      font-size: 1.08rem;
+      line-height: 1.85;
+    }
+
+    .summary-card p {
+      margin: 0;
+    }
+
+    .related-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin: 1rem 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .related-list li {
+      margin: 0;
+      padding: 0;
+    }
+
+    .note-link {
+      display: block;
+      height: 100%;
+      padding: 1rem 1.1rem;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--paper-soft);
+      color: var(--accent-dark);
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .note-link:hover,
+    .note-link:focus-visible {
+      border-color: #acc9bc;
+      background: var(--accent-soft);
+    }
+
+    .note-link::before {
+      margin-right: 0.45rem;
+      color: var(--accent);
+      content: "↗";
+    }
+
+    .document-footer {
+      padding: 1.35rem 4.25rem;
+      border-top: 1px solid var(--line);
+      background: var(--paper-soft);
+      color: var(--muted);
+      font-size: 0.75rem;
+    }
+
+    .mobile-nav {
+      display: none;
+    }
+
+    @media (max-width: 1080px) {
+      .page-shell {
+        grid-template-columns: minmax(0, var(--content-width));
+      }
+
+      .sidebar {
+        display: none;
+      }
+
+      .mobile-nav {
+        display: block;
+        margin: 0 0 2rem;
+        padding: 1rem 1.15rem;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: var(--paper-soft);
+      }
+
+      .mobile-nav summary {
+        color: var(--accent-dark);
+        font-size: 0.9rem;
+        font-weight: 800;
+        cursor: pointer;
+      }
+
+      .mobile-nav .toc {
+        margin-top: 0.8rem;
+      }
+    }
+
+    @media (max-width: 700px) {
+      body {
+        font-size: 16px;
+        line-height: 1.75;
+        word-break: normal;
+      }
+
+      .page-shell {
+        display: block;
+        padding: 0;
+      }
+
+      .document {
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      .hero {
+        padding: 3.25rem 1.35rem 2.4rem;
+      }
+
+      .content {
+        padding: 0 1.35rem 3.5rem;
+      }
+
+      section {
+        padding-top: 2.7rem;
+      }
+
+      h1 {
+        font-size: 2.25rem;
+      }
+
+      h2 {
+        align-items: flex-start;
+        font-size: 1.55rem;
+      }
+
+      .example-pair,
+      .related-list {
+        grid-template-columns: 1fr;
+      }
+
+      .principle {
+        padding: 1.25rem 1.15rem;
+      }
+
+      th,
+      td {
+        min-width: 145px;
+        padding: 0.75rem 0.8rem;
+      }
+
+      th:first-child,
+      td:first-child {
+        min-width: 105px;
+      }
+
+      .document-footer {
+        padding: 1.25rem 1.35rem;
+      }
+    }
+
+    @media print {
+      @page {
+        margin: 18mm;
+      }
+
+      body {
+        background: white;
+        font-size: 11pt;
+      }
+
+      .page-shell {
+        display: block;
+        padding: 0;
+      }
+
+      .sidebar,
+      .mobile-nav {
+        display: none;
+      }
+
+      .document {
+        border: 0;
+        box-shadow: none;
+      }
+
+      .hero,
+      .content,
+      .document-footer {
+        padding-right: 0;
+        padding-left: 0;
+      }
+
+      .principle,
+      .callout,
+      .table-wrap,
+      .flow,
+      .summary-card {
+        break-inside: avoid;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+  </style>
+<meta property="og:type" content="article">
+<meta property="og:title" content="피드백에서 감정의 방어적 기능과 감정 접근 방법">
+<meta property="og:description" content="[!info] 📌 본 노트의 출처 [[Great Leaders Know Which Emotions Their Feedback Will Trigger]] (Zhao, Olivera &amp; Edmondson, HBR 2026) 원문을 바탕으로, 피드백에서 감정의 방어적 기능과 그에 대한 감정 접근 방법(처리 원칙) 을 정리한 ">
+<meta property="og:url" content="https://teentopia00.github.io/teendocs/s/1ad1d4j/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="피드백에서 감정의 방어적 기능과 감정 접근 방법">
+<meta name="twitter:description" content="[!info] 📌 본 노트의 출처 [[Great Leaders Know Which Emotions Their Feedback Will Trigger]] (Zhao, Olivera &amp; Edmondson, HBR 2026) 원문을 바탕으로, 피드백에서 감정의 방어적 기능과 그에 대한 감정 접근 방법(처리 원칙) 을 정리한 ">
+<link rel="canonical" href="https://teentopia00.github.io/teendocs/s/1ad1d4j/">
+</head>
+<body>
+  <div class="page-shell">
+    <aside class="sidebar" aria-label="문서 탐색">
+      <nav class="sidebar-card" aria-labelledby="toc-title">
+        <h2 class="sidebar-title" id="toc-title">Contents</h2>
+        <ol class="toc">
+          <li><a href="#defensive-function">1. 피드백에서 감정의 방어적 기능</a></li>
+          <li class="toc-sub"><a href="#defensive-emotions">1-1. 방어를 유발하는 감정</a></li>
+          <li class="toc-sub"><a href="#learning-emotions">1-2. 학습을 만드는 감정</a></li>
+          <li><a href="#approach">2. 감정에 대한 접근 방법</a></li>
+          <li class="toc-sub"><a href="#principle-1">원칙 ① 주의의 방향</a></li>
+          <li class="toc-sub"><a href="#principle-2">원칙 ② 행동에 닻 내리기</a></li>
+          <li class="toc-sub"><a href="#principle-3">원칙 ③ 공정성</a></li>
+          <li class="toc-sub"><a href="#principle-4">원칙 ④ 통제감</a></li>
+          <li class="toc-sub"><a href="#principle-5">원칙 ⑤ 회복 경로</a></li>
+          <li class="toc-sub"><a href="#principle-6">원칙 ⑥ 주의 점검</a></li>
+          <li><a href="#extended-model">확장 모델</a></li>
+          <li><a href="#summary">한 줄 정리</a></li>
+          <li><a href="#related-notes">관련 노트</a></li>
+        </ol>
+      </nav>
+
+      <div class="sidebar-card">
+        <p class="sidebar-title">Note information</p>
+        <p>
+          <strong>유형</strong><br>
+          주제 정리 노트
+        </p>
+        <p>
+          <strong>작성일</strong><br>
+          <time datetime="2026-08-19">2026년 8월 19일</time>
+        </p>
+      </div>
+    </aside>
+
+    <article class="document">
+      <header class="hero">
+        <p class="eyebrow">LEADERSHIP · FEEDBACK · EMOTION</p>
+        <h1>🛡 피드백에서 감정의 방어적 기능과 감정 접근 방법</h1>
+        <p class="hero-summary">
+          피드백이 촉발하는 감정의 방어적 기능과, 주의를 자기 보호에서
+          업무 개선으로 돌리기 위한 처리 원칙을 정리한 노트입니다.
+        </p>
+        <ul class="metadata" aria-label="노트 메타데이터">
+          <li class="date"><time datetime="2026-08-19">2026-08-19</time></li>
+          <li>피드백</li>
+          <li>감정</li>
+          <li>방어기제</li>
+          <li>심리적안전감</li>
+          <li>리더십</li>
+          <li>감정조절</li>
+        </ul>
+      </header>
+
+      <main class="content">
+        <details class="mobile-nav">
+          <summary>목차 열기</summary>
+          <ol class="toc">
+            <li><a href="#defensive-function">1. 피드백에서 감정의 방어적 기능</a></li>
+            <li><a href="#approach">2. 감정에 대한 접근 방법</a></li>
+            <li><a href="#extended-model">확장 모델</a></li>
+            <li><a href="#summary">한 줄 정리</a></li>
+            <li><a href="#related-notes">관련 노트</a></li>
+          </ol>
+        </details>
+
+        <aside class="callout info" aria-labelledby="source-title">
+          <span class="callout-title" id="source-title">📌 본 노트의 출처</span>
+          <p>
+            <a href="#source-note">Great Leaders Know Which Emotions Their Feedback Will Trigger</a>
+            (Zhao, Olivera &amp; Edmondson, HBR 2026) 원문을 바탕으로,
+            피드백에서 감정의 <strong>방어적 기능</strong>과 그에 대한
+            <strong>감정 접근 방법(처리 원칙)</strong>을 정리한 노트입니다.
+          </p>
+        </aside>
+
+        <section id="defensive-function" aria-labelledby="defensive-function-title">
+          <h2 id="defensive-function-title">
+            <span class="number">1</span>
+            피드백에서 감정의 방어적 기능
+          </h2>
+
+          <blockquote class="callout key-insight">
+            <p>
+              핵심: <strong>피드백이 학습을 만드는 것이 아니라, 피드백이 촉발한 감정이
+              주의(attention)를 어디로 보내는가</strong>가 학습 여부를 결정합니다.
+            </p>
+            <p>
+              방어적 기능은 주의가 <strong>‘업무 개선’에서 ‘자기 보호’로</strong>
+              이동할 때 발생합니다.
+            </p>
+          </blockquote>
+
+          <h3 id="defensive-emotions">1-1. 방어를 유발하는 감정 (자기 중심 / 타인 지향)</h3>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">감정</th>
+                  <th scope="col">내면의 해석</th>
+                  <th scope="col">주의가 향하는 방향</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong class="emotion-defensive">수치심 (Shame)</strong></td>
+                  <td>“난 부족해”, “난 적합하지 않아”</td>
+                  <td>내면 → 위축·회피·방어</td>
+                </tr>
+                <tr>
+                  <td><strong class="emotion-defensive">두려움 (Fear)</strong></td>
+                  <td>“승진이 위험한가?”, “해고되나?”</td>
+                  <td>노출 회피 (처벌적 환경)</td>
+                </tr>
+                <tr>
+                  <td><strong class="emotion-defensive">분노 (Anger)</strong></td>
+                  <td>“이건 내 잘못이 아니다”</td>
+                  <td>외부·타인 → 비난과 방어</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <ul>
+            <li>세 감정의 공통점은 <strong>주의가 과업(task)에서 벗어난다</strong>는 점입니다.</li>
+            <li>
+              방어적 기능의 본질은 “감정이 무너지는 것”이 아니라
+              <strong>“감정이 주의를 자기 보호·타인 비난 쪽으로 돌리는 것”</strong>입니다.
+            </li>
+          </ul>
+
+          <h3 id="learning-emotions">1-2. 방어가 아니라 학습을 만드는 감정</h3>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">감정</th>
+                  <th scope="col">내면의 해석</th>
+                  <th scope="col">주의가 향하는 방향</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong class="emotion-learning">죄책감 (Guilt)</strong></td>
+                  <td>“내가 잘못된 행동을 했다”</td>
+                  <td>구체적 행동 → 교정</td>
+                </tr>
+                <tr>
+                  <td><strong class="emotion-learning">후회 (Regret)</strong></td>
+                  <td>“더 나은 선택이 있었는데”</td>
+                  <td>반성·조정</td>
+                </tr>
+                <tr>
+                  <td><strong class="emotion-learning">좌절감 (Frustration)</strong></td>
+                  <td>“막힌 것이 있다”</td>
+                  <td>문제 해결로의 연료</td>
+                </tr>
+                <tr>
+                  <td><strong class="emotion-learning">희망·자부심</strong></td>
+                  <td>“개선 경로가 보인다”, “진전을 인정받았다”</td>
+                  <td>학습 동기 지속</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="approach" aria-labelledby="approach-title">
+          <h2 id="approach-title">
+            <span class="number">2</span>
+            감정에 대한 접근 방법 (처리 원칙)
+          </h2>
+
+          <blockquote class="callout key-insight">
+            <p>
+              핵심 통찰: <strong>리더가 상대의 감정을 직접 통제할 수는 없지만,
+              상대가 피드백을 ‘어떤 의미로 해석하도록 만드는가’에는 큰 영향을 줄 수 있다.</strong>
+            </p>
+            <p>
+              → 따라서 감정 관리가 아니라 한 단계 앞선
+              <strong>‘의미 설계(Meaning Design)’</strong>로 접근합니다.
+            </p>
+          </blockquote>
+
+          <div class="principles">
+            <article class="principle" id="principle-1">
+              <h3>
+                <span class="principle-number">①</span>
+                감정을 줄이려 하지 말고, 감정이 향하는 ‘방향’을 바꿔라
+              </h3>
+              <ul>
+                <li>
+                  모든 부정적 감정이 나쁜 것은 아닙니다. 죄책감·후회·좌절감은
+                  오히려 학습의 연료입니다.
+                </li>
+                <li>
+                  구분 기준은 “좋고 나쁨”이 아니라
+                  <strong>“주의가 어디로 향하는가”</strong>입니다.
+                </li>
+                <li>
+                  → 감정을 제거하는 게 아니라, 주의가
+                  <strong>과업(task)</strong>에 머물도록 설계합니다.
+                </li>
+              </ul>
+            </article>
+
+            <article class="principle" id="principle-2">
+              <h3>
+                <span class="principle-number">②</span>
+                행동에는 닻을 내리고, 인격에는 닻을 내리지 마라
+              </h3>
+              <div class="example-pair" aria-label="피드백 표현 비교">
+                <div class="example bad">
+                  <span class="example-label">인격 중심 · 수치심 유발</span>
+                  “너는 전략적이지 못해.”
+                </div>
+                <div class="example good">
+                  <span class="example-label">행동 중심 · 교정 가능</span>
+                  “이 기획서에서 A 가설 검증과 데이터 분석 단계가 빠졌어.”
+                </div>
+              </div>
+              <p>
+                방어를 막는 가장 확실한 장치:
+                <strong>사람(person)이 아니라 행동·선택·대안</strong>을 말합니다.
+              </p>
+            </article>
+
+            <article class="principle" id="principle-3">
+              <h3>
+                <span class="principle-number">③</span>
+                방어적 감정이 나올 자리를 미리 줄여라 (공정성)
+              </h3>
+              <ul>
+                <li>
+                  피드백이 “부당하거나 편향됐다”고 느끼면 즉시 분노·방어가 발동합니다.
+                </li>
+                <li>
+                  → 상대의 관점을 먼저 묻고, 불확실성을 인정하고, 대화를 허용하면
+                  방어가 사라집니다.
+                </li>
+              </ul>
+            </article>
+
+            <article class="principle" id="principle-4">
+              <h3>
+                <span class="principle-number">④</span>
+                좌절감을 ‘통제감(Control)’으로 전환하라
+              </h3>
+              <ul>
+                <li>
+                  좌절감은 “막힌 것이 있다”는 신호입니다. 그대로 두면 무기력해집니다.
+                </li>
+                <li>
+                  → 문제를 쪼개고, “다음에 A → B → C로 하면 개선된다”처럼
+                  <strong>명확한 다음 단계</strong>를 제시해 통제감을 돌려줍니다.
+                </li>
+              </ul>
+            </article>
+
+            <article class="principle" id="principle-5">
+              <h3>
+                <span class="principle-number">⑤</span>
+                수치심이 이미 촉발되었다면, 회복 경로를 열어라
+              </h3>
+              <ul>
+                <li>
+                  수치심(“나는 부족한 사람”)이 깊어지면 즉각 과업 감정으로
+                  되돌리기 어렵습니다.
+                </li>
+                <li>
+                  → 처벌적 어조 대신
+                  <strong>“이 행동은 잘못됐지만, 돌아갈 길이 있다”</strong>는
+                  회복의 메시지로 재규정합니다.
+                </li>
+              </ul>
+            </article>
+
+            <article class="principle" id="principle-6">
+              <h3>
+                <span class="principle-number">⑥</span>
+                피드백 후 “명확했나?”가 아니라 “주의가 어디로 갔나?”를 점검하라
+              </h3>
+              <ul>
+                <li>
+                  성공 척도를 전달 명확성이 아니라
+                  <strong>“피드백 직후 상대의 주의 방향”</strong>으로 바꿉니다.
+                </li>
+                <li>
+                  일에 몰입하는가, 자기방어·타인 탓을 하는가 → 이 질문이
+                  조직 전체의 피드백 문화를 바꿉니다.
+                </li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section id="extended-model" aria-labelledby="extended-model-title">
+          <h2 id="extended-model-title">🧭 확장 모델</h2>
+          <p><strong>Feedback → Meaning → Emotion → Attention → Behavior</strong></p>
+
+          <figure class="flow" aria-labelledby="flow-caption">
+            <ol>
+              <li>
+                <span class="flow-name">FEEDBACK</span>
+                <span class="flow-detail">피드백</span>
+              </li>
+              <li>
+                <span class="flow-name">MEANING APPRAISAL</span>
+                <span class="flow-detail">
+                  “이게 무슨 뜻이지?”<br>
+                  가치·책임·통제·정체성·관계·미래
+                </span>
+              </li>
+              <li>
+                <span class="flow-name">EMOTION</span>
+                <span class="flow-detail">
+                  수치·두려움·죄책감·후회·분노·감사·희망
+                </span>
+              </li>
+              <li>
+                <span class="flow-name">ATTENTION</span>
+                <span class="flow-detail">
+                  Self-protection ⇄ Task-improvement
+                </span>
+              </li>
+              <li>
+                <span class="flow-name">BEHAVIOR</span>
+                <span class="flow-detail">
+                  방어·회피·비난 ⇄ 분석·수정·학습
+                </span>
+              </li>
+            </ol>
+            <figcaption class="flow-caption" id="flow-caption">
+              피드백은 의미 해석과 감정을 거쳐 주의의 방향을 결정하고,
+              최종적으로 행동에 영향을 줍니다.
+            </figcaption>
+          </figure>
+
+          <ul>
+            <li>
+              리더는 감정을 직접 통제할 수 없지만,
+              <strong>의미 해석 단계</strong>에는 개입할 수 있습니다.
+            </li>
+          </ul>
+        </section>
+
+        <section id="summary" aria-labelledby="summary-title">
+          <h2 id="summary-title">📌 한 줄 정리</h2>
+          <blockquote class="summary-card">
+            <p>
+              방어는 감정의 강도 문제가 아니라 <strong>주의 방향 문제</strong>입니다.
+              접근법은 “감정을 누르기”가 아니라, 상대가 피드백을
+              <strong>행동에 대한 정보로 해석하도록 의미를 설계</strong>하고 —
+              수치심 대신 죄책감·후회를, 두려움 대신 통제감·희망을 활성화하는 데 있습니다.
+            </p>
+          </blockquote>
+        </section>
+
+        <section id="related-notes" aria-labelledby="related-notes-title">
+          <h2 id="related-notes-title">🔗 관련 노트</h2>
+          <ul class="related-list">
+            <li id="source-note">
+              <a class="note-link" href="Great%20Leaders%20Know%20Which%20Emotions%20Their%20Feedback%20Will%20Trigger.html">
+                Great Leaders Know Which Emotions Their Feedback Will Trigger
+              </a>
+            </li>
+            <li>
+              <a class="note-link" href="%EC%A7%80%ED%98%9C%EC%99%80_%EA%B0%90%EC%A0%95_%EC%A0%95%EB%A6%AC.html">
+                지혜와_감정_정리
+              </a>
+            </li>
+          </ul>
+        </section>
+      </main>
+
+      <footer class="document-footer">
+        <span>주제 정리 노트</span>
+        <span aria-hidden="true"> · </span>
+        <span>출처: Great Leaders Know Which Emotions Their Feedback Will Trigger</span>
+        <span aria-hidden="true"> · </span>
+        <time datetime="2026-08-19">2026-08-19</time>
+      </footer>
+    </article>
+  </div>
+</body>
+</html>
